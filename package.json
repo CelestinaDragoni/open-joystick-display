@@ -1,0 +1,35 @@
+{
+  "name": "open-joystick-display",
+  "version": "1.0.0",
+  "description": "An open source Joystick display for Twitch, YouTube, etc. ",
+  "main": "src/js/bootstrap.js",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "open-joystick-display",
+    "productName": "Open Joystick Display",
+    "linux": {
+      "target": "dir",
+      "category": "Multimedia"
+    },
+    "win": {
+      "icon":"./src/icons/icon.png",
+      "target":"portable"
+    }
+  },
+  "dependencies": {
+    "clone": "^2.1.2",
+    "electron-store": "^2.0.0",
+    "jquery": "^3.3.1"
+  } , 
+  "devDependencies": {
+    "clone": "^2.1.2",
+    "electron": "^4.0.0",
+    "electron-builder": "^20.38.4",
+    "electron-store": "^2.0.0",
+    "jquery": "^3.3.1"
+  }
+}

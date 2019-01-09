@@ -1,0 +1,215 @@
+<div class='ojd-sidebar' id='ojd-interface-map'>
+	<div class='ojd-sidebar-row' id='ojd-mapper'>
+		<div class='ojd-sidebar-section-header'>Input Mapper</div>
+		<div class='ojd-sidebar-section' id='ojd-mapper-content'>
+
+			<div>
+				<h1>Configuration</h1>
+				<div class='ojd-sidebar-subsection-toolbar'>
+					<div>
+						<label class='ojd-label'>Name:</label>
+					</div>
+					<div class='ojd-sidebar-subsection-toolbar-grow'>
+						<input class='ojd-input' ojd-group='global' ojd-field='name' id='ojd-mapper-name'/>
+					</div>
+				</div>
+				<div class='ojd-sidebar-subsection-toolbar'>
+					<div>
+						<label class='ojd-label'>Buttons: <span id='ojd-mapper-buttons-count'>0</span></label>
+					</div>
+					<div>
+						<label class='ojd-label'>Directionals: <span id='ojd-mapper-directional-count'>0</span></label>
+					</div>
+					<div>
+						<label class='ojd-label'>Triggers: <span id='ojd-mapper-trigger-count'>0</span></label>
+					</div>
+				</div>
+			</div>
+			<div>
+				<h1>Buttons</h1>
+				<div id='ojd-mapper-buttons'>
+
+				</div>
+				<div class='ojd-mapper-add'>
+					<button id='ojd-add-button' class='ojd-button'><i class='fa fa-fw fa-plus'></i> Add Button</button>
+				</div>
+			</div>
+			<div>
+				<h1>Directionals</h1>
+				<div  id='ojd-mapper-directionals'>
+
+				</div>
+				<div class='ojd-mapper-add'>
+					<button id='ojd-add-directional' class='ojd-button'><i class='fa fa-fw fa-plus'></i> Add Directional</button>
+				</div>
+			</div>
+			<div>
+				<h1>Triggers</h1>
+				<div  id='ojd-mapper-triggers'>
+
+				</div>
+				<div class='ojd-mapper-add'>
+					<button id='ojd-add-trigger' class='ojd-button'><i class='fa fa-fw fa-plus'></i> Add Trigger</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script id='ojd-template-mapper' type='text/html'>
+
+
+</script>
+
+<script id='ojd-template-mapper' type='text/html'>
+	<div>
+		<h1>Configuration</h1>
+		<div class='ojd-sidebar-subsection-toolbar'>
+			<div>
+				<label class='ojd-label'>Buttons</label>
+				<select class='ojd-select'></select>
+			</div>
+			<div>
+				<label class='ojd-label'>Axes:</label>
+				<select class='ojd-select'></select>
+			</div>
+			<div>
+				<button class='ojd-button'>Configure by Controller</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script id='ojd-template-mapper-button-options' type='text/html'>
+	<option value='A'>A</option>
+	<option value='B'>B</option>
+	<option value='C'>C</option>
+	<option value='X'>X</option>
+	<option value='Y'>Y</option>
+	<option value='Z'>Z</option>
+	<option value='CROSS'>CROSS</option>
+	<option value='CIRCLE'>CIRCLE</option>
+	<option value='SQUARE'>SQUARE</option>
+	<option value='TRIANGLE'>TRIANGLE</option>
+	<option value='L'>L</option>
+	<option value='L2'>L2</option>
+	<option value='L3'>L3</option>
+	<option value='R'>R</option>
+	<option value='R2'>R2</option>
+	<option value='R3'>R3</option>
+	<option value='START'>START</option>
+	<option value='SELECT'>SELECT</option>
+	<option value='ACTION'>ACTION</option>
+	<option value='PS'>PS</option>
+	<option value='XBOX'>XBOX</option>
+	<option value='PLUS'>PLUS</option>
+	<option value='MINUS'>MINUS</option>
+	<option value='HOME'>HOME</option>
+	<option value='UP'>UP</option>
+	<option value='DOWN'>DOWN</option>
+	<option value='LEFT'>LEFT</option>
+	<option value='RIGHT'>RIGHT</option>
+	<option value='CUP'>C UP</option>
+	<option value='CDOWN'>C DOWN</option>
+	<option value='CLEFT'>C LEFT</option>
+	<option value='CRIGHT'>C RIGHT</option>
+	<option value='1'>1</option>
+	<option value='2'>2</option>
+	<option value='3'>3</option>
+	<option value='4'>4</option>
+	<option value='5'>5</option>
+	<option value='6'>6</option>
+	<option value='7'>7</option>
+	<option value='8'>8</option>
+	<option value='9'>9</option>
+	<option value='10'>10</option>
+	<option value='11'>11</option>
+	<option value='12'>12</option>
+	<option value='13'>13</option>
+	<option value='14'>14</option>
+	<option value='15'>15</option>
+	<option value='16'>16</option>
+	<option value='17'>17</option>
+	<option value='18'>18</option>
+	<option value='19'>19</option>
+	<option value='20'>20</option>
+</script>
+
+<script id='ojd-template-mapper-button-row' type='text/html'>
+	<div ojd-map-index='${i}' class='ojd-mapper-button-row'>
+		<div>
+			<select ojd-map-index='${i}' ojd-group='button' ojd-field='button' class='ojd-select ojd-map-button'>${select}</select>
+		</div>
+		<div>
+			<input ojd-map-index='${i}' ojd-group='button' ojd-field='index' type='number' min='0' max='100' class='ojd-input ojd-map-button-index' value='${index}'/>
+		</div>
+		<div>
+			<button class='ojd-button ojd-delete-button' ojd-map-index='${i}' ojd-group='button'><i class='fa fa-fw fa-trash'></i> Delete</button>
+		</div>
+	</div>
+</script>
+
+<script id='ojd-template-mapper-directional-row' type='text/html'>
+	<div ojd-map-index='${i}' class='ojd-mapper-directional-row'>
+		<h2>Directional ID: ${i}</h2>
+		<div class='ojd-row-one'>
+			<div>
+				<label>Axis X:</label>
+				<input ojd-map-index='${i}' ojd-group='directional' ojd-field='axisX' type='number' step='1' class='ojd-input ojd-map-directional-x' value='${x}'/></div>
+			<div>
+				<label>Axis Y:</label>
+				<input ojd-map-index='${i}' ojd-group='directional' ojd-field='axisY' type='number' step='1' class='ojd-input ojd-map-directional-y' value='${y}'/></div>
+			<div>
+				<label>Deadzone:</label>
+				<input ojd-map-index='${i}' ojd-group='directional' ojd-field='deadzone' type='number' step='.05' min='-1' max='1' class='ojd-input ojd-map-directional-deadzone' value='${deadzone}'/>
+			</div>
+		</div>
+		<div class='ojd-row-two'>
+			<div>
+				<label><input type='checkbox' ojd-map-index='${i}' ojd-group='directional' ojd-field='dpad'  ${dpad}> Trigger D-Pad</label>
+			</div>
+			<div>
+				<label><input type='checkbox' ojd-map-index='${i}' ojd-group='directional' ojd-field='cpad'  ${cstick}> Trigger C-Pad</label>
+			</div>
+		</div>
+		<div class='ojd-row-delete'>
+			<button class='ojd-button ojd-delete-directional' ojd-map-index='${i}' ojd-group='directional'><i class='fa fa-fw fa-trash'></i> Delete</button>
+		</div>
+	</div>
+
+</script>
+
+<script id='ojd-template-mapper-trigger-row' type='text/html'>
+	<div ojd-map-index='${i}' class='ojd-mapper-trigger-row'>
+		<h2>Trigger ID: ${i}</h2>
+		<div class='ojd-row-one'>
+			<div>
+				<label>Axis:</label>
+				<input ojd-map-index='${i}' ojd-group='trigger' ojd-field='axis' type='number' step='1' class='ojd-input ojd-map-directional-x' value='${axis}'/>
+			</div>
+			<div>
+				<label>Min:</label>
+				<input ojd-map-index='${i}' ojd-group='trigger' ojd-field='min' type='number' step='.05' min='-1' max='1' class='ojd-input ojd-map-directional-y' value='${min}'/>
+			</div>
+			<div>
+				<label>Max:</label>
+				<input ojd-map-index='${i}' ojd-group='trigger' ojd-field='max' type='number' step='.05' min='-1' max='1' class='ojd-input ojd-map-directional-y' value='${max}'/>
+			</div>
+		</div>
+		<div class='ojd-row-two'>
+			<div>
+				<label class='ojd-label'>Trigger Button:</label>
+				<div>
+					<select ojd-map-index='${i}' ojd-group='trigger' ojd-field='button' class='ojd-select ojd-trigger-button'>
+						<option>None</option>
+						${select}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class='ojd-row-delete'>
+			<button class='ojd-button ojd-delete-trigger' ojd-map-index='${i}' ojd-group='trigger'><i class='fa fa-fw fa-trash'></i> Delete</button>
+		</div>
+	</div>
+
+</script>

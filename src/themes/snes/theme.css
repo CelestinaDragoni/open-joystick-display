@@ -1,0 +1,327 @@
+
+#contents {
+	width:600px;
+	height:280px;
+	flex:none;
+}
+.snes {
+	width:600px;
+	height:280px;
+}
+
+.snes-top {
+	position:absolute;
+	top:20px;
+	width:365px;
+	height:200px;
+	left:117px;
+	background:#b2b4b2;
+}
+.snes-round-left {
+	position:absolute;
+	top:20px;
+	left:0px;
+	width:250px;
+	height:250px;
+	border-radius:100%;
+	background:#b2b4b2;
+
+}
+.snes-round-right {
+	position:absolute;
+	top:20px;
+	right:0px;
+	width:250px;
+	height:250px;
+	border-radius:100%;
+	background:#b2b4b2;
+}
+.snes-round-inset-right {
+	position:absolute;
+	top:30px;
+	right:10px;
+	width:230px;
+	height:230px;
+	border-radius:100%;
+	background:#707372;
+}
+.snes-round-inset-left {
+	position:absolute;
+	top:70px;
+	left:48px;
+	width:150px;
+	height:150px;
+	border-radius:100%;
+	border:4px solid #707372;
+}
+
+.snes-center-wrapper {
+	position:absolute;
+	bottom:60px;
+	left:224px;
+	width:130px;
+	height:90px;
+}
+
+.snes-center-button {
+	transform: rotate(45deg);
+	position:absolute;
+	background:#333;
+	width:15px;
+	height:45px;
+	border-radius:50px;
+	box-shadow:-1px -1px 0px #000;
+}
+.snes-center-button.active{
+	background:white;
+}
+
+.SELECT {
+	top:0px;
+	left:25px;
+}
+.START {
+	top:0px;
+	right:35px;
+}
+.snes-lbl-buttons-center {
+	position:absolute;
+	font-size:10px;
+	font-family:Arial,Helvetica,Sans-Serif,Monospace;
+	font-style:italic;
+	font-weight:bold;
+	color:#707372;
+}
+.lblSELECT {
+	left:6px;
+	bottom:30px;
+}
+.lblSTART {
+	left:65px;
+	bottom:30px;
+}
+
+.snes-dpad-vert {
+	
+	position:absolute;
+	top:20px;
+	left:55px;
+	background:	#333;
+	height:100px;
+	width:35px;
+	box-shadow:0px 4px 0px #000;
+}
+.snes-dpad-hori {
+	position:absolute;
+	top:53px;
+	left:22px;
+	background:	#333;
+	height:35px;
+	width:100px;
+	box-shadow:0px 4px 0px #000;
+}
+
+.button-dpad {
+	margin:5px;
+	position:absolute;
+}
+
+.UP {
+	top:0px;
+	left:0px;
+	
+	width: 0; 
+	height: 0; 
+	border-left: 13px solid transparent;
+	border-right: 13px solid transparent;
+	border-bottom: 23px solid #222;
+}
+.UP.active {
+	border-bottom-color:white;
+}
+
+.DOWN {
+	bottom:0px;
+	left: 0px;
+	width: 0; 
+  	height: 0; 
+  	border-left: 13px solid transparent;
+  	border-right: 13px solid transparent;
+  	border-top: 23px solid #222;
+}
+.DOWN.active {
+	border-top-color:white;
+}
+
+.RIGHT {
+	top:0px;
+	right:0px;
+  	width: 0; 
+  	height: 0; 
+  	border-top: 13px solid transparent;
+  	border-bottom: 13px solid transparent;
+  	border-left: 23px solid #222;
+}
+.RIGHT.active {
+	border-left-color:white;
+}
+
+.LEFT {
+	top:0px;
+	left:0px;
+	width: 0; 
+  	height: 0; 
+  	border-top: 13px solid transparent;
+  	border-bottom: 13px solid transparent; 
+  	border-right:23px solid #222; 
+}
+.LEFT.active {
+	border-right-color:white;
+}
+
+.snes-rounded-button-top {
+	transform: rotate(315deg);
+	position:absolute;
+	top:95px;
+	right:80px;
+	background:#b2b4b2;
+	width:140px;
+	height:60px;
+	border-radius:50px;
+
+}
+
+.snes-rounded-button-bottom {
+	transform: rotate(315deg);
+	position:absolute;
+	top:140px;
+	right:30px;
+	background:#b2b4b2;
+	width:140px;
+	height:60px;
+	border-radius:50px;
+}
+
+.button-inset {
+	position:absolute;
+	background:#a7a4e0;
+	width:50px;
+	height:50px;
+	border-radius:100%;
+	box-shadow:-2px 2px 0px #323143;
+}
+.button-inset.active {
+	background:white;
+	margin:1px;
+	box-shadow:-1px 1px 0px #323143;
+}
+.button {
+	position:absolute;
+	background:#514689;
+	width:50px;
+	height:50px;
+	border-radius:100%;
+	box-shadow:-2px 2px 0px #201c36;
+}
+.button.active {
+	background:white;
+	margin:1px;
+	box-shadow:-1px 1px 0px #323143;
+}
+
+.snes-lbl-container-right {
+	position:absolute;
+	top:30px;
+	right:10px;
+	width:230px;
+	height:230px;
+}
+
+.snes-lbl-buttons-right {
+	position:absolute;
+	color:#b2b4b2;
+	font-size:20px;
+	font-family:Arial,Helvetica,Sans-Serif,Monospace;
+	font-style:italic;
+	font-weight:bold;
+}
+
+.lblA{
+	top:70px;
+	right:19px;
+}
+
+.lblB{
+	bottom:20px;
+	left:72px;
+}
+
+.lblX {
+	top:25px;
+	right:72px;
+}
+
+.lblY {
+	bottom:65px;
+	left:22px;
+}
+
+.A{
+	top:4px;
+	right:5px;
+}
+.B{
+	top:4px;
+	left:5px;
+}
+.X {
+	top:4px;
+	right:5px;
+}
+.Y {
+	top:4px;
+	left:5px;
+}
+
+.snes-left-trigger{
+	position:absolute;
+	top:0px;
+	left:50px;
+	width:200px;
+	height:50px;
+	background:#707372;
+	border-radius:150px 15px 0 0;
+	text-align:right;
+	padding:2px 5px;
+	font-size:13px;
+	font-family:Arial,Helvetica,Sans-Serif,Monospace;
+	font-weight:bold;
+	color:black;
+}
+
+.snes-right-trigger{
+	position:absolute;
+	top:0px;
+	right:50px;
+	width:200px;
+	height:50px;
+	background:#707372;
+	border-radius:15px 150px 0 0;
+	text-align:left;
+	padding:2px 5px;
+	font-size:13px;
+	font-family:Arial,Helvetica,Sans-Serif,Monospace;
+	font-weight:bold;
+	color:black;
+}
+.snes-left-trigger.active, .snes-right-trigger.active {
+	top:5px;
+	background:white;
+}
+.snes-logo  {
+	position:absolute;
+	width:25%;
+	left:208px;
+	top:30px;
+	opacity:.30;
+}

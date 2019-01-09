@@ -1,0 +1,105 @@
+#ojd-interface-map {
+	user-select: none;
+	#ojd-mapper{
+		.ojd-sidebar-subsection-toolbar {
+			input {
+				width:320px;
+
+			}
+		}
+
+		#ojd-mapper-buttons {
+
+			.ojd-mapper-button-row {
+				display:block;
+				padding:5px;
+				div {
+					display:inline-block;
+					select {
+						width:200px;
+					}
+					input {
+						width:75px;
+					}
+
+				}
+				div:last-child {
+					float:right;
+					padding-right:5px;
+				}
+			}
+		}
+
+
+		.ojd-mapper-add {
+			padding:10px;
+			text-align:right;
+		}
+
+		.ojd-mapper-directional-row {
+			border-bottom:1px solid @color-lighter;
+			> div {
+				padding:5px;
+			}
+			> div.ojd-row-one {
+				div {
+					display:inline-block;
+					padding:5px;
+					
+					input {
+						width:30px;
+					}
+					label {
+						padding-right:3px;
+					}
+					&:last-child {
+						input {
+							width:50px;
+						}
+					}
+				}
+			}
+			> div.ojd-row-two  {
+				div {
+					display:inline-block;
+					padding:5px;
+				}
+			}
+			> div.ojd-row-delete  {
+				padding:5px;
+				padding-right:10px;
+				text-align:right;
+			}
+		}
+
+		.ojd-mapper-trigger-row {
+			border-bottom:1px solid @color-lighter;
+			> div.ojd-row-one {
+				div {
+					display:inline-block;
+					padding:5px;
+					
+					input {
+						width:50px;
+					}
+					label {
+						padding-right:3px;
+					}
+				}
+			}
+			> div.ojd-row-two {
+				div {
+					display:inline-block;
+					padding:5px;
+				}
+			}
+			> div.ojd-row-delete {
+				padding:5px;
+				padding-right:10px;
+				text-align:right;
+			}
+		}
+
+	}
+}
+
