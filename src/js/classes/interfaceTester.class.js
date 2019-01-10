@@ -81,7 +81,7 @@ class InterfaceTester {
 	render() {
 
 		const files = [
-			FS.openSync('./src/views/interfaceTester.view.html', 'r')
+			FS.openSync(`${window.cwd}/src/views/interfaceTester.view.html`, 'r')
 		];
 
 		for (const file of files) {

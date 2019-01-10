@@ -1,5 +1,7 @@
 window.$ = window.jQuery = require('jquery');
 
+window.cwd = __dirname.replace('src/views', '');
+console.log(window.cwd);
 
 $(function() {
 	const {Config} 		= require("../../src/js/classes/config.class.js");

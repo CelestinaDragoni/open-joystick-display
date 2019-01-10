@@ -1,6 +1,8 @@
 .gc {
 	width:400px;
 	height:275px;
+	font-size:16px;
+	font-weight:bold;
 }
 .gc-dpad {
 	position:absolute;

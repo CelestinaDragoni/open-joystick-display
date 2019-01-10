@@ -314,7 +314,7 @@ class InterfaceMapper {
 	render() {
 
 		const files = [
-			FS.openSync('./src/views/interfaceMapper.view.html', 'r')
+			FS.openSync(`${window.cwd}/src/views/interfaceMapper.view.html`, 'r')
 		];
 
 		for (const file of files) {

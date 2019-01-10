@@ -1,20 +1,84 @@
 const FS = require('fs');
+const Sanitize = require('sanitize-html');
 
 class Themes {
 
 	constructor(config) {
 		this.config = config;
+		this.allowedTags = [
+			'div',
+			'main',
+			'header',
+			'section',
+			'footer', 
+			'small',
+			'span', 
+			'svg', 
+			'rect',
+			'polygon',
+			'ellipse',
+			'star',
+			'circle',
+			'text',
+			'button', 
+			'b', 
+			'i', 
+			'u',
+			'em',
+			'sup',
+			'strong', 
+			'img', 
+			'br', 
+			'p', 
+			'label', 
+			'strike'
+		];
+		this.allowedAttributes = {};
+		for (const attr of this.allowedTags) {
+			this.allowedAttributes[attr] = [
+				'ojd-directional', 
+				'ojd-button',
+				'ojd-trigger-scale',
+				'ojd-trigger-scale-inverted',
+				'ojd-trigger-move',
+				'ojd-trigger-move-inverted',
+				'class',
+				'style',
+				'id',
+				'src',
+				'height',
+				'width',
+				'cx',
+				'cy',
+				'r',
+				'stroke',
+				'stroke-width',
+				'fill',
+				'x',
+				'y',
+				'rx',
+				'ry',
+				'points',
+				'defs',
+				'linearGradient',
+				'font-size',
+				'font-family',
+
+
+			];
+		}
 		this.themes = {};
 		this.refresh();
 	}
 
 	refresh() {
+
 		this.themes = {};
-		const paths = FS.readdirSync('./src/themes/');
+		const paths = FS.readdirSync(`${window.cwd}/src/themes`);
 		for (const dir of paths) {
-			this.themes[dir] = require(`../../../src/themes/${dir}/theme.json`);
-			this.themes[dir].directory = `./src/themes/${dir}/`;
-			this.themes[dir].cssDirectory = `../../src/themes/${dir}/`;
+			this.themes[dir] = require(`${window.cwd}/src/themes/${dir}/theme.json`);
+			this.themes[dir].directory = `${window.cwd}/src/themes/${dir}/`;
+			this.themes[dir].cssDirectory = `${window.cwd}/src/themes/${dir}/`;
 			this.themes[dir].user = false;
 		}
 
@@ -23,9 +87,13 @@ class Themes {
 			try {
 				const paths = FS.readdirSync(userDirectory);
 				for (const dir of paths) {
-					this.themes[dir] = require(`${userDirectory}/${dir}/theme.json`);
-					this.themes[dir].cssDirectory = this.themes[dir].directory = `${userDirectory}/${dir}/`;
-					this.themes[dir].user = true;
+					try {
+						this.themes[dir] = require(`${userDirectory}/${dir}/theme.json`);
+						this.themes[dir].cssDirectory = this.themes[dir].directory = `${userDirectory}/${dir}/`;
+						this.themes[dir].user = true;
+					} catch {
+						console.error(`Could not load theme from directory: ${dir}`);
+					}
 				}
 			} catch {
 				console.error("Could not load user themes.");
@@ -57,9 +125,13 @@ class Themes {
 		try {
 			const file = FS.openSync(`${theme.directory}/theme.html`, 'r');
 			html = FS.readFileSync(file, 'UTF-8');
+			html = Sanitize(html, {
+				allowedTags:this.allowedTags,
+				allowedAttributes:this.allowedAttributes
+			});
 			FS.closeSync(file);
 		} catch {
-			alert("Controller theme not found. Perhaps it was moved or deleted?");
+			alert("Theme not found. Perhaps it was moved or deleted?");
 			FS.closeSync(file);
 			return;
 		}

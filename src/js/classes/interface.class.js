@@ -136,7 +136,6 @@ class Interface {
 
 	actionToggleAlwaysOnTop(e) {
 		const alwaysOnTop = this.config.toggleAlwaysOnTop();
-		console.log(alwaysOnTop);
 		if (alwaysOnTop) {
 			$("#ojd-top-toggle").addClass("ojd-active");
 		} else {
@@ -254,9 +253,9 @@ class Interface {
 	render() {
 
 		const files = [
-			FS.openSync('./src/views/interface.view.html', 'r'),
-			FS.openSync('./src/views/theme.view.html', 'r'),
-			FS.openSync('./src/views/about.view.html', 'r')
+			FS.openSync(`${window.cwd}/src/views/interface.view.html`, 'r'),
+			FS.openSync(`${window.cwd}/src/views/theme.view.html`, 'r'),
+			FS.openSync(`${window.cwd}/src/views/about.view.html`, 'r')
 		];
 
 		$("body").html("");

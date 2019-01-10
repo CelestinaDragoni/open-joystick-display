@@ -11,20 +11,27 @@
   "build": {
     "appId": "open-joystick-display",
     "productName": "Open Joystick Display",
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
     "linux": {
       "target": "dir",
       "category": "Multimedia"
     },
     "win": {
-      "icon":"./src/icons/icon.png",
-      "target":"portable"
+      "icon": "./src/icons/icon.png",
+      "target": "portable"
     }
   },
   "dependencies": {
     "clone": "^2.1.2",
     "electron-store": "^2.0.0",
-    "jquery": "^3.3.1"
-  } , 
+    "jquery": "^3.3.1",
+    "original-fs": "^1.0.0",
+    "sanitize-html": "^1.20.0"
+  },
   "devDependencies": {
     "clone": "^2.1.2",
     "electron": "^4.0.0",
