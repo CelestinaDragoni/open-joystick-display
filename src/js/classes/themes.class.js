@@ -62,9 +62,7 @@ class Themes {
 				'defs',
 				'linearGradient',
 				'font-size',
-				'font-family',
-
-
+				'font-family'
 			];
 		}
 		this.themes = {};
@@ -87,12 +85,14 @@ class Themes {
 			try {
 				const paths = FS.readdirSync(userDirectory);
 				for (const dir of paths) {
-					try {
-						this.themes[dir] = require(`${userDirectory}/${dir}/theme.json`);
-						this.themes[dir].cssDirectory = this.themes[dir].directory = `${userDirectory}/${dir}/`;
-						this.themes[dir].user = true;
-					} catch {
-						console.error(`Could not load theme from directory: ${dir}`);
+					if (FS.lstatSync(`${userDirectory}/${dir}`).isDirectory() && FS.existsSync(`${userDirectory}/${dir}/theme.json`)) {
+						try {
+							this.themes[dir] = require(`${userDirectory}/${dir}/theme.json`);
+							this.themes[dir].cssDirectory = this.themes[dir].directory = `${userDirectory}/${dir}/`;
+							this.themes[dir].user = true;
+						} catch {
+							console.error(`Could not load theme from directory: ${dir}`);
+						}
 					}
 				}
 			} catch {
