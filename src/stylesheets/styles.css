@@ -377,7 +377,7 @@ div.ojd-modal div.ojd-modal-content {
   user-select: none;
 }
 #ojd-interface-map #ojd-mapper .ojd-sidebar-subsection-toolbar input {
-  width: 320px;
+  width: 300px;
 }
 #ojd-interface-map #ojd-mapper #ojd-mapper-buttons .ojd-mapper-button-row {
   display: block;
@@ -470,7 +470,7 @@ div.ojd-modal div.ojd-modal-content {
   text-align: center;
 }
 #ojd-interface-tester #ojd-tester .ojd-tester-button.active {
-  color: #111;
+  color: #FFF;
   background: #9954bb;
 }
 #ojd-interface-tester #ojd-tester .ojd-tester-analog {

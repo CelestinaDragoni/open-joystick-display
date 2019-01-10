@@ -67,6 +67,7 @@ class Interface {
 	}
 
 	actionToggleExternalLinks(e) {
+		e.preventDefault();
 		const $element = $(e.target);
 		shell.openExternal($element.attr('href'));
 	}
