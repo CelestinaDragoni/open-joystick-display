@@ -9,7 +9,7 @@
 	"mapInterface":true,
 	"map":0,
 	"zoom":1.0,
-	"theme":"snes",
+	"theme":"ojd-snes",
 	"themeUserDirectory":false,
 	"mappings":[
 			{
@@ -241,7 +241,7 @@
 						"index": 11
 					},
 					{
-						"button": "ACTION",
+						"button": "XBOX",
 						"index": 16
 					},
 					{
