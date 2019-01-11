@@ -1,7 +1,12 @@
 window.$ = window.jQuery = require('jquery');
 
-window.cwd = __dirname.replace('src/views', '');
+if (process.platform === "win32") {
+	window.cwd = __dirname.replace('src\\views', '');
+} else {
+	window.cwd = __dirname.replace('src/views', '');
+}
 console.log(window.cwd);
+console.log(process.platform);
 
 $(function() {
 	const {Config} 		= require("../../src/js/classes/config.class.js");
@@ -18,3 +23,4 @@ $(function() {
 
 	window.config = config;
 });
+

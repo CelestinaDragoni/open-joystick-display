@@ -12,11 +12,11 @@ function createWindow () {
     }
 
     if (process.platform === "win32") {
-        cwd = __dirname.replace('src\js', '');
+        cwd = __dirname.replace('src\\js', '');
         ico = cwd+"src/icons/icon.png"; 
     } else {
         cwd = __dirname.replace('src/js', '');
-        ico = cwd+"src\icons\icon.png";
+        ico = cwd+"src/icons/icon.png";
     } 
     
     const windowConfig = {

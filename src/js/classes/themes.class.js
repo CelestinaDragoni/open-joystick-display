@@ -73,10 +73,10 @@ class Themes {
 
 		this.themes = {};
 		if (process.platform === "win32") {
-			const paths = FS.readdirSync(`${window.cwd}\src\themes`);
+			const paths = FS.readdirSync(`${window.cwd}\\src\\themes`);
 			for (const dir of paths) {
-				this.themes[dir] = require(`${window.cwd}\src/\themes\${dir}\theme.json`);
-				this.themes[dir].directory = `${window.cwd}\src\themes/${dir}/`;
+				this.themes[dir] = require(`${window.cwd}\\src\\themes\\${dir}\\theme.json`);
+				this.themes[dir].directory = `${window.cwd}\\src\\themes/${dir}/`;
 				this.themes[dir].cssDirectory = `${window.cwd}/src/themes/${dir}/`;
 				this.themes[dir].user = false;
 			}
@@ -95,13 +95,25 @@ class Themes {
 			try {
 				const paths = FS.readdirSync(userDirectory);
 				for (const dir of paths) {
-					if (FS.lstatSync(`${userDirectory}/${dir}`).isDirectory() && FS.existsSync(`${userDirectory}/${dir}/theme.json`)) {
-						try {
-							this.themes[dir] = require(`${userDirectory}/${dir}/theme.json`);
-							this.themes[dir].cssDirectory = this.themes[dir].directory = `${userDirectory}/${dir}/`;
-							this.themes[dir].user = true;
-						} catch {
-							console.error(`Could not load theme from directory: ${dir}`);
+					if (process.platform === "win32") {
+						if (FS.lstatSync(`${userDirectory}\\${dir}`).isDirectory() && FS.existsSync(`${userDirectory}\\${dir}\\theme.json`)) {
+							try {
+								this.themes[dir] = require(`${userDirectory}\\${dir}\\theme.json`);
+								this.themes[dir].cssDirectory = this.themes[dir].directory = `${userDirectory}/${dir}/`;
+								this.themes[dir].user = true;
+							} catch {
+								console.error(`Could not load theme from directory: ${dir}`);
+							}
+						}
+					} else {
+						if (FS.lstatSync(`${userDirectory}/${dir}`).isDirectory() && FS.existsSync(`${userDirectory}/${dir}/theme.json`)) {
+							try {
+								this.themes[dir] = require(`${userDirectory}/${dir}/theme.json`);
+								this.themes[dir].cssDirectory = this.themes[dir].directory = `${userDirectory}/${dir}/`;
+								this.themes[dir].user = true;
+							} catch {
+								console.error(`Could not load theme from directory: ${dir}`);
+							}
 						}
 					}
 				}
