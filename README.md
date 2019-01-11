@@ -13,13 +13,13 @@ Included Features:
 * Developer Tools
 
 ## Package Downloads
-https://ojdproject.com/downloads
+https://ojdproject.com
 
 ## User Guide
 https://ojdproject.com/user-guide
 
 ## Developer Guide
-https://ojdproject.com/development
+https://ojdproject.com/developer-guide
 
 ## Contact/Feedback/Suggestions
 https://ojdproject.com/contact
