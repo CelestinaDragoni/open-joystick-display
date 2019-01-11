@@ -18,7 +18,7 @@
     ],
     "linux": {
       "icon":"./src/icons/icon.png",
-      "target": "dir",
+      "target": "tar.gz",
       "category": "Multimedia"
     },
     "win": {

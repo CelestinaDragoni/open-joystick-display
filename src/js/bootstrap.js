@@ -10,10 +10,17 @@ function createWindow () {
     if (typeof store.get('config') !== 'undefined' && typeof store.get('config').bounds !== 'undefined' && store.get('config').bounds !== null) {
         bounds = store.get('config').bounds;
     }
+
+    if (process.platform === "win32") {
+        cwd = __dirname.replace('src\js', '');
+        ico = cwd+"src/icons/icon.png"; 
+    } else {
+        cwd = __dirname.replace('src/js', '');
+        ico = cwd+"src\icons\icon.png";
+    } 
     
-    cwd = __dirname.replace('src/js', '');
     const windowConfig = {
-        icon:cwd+"src/icons/icon.png",
+        icon:ico,
         width:bounds.width, 
         height:bounds.height, 
         x:bounds.x, 

@@ -72,12 +72,22 @@ class Themes {
 	refresh() {
 
 		this.themes = {};
-		const paths = FS.readdirSync(`${window.cwd}/src/themes`);
-		for (const dir of paths) {
-			this.themes[dir] = require(`${window.cwd}/src/themes/${dir}/theme.json`);
-			this.themes[dir].directory = `${window.cwd}/src/themes/${dir}/`;
-			this.themes[dir].cssDirectory = `${window.cwd}/src/themes/${dir}/`;
-			this.themes[dir].user = false;
+		if (process.platform === "win32") {
+			const paths = FS.readdirSync(`${window.cwd}\src\themes`);
+			for (const dir of paths) {
+				this.themes[dir] = require(`${window.cwd}\src/\themes\${dir}\theme.json`);
+				this.themes[dir].directory = `${window.cwd}\src\themes/${dir}/`;
+				this.themes[dir].cssDirectory = `${window.cwd}/src/themes/${dir}/`;
+				this.themes[dir].user = false;
+			}
+		} else {
+			const paths = FS.readdirSync(`${window.cwd}/src/themes`);
+			for (const dir of paths) {
+				this.themes[dir] = require(`${window.cwd}/src/themes/${dir}/theme.json`);
+				this.themes[dir].directory = `${window.cwd}/src/themes/${dir}/`;
+				this.themes[dir].cssDirectory = `${window.cwd}/src/themes/${dir}/`;
+				this.themes[dir].user = false;
+			}
 		}
 
 		const userDirectory = this.config.getUserThemeDirectory();
