@@ -1,5 +1,5 @@
 # Open Joystick Display
-**An easy yet powerful interface to display your joystick/gamepad/controller inputs for streaming/recording.**
+**A powerful and easy to use streamer-ready display for your joystick or gamepad. Completely free and open source.**
 
 ## Features
 Included Features:
