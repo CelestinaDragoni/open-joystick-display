@@ -1,6 +1,6 @@
 {
   "name": "open-joystick-display",
-  "version": "1.0.0",
+  "version": "1.0.0-Beta",
   "description": "An open source Joystick display for Twitch, YouTube, etc. ",
   "main": "src/js/bootstrap.js",
   "scripts": {
@@ -17,11 +17,12 @@
       "package.json"
     ],
     "linux": {
+      "icon":"./src/icons/icon.png",
       "target": "dir",
       "category": "Multimedia"
     },
     "win": {
-      "icon": "./src/icons/icon.png",
+      "icon": "./src/icons/icon.ico",
       "target": "portable"
     }
   },

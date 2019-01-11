@@ -11,8 +11,9 @@ function createWindow () {
         bounds = store.get('config').bounds;
     }
     
+    cwd = __dirname.replace('src/js', '');
     const windowConfig = {
-        icon:"./src/icons/icon.png",
+        icon:cwd+"src/icons/icon.png",
         width:bounds.width, 
         height:bounds.height, 
         x:bounds.x, 
