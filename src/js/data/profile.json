@@ -1,0 +1,21 @@
+[
+	{
+		"name":"Default Profile",
+		"bounds":{
+			"x":0, 
+			"y":0, 
+			"height":600, 
+			"width":800,
+			"lock":false
+		},
+		"map":0,
+		"theme":0,
+		"chroma":false,
+		"chromaColor":"#FF00FF",
+		"alwaysOnTop":false,
+		"theme":"ojd-snes",
+		"themeSub":-1,
+		"zoom":1.0,
+		"poll":10
+	}
+]

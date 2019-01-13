@@ -1,0 +1,13 @@
+{
+	"version":1,
+	"bounds":{
+		"x":null, 
+		"y":null, 
+		"height":1080, 
+		"width":1920
+	},
+	"devTools":false,
+	"interface":true,
+	"profile":0,
+	"themeUserDirectory":false
+}

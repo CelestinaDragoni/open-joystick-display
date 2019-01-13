@@ -5,65 +5,12 @@ class Themes {
 
 	constructor(config) {
 		this.config = config;
-		this.allowedTags = [
-			'div',
-			'main',
-			'header',
-			'section',
-			'footer', 
-			'small',
-			'span', 
-			'svg', 
-			'rect',
-			'polygon',
-			'ellipse',
-			'star',
-			'circle',
-			'text',
-			'button', 
-			'b', 
-			'i', 
-			'u',
-			'em',
-			'sup',
-			'strong', 
-			'img', 
-			'br', 
-			'p', 
-			'label', 
-			'strike'
-		];
+		//this.allowedTags = [
+			
+		//];
 		this.allowedAttributes = {};
 		for (const attr of this.allowedTags) {
-			this.allowedAttributes[attr] = [
-				'ojd-directional', 
-				'ojd-button',
-				'ojd-trigger-scale',
-				'ojd-trigger-scale-inverted',
-				'ojd-trigger-move',
-				'ojd-trigger-move-inverted',
-				'class',
-				'style',
-				'id',
-				'src',
-				'height',
-				'width',
-				'cx',
-				'cy',
-				'r',
-				'stroke',
-				'stroke-width',
-				'fill',
-				'x',
-				'y',
-				'rx',
-				'ry',
-				'points',
-				'defs',
-				'linearGradient',
-				'font-size',
-				'font-family'
-			];
+			//this.allowedAttributes[attr] = 
 		}
 		this.themes = {};
 		this.refresh();

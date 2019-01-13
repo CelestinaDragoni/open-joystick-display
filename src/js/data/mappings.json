@@ -1,0 +1,618 @@
+[
+	{
+		"name": "8BitDo SN30/SFC30",
+		"button": [
+			{
+				"button": "B",
+				"index": 1
+			},
+			{
+				"button": "A",
+				"index": 0
+			},
+			{
+				"button": "Y",
+				"index": 4
+			},
+			{
+				"button": "X",
+				"index": 3
+			},
+			{
+				"button": "L",
+				"index": 6
+			},
+			{
+				"button": "R",
+				"index": 7
+			},
+			{
+				"button": "START",
+				"index": 11
+			},
+			{
+				"button": "SELECT",
+				"index": 10
+			}
+		],
+		"directional": [
+			{
+				"deadzone": 0.25,
+				"dpad": true,
+				"analog": false,
+				"axes": [
+					0,
+					1
+				]
+			}
+		],
+		"trigger": []
+	},
+	{
+		"name": "8BitDo NES30",
+		"button": [
+			{
+				"button": "B",
+				"index": 2
+			},
+			{
+				"button": "A",
+				"index": 1
+			},
+			{
+				"button": "Y",
+				"index": 3
+			},
+			{
+				"button": "X",
+				"index": 0
+			},
+			{
+				"button": "L",
+				"index": 4
+			},
+			{
+				"button": "R",
+				"index": 5
+			},
+			{
+				"button": "START",
+				"index": 7
+			},
+			{
+				"button": "SELECT",
+				"index": 6
+			}
+		],
+		"directional": [
+			{
+				"axes": [
+					0,
+					1
+				],
+				"deadzone": 0.25,
+				"dpad": true,
+				"cpad": false
+			}
+		],
+		"trigger": []
+	},
+	{
+		"name": "Nintendo Gamecube (Mayflash)",
+		"button": [
+			{
+				"button": "B",
+				"index": 2
+			},
+			{
+				"button": "A",
+				"index": 1
+			},
+			{
+				"button": "Y",
+				"index": 3
+			},
+			{
+				"button": "X",
+				"index": 0
+			},
+			{
+				"button": "L",
+				"index": 4
+			},
+			{
+				"button": "R",
+				"index": 5
+			},
+			{
+				"button": "Z",
+				"index": 7
+			},
+			{
+				"button": "START",
+				"index": 9
+			},
+			{
+				"button": "UP",
+				"index": 12
+			},
+			{
+				"button": "DOWN",
+				"index": 14
+			},
+			{
+				"button": "LEFT",
+				"index": 15
+			},
+			{
+				"button": "RIGHT",
+				"index": 13
+			}
+		],
+		"directional": [
+			{
+				"deadzone": 0.25,
+				"analog": true,
+				"axes": [
+					0,
+					1
+				]
+			},
+			{
+				"deadzone": 0.25,
+				"analog": true,
+				"axes": [
+					5,
+					2
+				]
+			}
+		],
+		"trigger": [
+			{
+				"axis": 3,
+				"range": [
+					-0.7,
+					1
+				]
+			},
+			{
+				"axis": 4,
+				"range": [
+					-0.7,
+					1
+				]
+			}
+		]
+	},
+	{
+		"name": "Microsoft XBox 360 / One",
+		"button": [
+			{
+				"button": "B",
+				"index": 1
+			},
+			{
+				"button": "A",
+				"index": 0
+			},
+			{
+				"button": "Y",
+				"index": 3
+			},
+			{
+				"button": "X",
+				"index": 2
+			},
+			{
+				"button": "L",
+				"index": 4
+			},
+			{
+				"button": "R",
+				"index": 5
+			},
+			{
+				"button": "L2",
+				"index": 6
+			},
+			{
+				"button": "R2",
+				"index": 7
+			},
+			{
+				"button": "L3",
+				"index": 10
+			},
+			{
+				"button": "R3",
+				"index": 11
+			},
+			{
+				"button": "XBOX",
+				"index": 16
+			},
+			{
+				"button": "START",
+				"index": 9
+			},
+			{
+				"button": "SELECT",
+				"index": 8
+			},
+			{
+				"button": "UP",
+				"index": 12
+			},
+			{
+				"button": "DOWN",
+				"index": 13
+			},
+			{
+				"button": "LEFT",
+				"index": 14
+			},
+			{
+				"button": "RIGHT",
+				"index": 15
+			}
+		],
+		"directional": [
+			{
+				"deadzone": 0.25,
+				"analog": true,
+				"axes": [
+					0,
+					1
+				]
+			},
+			{
+				"deadzone": 0.25,
+				"analog": true,
+				"axes": [
+					2,
+					3
+				]
+			}
+		],
+		"trigger": []
+	},
+	{
+		"name": "Sony PlayStation 4",
+		"button": [
+			{
+				"button": "CROSS",
+				"index": 0
+			},
+			{
+				"button": "CIRCLE",
+				"index": 1
+			},
+			{
+				"button": "SQUARE",
+				"index": 2
+			},
+			{
+				"button": "TRIANGLE",
+				"index": 3
+			},
+			{
+				"button": "L",
+				"index": 4
+			},
+			{
+				"button": "R",
+				"index": 5
+			},
+			{
+				"button": "L2",
+				"index": 6
+			},
+			{
+				"button": "R2",
+				"index": 7
+			},
+			{
+				"button": "SELECT",
+				"index": 8
+			},
+			{
+				"button": "START",
+				"index": 9
+			},
+			{
+				"button": "L3",
+				"index": 10
+			},
+			{
+				"button": "R3",
+				"index": 11
+			},
+			{
+				"button": "UP",
+				"index": 12
+			},
+			{
+				"button": "DOWN",
+				"index": 13
+			},
+			{
+				"button": "LEFT",
+				"index": 14
+			},
+			{
+				"button": "RIGHT",
+				"index": 15
+			},
+			{
+				"button": "PS",
+				"index": 16
+			}
+		],
+		"directional": [
+			{
+				"axes": [
+					0,
+					1
+				],
+				"deadzone": 0.25,
+				"dpad": false,
+				"cpad": false
+			},
+			{
+				"axes": [
+					2,
+					3
+				],
+				"deadzone": 0.25,
+				"dpad": false,
+				"cpad": false
+			}
+		],
+		"trigger": []
+	},
+	{
+		"name": "Sony PlayStation 3",
+		"button": [
+			{
+				"button": "CROSS",
+				"index": 0
+			},
+			{
+				"button": "CIRCLE",
+				"index": 1
+			},
+			{
+				"button": "SQUARE",
+				"index": 2
+			},
+			{
+				"button": "TRIANGLE",
+				"index": 3
+			},
+			{
+				"button": "L",
+				"index": 4
+			},
+			{
+				"button": "R",
+				"index": 5
+			},
+			{
+				"button": "L2",
+				"index": 6
+			},
+			{
+				"button": "R2",
+				"index": 7
+			},
+			{
+				"button": "SELECT",
+				"index": 8
+			},
+			{
+				"button": "START",
+				"index": 9
+			},
+			{
+				"button": "L3",
+				"index": 10
+			},
+			{
+				"button": "R3",
+				"index": 11
+			},
+			{
+				"button": "UP",
+				"index": 12
+			},
+			{
+				"button": "DOWN",
+				"index": 13
+			},
+			{
+				"button": "LEFT",
+				"index": 14
+			},
+			{
+				"button": "RIGHT",
+				"index": 15
+			},
+			{
+				"button": "PS",
+				"index": 16
+			}
+		],
+		"directional": [
+			{
+				"axes": [
+					0,
+					1
+				],
+				"deadzone": 0.25,
+				"dpad": false,
+				"cpad": false
+			},
+			{
+				"axes": [
+					2,
+					3
+				],
+				"deadzone": 0.25,
+				"dpad": false,
+				"cpad": false
+			}
+		],
+		"trigger": []
+	},
+	{
+		"name": "Sony PlayStation Classic",
+		"button": [
+			{
+				"button": "CROSS",
+				"index": 2
+			},
+			{
+				"button": "CIRCLE",
+				"index": 1
+			},
+			{
+				"button": "SQUARE",
+				"index": 3
+			},
+			{
+				"button": "TRIANGLE",
+				"index": 0
+			},
+			{
+				"button": "L",
+				"index": 6
+			},
+			{
+				"button": "R",
+				"index": 7
+			},
+			{
+				"button": "L2",
+				"index": 4
+			},
+			{
+				"button": "R2",
+				"index": 5
+			},
+			{
+				"button": "SELECT",
+				"index": 8
+			},
+			{
+				"button": "START",
+				"index": 9
+			}
+		],
+		"directional": [
+			{
+				"axes": [
+					0,
+					1
+				],
+				"deadzone": 0.25,
+				"dpad": true,
+				"cpad": false
+			}
+		],
+		"trigger": []
+	},
+	{
+		"name": "NVIDIA Shield",
+		"button": [
+			{
+				"button": "A",
+				"index": 0
+			},
+			{
+				"button": "B",
+				"index": 1
+			},
+			{
+				"button": "X",
+				"index": 2
+			},
+			{
+				"button": "Y",
+				"index": 3
+			},
+			{
+				"button": "L",
+				"index": 4
+			},
+			{
+				"button": "R",
+				"index": 5
+			},
+			{
+				"button": "L2",
+				"index": 6
+			},
+			{
+				"button": "R2",
+				"index": 7
+			},
+			{
+				"button": "SELECT",
+				"index": 8
+			},
+			{
+				"button": "START",
+				"index": 9
+			},
+			{
+				"button": "L3",
+				"index": 10
+			},
+			{
+				"button": "R3",
+				"index": 11
+			},
+			{
+				"button": "UP",
+				"index": 12
+			},
+			{
+				"button": "DOWN",
+				"index": 13
+			},
+			{
+				"button": "LEFT",
+				"index": 14
+			},
+			{
+				"button": "RIGHT",
+				"index": 15
+			},
+			{
+				"button": "ACTION",
+				"index": 17
+			}
+		],
+		"directional": [
+			{
+				"axes": [
+					0,
+					1
+				],
+				"deadzone": 0.25,
+				"dpad": false,
+				"cpad": false
+			},
+			{
+				"axes": [
+					2,
+					3
+				],
+				"deadzone": 0.25,
+				"dpad": false,
+				"cpad": false
+			}
+		],
+		"trigger": []
+	}
+]

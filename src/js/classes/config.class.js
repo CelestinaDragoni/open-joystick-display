@@ -1,47 +1,227 @@
 const Store = require('electron-store');
 const Clone = require('clone');
 
+/*
+	Class Config
+	System wide config handler for objects.
+*/
 class Config {
 
+	/*
+	 * constructor(cwd)
+	 * Config class constructor. 
+	 */
 	constructor() {
 
-		this.config = {};
-		this.configDefault = require('../../../src/js/config.json');
-		this.currentMapping = {};
-
+		// Electron Store
 		this.store = new Store();
 
-		if (typeof this.store.get('config') === 'undefined') {
-			console.warn('Loading Default Config');
-			this.store.set('config', this.configDefault);
-			this.config = Clone(this.configDefault);
-		} else {
-			this.config = this.store.get('config');
-		}
+		// Class Variables
+		this.config = {};
+		this.currentMapping = {};
+
+		// Make new config if one doesn't exist.
+		this.init();
 		
+		// If config version 0, migrate.
+		this.migrateConfigZero();
+
+	}
+
+	/*
+	 * init()
+	 * @param bool reset - Overloaded method for reseting regardless of current state. 
+	 * @return bool
+	 * Makes a new configuration if this is the first time it's being used. 
+	 */
+	init(reset=false) {
+
+		if (typeof this.store.get('config') !== 'undefined') {
+			if (!reset) {
+				this.config = this.store.get('config');
+				return false;
+			}
+		}
+
+		const configDefault = require('../../../src/js/data/config.json');
+		const profileDefault = require('../../../src/js/data/profile.json');
+		const mappingDefault = require('../../../src/js/data/mappings.json');
+
+		this.store.set('mappings', mappings);
+		this.store.set('profiles', profiles);
+		this.store.set('config', this.config);
+
 		this.config = this.store.get('config');
-		this.loadMapping(this.config.map);
+
+		return true;
+	}
+
+	/*
+	 * migrateConfigZero()
+	 * @return bool
+	 * Migrates config version 0 to version 1. Separates mappings and profile from core config for easy backups.
+	 */
+	migrateConfigZero() {
+
+		if (this.config.version !== 0) {
+			return false;
+		}
+
+		// Migrate to new profile system, will be removed in future releases.
+		const profiles = require('../../../src/js/data/profile.json');
+		const mappings = Clone(this.config.mappings);
+
+		profiles[0].theme 			= this.config.theme;
+		profiles[0].map 			= this.config.map;
+		profiles[0].chroma 			= this.config.chroma;
+		profiles[0].chromaColor 	= this.config.chromaColor;
+		profiles[0].alwaysOnTop 	= this.config.alwaysOnTop;
+		profiles[0].zoom 			= this.config.zoom;
+
+		// Remove, no longer in config store.
+		delete this.config.theme;
+		delete this.config.map;
+		delete this.config.chroma;
+		delete this.config.chromaColor;
+		delete this.config.alwaysOnTop;
+		delete this.config.zoom;
+		delete this.config.mappings;
+
+		this.config.version = 1;
+		this.store.set('mappings', mappings);
+		this.store.set('profiles', profiles);
+		this.store.set('config', this.config);
+
+		// Reload
+		this.config = this.store.get('config');
+
+		return true;
 
 	}
 
-	toggleMapInterface() {
-		this.config.mapInterface = !this.config.mapInterface;
+	/*
+	 * setBounds(bounds)
+	 * @param object bounds
+	 * @return object
+	 * Sets the current bounds of the window in non-broadcast mode. {x:, y:, height:, width:}. 
+	 */
+	setBounds(bounds) {
+		this.config.bounds = Clone(bounds);
 		this.save();
-		return  this.config.mapInterface;
+		return bounds;
 	}
 
-	getMapInterface() {
-		return this.config.mapInterface;
+	/*
+	 * getBounds()
+	 * @return object
+	 * Returns the current bounds of the window when in interface mode. {x:, y:, height:, width:}. Typically used during launch.
+	 */
+	getBounds() {
+		return this.config.bounds;
 	}
 
+	/*
+	 * toggleInterface()
+	 * @return bool
+	 * Toggles between interface and broadcast mode.
+	 */
+	toggleInterface() {
+		this.config.interface = !this.config.interface;
+		this.save();
+		return this.config.interface;
+	}
+
+	/*
+	 * getInterface()
+	 * @return bool
+	 * Determines if we're in interface or broadcast mode.
+	 */
+	getInterface() {
+		return this.config.interface;
+	}
+
+	/*
+	 * toggleInterface()
+	 * @return bool
+	 * Toggles between having dev tools on or off.
+	 */
+	toggleDevtools() {
+		this.config.devTools = !this.config.devTools;
+		this.save();
+		return this.config.devTools;
+	}
+
+	/*
+	 * getInterface()
+	 * @return bool
+	 * Determines if dev tools are opened.
+	 */
+	getDevTools() {
+		return this.config.devTools;
+	}
+
+	/*
+	 * setProfile(id)
+	 * @param integer id
+	 * @return integer
+	 * Sets the profile currently being used in OJD
+	 */
+	setProfile(id) {
+		this.config.profile = parseInt(id, 10);
+		this.save();
+		return this.config.profile;
+	}
+
+	/*
+	 * getProfile()
+	 * @return integer
+	 * Returns the profile id set.
+	 */
+	getProfile() {
+		return this.config.profile;
+	}
+
+	/*
+	 * setUserThemeDirectory(id)
+	 * @param string directory
+	 * @return string
+	 * Sets the custom theme directory.
+	 */
 	setUserThemeDirectory(directory) {
 		this.config.themeUserDirectory = directory;
 		this.save();
+		return this.config.themeUserDirectory;
 	}
 
+	/*
+	 * getUserThemeDirectory()
+	 * @return string
+	 * Returns the current custom theme directory.
+	 */
 	getUserThemeDirectory() {
 		return this.config.themeUserDirectory;
 	}
+
+	/*
+	 * save()
+	 * @return NULL
+	 * Saves config object
+	 */
+	save() {
+		this.store.set('config', this.config);
+	}
+
+	/*
+	 * reset()
+	 * @return bool
+	 * Alias of init.
+	 */
+	reset() {
+		return this.init(true);
+	}
+
+/*
+	Old Code being Removed
 
 	getAlwaysOnTop() {
 		return this.config.alwaysOnTop;
@@ -61,18 +241,11 @@ class Config {
 		this.config.zoom = parseFloat(zoom);
 		this.save();
 		return this.config.zoom;
-	}
+	}*/
 
-	toggleInterface() {
-		this.config.interface = !this.config.interface;
-		this.save();
-		return  this.config.interface;
-	}
 
-	getInterface() {
-		return this.config.interface;
-	}
 
+/*
 	toggleChroma() {
 		this.config.chroma = !this.config.chroma;
 		this.save();
@@ -130,15 +303,9 @@ class Config {
 
 	getMapping() {
 		return this.currentMapping;
-	}
+	}*/
 
-	save() {
-		this.store.set('config', this.config);
-	}
 
-	reset() {
-		this.store.set('config', Clone(this.configDefault));
-	}
 
 }
 
