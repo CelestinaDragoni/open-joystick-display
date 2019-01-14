@@ -3,14 +3,16 @@
 */
 
 // Load jQuery Globally
-window.$ = window.jQuery = require('jquery');
+window.$ 	= window.jQuery = require('jquery');
+const {OJD} = require("../../src/js/ojd.js");
 
 // Load Tools Globally
-const {OJD} = require("../../src/js/ojd.js");
-window.$OJD = new OJD(__dirname);
+window.OJD 	= new OJD(__dirname);
 
 // Load Application
 $(function() {
+
+	
 	const {Config} 		= require("../../src/js/classes/config.class.js");
 	const {Mappings} 	= require("../../src/js/classes/mappings.class.js");
 	const {Profiles} 	= require("../../src/js/classes/profiles.class.js");
@@ -19,6 +21,13 @@ $(function() {
 	const {Interface} 	= require("../../src/js/classes/interface.class.js");
 
 	const config 	= new Config();
+		window.OJD.setConfig(config);
+	const mappings  = new Mappings(config);
+	const profiles  = new Profiles(config, mappings);
+	const joystick  = new Joystick(config, profiles);
+	const themes 	= new Themes(config, profiles);
+	const interface = new Interface(config, profiles);
+
 	//const mappings 	= new Mappings(config);
 	//const profiles 	= new Profiles(config, mappings);
 	//const joystick 	= new Joystick(config, profiles);

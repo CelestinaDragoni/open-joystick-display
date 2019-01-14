@@ -1,25 +1,43 @@
 const FS = require('fs');
 const Sanitize = require('sanitize-html');
+const OJD = window.OJD;
 
 class Themes {
 
-	constructor(config) {
+	constructor(config, profiles) {
+
 		this.config = config;
-		//this.allowedTags = [
-			
-		//];
-		this.allowedAttributes = {};
-		for (const attr of this.allowedTags) {
-			//this.allowedAttributes[attr] = 
-		}
+		this.profiles = profiles;
 		this.themes = {};
-		this.refresh();
+
+		// HTML Sanitization Configuration
+		this.sanitize = require('../../../src/js/data/sanitize.json');
+		this.sanitizeTags = this.sanitize.tags;
+		this.sanitizeAttributes = [];
+		for (const attr of this.sanitizeTags) {
+			this.sanitizeAttributes[attr] = this.sanitize.attributes;
+		}
+
+		this.load();
 	}
 
-	refresh() {
+	load() {
 
 		this.themes = {};
-		if (process.platform === "win32") {
+		const directories = FS.readdirSync(OJD.appendCwdPath('/src/themes'));
+		for (const dir of directories) {
+			try {
+				this.themes[dir] = require(OJD.appendCwdPath(`/src/themes/${dir}/theme.json`));
+				this.themes[dir].directory = OJD.appendCwdPath(`/src/themes/${dir}/`);
+			} catch {
+				console.log('Error Loading');
+			}
+		}
+		console.log(this.themes);
+		console.log(paths);
+		
+
+		/*if (process.platform === "win32") {
 			const paths = FS.readdirSync(`${window.cwd}\\src\\themes`);
 			for (const dir of paths) {
 				this.themes[dir] = require(`${window.cwd}\\src\\themes\\${dir}\\theme.json`);
@@ -35,7 +53,7 @@ class Themes {
 				this.themes[dir].cssDirectory = `${window.cwd}/src/themes/${dir}/`;
 				this.themes[dir].user = false;
 			}
-		}
+		}*/
 
 		const userDirectory = this.config.getUserThemeDirectory();
 		if (userDirectory) {

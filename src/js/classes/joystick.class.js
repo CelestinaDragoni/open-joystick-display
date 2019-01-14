@@ -18,8 +18,8 @@ class Joystick {
 		this.joystickCheckInterval = null;
 
 		// Load Event Listeners
-		window.addEventListener("gamepadconnected", this.eventConnectGamepad.bind(this));
-		window.addEventListener("gamepaddisconnected", this.eventDisconnectGamepad.bind(this));
+		//window.addEventListener("gamepadconnected", this.eventConnectGamepad.bind(this));
+		//window.addEventListener("gamepaddisconnected", this.eventDisconnectGamepad.bind(this));
 
 	}
 

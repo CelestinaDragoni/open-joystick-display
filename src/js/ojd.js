@@ -11,8 +11,17 @@ class OJD {
 	 * @return OJD
 	 * OJD Class constructor. Sets the CWD application wide.
 	 */
-	constructor(cwd, config) {
+	constructor(cwd) {
 		this.cwd = this.getEnvPath(cwd.replace('src/views', ''));
+	}
+
+	/*
+	 * setConfig()
+	 * @param object Config
+	 * @return bool
+	 * Post constructor bind of configuration class.
+	 */
+	setConfig(config) {
 		this.config = config;
 	}
 

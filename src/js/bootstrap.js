@@ -33,6 +33,7 @@ function createWindow () {
     };
 
     mainWindow = new BrowserWindow(windowConfig);
+    mainWindow.toggleDevTools();
     mainWindow.setMenu(null);
 
     // Our Controller FIle

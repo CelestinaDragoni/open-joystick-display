@@ -43,13 +43,13 @@ class Config {
 			}
 		}
 
-		const configDefault = require('../../../src/js/data/config.json');
-		const profileDefault = require('../../../src/js/data/profile.json');
-		const mappingDefault = require('../../../src/js/data/mappings.json');
+		const config = require('../../../src/js/data/config.json');
+		const profile = require('../../../src/js/data/profile.json');
+		const mappings = require('../../../src/js/data/mappings.json');
 
 		this.store.set('mappings', mappings);
-		this.store.set('profiles', profiles);
-		this.store.set('config', this.config);
+		this.store.set('profiles', [profile]);
+		this.store.set('config', config);
 
 		this.config = this.store.get('config');
 
@@ -68,15 +68,15 @@ class Config {
 		}
 
 		// Migrate to new profile system, will be removed in future releases.
-		const profiles = require('../../../src/js/data/profile.json');
+		const profile = require('../../../src/js/data/profile.json');
 		const mappings = Clone(this.config.mappings);
 
-		profiles[0].theme 			= this.config.theme;
-		profiles[0].map 			= this.config.map;
-		profiles[0].chroma 			= this.config.chroma;
-		profiles[0].chromaColor 	= this.config.chromaColor;
-		profiles[0].alwaysOnTop 	= this.config.alwaysOnTop;
-		profiles[0].zoom 			= this.config.zoom;
+		profile.theme 			= this.config.theme;
+		profile.map 			= this.config.map;
+		profile.chroma 			= this.config.chroma;
+		profile.chromaColor 	= this.config.chromaColor;
+		profile.alwaysOnTop 	= this.config.alwaysOnTop;
+		profile.zoom 			= this.config.zoom;
 
 		// Remove, no longer in config store.
 		delete this.config.theme;
@@ -89,7 +89,7 @@ class Config {
 
 		this.config.version = 1;
 		this.store.set('mappings', mappings);
-		this.store.set('profiles', profiles);
+		this.store.set('profiles', [profile]);
 		this.store.set('config', this.config);
 
 		// Reload
@@ -219,92 +219,6 @@ class Config {
 	reset() {
 		return this.init(true);
 	}
-
-/*
-	Old Code being Removed
-
-	getAlwaysOnTop() {
-		return this.config.alwaysOnTop;
-	}
-
-	toggleAlwaysOnTop() {
-		this.config.alwaysOnTop = !this.config.alwaysOnTop;
-		this.save();
-		return  this.config.alwaysOnTop;
-	}
-
-	getZoom() {
-		return this.config.zoom;
-	}
-
-	setZoom(zoom) {
-		this.config.zoom = parseFloat(zoom);
-		this.save();
-		return this.config.zoom;
-	}*/
-
-
-
-/*
-	toggleChroma() {
-		this.config.chroma = !this.config.chroma;
-		this.save();
-		return  this.config.chroma;
-	}
-
-	getChroma() {
-		return this.config.chroma;
-	}
-
-	getChromaColor() {
-		return this.config.chromaColor;
-	}
-
-	setChromaColor(value) {
-		this.config.chromaColor = value;
-		this.save();
-		return  this.config.chromaColor;
-	}
-
-	getTheme() {
-		return this.config.theme;
-	}
-
-	setTheme(id) {
-		this.config.theme = id;
-		this.save();
-	}
-
-	loadMapping(id) {
-
-		// To prevent bad things from happening
-		if (typeof this.config.mappings[0] === 'undefined') {
-			console.warn('Something went wrong, no mappings were found. Loading default configuration.');
-			this.reset();
-		}
-
-		// Switch current mapping.
-		if (typeof this.config.mappings[id] !== 'undefined') {
-			this.config.map = id;
-			this.currentMapping = this.config.mappings[id];
-		} else {
-			this.config.map = 0;
-			this.currentMapping = this.config.mappings[0];
-		}
-
-		// Save for Sanity
-		this.save();
-
-	}
-
-	getMappingIndex() {
-		return this.config.map;
-	}
-
-	getMapping() {
-		return this.currentMapping;
-	}*/
-
 
 
 }

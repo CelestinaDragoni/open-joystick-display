@@ -9,5 +9,6 @@
 	"devTools":false,
 	"interface":true,
 	"profile":0,
-	"themeUserDirectory":false
+	"themeUserDirectory":false,
+	"locale":"en-us"
 }
