@@ -4,6 +4,11 @@ const store = new Store();
 let mainWindow;
 let bounds = {x:null, y:null, width:1920, height:1080};
 
+// Fixes it for Windows 10, noticed much more stable performance in OBS Linux as well.
+// Since the engine is only rendering 2D, hardware acceleration isn't required.
+// Will move elsewhere prior to 1.0 Final
+app.disableHardwareAcceleration();
+
 function createWindow () {
     
     // Check for Saved Bounds 
