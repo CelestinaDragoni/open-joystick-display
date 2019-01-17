@@ -1,0 +1,61 @@
+.gc-button.active{
+	fill:white !important;
+}
+.gc-button.trigger-active{
+	fill:white !important;
+}
+.gc-button.active *{
+	fill:white !important;
+}
+.gc-button.active text *{
+	fill:black !important;
+}
+.gc-button.active .label{
+	fill:black !important;
+}
+
+.gc-analog-wrapper {
+	position:absolute;
+	top:128px;
+	left:86px;
+	height:70px;
+	width:70px;
+	border-radius:100%;
+}
+.gc-analog {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:60px;
+	height:60px;
+	margin-left:-30px;
+	margin-top:-30px;
+	background:#DDD;
+	border-radius:100%;
+}
+.gc-analog.active {
+	background:white;
+}
+
+.gc-cstick-wrapper {
+	position:absolute;
+	bottom:121px;
+	right:163px;
+	height:70px;
+	width:70px;
+	border-radius:100%;
+}
+.gc-cstick {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:50px;
+	height:50px;
+	margin-left:-25px;
+	margin-top:-25px;
+	background:#FFCC00;
+	border-radius:100%;
+}
+.gc-cstick.active {
+	background:#FFEEAA;
+}

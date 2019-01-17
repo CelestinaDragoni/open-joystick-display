@@ -31,7 +31,8 @@ class Themes {
 			'br', 
 			'p', 
 			'label', 
-			'strike'
+			'strike',
+
 		];
 		this.allowedAttributes = {};
 		for (const attr of this.allowedTags) {
@@ -62,7 +63,10 @@ class Themes {
 				'defs',
 				'linearGradient',
 				'font-size',
-				'font-family'
+				'font-family',
+				'data',
+				'type',
+				'ojd-svg'
 			];
 		}
 		this.themes = {};
@@ -158,14 +162,25 @@ class Themes {
 			return;
 		}
 
-		// For User Content, Replace the Directory Variable
-		if (theme.user) {
-			html= html.replace(/%DIRECTORY%/g, theme.directory);
-		}
+
+		html= html.replace(/%DIRECTORY%/g, theme.directory);
+	
 		$('#ojd-theme-contents').html(html);
-
-
 		$('#ojd-theme-contents').show();
+
+		let svg = "";
+		const $svgElements = $('#ojd-theme-contents *[ojd-svg]');
+		for(const $e of $svgElements) {
+			try {
+				const file = FS.openSync($($e).attr('ojd-svg'), 'r');
+				svg = FS.readFileSync(file, 'UTF-8');
+				$($e).html(svg);
+				FS.closeSync(file);
+			} catch {
+				alert("Can't read SVG.");
+			}
+		}
+	
 
 	}
 
