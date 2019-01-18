@@ -25,7 +25,8 @@
 		"br", 
 		"p", 
 		"label", 
-		"strike"
+		"strike",
+		"object"
 	],
 	"attributes": [
 		"ojd-directional", 
@@ -54,6 +55,8 @@
 		"defs",
 		"linearGradient",
 		"font-size",
-		"font-family"
+		"font-family",
+		"data",
+		"type"
 	]
 }
