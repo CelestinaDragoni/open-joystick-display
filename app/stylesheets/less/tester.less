@@ -1,0 +1,67 @@
+.ojd-tester-button {
+	display:inline-block;
+	background:@color-darkest;
+	color:@color-font;
+	font-size:12px;
+	line-height:0px;
+	padding:15px 0px;
+	width:30px;
+	margin-right:5px;
+	margin-bottom:5px;
+	border-radius:15px;
+	text-align:center;
+
+	&.ojd-tester-active {
+		color:@color-font;
+		background:@color-accent;
+	}
+}
+.ojd-tester-directional-group {
+	border:0px;
+	input {
+		width:80px;
+	}
+}
+.ojd-tester-directional-wrapper {
+
+	display:inline-block;
+	position:relative;
+	top:0px;
+	left:0px;
+	height:80px;
+	width:80px;
+	background:@color-darkest;
+	overflow:hidden;
+
+	.ojd-tester-directional {
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:6px;
+		height:6px;
+		margin-left:-3px;
+		margin-top:-3px;
+		background:@color-accent;
+	}
+}
+.ojd-tester-trigger-group {
+	border:0px;
+	input {
+		width:80px;
+	}
+}
+.ojd-tester-trigger-wrapper {
+	position:relative;
+	left:0px;
+	height:24px;
+	background:@color-darkest;
+	width:200px;
+	.ojd-tester-trigger{
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:0px;
+		height:100%;
+		background:@color-accent;
+	}
+}

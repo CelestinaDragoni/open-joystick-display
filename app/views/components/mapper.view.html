@@ -1,0 +1,159 @@
+<div class='ojd-sidebar-handle'>Input Mapper</div>
+<div class='ojd-sidebar-section-header'>Map Configuration</div>
+<div class='ojd-sidebar-subsection'>
+	<div class='ojd-sidebar-subsection-header'>Information</div>
+	<div class='ojd-sidebar-subsection-content'>
+
+		<div class='ojd-sidebar-subsection-division'>
+			<label class='ojd-label'>Name:</label>
+			<input id='ojd-map-name' class='ojd-input' type='text' maxlength='255' value=''/>
+		</div>
+		<div class='ojd-sidebar-flex-row'>
+			<div class='ojd-flex-grow'>
+				<strong>Buttons:</strong> <span>0</span>
+			</div>
+			<div class='ojd-flex-grow'>
+				<strong>Axes:</strong> <span>0</span>
+			</div>
+			<div class='ojd-flex-grow'>
+				<strong>Triggers:</strong> <span>0</span>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class='ojd-sidebar-subsection'>
+	<div class='ojd-sidebar-subsection-header'>Buttons</div>
+	<div class='ojd-sidebar-subsection-content'>
+		<div class='ojd-sidebar-group-header'>
+			<div class='ojd-sidebar-flex-row'>
+				<div class='ojd-flex-static' style='width:150px'>
+					<label class='ojd-label'>Label:</label>
+				</div>
+				<div class='ojd-flex-grow'>
+					<label class='ojd-label'>Button:</label>
+				</div>
+				<div class='ojd-flex-static'>
+					<label class='ojd-label'>&nbsp;</label>
+				</div>
+			</div>
+		</div>
+		<div id='ojd-buttons-group'>
+			<div class='ojd-sidebar-group'>
+				<div class='ojd-sidebar-flex-row'>
+					<div class='ojd-flex-static' style='width:150px'>
+						<select id='ojd-profile-theme-style' class='ojd-input'>
+							<option>Default Style</option>
+						</select>
+					</div>
+					<div class='ojd-flex-grow'>
+						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
+					</div>
+					<div class='ojd-flex-static'>
+						<button class='ojd-button ojd-sidebar-button ojd-button-danger'><i class="fas fa-trash"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row ojd-margin-top'>
+			<div class='ojd-flex-grow'></div>
+			<div class='ojd-flex-static'>
+				<button class='ojd-button ojd-sidebar-button'><i class="fas fa-plus"></i> Add Button</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='ojd-sidebar-subsection'>
+	<div class='ojd-sidebar-subsection-header'>Directionals</div>
+	<div class='ojd-sidebar-subsection-content'>
+		<div id='ojd-directionals-group'>
+			<div class='ojd-sidebar-group ojd-margin-bottom-sm'>
+				<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>Directional ID:</label>
+					</div>
+				</div>
+				<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>X Axis:</label>
+						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
+					</div>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>Y Axis:</label>
+						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
+					</div>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>Deadzone:</label>
+						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
+					</div>
+				</div>
+				<div class='ojd-sidebar-flex-row '>
+					<div class='ojd-flex-grow'>
+						<button class='ojd-button ojd-sidebar-button'><i class="fas fa-check"></i> Use as D-Pad</button>
+					</div>
+					<div class='ojd-flex-grow'>
+						<button class='ojd-button ojd-sidebar-button'><i class="fas fa-check"></i> Use as C-Pad</button>
+					</div>
+					<div class='ojd-flex-grow'>
+						<button class='ojd-button ojd-sidebar-button ojd-button-danger'><i class="fas fa-trash"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row ojd-margin-top'>
+			<div class='ojd-flex-grow'></div>
+			<div class='ojd-flex-static'>
+				<button class='ojd-button ojd-sidebar-button'><i class="fas fa-plus"></i> Add Directional</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='ojd-sidebar-subsection'>
+	<div class='ojd-sidebar-subsection-header'>Triggers</div>
+	<div class='ojd-sidebar-subsection-content'>
+		<div id='ojd-triggers-group'>
+			<div class='ojd-sidebar-group ojd-margin-bottom-sm'>
+				<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>Trigger ID:</label>
+					</div>
+				</div>
+				<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>Axis:</label>
+						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
+					</div>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>Min:</label>
+						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
+					</div>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>Max:</label>
+						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
+					</div>
+				</div>
+				<div class='ojd-sidebar-flex-row '>
+					<div class='ojd-flex-grow'>
+						<label class='ojd-label'>Trigger Button</label>
+						<select id='ojd-profile-theme-style' class='ojd-input'>
+							<option>Default Style</option>
+						</select>
+					</div>
+					<div class='ojd-flex-static'>
+						<label class='ojd-label'>&nbsp;</label>
+						<button class='ojd-button ojd-sidebar-button ojd-button-danger'><i class="fas fa-trash"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row ojd-margin-top'>
+			<div class='ojd-flex-grow'></div>
+			<div class='ojd-flex-static'>
+				<button class='ojd-button ojd-sidebar-button'><i class="fas fa-plus"></i> Add Trigger</button>
+			</div>
+		</div>
+	</div>
+</div>

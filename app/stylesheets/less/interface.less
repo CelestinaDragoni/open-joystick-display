@@ -1,0 +1,93 @@
+
+.ojd-interface {
+
+	position:absolute;
+	width:100%;
+	height:100%;
+	margin:0;
+	display:flex;
+	flex-direction:column;
+
+	.ojd-toolbar {
+		z-index:999;
+		position:relative;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:35px;
+		color:@color-font;
+		background:@color-dark;
+		overflow:hidden;
+
+	}
+
+	.ojd-content-wrapper {
+		position:relative;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		display:flex;
+		flex:2;
+		
+		.ojd-sidebar {
+			background:@color-normal;
+			flex:0 0 300px;	
+			overflow:auto;
+
+			.scrollbar;
+
+		}
+
+		.ojd-sidebar-left {
+			z-index:999;
+			z-index:900;
+		}
+
+		.ojd-sidebar-right {
+			z-index:999;
+			z-index:901;
+		}
+
+		.ojd-content {
+			height:100%;
+			display:flex;
+			flex: 1 1;
+			flex-direction:column;
+			background:@color-background;
+
+			.ojd-theme {
+				z-index:0;
+				position:relative;
+				top:0px;
+				left:0px;
+
+				flex-grow:1;
+				.ojd-theme-wrapper{
+					position: absolute;
+					z-index:0;
+  					left: 50%;
+  					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			.ojd-sidebar-bottom {
+				z-index:999;
+				flex:0 0 325px;
+				border-left:1px solid @color-darker;
+				border-right:1px solid @color-darker;
+				#ojd-tester {
+					height:100%;
+				}
+			}
+
+		}
+	}
+
+	.ojd-status-bar {
+		height:20px;
+		background:@color-darker;
+	}
+
+}
