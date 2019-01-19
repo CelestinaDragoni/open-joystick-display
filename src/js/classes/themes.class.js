@@ -194,7 +194,7 @@ class Themes {
 	}
 
 	setDefaultTheme() {
-		this.setTheme('sfc');
+		this.setTheme('ojd-sfc');
 	}
 
 	getThemes() {
