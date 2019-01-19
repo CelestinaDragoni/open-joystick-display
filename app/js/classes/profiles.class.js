@@ -1,5 +1,6 @@
 const Store = require('electron-store');
 const Clone = require('clone');
+const OJD = window.OJD;
 
 /*
 	Class Profiles
@@ -93,6 +94,15 @@ class Profiles {
 	}
 
 	/*
+	 * getCurrentProfileBounds()
+	 * @return object
+	 * Returns the current broadcast window bounds of the profile.
+	 */
+	getCurrentProfileBounds() {
+		return this.profile.bounds;
+	}
+
+	/*
 	 * getCurrentProfileChromaColor()
 	 * @return string
 	 * Returns the current color of chroma for the profile.
@@ -120,6 +130,15 @@ class Profiles {
 	}
 
 	/*
+	 * getCurrentProfileBoundsLock()
+	 * @return bool
+	 * Returns if the broadcast window size is locked
+	 */
+	getCurrentProfileBoundsLock() {
+		return this.profile.boundsLock;
+	}
+
+	/*
 	 * getProfile(id)
 	 * @param integer id
 	 * @return object
@@ -128,6 +147,15 @@ class Profiles {
 	getProfile(id) {
 		id = parseInt(id, 10);
 		return this.profiles[id];
+	}
+
+	/*
+	 * getProfile(id)
+	 * @return array
+	 * Returns all profiles
+	 */
+	getProfiles() {
+		return this.profiles;
 	}
 
 	/* 
@@ -301,7 +329,8 @@ class Profiles {
 	 */
 	create() {
 		const id = this.profiles.length; // Will always be one ahead. Thanks zero index;
-		const profile = require('../../../src/js/data/profile.json');
+		console.log(id);
+		const profile = require(OJD.appendCwdPath('app/js/data/profile.json'));
 		this.profiles.push(profile);
 		this.setCurrentProfile(id);
 		this.save();
@@ -315,13 +344,13 @@ class Profiles {
 	 * Creates a new profile based on a previous profile.
 	 */
 	clone(id) {
-		const id = this.profiles.length;
+		const newId = this.profiles.length;
 		const profile = Clone(this.getProfile(id));
 		profile.name = profile.name + ' (Cloned)';
 		this.profiles.push(profile);
-		this.setCurrentProfile(id);
+		this.setCurrentProfile(newId);
 		this.save();
-		return id;
+		return newId;
 	}
 
 	/*

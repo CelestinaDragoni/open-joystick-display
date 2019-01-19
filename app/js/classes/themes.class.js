@@ -1,6 +1,7 @@
 const FS = require('fs');
 const Sanitize = require('sanitize-html');
 const OJD = window.OJD;
+const Clone = require('clone');
 
 class Themes {
 
@@ -11,7 +12,7 @@ class Themes {
 		this.themes = {};
 
 		// HTML Sanitization Configuration
-		this.sanitize = require('../../../app/js/data/sanitize.json');
+		this.sanitize = require(OJD.appendCwdPath('/app/js/data/sanitize.json'));
 		this.sanitizeTags = this.sanitize.tags;
 		this.sanitizeAttributes = [];
 		for (const attr of this.sanitizeTags) {
@@ -55,88 +56,50 @@ class Themes {
 
 	}
 
-	render() {
+	getThemeThemeId() {
+		return 'ojd-gc';
+	}
 
-		/*const currentTheme = this.getCurrentTheme();
-		const theme = this.themes[currentTheme];
+	getTheme(id) {
 
-		// Invalid theme on load
+		console.log(this.themes[id]);
+
+		const theme = Clone(this.themes[id]);
 		if (!theme) {
-			this.setDefaultTheme();
-			this.render();
-			return;
+			return false;
 		}
 
-		$('#ojd-theme-contents').hide();
-	
-		// Get Theme CSS
-		$("#theme-stylesheet").remove();
-		$('head').append(`<link id="theme-stylesheet" rel="stylesheet" href="${theme.cssDirectory}/theme.css" type="text/css" />`);
-
-		// Get Theme Data
-		let html = "";
+		theme.html = '';
 		try {
-			const file = FS.openSync(`${theme.directory}/theme.html`, 'r');
-			html = FS.readFileSync(file, 'UTF-8');
-			html = Sanitize(html, {
-				allowedTags:this.allowedTags,
-				allowedAttributes:this.allowedAttributes
+			const file = FS.openSync(`${theme.directory}theme.html`, 'r');
+			theme.html = FS.readFileSync(file, 'UTF-8');
+			FS.closeSync(file);
+			theme.html = Sanitize(theme.html, {
+				allowedTags:this.sanitizeTags,
+				allowedAttributes:this.sanitizeAttributes
 			});
-			FS.closeSync(file);
-		} catch {
-			alert("Theme not found. Perhaps it was moved or deleted?");
-			FS.closeSync(file);
-			return;
+		} catch(e) {
+			console.error(e);
+			return false;
 		}
 
-		$('#ojd-theme-contents').show();*/
+		theme.html = theme.html.replace(/%DIRECTORY%/g, theme.directory);
 
-		html= html.replace(/%DIRECTORY%/g, theme.directory);
-	
-		$('#ojd-theme-contents').html(html);
-		$('#ojd-theme-contents').show();
-
-
-		let svg = "";
-		const $svgElements = $('#ojd-theme-contents *[ojd-svg]');
-		for(const $e of $svgElements) {
-			try {
-				const file = FS.openSync($($e).attr('ojd-svg'), 'r');
-				svg = FS.readFileSync(file, 'UTF-8');
-				$($e).html(svg);
-				FS.closeSync(file);
-			} catch {
-				alert("Can't read SVG.");
-			}
-		}
-	
+		return theme;
 
 	}
 
 	setUserThemeDirectory(directory) {
 		this.config.setUserThemeDirectory(directory);
-		this.setDefaultTheme();
+		this.load();
 	}
 
 	getUserThemeDirectory() {
 		return this.config.getUserThemeDirectory();
 	}
 
-	setDefaultTheme() {
-		this.setTheme('sfc');
-	}
-
 	getThemes() {
 		return this.themes;
-	}
-
-	getCurrentTheme() {
-		return this.config.getTheme();
-	}
-
-	setTheme(themeIndex) {
-		this.config.setTheme(themeIndex);
-		this.render();
 	}
 
 }

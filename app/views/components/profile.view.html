@@ -82,42 +82,6 @@
 </div>
 
 <div class='ojd-sidebar-subsection'>
-	<div class='ojd-sidebar-subsection-header'>Profile Window Position</div>
-	<div class='ojd-sidebar-subsection-content'>
-		<div class='ojd-sidebar-flex-row'>
-			<div class='ojd-flex-grow'>
-				<label class='ojd-label'>X Pos:</label>
-				<input ojd-profile-event-input ojd-profile-data='bounds.x' type='number' step='1' class='ojd-input' type='text' maxlength='255' value=''/>
-			</div>
-			<div class='ojd-flex-grow'>
-				<label class='ojd-label'>Y Pos:</label>
-				<input ojd-profile-event-input ojd-profile-data='bounds.y' type='number' step='1' class='ojd-input' type='text' maxlength='255' value=''/>
-			</div>
-			<div class='ojd-flex-grow'>
-				<label class='ojd-label'>Height:</label>
-				<input ojd-profile-event-input ojd-profile-data='bounds.height' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value=''/>
-			</div>
-			<div class='ojd-flex-grow'>
-				<label class='ojd-label'>Width:</label>
-				<input ojd-profile-event-input ojd-profile-data='bounds.width' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value=''/>
-			</div>
-		</div>
-	</div>
-	<div class='ojd-sidebar-subsection-content'>
-		<div class='ojd-sidebar-flex-row'>
-			<div class='ojd-flex-grow'>
-				<p class='ojd-sidebar-note'>
-					<strong>Note:</strong> These settings will ony be reflected in broadcast mode. Alternatively, you can resize and position the window to your liking in broadcast mode and these values will apply here automatically.
-				</p>
-			</div>
-			<div class='ojd-flex-fixed'>
-				<button ojd-profile-event-toggle ojd-profile-data='boundsLock' id='ojd-profile-window-lock' class='ojd-button ojd-sidebar-button'><i class="fas fa-lock"></i> Lock</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class='ojd-sidebar-subsection'>
 	<div class='ojd-sidebar-subsection-header'>
 		Profile Options
 		<div class='ojd-sidebar-subsection-toggle'></div>
@@ -156,7 +120,7 @@
 					<label class='ojd-label'>Zoom Level: <span id='ojd-profile-label-zoom'></span>%</label>
 				</div>
 				<div class='ojd-flex-fixed'>
-					<input ojd-profile-event-input ojd-profile-data='zoom' ojd-profile-data-label='zoom' class='ojd-input-range' type='range' min='25' max='300' step='25' value='1'>
+					<input ojd-profile-event-slider ojd-profile-data='zoom' ojd-profile-data-label='zoom' class='ojd-input-range' type='range' min='25' max='300' step='25' value='1'>
 				</div>
 			</div>
 		</div>
@@ -167,7 +131,7 @@
 					<label class='ojd-label'>Poll Rate: <span id='ojd-profile-label-poll'></span>ms</label>
 				</div>
 				<div class='ojd-flex-fixed'>
-					<input ojd-profile-event-input ojd-profile-data='poll' ojd-profile-data-label='poll' class='ojd-input-range' type='range' min='1' max='20' step='1' value='10'>
+					<input ojd-profile-event-slider ojd-profile-data='poll' ojd-profile-data-label='poll' class='ojd-input-range' type='range' min='1' max='20' step='1' value='10'>
 				</div>
 			</div>
 		</div>
@@ -175,4 +139,45 @@
 
 	</div>
 </div>
+
+<div class='ojd-sidebar-subsection'>
+	<div class='ojd-sidebar-subsection-header'>Profile Window Size</div>
+	<div class='ojd-sidebar-subsection-content'>
+		<div class='ojd-sidebar-flex-row'>
+			<!--<div class='ojd-flex-grow'>
+				<label class='ojd-label'>X Pos:</label>
+				<input ojd-profile-event-input ojd-profile-data='bounds.x' type='number' step='1' class='ojd-input' type='text' maxlength='255' value=''/>
+			</div>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Y Pos:</label>
+				<input ojd-profile-event-input ojd-profile-data='bounds.y' type='number' step='1' class='ojd-input' type='text' maxlength='255' value=''/>
+			</div>-->
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Height:</label>
+				<input ojd-profile-event-input ojd-profile-data='bounds.height' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value=''/>
+			</div>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Width:</label>
+				<input ojd-profile-event-input ojd-profile-data='bounds.width' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value=''/>
+			</div>
+			<div class='ojd-flex-fixed'>
+				<label class='ojd-label'>&nbsp;</label>
+				<button ojd-profile-event-toggle ojd-profile-data='boundsLock' id='ojd-profile-window-lock' class='ojd-button ojd-sidebar-button'><i class="fas fa-lock"></i> Lock</button>
+			</div>
+		</div>
+	</div>
+	<div class='ojd-sidebar-subsection-content'>
+		<div class='ojd-sidebar-flex-row'>
+			<div class='ojd-flex-grow'>
+				<p class='ojd-sidebar-note'>
+					These settings will only be reflected in broadcast mode. Alternatively, you can resize the window to your liking in broadcast mode and these values will apply here automatically.<br/><br/>
+					The <i class="fas fa-lock"></i> Lock button will prevent you from resizing the window in broadcast mode. Useful for setting up consistant scenes.
+				</p>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
 

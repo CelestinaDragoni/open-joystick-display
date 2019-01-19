@@ -1,6 +1,10 @@
 const FS = require('fs');
 const OJD = window.OJD;
 
+/*
+	Class ProfileController
+	Renders and binds events to the profile sidebar.
+*/
 class ProfileController {
 
 	constructor(rootController) {
@@ -14,26 +18,60 @@ class ProfileController {
 			themeFolderLabel:'#ojd-profile-folder-label',
 			mapCreate:'#ojd-profile-map-create',
 			mapClone:'#ojd-profile-map-clone',
-			mapDelete:'#ojd-profile-map-delete',
-			profileZoomLabel:'#ojd-profile-zoom-label',
-			profilePollLabel:'#ojd-profile-poll-label'
+			mapDelete:'#ojd-profile-map-delete'
 		};
 		this.rootController = rootController;
-		this.profiles = rootController.profiles;
+		this.profiles 		= rootController.profiles;
+		this.themes 		= rootController.themes;
+		this.mappings 		= rootController.mappings;
 	}
 
+	/*
+		Rebinds events on render.
+	*/
 	bindEvents() {
+
+		// Input Events
 		$(`${this.rootId} *[ojd-profile-event-input]`).unbind('keyup');
 		$(`${this.rootId} *[ojd-profile-event-input]`).unbind('change');
+		$(`${this.rootId} *[ojd-profile-event-slider]`).unbind('input');
 		$(`${this.rootId} *[ojd-profile-event-select]`).unbind('change');
 		$(`${this.rootId} *[ojd-profile-event-toggle]`).unbind('click');
+		
 
 		$(`${this.rootId} *[ojd-profile-event-input]`).bind('keyup', this.onInput.bind(this));
 		$(`${this.rootId} *[ojd-profile-event-input]`).bind('change', this.onInput.bind(this));
+		$(`${this.rootId} *[ojd-profile-event-slider]`).bind('input', this.onInput.bind(this));
 		$(`${this.rootId} *[ojd-profile-event-select]`).bind('change', this.onSelect.bind(this));
 		$(`${this.rootId} *[ojd-profile-event-toggle]`).bind('click', this.onToggle.bind(this));
+
+		// Static Events
+		$(`${this.rootId} ${this.objectIds.profileMenu}`).unbind('change');
+		$(`${this.rootId} ${this.objectIds.profileCreate}`).unbind('click');
+		$(`${this.rootId} ${this.objectIds.profileClone}`).unbind('click');
+		$(`${this.rootId} ${this.objectIds.profileDelete}`).unbind('click');
+		$(`${this.rootId} ${this.objectIds.themeFolder}`).unbind('click');
+		$(`${this.rootId} ${this.objectIds.mapCreate}`).unbind('click');
+		$(`${this.rootId} ${this.objectIds.mapClone}`).unbind('click');
+		$(`${this.rootId} ${this.objectIds.mapDelete}`).unbind('click');
+
+		$(`${this.rootId} ${this.objectIds.profileMenu}`).bind('change', this.onChangeProfile.bind(this));
+		$(`${this.rootId} ${this.objectIds.profileCreate}`).bind('click', this.onCreateProfile.bind(this));
+		$(`${this.rootId} ${this.objectIds.profileClone}`).bind('click', this.onCloneProfile.bind(this));
+		$(`${this.rootId} ${this.objectIds.profileDelete}`).bind('click', this.onDeleteProfile.bind(this));
+		$(`${this.rootId} ${this.objectIds.themeFolder}`).bind('click', this.onSelectThemeFolder.bind(this));
+		$(`${this.rootId} ${this.objectIds.mapCreate}`).bind('click', this.onCreateMap.bind(this));
+		$(`${this.rootId} ${this.objectIds.mapClone}`).bind('click', this.onCloneMap.bind(this));
+		$(`${this.rootId} ${this.objectIds.mapDelete}`).bind('click', this.onDeleteMap.bind(this));
+
 	}
 
+	/*
+	 * onInput(e)
+	 * @param event e
+	 * @return NULL
+	 * When a input field in the sidebar is edited it will update the profile and render the changes.
+	 */
 	onInput(e) {
 
 		const profile = this.profiles.getCurrentProfile(); //@todo, use getter instead
@@ -74,6 +112,12 @@ class ProfileController {
 
 	}
 
+	/*
+	 * onSelect(e)
+	 * @param event e
+	 * @return NULL
+	 * When a select field in the sidebar is edited it will update the profile and render the changes.
+	 */
 	onSelect(e) {
 
 		const $e = $(e.target);
@@ -85,10 +129,12 @@ class ProfileController {
 				this.profiles.setProfileTheme(value);
 				this.profiles.setProfileThemeStyle(0);
 			}
+			// @todo add theme.render();
 		} else if (key === 'themeStyle') {
 			if (value !== '') {
 				this.profiles.setProfileThemeStyle(value);
 			}
+			// @todo add theme.render();
 		} else if (key === 'map') {
 			this.profiles.setProfileMap(value);
 		} else {
@@ -98,6 +144,12 @@ class ProfileController {
 		this.render();
 	}
 
+	/*
+	 * onToggle(e)
+	 * @param event e
+	 * @return NULL
+	 * When a toggle button in the sidebar is edited it will update the profile and render the changes.
+	 */
 	onToggle(e) {
 
 		const $e = $(e.target);
@@ -118,63 +170,134 @@ class ProfileController {
 
 	}
 
-	onChangeProfile() {
-
+	/*
+	 * onChangeProfile(e)
+	 * @param event e
+	 * @return NULL
+	 * Update current profile
+	 */
+	onChangeProfile(e) {
+		const id = e.target.value;
+		this.profiles.setCurrentProfile(id);
+		this.render();
 	}
 
-	onCreateProfile() {
-
+	/*
+	 * onCreateProfile(e)
+	 * @param event e
+	 * @return NULL
+	 * Update new profile
+	 */
+	onCreateProfile(e) {
+		this.profiles.create();
+		this.render();
 	}
 
-	onCloneProfile() {
-
+	/*
+	 * onCloneProfile(e)
+	 * @param event e
+	 * @return NULL
+	 * Clone current profile
+	 */
+	onCloneProfile(e) {
+		this.profiles.clone(this.profiles.getCurrentProfileId());
+		this.render();
 	}
 
-	onDeleteProfile() {
-
+	/*
+	 * onDeleteProfile(e)
+	 * @param event e
+	 * @return NULL
+	 * Delete current profile
+	 */
+	onDeleteProfile(e) {
+		if (confirm("Do you wish to delete this profile? This action cannot be undone.")) {
+			this.profiles.remove(this.profiles.getCurrentProfileId());
+			this.render();
+		}
 	}
 
-	onChangeMap() {
-
+	/*
+	 * onCreateMap(e)
+	 * @param event e
+	 * @return NULL
+	 * Create a new mapping
+	 */
+	onCreateMap(e) {
+		const id = this.mappings.create();
+		this.profiles.setProfileMap(id);
+		this.render();
 	}
 
-	onCreateMap() {
-
+	/*
+	 * onCloneMap(e)
+	 * @param event e
+	 * @return NULL
+	 * Clone current mapping
+	 */
+	onCloneMap(e) {
+		const id = this.mappings.clone(this.profiles.getCurrentProfileMap());
+		this.profiles.setProfileMap(id);
+		this.render();
 	}
 
-	onCloneMap() {
-
+	/*
+	 * onDeleteMap(e)
+	 * @param event e
+	 * @return NULL
+	 * Delete current mapping
+	 */
+	onDeleteMap(e) {
+		const id = this.mappings.remove(this.profiles.getCurrentProfileMap());
+		this.profiles.setProfileMap(id);
+		this.render();
 	}
 
-	onDeleteMap() {
-
+	/*
+	 * onSelectThemeFolder(e)
+	 * @param event e
+	 * @return NULL
+	 * Updates the user theme folder.
+	 */
+	onSelectThemeFolder(e) {
+		const folder = this.rootController.openDirectoryDialog();
+		if (folder !== false) {
+			this.themes.setUserThemeDirectory(folder);
+			this.render();
+		}
 	}
 
-	onSelectTheme() {
+
+
+
+	renderCSSOverrides() {
+
+		let css="";
+
+		if (this.profiles.getCurrentProfileChroma()) {
+			const chromaColor = this.profiles.getCurrentProfileChromaColor();
+			console.log(chromaColor);
+			css += `body{background:${chromaColor} !important;}`;
+		}
+
+		const zoom = this.profiles.getCurrentProfileZoom();
+		if (zoom != 1) {
+			css += `#ojd-theme-contents{transform: scale(${zoom/100});}`;
+		}
+
+		$("#ojd-profile-css-overrides").html(css);
 
 	}
-
-	onSelectThemeStyle() {
-
-	}
-
-	onSelectThemeFolder() {
-
-	}
-
-	onColorPicker() {
-
-
-	}
-
 
 
 
 	renderFields() {
 
 		const profile = this.profiles.getCurrentProfile();
-		const $fields = $(`${this.rootId} *[ojd-profile-event-input]`);
-	
+		const $inputs = $(`${this.rootId} *[ojd-profile-event-input]`);
+		const $sliders = $(`${this.rootId} *[ojd-profile-event-slider]`)
+		const $fields = [...$inputs, ...$sliders];
+
 		// Input Fields
 		for(const field of $fields) {
 			const $field = $(field);
@@ -206,13 +329,20 @@ class ProfileController {
 	}
 
 	renderProfilesMenu() {
-
+		const profiles = this.profiles.getProfiles();
+		const $menu = $(`${this.rootId} ${this.objectIds.profileMenu}`);
+		$menu.html('');
+		for (const key in profiles) {
+			const profile = profiles[key];
+			$menu.append($('<option/>').val(OJD.escapeText(key)).html(OJD.escapeText(profile.name)));
+		}
+		$menu.val(this.profiles.getCurrentProfileId());
 	}
 
 	renderThemesMenu() {
 
 		const profile = this.profiles.getCurrentProfile();
-		const themes = this.rootController.themes.getThemes();
+		const themes = this.themes.getThemes();
 		const $menu = $(`${this.rootId} select[ojd-profile-data='theme']`);
 		const $menuStyle = $(`${this.rootId} select[ojd-profile-data='themeStyle']`);
 		$menu.html('');
@@ -255,13 +385,21 @@ class ProfileController {
 		} catch {
 			console.error("Couldn't load theme style list");
 		}
-	
+
+		/* Themes Directory */
+		let themeDir = this.themes.getUserThemeDirectory();
+		if (themeDir === false) {
+			themeDir = 'Currently Not Set';
+		}
+
+		$(`${this.rootId} ${this.objectIds.themeFolderLabel}`).html(OJD.escapeText(themeDir));
+		
 	}
 
 	renderMappingsMenu() {
 
 		const profile = this.profiles.getCurrentProfile();
-		const mapppings = this.rootController.mappings.getMappings();
+		const mapppings = this.mappings.getMappings();
 		const $menu = $(`${this.rootId} select[ojd-profile-data='map']`);
 		$menu.html('');
 
@@ -280,6 +418,8 @@ class ProfileController {
 		this.renderThemesMenu();
 		this.renderMappingsMenu();
 		this.renderFields();
+		this.renderCSSOverrides();
+		this.rootController.reloadTheme();
 		this.bindEvents();
 	}
 

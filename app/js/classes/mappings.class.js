@@ -1,5 +1,6 @@
 const Store = require('electron-store');
 const Clone = require('clone');
+const OJD = window.OJD;
 
 class Mappings {
 
@@ -48,10 +49,9 @@ class Mappings {
 	 * Creates a new blank template mapping.
 	 */
 	create() {
-		const id = this.profiles.length; // Will always be one ahead. Thanks zero index;
-		const profile = require('../../../src/js/data/mapping.json');
-		this.profiles.push(profile);
-		this.setCurrentProfile(id);
+		const id = this.mappings.length; // Will always be one ahead. Thanks zero index;
+		const mapping = require(OJD.appendCwdPath('app/js/data/mapping.json'));
+		this.mappings.push(mapping);
 		this.save();
 		return id;
 	}
@@ -63,12 +63,12 @@ class Mappings {
 	 * Creates a new mapping based on a previous mapping.
 	 */
 	clone(id) {
-		const id = this.mappings.length;
+		const newId = this.mappings.length;
 		const mapping = Clone(this.getMapping(id));
 		mapping.name = mapping.name + ' (Cloned)';
-		this.mappings.push(profile);
+		this.mappings.push(mapping);
 		this.save();
-		return id;
+		return newId;
 	}
 
 	/*

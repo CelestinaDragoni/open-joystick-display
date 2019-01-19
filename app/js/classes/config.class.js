@@ -1,6 +1,7 @@
+const electron = require('electron');
 const Store = require('electron-store');
 const Clone = require('clone');
-
+const OJD = window.OJD;
 /*
 	Class Config
 	System wide config handler for objects.
@@ -26,8 +27,6 @@ class Config {
 		// If config version 0, migrate.
 		this.migrateConfigZero();
 
-		console.log(this.config);
-
 	}
 
 	/*
@@ -48,6 +47,11 @@ class Config {
 		const config = require('../../../app/js/data/config.json');
 		const profile = require('../../../app/js/data/profile.json');
 		const mappings = require('../../../app/js/data/mappings.json');
+
+		// Center on Screen
+		const screenSize = electron.screen.getPrimaryDisplay().size;
+		config.bounds.x = parseInt((screenSize.width - config.bounds.width)/2, 10);
+		config.bounds.y = parseInt((screenSize.height - config.bounds.height)/2, 10);
 
 		this.store.set('mappings', mappings);
 		this.store.set('profiles', [profile]);
@@ -125,23 +129,23 @@ class Config {
 	}
 
 	/*
-	 * toggleInterface()
+	 * toggleBroadcast()
 	 * @return bool
 	 * Toggles between interface and broadcast mode.
 	 */
-	toggleInterface() {
-		this.config.interface = !this.config.interface;
+	toggleBroadcast() {
+		this.config.broadcast = !this.config.broadcast;
 		this.save();
-		return this.config.interface;
+		return this.config.broadcast;
 	}
 
 	/*
-	 * getInterface()
+	 * getBroadcast()
 	 * @return bool
 	 * Determines if we're in interface or broadcast mode.
 	 */
-	getInterface() {
-		return this.config.interface;
+	getBroadcast() {
+		return this.config.broadcast;
 	}
 
 	/*

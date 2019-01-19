@@ -1,3 +1,5 @@
+const OJD = window.OJD;
+
 class Joystick {
 
 	constructor(config) {

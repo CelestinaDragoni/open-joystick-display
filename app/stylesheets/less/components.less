@@ -90,7 +90,7 @@ button.ojd-button {
 			}
 		}
 		&.ojd-button-active {
-			background:@color-lighter;
+			background:@color-lightest;
 		}
 	}
 
@@ -102,7 +102,7 @@ button.ojd-button {
 			background:@color-lighter;
 		}
 		&.ojd-button-active {
-
+			background:@color-lightest;
 		}
 		&.ojd-button-inactive {
 			opacity:.5;
@@ -254,4 +254,60 @@ p.ojd-sidebar-note {
 .ojd-toolbar-logo {
 	height:34px;
 	padding:6px;
+}
+.ojd-toolbar-spacer{
+	border-left:1px dotted @color-lightest;
+	width:1px;
+	margin:5px;
+	opacity:.35;
+	height:27px;
+}
+
+
+div.ojd-modal-wrapper {
+
+	position:fixed;
+	z-index:999;
+	background:#000000CC;
+	width:100%;
+	height:100%;
+	display:none;
+
+	div.ojd-modal {
+
+		position:relative;
+		top: 50%;
+	  	transform: translateY(-50%);
+		background:@color-normal;
+		border:1px solid @color-darker;
+		margin:0px auto;
+
+		div.ojd-modal-handler {
+
+			user-select: none;
+			position:relative;
+			top:0px;
+			left:0px;
+			background: @color-darkest;
+			padding:5px;
+			font-size:14px;
+
+			button.ojd-modal-close {
+
+				float:right;
+				background:0px;
+				padding:0px;
+				border:0px;
+				color:@color-font;
+				cursor:pointer;
+				&:hover {
+					color:@color-accent;
+				}
+			}
+		}
+		div.ojd-modal-content {
+			overflow:auto;
+			padding:20px;
+		}
+	}
 }

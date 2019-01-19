@@ -1,19 +1,21 @@
 <div class='ojd-sidebar-flex-row'>
-	<div class='ojd-flex-grow'>
-		<button class='ojd-button ojd-toolbar-button'><i class="fas fa-sync-alt"></i> Reload</button>
-		<button class='ojd-button ojd-toolbar-button'><i class="fas fa-cog"></i> Dev Tools</button>
-		<button class='ojd-button ojd-toolbar-button'><i class="fas fa-exclamation-triangle"></i> Reset Config</button>
-		<button class='ojd-button ojd-toolbar-button'><i class="fas fa-life-ring"></i> User Guide</button>
-		<button class='ojd-button ojd-toolbar-button'><i class="fas fa-question-circle"></i> About</button>
+	<div class='ojd-flex-fixed'>
+		<button id='ojd-toolbar-reload' class='ojd-button ojd-toolbar-button'><i class="fas fa-sync-alt"></i> Reload</button>
+		<button id='ojd-toolbar-dev' class='ojd-button ojd-toolbar-button'><i class="fas fa-cog"></i> Dev Tools</button>
+		<button id='ojd-toolbar-reset' class='ojd-button ojd-toolbar-button'><i class="fas fa-exclamation-triangle"></i> Reset Config</button>
 	</div>
+	<div class='ojd-flex-fixed'><div class='ojd-toolbar-spacer'></div></div>
 	<div class='ojd-flex-grow'>
-
+		<button class='ojd-button ojd-toolbar-button ojd-external-link' href='https://ojdproject.com/user-guide'><i class="fas fa-life-ring"></i> User Guide</button>
+		<button class='ojd-button ojd-toolbar-button ojd-external-link' href='https://ojdproject.com/developer-guide'><i class="fas fa-laptop-code"></i> Developer Guide</button>
+		<button id='ojd-toolbar-about' class='ojd-button ojd-toolbar-button'><i class="fas fa-question-circle"></i> About</button>
+	</div>
+	
+	<div id='ojd-toolbar-download' class='ojd-flex-fixed' style='display:none'>
+		<button class='ojd-button ojd-toolbar-button ojd-external-link' href='https://ojdproject.com'><i class="fas fa-download"></i> Update Avaliable</button>
 	</div>
 	<div class='ojd-flex-fixed'>
 		<img class='ojd-toolbar-logo' src='../../app/images/logo.png' alt='Open Joystick Display'/> 
 	</div>
-	<div class='ojd-flex-fixed' style='display:none'>
-		<button class='ojd-button ojd-toolbar-button'><i class="fas fa-download"></i> Update Avaliable</button>
-	</div>
-
+	
 </div>

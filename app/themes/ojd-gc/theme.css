@@ -1,3 +1,10 @@
+.gc {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:600px;
+	height:452px;
+}
 .gc-button.active{
 	fill:white !important;
 }
