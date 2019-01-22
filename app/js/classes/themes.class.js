@@ -1,4 +1,5 @@
 const FS = require('fs');
+const PATH = require('path');
 const Sanitize = require('sanitize-html');
 const OJD = window.OJD;
 const Clone = require('clone');
@@ -60,16 +61,29 @@ class Themes {
 		return 'ojd-gc';
 	}
 
-	getTheme(id) {
+	getTheme(id, styleKey) {
 
 		const theme = Clone(this.themes[id]);
 		if (!theme) {
 			return false;
 		}
 
+		let styleFile = false;
+		if (theme.styles && theme.styles[styleKey] && theme.styles[styleKey].file) {
+			styleFile = PATH.basename(theme.styles[styleKey].file);
+			console.log(styleFile);
+		}
+
 		theme.html = '';
 		try {
-			const file = FS.openSync(`${theme.directory}theme.html`, 'r');
+
+			let file = '';
+			if (styleFile && FS.existsSync(`${theme.directory}${styleFile}`)) {
+				file = FS.openSync(`${theme.directory}${styleFile}`, 'r');
+			} else {
+				file = FS.openSync(`${theme.directory}theme.html`, 'r');
+			}
+
 			theme.html = FS.readFileSync(file, 'UTF-8');
 			FS.closeSync(file);
 			theme.html = Sanitize(theme.html, {

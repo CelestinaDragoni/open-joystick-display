@@ -2,7 +2,7 @@
 	"id":"ojd-gc",
 	"name":"Nintendo Gamecube",
 	"author":"Anthony Dragoni (RetroWeeb)",
-	"version":"1.0",
+	"version":"2.0",
 	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
@@ -12,6 +12,12 @@
 		{"id":"orange", "name":"Orange"},
 		{"id":"pink", "name":"Pink"},
 		{"id":"bronze", "name":"Bronze"},
-		{"id":"black", "name":"Black"}
+		{"id":"black", "name":"Black"},
+		{"id":"streamer-white", "name":"Streamer (White Active)", "file":"theme-streamer.html"},
+		{"id":"streamer-purple", "name":"Streamer (Purple Active)", "file":"theme-streamer.html"},
+		{"id":"streamer-orange", "name":"Streamer (Orange Active)", "file":"theme-streamer.html"},
+		{"id":"streamer-pink", "name":"Streamer (Pink Active)", "file":"theme-streamer.html"},
+		{"id":"streamer-green", "name":"Streamer (Green Active)", "file":"theme-streamer.html"},
+		{"id":"streamer-red", "name":"Streamer (Red Active)", "file":"theme-streamer.html"}
 	]
 }

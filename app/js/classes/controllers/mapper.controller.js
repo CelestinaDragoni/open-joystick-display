@@ -156,6 +156,7 @@ class MapperController {
 		}
 
 		this.mappings.update(mapid, mapping);
+		this.mappings.reset();
 		this.rootController.reloadProfile();
 		this.render();
 
@@ -185,6 +186,7 @@ class MapperController {
 		}
 
 		this.mappings.update(mapid, mapping);
+		this.mappings.reset();
 		this.rootController.reloadProfile();
 		this.render();
 

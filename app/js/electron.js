@@ -2,40 +2,40 @@ const {app, BrowserWindow} = require('electron');
 let mainWindow;
 
 // Fixes it for Windows 10, noticed much more stable performance in OBS Linux as well.
-// Since the engine is only rendering 2D, hardware acceleration isn't required.
-// Will move elsewhere prior to 1.0 Final
 app.disableHardwareAcceleration();
 
 function createWindow () {
     
+    console.log(__dirname);
     if (process.platform === "win32") {
-        cwd = __dirname.replace('src\\js', '');
-        ico = cwd+"src/icons/icon.png"; 
+        cwd = __dirname.replace('app\\js', '');
+        ico = cwd+"app/icons/icon.png"; 
     } else {
-        cwd = __dirname.replace('src/js', '');
-        ico = cwd+"src/icons/icon.png";
+        cwd = __dirname.replace('app/js', '');
+        ico = cwd+"app/icons/icon.png";
     } 
     
     const windowConfig = {
         icon:ico,
-        width:0, 
-        height:0, 
+        width:320, 
+        height:200, 
         x:0, 
         y:0, 
         minWidth:50, 
         minHeight:50, 
         menu:null,
-        toolbar:false, 
+        toolbar:false,
+        maximizable:false,
+        minimizable:false,
+        fullscreen:false,
         webPreferences:{nodeIntegration:true}
     };
 
     mainWindow = new BrowserWindow(windowConfig);
-    mainWindow.toggleDevTools();
     mainWindow.setMenu(null);
 
     // Our Controller FIle
     mainWindow.loadFile('app/views/index.view.html');
-
     
 }
 

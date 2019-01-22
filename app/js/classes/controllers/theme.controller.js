@@ -34,12 +34,12 @@ class ThemeController {
 			}
 		}
 
-		const theme = this.themes.getTheme(themeId);
+		const theme = this.themes.getTheme(themeId, themeStyleId);
 		if (!theme) {
-			id = this.themes.getDefault();
+			let id = this.themes.getDefault();
 			this.profiles.setProfileTheme(id);
 			this.profiles.setProfileThemeStyle(0);
-			rootController.reloadProfile();
+			this.rootController.reloadProfile();
 			return;
 		}
 

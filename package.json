@@ -2,7 +2,7 @@
   "name": "open-joystick-display",
   "version": "1.0",
   "description": "An open source Joystick display for Twitch, YouTube, etc. ",
-  "main": "app/js/bootstrap.js",
+  "main": "app/js/electron.js",
   "scripts": {
     "pack": "electron-builder --dir",
     "dist": "electron-builder",

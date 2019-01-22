@@ -95,6 +95,7 @@ class RootController {
 			$("*[ojd-broadcast]").removeClass('ojd-broadcast-mode');
 			remote.getCurrentWindow().setBounds(this.config.getBounds());	
 			remote.getCurrentWindow().setResizable(true);
+			this.reloadProfile();
 		}
 	}
 
