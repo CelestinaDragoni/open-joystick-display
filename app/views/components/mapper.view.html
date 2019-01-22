@@ -6,17 +6,17 @@
 
 		<div class='ojd-sidebar-subsection-division'>
 			<label class='ojd-label'>Name:</label>
-			<input id='ojd-map-name' class='ojd-input' type='text' maxlength='255' value=''/>
+			<input id='ojd-mapper-name' class='ojd-input' ojd-map-group='global' ojd-map-field='name' class='ojd-input' type='text' maxlength='255' value=''/>
 		</div>
 		<div class='ojd-sidebar-flex-row'>
 			<div class='ojd-flex-grow'>
-				<strong>Buttons:</strong> <span>0</span>
+				<strong>Buttons:</strong> <span id='ojd-mapper-buttons-count'></span>
 			</div>
 			<div class='ojd-flex-grow'>
-				<strong>Axes:</strong> <span>0</span>
+				<strong>Directionals:</strong> <span id='ojd-mapper-axes-count'></span>
 			</div>
 			<div class='ojd-flex-grow'>
-				<strong>Triggers:</strong> <span>0</span>
+				<strong>Triggers:</strong> <span id='ojd-mapper-triggers-count'></span>
 			</div>
 		</div>
 
@@ -39,27 +39,13 @@
 				</div>
 			</div>
 		</div>
-		<div id='ojd-buttons-group'>
-			<div class='ojd-sidebar-group'>
-				<div class='ojd-sidebar-flex-row'>
-					<div class='ojd-flex-static' style='width:150px'>
-						<select id='ojd-profile-theme-style' class='ojd-input'>
-							<option>Default Style</option>
-						</select>
-					</div>
-					<div class='ojd-flex-grow'>
-						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
-					</div>
-					<div class='ojd-flex-static'>
-						<button class='ojd-button ojd-sidebar-button ojd-button-danger'><i class="fas fa-trash"></i></button>
-					</div>
-				</div>
-			</div>
+		<div>
+			<div id='ojd-buttons-group' class='ojd-sidebar-group'></div>
 		</div>
 		<div class='ojd-sidebar-flex-row ojd-margin-top'>
 			<div class='ojd-flex-grow'></div>
 			<div class='ojd-flex-static'>
-				<button class='ojd-button ojd-sidebar-button'><i class="fas fa-plus"></i> Add Button</button>
+				<button ojd-map-group='button' class='ojd-button ojd-sidebar-button ojd-button-add'><i class="fas fa-plus"></i> Add Button</button>
 			</div>
 		</div>
 	</div>
@@ -68,44 +54,11 @@
 <div class='ojd-sidebar-subsection'>
 	<div class='ojd-sidebar-subsection-header'>Directionals</div>
 	<div class='ojd-sidebar-subsection-content'>
-		<div id='ojd-directionals-group'>
-			<div class='ojd-sidebar-group ojd-margin-bottom-sm'>
-				<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>Directional ID:</label>
-					</div>
-				</div>
-				<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>X Axis:</label>
-						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
-					</div>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>Y Axis:</label>
-						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
-					</div>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>Deadzone:</label>
-						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
-					</div>
-				</div>
-				<div class='ojd-sidebar-flex-row '>
-					<div class='ojd-flex-grow'>
-						<button class='ojd-button ojd-sidebar-button'><i class="fas fa-check"></i> Use as D-Pad</button>
-					</div>
-					<div class='ojd-flex-grow'>
-						<button class='ojd-button ojd-sidebar-button'><i class="fas fa-check"></i> Use as C-Pad</button>
-					</div>
-					<div class='ojd-flex-grow'>
-						<button class='ojd-button ojd-sidebar-button ojd-button-danger'><i class="fas fa-trash"></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div id='ojd-directionals-group'></div>
 		<div class='ojd-sidebar-flex-row ojd-margin-top'>
 			<div class='ojd-flex-grow'></div>
 			<div class='ojd-flex-static'>
-				<button class='ojd-button ojd-sidebar-button'><i class="fas fa-plus"></i> Add Directional</button>
+				<button ojd-map-group='directional' class='ojd-button ojd-sidebar-button ojd-button-add'><i class="fas fa-plus"></i> Add Directional</button>
 			</div>
 		</div>
 	</div>
@@ -114,46 +67,154 @@
 <div class='ojd-sidebar-subsection'>
 	<div class='ojd-sidebar-subsection-header'>Triggers</div>
 	<div class='ojd-sidebar-subsection-content'>
-		<div id='ojd-triggers-group'>
-			<div class='ojd-sidebar-group ojd-margin-bottom-sm'>
-				<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>Trigger ID:</label>
-					</div>
-				</div>
-				<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>Axis:</label>
-						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
-					</div>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>Min:</label>
-						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
-					</div>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>Max:</label>
-						<input id='ojd-profile-name' class='ojd-input' type='text' maxlength='255' value=''/>
-					</div>
-				</div>
-				<div class='ojd-sidebar-flex-row '>
-					<div class='ojd-flex-grow'>
-						<label class='ojd-label'>Trigger Button</label>
-						<select id='ojd-profile-theme-style' class='ojd-input'>
-							<option>Default Style</option>
-						</select>
-					</div>
-					<div class='ojd-flex-static'>
-						<label class='ojd-label'>&nbsp;</label>
-						<button class='ojd-button ojd-sidebar-button ojd-button-danger'><i class="fas fa-trash"></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div id='ojd-triggers-group'></div>
 		<div class='ojd-sidebar-flex-row ojd-margin-top'>
 			<div class='ojd-flex-grow'></div>
 			<div class='ojd-flex-static'>
-				<button class='ojd-button ojd-sidebar-button'><i class="fas fa-plus"></i> Add Trigger</button>
+				<button ojd-map-group='trigger' class='ojd-button ojd-sidebar-button ojd-button-add'><i class="fas fa-plus"></i> Add Trigger</button>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script id='ojd-mapper-button-template' type='text/html'>
+	<div ojd-map-index='${i}' ojd-map-group='button' class='ojd-sidebar-flex-row ojd-margin-bottom'>
+		<div class='ojd-flex-static' style='width:150px'>
+			<select ojd-map-index='${i}' ojd-map-group='button' ojd-map-field='button' class='ojd-input'>${select}</select>
+		</div>
+		<div class='ojd-flex-grow'>
+			<input ojd-map-index='${i}' ojd-map-group='button' ojd-map-field='index' type='number' min='0' max='100' class='ojd-input' type='text' maxlength='255' value='${index}'/>
+		</div>
+		<div class='ojd-flex-static'>
+			<button ojd-map-index='${i}' ojd-map-group='button' class='ojd-button ojd-sidebar-button ojd-button-danger ojd-button-delete'><i class="fas fa-trash"></i></button>
+		</div>
+	</div>
+</script>
+
+<script id='ojd-mapper-directional-template' type='text/html'>
+	<div ojd-map-index='${i}' ojd-map-group='directional' class='ojd-sidebar-group ojd-margin-bottom-sm'>
+		<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Directional ID: ${i}</label>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>X Axis:</label>
+				<input ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='axisX' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value='${x}'/>
+			</div>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Y Axis:</label>
+				<input ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='axisY' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value='${y}'/>
+			</div>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Deadzone:</label>
+				<input ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='deadzone' type='number' step='.05' min='-1' max='1' class='ojd-input' type='text' maxlength='255' value='${deadzone}'/>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row'>
+			<div class='ojd-flex-grow'>
+				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='dpad' class='ojd-button ojd-sidebar-button ojd-button-toggle ${dpad}'><i class="fas fa-check"></i> Use D-Pad</button>
+			</div>
+			<div class='ojd-flex-grow'>
+				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='cpad' class='ojd-button ojd-sidebar-button ojd-button-toggle ${cpad}'><i class="fas fa-check"></i> Use C-Pad</button>
+			</div>
+			<div class='ojd-flex-fixed'>
+				<button ojd-map-index='${i}' ojd-map-group='directional' class='ojd-button ojd-sidebar-button ojd-button-danger ojd-button-delete'><i class="fas fa-trash"></i></button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script id='ojd-mapper-trigger-template' type='text/html'>
+	<div ojd-map-index='${i}' ojd-map-group='trigger' class='ojd-sidebar-group ojd-margin-bottom-sm ojd-mapper-trigger-row'>
+		<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Trigger ID: ${i}</label>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Axis:</label>
+				<input ojd-map-index='${i}' ojd-map-group='trigger' ojd-map-field='axis' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value='${axis}'/>
+			</div>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Min:</label>
+				<input ojd-map-index='${i}' ojd-map-group='trigger' ojd-map-field='min' type='number' step='.05' min='-1' max='1' class='ojd-input' type='text' maxlength='255' value='${min}'/>
+			</div>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Max:</label>
+				<input ojd-map-index='${i}' ojd-map-group='trigger' ojd-map-field='max' type='number' step='.05' min='-1' max='1' class='ojd-input' type='text' maxlength='255' value='${max}'/>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row '>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Trigger Button</label>
+				<select ojd-map-index='${i}' ojd-map-group='trigger' ojd-map-field='button' class='ojd-input'>
+					<option>None</option>
+					${select}
+				</select>
+			</div>
+			<div class='ojd-flex-static'>
+				<label class='ojd-label'>&nbsp;</label>
+				<button ojd-map-index='${i}' ojd-map-group='trigger' class='ojd-button ojd-sidebar-button ojd-button-danger ojd-button-delete'><i class="fas fa-trash"></i></button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script id='ojd-mapper-button-options-template' type='text/html'>
+	<option value='A'>A</option>
+	<option value='B'>B</option>
+	<option value='C'>C</option>
+	<option value='D'>D</option>
+	<option value='X'>X</option>
+	<option value='Y'>Y</option>
+	<option value='Z'>Z</option>
+	<option value='CROSS'>CROSS</option>
+	<option value='CIRCLE'>CIRCLE</option>
+	<option value='SQUARE'>SQUARE</option>
+	<option value='TRIANGLE'>TRIANGLE</option>
+	<option value='L'>L</option>
+	<option value='L2'>L2</option>
+	<option value='L3'>L3</option>
+	<option value='R'>R</option>
+	<option value='R2'>R2</option>
+	<option value='R3'>R3</option>
+	<option value='START'>START</option>
+	<option value='SELECT'>SELECT</option>
+	<option value='ACTION'>ACTION</option>
+	<option value='PS'>PS</option>
+	<option value='XBOX'>XBOX</option>
+	<option value='PLUS'>PLUS</option>
+	<option value='MINUS'>MINUS</option>
+	<option value='HOME'>HOME</option>
+	<option value='UP'>UP</option>
+	<option value='DOWN'>DOWN</option>
+	<option value='LEFT'>LEFT</option>
+	<option value='RIGHT'>RIGHT</option>
+	<option value='CUP'>C UP</option>
+	<option value='CDOWN'>C DOWN</option>
+	<option value='CLEFT'>C LEFT</option>
+	<option value='CRIGHT'>C RIGHT</option>
+	<option value='1'>1</option>
+	<option value='2'>2</option>
+	<option value='3'>3</option>
+	<option value='4'>4</option>
+	<option value='5'>5</option>
+	<option value='6'>6</option>
+	<option value='7'>7</option>
+	<option value='8'>8</option>
+	<option value='9'>9</option>
+	<option value='10'>10</option>
+	<option value='11'>11</option>
+	<option value='12'>12</option>
+	<option value='13'>13</option>
+	<option value='14'>14</option>
+	<option value='15'>15</option>
+	<option value='16'>16</option>
+	<option value='17'>17</option>
+	<option value='18'>18</option>
+	<option value='19'>19</option>
+	<option value='20'>20</option>
+</script>

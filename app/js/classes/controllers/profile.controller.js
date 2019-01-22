@@ -24,10 +24,13 @@ class ProfileController {
 		this.profiles 		= rootController.profiles;
 		this.themes 		= rootController.themes;
 		this.mappings 		= rootController.mappings;
+		this.joystick 		= rootController.joystick;
 	}
 
 	/*
-		Rebinds events on render.
+	 * bindEvents() 
+	 * @return NULL
+	 * Rebinds events on render.
 	*/
 	bindEvents() {
 
@@ -102,6 +105,7 @@ class ProfileController {
 			this.profiles.setProfileZoom(value);
 		} else if (key === 'poll'){
 			this.profiles.setProfilePoll(value);
+			this.joystick.updatePollRate();
 		} else if (key === 'name'){
 			this.profiles.setProfileName(value);
 		} else {
@@ -137,6 +141,7 @@ class ProfileController {
 			// @todo add theme.render();
 		} else if (key === 'map') {
 			this.profiles.setProfileMap(value);
+			this.rootController.reloadMapper();
 		} else {
 			return;
 		}
@@ -152,7 +157,7 @@ class ProfileController {
 	 */
 	onToggle(e) {
 
-		const $e = $(e.target);
+		const $e = $(e.currentTarget);
 		const key = $e.attr('ojd-profile-data');
 		const value = $e.val();
 
@@ -179,6 +184,7 @@ class ProfileController {
 	onChangeProfile(e) {
 		const id = e.target.value;
 		this.profiles.setCurrentProfile(id);
+		this.rootController.reloadMapper();
 		this.render();
 	}
 
@@ -190,6 +196,7 @@ class ProfileController {
 	 */
 	onCreateProfile(e) {
 		this.profiles.create();
+		this.rootController.reloadMapper();
 		this.render();
 	}
 
@@ -201,6 +208,7 @@ class ProfileController {
 	 */
 	onCloneProfile(e) {
 		this.profiles.clone(this.profiles.getCurrentProfileId());
+		this.rootController.reloadMapper();
 		this.render();
 	}
 
@@ -213,6 +221,7 @@ class ProfileController {
 	onDeleteProfile(e) {
 		if (confirm("Do you wish to delete this profile? This action cannot be undone.")) {
 			this.profiles.remove(this.profiles.getCurrentProfileId());
+			this.rootController.reloadMapper();
 			this.render();
 		}
 	}
@@ -226,6 +235,7 @@ class ProfileController {
 	onCreateMap(e) {
 		const id = this.mappings.create();
 		this.profiles.setProfileMap(id);
+		this.rootController.reloadMapper();
 		this.render();
 	}
 
@@ -238,6 +248,7 @@ class ProfileController {
 	onCloneMap(e) {
 		const id = this.mappings.clone(this.profiles.getCurrentProfileMap());
 		this.profiles.setProfileMap(id);
+		this.rootController.reloadMapper();
 		this.render();
 	}
 
@@ -250,6 +261,7 @@ class ProfileController {
 	onDeleteMap(e) {
 		const id = this.mappings.remove(this.profiles.getCurrentProfileMap());
 		this.profiles.setProfileMap(id);
+		this.rootController.reloadMapper();
 		this.render();
 	}
 
@@ -268,8 +280,11 @@ class ProfileController {
 	}
 
 
-
-
+	/*
+	 * renderCSSOverrides()
+	 * @return NULL
+	 * Renders any CSS overrides required for the profile. Chroma being one of them.
+	 */
 	renderCSSOverrides() {
 
 		let css="";
@@ -290,7 +305,11 @@ class ProfileController {
 	}
 
 
-
+	/*
+	 * renderFields()
+	 * @return NULL
+	 * Renders all of the fields in the profile
+	 */
 	renderFields() {
 
 		const profile = this.profiles.getCurrentProfile();
@@ -328,6 +347,12 @@ class ProfileController {
 
 	}
 
+
+	/*
+	 * renderProfilesMenu()
+	 * @return NULL
+	 * Renders the profiles menu for the profile
+	 */
 	renderProfilesMenu() {
 		const profiles = this.profiles.getProfiles();
 		const $menu = $(`${this.rootId} ${this.objectIds.profileMenu}`);
@@ -339,6 +364,11 @@ class ProfileController {
 		$menu.val(this.profiles.getCurrentProfileId());
 	}
 
+	/*
+	 * renderThemesMenu()
+	 * @return NULL
+	 * Renders the theme menu for the profile
+	 */
 	renderThemesMenu() {
 
 		const profile = this.profiles.getCurrentProfile();
@@ -396,6 +426,11 @@ class ProfileController {
 		
 	}
 
+	/*
+	 * renderMappingsMenu()
+	 * @return NULL
+	 * Renders the mapping menu for the profile
+	 */
 	renderMappingsMenu() {
 
 		const profile = this.profiles.getCurrentProfile();
@@ -412,7 +447,11 @@ class ProfileController {
 
 	}
 
-	
+	/*
+	 * render()
+	 * @return NULL
+	 * General renderer
+	 */		
 	render() {
 		this.renderProfilesMenu();
 		this.renderThemesMenu();
@@ -423,6 +462,11 @@ class ProfileController {
 		this.bindEvents();
 	}
 
+	/*
+	 * renderInitial()
+	 * @return NULL
+	 * Initial render called by rootController
+	 */	
 	renderInitial() {
 
 		const files = [

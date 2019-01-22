@@ -83,7 +83,6 @@ class ToolbarController {
 		$(this.aboutId).html("");
 		for (const file of files) {
 			const html = FS.readFileSync(file, 'UTF-8');
-			console.log(html);
 			$(this.aboutId).append(html);
 			FS.closeSync(file);
 		}

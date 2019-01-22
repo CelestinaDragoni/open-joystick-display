@@ -2,10 +2,11 @@ const OJD = window.OJD;
 
 class Joystick {
 
-	constructor(config) {
+	constructor(config, profiles) {
 
 		// External Classes
 		this.config = config;
+		this.profiles = profiles;
 		this.lastButton = 0;
 
 		// Keywords for Interface
@@ -20,13 +21,14 @@ class Joystick {
 		this.joystickCheckInterval = null;
 
 		// Load Event Listeners
-		//window.addEventListener("gamepadconnected", this.eventConnectGamepad.bind(this));
-		//window.addEventListener("gamepaddisconnected", this.eventDisconnectGamepad.bind(this));
+		window.addEventListener("gamepadconnected", this.eventConnectGamepad.bind(this));
+		window.addEventListener("gamepaddisconnected", this.eventDisconnectGamepad.bind(this));
 
 	}
 
 	eventConnectGamepad(e) {
 		if (!this.joystickConnected) {
+			const poll = this.profiles.getCurrentProfilePoll();
 			const joystick = navigator.getGamepads()[e.gamepad.index];
 
 			this.joystickConnected = true;
@@ -35,7 +37,7 @@ class Joystick {
 			this.joystickInfo = `Joystick connected at index ${joystick.index}: ${joystick.id}. ${joystick.buttons.length} buttons, ${joystick.axes.length} axes.`;
 
 			const func = this.intervalCheckJoystick.bind(this);
-			this.joystickCheckInterval = setInterval(func, 10);
+			this.joystickCheckInterval = setInterval(func, poll);
 		}
 	}
 
@@ -45,6 +47,16 @@ class Joystick {
 		this.joystickConnected = false;
 		this.joystickStatus = 'No Joystick Connected. Press a button or connect a joystick.';	
 		this.joystickInfo = '';
+	}
+
+	updatePollRate() {
+		if (this.joystickConnected) {
+			const poll = this.profiles.getCurrentProfilePoll();
+			console.log(poll);
+			clearInterval(this.joystickCheckInterval);
+			const func = this.intervalCheckJoystick.bind(this);
+			this.joystickCheckInterval = setInterval(func, poll);
+		}
 	}
 
 	intervalCheckJoystick() {
@@ -59,9 +71,9 @@ class Joystick {
 		for (const i in joystick.buttons) {
 			if (joystick.buttons[i].pressed) {
 				this.lastButton = i;
-				$(`*[ojd-raw-button='${i}']`).addClass('active');
+				$(`*[ojd-raw-button='${i}']`).addClass('ojd-tester-active');
 			} else {
-				$(`*[ojd-raw-button='${i}']`).removeClass('active');
+				$(`*[ojd-raw-button='${i}']`).removeClass('ojd-tester-active');
 			}
 		}
 
@@ -99,7 +111,7 @@ class Joystick {
 
 	checkMapping() {
 
-		const currentMapping = this.config.getMapping();
+		const currentMapping = this.profiles.getCurrentProfileMapping();
 		const currentButtonMapping = currentMapping.button;
 		const hasDirectionalPad = currentMapping;
 

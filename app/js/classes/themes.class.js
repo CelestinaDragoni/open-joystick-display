@@ -31,7 +31,7 @@ class Themes {
 				this.themes[dir] = require(OJD.appendCwdPath(`/app/themes/${dir}/theme.json`));
 				this.themes[dir].directory = OJD.appendCwdPath(`/app/themes/${dir}/`);
 			} catch {
-				console.log('Error Loading');
+				console.error(`Error loading system theme: ${dir}`);
 			}
 		}
 
@@ -45,7 +45,7 @@ class Themes {
 						this.themes[dir].directory = OJD.getEnvPath(`${userDirectory}/${dir}/`);
 						this.themes[dir].user = true;
 					} catch {
-						console.error(`Could not load theme from directory: ${dir}`);
+						console.error(`Could not load user theme from directory: ${dir}`);
 					}
 				}
 			} catch {
@@ -56,13 +56,11 @@ class Themes {
 
 	}
 
-	getThemeThemeId() {
+	getDefault() {
 		return 'ojd-gc';
 	}
 
 	getTheme(id) {
-
-		console.log(this.themes[id]);
 
 		const theme = Clone(this.themes[id]);
 		if (!theme) {

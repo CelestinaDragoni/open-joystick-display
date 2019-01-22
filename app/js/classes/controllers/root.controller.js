@@ -115,7 +115,7 @@ class RootController {
 	}
 
 	reloadMapper() {
-
+		this.controllers.mapper.render();
 	}
 
 	reloadProfile() {

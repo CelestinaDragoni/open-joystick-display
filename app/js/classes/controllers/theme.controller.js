@@ -1,6 +1,10 @@
 const FS = require('fs');
 const OJD = window.OJD;
 
+/*
+	ThemeController
+	Handles the rendering the current joystick theme into view.
+*/
 class ThemeController {
 
 	constructor(rootController) {
@@ -14,6 +18,11 @@ class ThemeController {
 		this.currentThemeStyleId=false;
 	}
 
+	/*
+	 * render()
+	 * @return NULL
+	 * General renderer, gets the current profile theme and loads it into the canvas.
+	 */	
 	render() {
 
 		const themeId = this.profiles.getCurrentProfileTheme();
@@ -68,6 +77,11 @@ class ThemeController {
 
 	}
 
+	/*
+	 * renderInitial()
+	 * @return NULL
+	 * Initial render called by rootController
+	 */	
 	renderInitial() {
 		this.render();
 	}

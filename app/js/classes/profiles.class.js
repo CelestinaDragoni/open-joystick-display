@@ -8,9 +8,10 @@ const OJD = window.OJD;
 */
 class Profiles {
 
-	constructor(config) {
+	constructor(config, mappings) {
 		this.store = new Store();
 		this.config = config;
+		this.mappings = mappings;
 		this.profiles = this.store.get('profiles');
 		this.setCurrentProfile(this.getCurrentProfileId());
 	}
@@ -45,7 +46,7 @@ class Profiles {
 	 * Returns the current mapping for the profile.
 	 */
 	getCurrentProfileMapping() {
-		return this.mappings.getMapping(this.config.getProfile());
+		return this.mappings.getMapping(this.getCurrentProfileMap());
 	}
 
 	/*
