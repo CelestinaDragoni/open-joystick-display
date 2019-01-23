@@ -1,0 +1,16 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:400px;
+	height:100px;
+}
+.nes-button.active{
+	fill:white !important;
+}
+.nes-label.active{
+	fill:white !important;
+}
+.nes-label.active *{
+	fill:white !important;
+}

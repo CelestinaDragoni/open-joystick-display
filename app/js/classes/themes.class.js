@@ -58,7 +58,7 @@ class Themes {
 	}
 
 	getDefault() {
-		return 'ojd-gc';
+		return 'ojd-nintendo-gamecube';
 	}
 
 	getTheme(id, styleKey) {
@@ -71,7 +71,6 @@ class Themes {
 		let styleFile = false;
 		if (theme.styles && theme.styles[styleKey] && theme.styles[styleKey].file) {
 			styleFile = PATH.basename(theme.styles[styleKey].file);
-			console.log(styleFile);
 		}
 
 		theme.html = '';

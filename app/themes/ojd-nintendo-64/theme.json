@@ -1,0 +1,24 @@
+{
+	"id":"ojd-nintendo-64",
+	"name":"Nintendo 64 (N64)",
+	"author":"Anthony Dragoni (RetroWeeb)",
+	"version":"2.0",
+	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+	"license":"BSD 4-Clause Attribution",
+	"website":"https://ojdproject.com",
+	"styles":[
+		{"id":"gray", 	"name":"Gray"},
+		{"id":"blue", 	"name":"Blue"},
+		{"id":"red", 	"name":"Red"},
+		{"id":"green", 	"name":"Green"},
+		{"id":"black", 	"name":"Black"},
+		{"id":"yellow", "name":"Yellow"},
+		{"id":"streamer-white", 	"name":"Streamer (White Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
+		{"id":"streamer-purple", 	"name":"Streamer (Purple Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
+		{"id":"streamer-orange", 	"name":"Streamer (Orange Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
+		{"id":"streamer-pink", 		"name":"Streamer (Pink Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
+		{"id":"streamer-green", 	"name":"Streamer (Green Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
+		{"id":"streamer-red", 		"name":"Streamer (Red Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
+		{"id":"streamer-blue", 		"name":"Streamer (Blue Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"}
+	]
+}

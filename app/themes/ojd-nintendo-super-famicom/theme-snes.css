@@ -1,0 +1,10 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:500px;
+	height:250px;
+}
+.snes-button.active{
+	fill:white !important;
+}

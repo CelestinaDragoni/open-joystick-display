@@ -1,5 +1,6 @@
 const FS = require('fs');
 const OJD = window.OJD;
+const PATH = require('path');
 
 /*
 	ThemeController
@@ -29,7 +30,7 @@ class ThemeController {
 		const themeStyleId = this.profiles.getCurrentProfileThemeStyle();
 
 		if (this.currentTheme!==false) {
-			if (this.currentTheme===themeId && this.currentThemeStyleId===themeStyleId) {
+			if (this.currentTheme === themeId && this.currentThemeStyleId === themeStyleId) {
 				return; // Don't re-render.
 			}
 		}
@@ -50,8 +51,14 @@ class ThemeController {
 		// Append CSS
 		$('#ojd-theme-stylesheet-style').remove();
 		$('#ojd-theme-stylesheet').remove();
-		$('head').append(`<link id="ojd-theme-stylesheet" rel="stylesheet" href="${theme.directory}/theme.css" type="text/css" />`);
 
+		// If the style has a master css file, load that first, otherwise load the base theme.css
+		if (theme.styles && theme.styles.length > 0 && theme.styles[themeStyleId] && theme.styles[themeStyleId].mastercss) {
+			$('head').append(`<link id="ojd-theme-stylesheet" rel="stylesheet" href="${theme.directory}/${PATH.basename(theme.styles[themeStyleId].mastercss)}" type="text/css" />`);
+		} else {
+			$('head').append(`<link id="ojd-theme-stylesheet" rel="stylesheet" href="${theme.directory}/theme.css" type="text/css" />`);
+		}
+		
 		// Style of Theme
 		if (theme.styles && theme.styles.length > 0 && theme.styles[themeStyleId]) {
 			const style = theme.styles[themeStyleId];

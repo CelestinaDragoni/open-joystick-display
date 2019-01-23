@@ -1,0 +1,21 @@
+.gc-button.active{
+	fill:#5a2ca0 !important;
+}
+.gc-button.trigger-active{
+	fill:#5a2ca0  !important;
+}
+.gc-button.active *{
+	fill:#5a2ca0  !important;
+}
+.gc-button.active text *{
+	fill:#FFF  !important;
+}
+.gc-button.active .label{
+	fill:#FFF  !important;
+}
+.gc-analog.active {
+	background:#5a2ca0 ;
+}
+.gc-cstick.active {
+	background:#5a2ca0 ;
+}
