@@ -7,8 +7,8 @@
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[
-		{"id":"three-button", 		"name":"Three Button", 				"file":"theme-three.html", 		"mastercss":"theme-three.css"},
-		{"id":"six-button", 		"name":"Six Button", 				"file":"theme-six.html", 		"mastercss":"theme-six.css"},
+		{"id":"three", 		"name":"Three Button", 				"file":"theme-three.html", 		"mastercss":"theme-three.css"},
+		{"id":"six", 		"name":"Six Button", 				"file":"theme-six.html", 		"mastercss":"theme-six.css"},
 		{"id":"streamer-white", 	"name":"Streamer (White Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
 		{"id":"streamer-purple", 	"name":"Streamer (Purple Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
 		{"id":"streamer-orange", 	"name":"Streamer (Orange Active)", 	"file":"theme-streamer.html", 	"mastercss":"theme-streamer.css"},
