@@ -1,0 +1,15 @@
+.theme-color-stroke-dark {
+	stroke:#222 !important;
+}
+.theme-color-dark *{
+	fill:#222 !important;
+}
+.theme-color-dark {
+	fill:#222 !important;
+}
+.theme-color-darker {
+	fill:#111 !important;
+}
+.theme-color-light {
+	fill:#333333 !important;
+}

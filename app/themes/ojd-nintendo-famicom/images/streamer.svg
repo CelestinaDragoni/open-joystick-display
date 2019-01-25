@@ -26,10 +26,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8000001"
-     inkscape:cx="192.96221"
+     inkscape:cx="128.49793"
      inkscape:cy="129.97781"
      inkscape:document-units="mm"
-     inkscape:current-layer="g977"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="2319"
      inkscape:window-height="1052"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,7 +58,7 @@
      transform="translate(0,-270.54167)">
     <path
        inkscape:connector-curvature="0"
-       style="opacity:1;fill:#808080;stroke:none;stroke-width:0.27389088;stroke-miterlimit:4;stroke-dasharray:none"
+       style="opacity:1;fill:none;stroke:#808080;stroke-width:0.52916667;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 14.946089,273.44981 c -0.724437,0 -1.307655,0.54751 -1.307655,1.22759 v 5.26165 H 7.9421192 c -0.724437,0 -1.307655,0.5475 -1.307655,1.22758 v 4.68555 c 0,0.68009 0.583218,1.22759 1.307655,1.22759 h 5.6963148 v 5.46352 c 0,0.68009 0.583218,1.2276 1.307655,1.2276 h 4.991158 c 0.724438,0 1.307658,-0.54751 1.307658,-1.2276 v -5.46352 h 5.728672 c 0.724441,0 1.307655,-0.5475 1.307655,-1.22759 v -4.68555 c 0,-0.68008 -0.583214,-1.22758 -1.307655,-1.22758 h -5.728672 v -5.26165 c 0,-0.68008 -0.58322,-1.22759 -1.307658,-1.22759 z"
        id="rect1008-3" />
     <g
@@ -112,7 +112,9 @@
          id="text889"
          style="font-style:normal;font-weight:normal;font-size:19.27701759px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.48192546"
          aria-label="SELECT"
-         inkscape:label="labelSelect" class="nes-label" ojd-button="SELECT">
+         inkscape:label="labelSelect"
+         class="nes-label"
+         ojd-button="SELECT">
         <path
            inkscape:connector-curvature="0"
            id="path914"
@@ -224,9 +226,7 @@
          d="M 176.05036,269.47327 H 183.97 v -1.97992 h -7.91964 z m 0,4.61979 H 183.97 v -1.97991 h -7.91964 z m -2.63988,2.63988 v -11.87947 h 9.23958 q 3.95983,0 3.95983,3.59024 0,1.46514 -0.63358,2.3495 0.63358,0.87116 0.63358,2.33629 0,3.60344 -3.95983,3.60344 z"
          id="path1022"
          inkscape:connector-curvature="0"
-         inkscape:label="labelB"
-         
-          />
+         inkscape:label="labelB" />
     </g>
     <g
        aria-label="A"
@@ -237,12 +237,9 @@
        ojd-button="A">
       <path
          d="m 189.47321,337.52879 v -1.97991 q 0,-1.31994 -1.31994,-1.31994 h -5.27977 q -1.31994,0 -1.31994,1.31994 v 1.97991 z m -7.91965,2.63989 v 3.29985 h -2.63988 v -7.91965 q 0,-3.95982 3.95982,-3.95982 h 5.27977 q 3.95982,0 3.95982,3.95982 v 7.91965 h -2.63988 v -3.29985 z"
-  
          id="path1019"
          inkscape:connector-curvature="0"
-         inkscape:label="labelA"
-         
-          />
+         inkscape:label="labelA" />
     </g>
   </g>
 </svg>

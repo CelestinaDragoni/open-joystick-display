@@ -1,0 +1,15 @@
+.theme-button.active{
+	fill:red !important;
+}
+.theme-label.active{
+	fill:white !important;
+}
+.theme-label.active *{
+	fill:white !important;
+}
+.theme-label-contrast.active{
+	fill:white !important;
+}
+.theme-label-contrast.active *{
+	fill:white !important;
+}

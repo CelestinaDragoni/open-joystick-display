@@ -25,17 +25,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.2936621"
-     inkscape:cx="140.13973"
-     inkscape:cy="351.80871"
+     inkscape:zoom="1.621864"
+     inkscape:cx="321.26008"
+     inkscape:cy="313.69153"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
-     inkscape:window-width="3840"
-     inkscape:window-height="2107"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1511"
+     inkscape:window-height="1227"
+     inkscape:window-x="1570"
+     inkscape:window-y="491"
+     inkscape:window-maximized="0"
      units="px" />
   <metadata
      id="metadata5">
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -66,7 +66,7 @@
        ojd-button="START" />
     <path
        sodipodi:type="star"
-       style="display:inline;opacity:1;fill:none;stroke-width:0.52916742;stroke:#808080;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:round"
+       style="display:inline;opacity:1;fill:none;stroke:#808080;stroke-width:0.52916741;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="path3935"
        sodipodi:sides="8"
        sodipodi:cx="92.527122"
@@ -85,7 +85,7 @@
        class="gc-color-dark" />
     <path
        sodipodi:type="star"
-       style="display:inline;opacity:1;fill:none;stroke-width:0.52916742;stroke:#808080;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:round"
+       style="display:inline;opacity:1;fill:none;stroke:#808080;stroke-width:0.52916741;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="path3935-2"
        sodipodi:sides="8"
        sodipodi:cx="18.430182"
@@ -361,7 +361,7 @@
     </g>
     <g
        id="g535"
-       transform="translate(-7.3295466,19.852384)"
+       transform="translate(28.194247,19.852384)"
        inkscape:label="btnR-grp"
        class="gc-button"
        ojd-button="R">
@@ -392,7 +392,7 @@
     </g>
     <g
        id="g540"
-       transform="translate(-4.1545406,19.96774)"
+       transform="translate(-58.223746,19.96774)"
        inkscape:label="btnZ-grp"
        class="gc-button"
        ojd-button="Z">
