@@ -2,6 +2,8 @@
 	Class OJD
 	General tools used globally thoughout OJD.
 */
+const PATH = require('path');
+
 class OJD {
 
 	/*
@@ -12,7 +14,7 @@ class OJD {
 	 * OJD Class constructor. Sets the CWD application wide.
 	 */
 	constructor(cwd) {
-		this.cwd = this.getEnvPath(cwd.replace('app/views', ''));
+		this.cwd = this.getEnvPath(cwd.replace('app/views', '').replace('app\\views', ''));
 	}
 
 	/*
@@ -28,7 +30,7 @@ class OJD {
 	/*
 	 * isWindows()
 	 * @return bool
-	 * Determines if the application is running in windows.
+	 * Determines if the application is running in windows.c
 	 */
 	isWindows() {
 		if (process.platform === "win32") {
@@ -54,9 +56,7 @@ class OJD {
 	 */
 	getEnvPath(path) {
 		if (this.isWindows()) {
-			this.log("Before Path: "+path);
-			path = path.replace('/\//g', '\\');
-			this.log(path);
+			path = PATH.normalize(path);
 		}
 		return path;
 	}
