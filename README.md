@@ -1,8 +1,27 @@
+![Open Joystick Display](https://ojdproject.com/images/logo-dark.png)
+
 # Open Joystick Display
 **A powerful and easy to use streamer-ready display for your joystick or gamepad. Completely free and open source.**
 
 ## Features
-Included Features:
+
+### New Features in 1.0 Stable
+* Updated interface and color theme.
+* Broadcast profiles
+* Brand new themes for the following platforms. All with various controller styles as well as streamer-style color options! Included in this update are:
+    - Xbox
+    - Nintendo Gamecube
+    - NES / Famicom
+    - SNES / Super Famicom
+    - Nintendo 64
+    - Sega Master System / Mark III
+    - Sega Genesis / Mega Drive
+    - Sony Playstation
+* Updated theme engine with sub-themes (Styles)
+* Better SVG support
+* Ability to change the event polling rate for better response time.
+
+### Original Features
 * Gamepad/Joystick Support
 * Various Types of Buttons (Alpha, Numeric, PlayStation, Gamecube/N64, Wii/Switch)
 * Analog, Directionals, Linear Triggers, and C-Stick Support
@@ -11,6 +30,8 @@ Included Features:
 * Chroma Key Support
 * Zooming
 * Developer Tools
+
+For more information on updates please view the changelog here: https://ojdproject.com/changelog
 
 ## Package Downloads
 https://ojdproject.com
