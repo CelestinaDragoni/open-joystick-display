@@ -5,6 +5,7 @@ var combiner 	= require('stream-combiner2');
 var os 			= require('os');
 let cleanCSS 	= require('gulp-clean-css');
 var execSync 	= require('child_process').execSync;
+let fs 			= require('fs');
 
 function taskError(e) {
 	console.error(e);
@@ -33,8 +34,30 @@ function taskBuildLinux() {
 		return;
 	}
 
-	execSync('yarn build');
+	let version = 0;
+	let unstable = '';
 
+	console.log('Transforming LESS Files');
+	taskCSS();
+
+	const versionFile = fs.openSync('app/version', 'r');
+	version = fs.readFileSync(versionFile, 'UTF-8');
+	fs.closeSync(versionFile);
+
+	// Any version not whole is unstable.
+	if (parseFloat(version) % 1) {
+		unstable = '-unstable';
+	}
+
+	console.log('Cleaning Artifacts');
+	execSync('rm -Rfv ./dist/');
+	console.log('Building Package');
+	execSync('yarn build');
+	execSync('mv ./dist/linux-unpacked ./dist/open-joystick-display');
+	console.log('Copying Icon');
+	execSync('cp ./app/icons/icon.png ./dist/open-joystick-display/icon.png');
+	console.log('Compressing Package');
+	execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-linux.tar.gz -C ./dist open-joystick-display`);
 
 }
 
