@@ -1,0 +1,39 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:500px;
+	height:150px;
+}
+.theme-button.active{
+	fill:white !important;
+}
+.theme-analog-wrapper {
+	position:absolute;
+	top:71px;
+	left:194px;
+	height:70px;
+	width:70px;
+	border-radius:100%;
+}
+.theme-analog {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:40px;
+	height:40px;
+	margin-left:-20px;
+	margin-top:-20px;
+	background:#CCC;
+	border-radius:100%;
+}
+.theme-analog.active {
+	background:white;
+}
+.theme-label.active{
+	fill:black !important;
+}
+
+.theme-label.active *{
+	fill:black !important;
+}

@@ -1,0 +1,23 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:500px;
+	height:200px;
+}
+.theme-button.active{
+	fill:white !important;
+}
+
+.theme-label.active{
+	fill:white !important;
+}
+.theme-label.active *{
+	fill:white !important;
+}
+.theme-label-contrast.active{
+	fill:black !important;
+}
+.theme-label-contrast.active *{
+	fill:black !important;
+}

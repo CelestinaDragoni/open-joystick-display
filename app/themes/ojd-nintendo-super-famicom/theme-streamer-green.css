@@ -1,0 +1,9 @@
+.snes-button.active{
+	fill:#00FF00 !important;
+}
+.snes-label.active{
+	fill:#00FF00 !important;
+}
+.snes-label.active *{
+	fill:#00FF00 !important;
+}

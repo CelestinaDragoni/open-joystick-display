@@ -1,0 +1,88 @@
+<div class='ojd-sidebar-flex-columns'>
+
+	<div class='ojd-sidebar-handle'>Input Tester</div>
+	<div class='ojd-sidebar-section-header'>Information</div>
+
+	<div class='ojd-sidebar-section ojd-sidebar-subsection'>
+		<div class='ojd-sidebar-subsection-content'>
+			<div class='ojd-sidebar-subsection-division' id='ojd-tester-information'></div>
+		</div>
+	</div>
+
+	<div class='ojd-sidebar-flex-columns-wrapper' id='ojd-tester-connected'>
+		<div class='ojd-flex-static' style='width:300px'>
+			<div class='ojd-sidebar-section-header'>Buttons</div>
+			<div class='ojd-sidebar-section ojd-sidebar-subsection'>
+				<div class='ojd-sidebar-subsection-content'>
+					<div id='ojd-tester-buttons' class='ojd-sidebar-subsection-division'>
+						<!-- Buttons Population Here -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='ojd-flex-static'>
+			<div class='ojd-sidebar-section-header'>Two Dimensional Axis View</div>
+			<div  class='ojd-sidebar-section ojd-sidebar-subsection'>
+				<div class='ojd-sidebar-subsection-content'>
+					<div id='ojd-tester-dimensional-axes' class='ojd-sidebar-subsection-division'>
+					<!-- Dimensional Axis Population Here -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='ojd-flex-grow'>
+			<div class='ojd-sidebar-section-header'>One Dimensional Axis View</div>
+
+			<div class='ojd-sidebar-section ojd-sidebar-subsection'>
+				<div class='ojd-sidebar-subsection-content'>
+					<div id='ojd-tester-linear-axes' class='ojd-sidebar-subsection-division'>
+						<!-- Linear Axis Population Here -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script id='ojd-tester-buttons-template' type='text/html'>
+	<div class='ojd-tester-button' ojd-raw-button='${index}'>${index}</div>
+</script>
+
+<script id='ojd-tester-dimensional-axis-template' type='text/html'>
+	
+		
+			<div class='ojd-inline-group ojd-tester-directional-group'>
+				<div class='ojd-tester-directional-wrapper'>
+					<div class='ojd-tester-directional' ojd-raw-analog='${index}'></div>
+				</div>
+				<div>
+					<label class='ojd-label'>X Axis:</label>
+					<input class='ojd-input' type='text' ojd-raw-analog-x='${index}' readonly='readonly' value='0'/>
+				</div>
+				<div>
+					<label class='ojd-label'>Y Axis:</label>
+					<input class='ojd-input' type='text' ojd-raw-analog-y='${index}' readonly='readonly' value='0'/>
+				</div>
+			</div>
+
+	
+</script>
+
+<script id='ojd-tester-linear-axis-template' type='text/html'>
+	<div class='ojd-inline-group ojd-tester-trigger-group '>
+		<div class='ojd-sidebar-flex-row'>
+			<div class='ojd-flex-static'>
+				<label class='ojd-label'>Axis ${index}:</label>
+			</div>
+			<div class='ojd-flex-static'>
+				<div class='ojd-tester-trigger-wrapper'>
+					<div class='ojd-tester-trigger' ojd-raw-axes='${index}'></div>
+				</div>
+			</div>
+			<div class='ojd-flex-static'>
+				<input class='ojd-input' type='text' ojd-raw-axes-value='${index}' readonly='readonly' value='0'/>
+			</div>
+		</div>
+	</div>
+</script>

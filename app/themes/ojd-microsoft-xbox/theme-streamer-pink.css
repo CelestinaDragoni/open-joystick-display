@@ -1,0 +1,24 @@
+.theme-button.active{
+	fill:#ff4ca6 !important;
+}
+.theme-label.active{
+	fill:#ff4ca6 !important;
+}
+.theme-label.active *{
+	fill:#ff4ca6 !important;
+}
+.theme-label-contrast.active{
+	fill:white !important;
+}
+.theme-label-contrast.active *{
+	fill:white !important;
+}
+.theme-stroke.active{
+	stroke:white !important;
+}
+.theme-stroke.active *{
+	stroke:white !important;
+}
+.theme-analog.active {
+	background:#ff4ca6;
+}

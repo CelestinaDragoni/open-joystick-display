@@ -1,0 +1,27 @@
+{
+	"id":"ojd-sony-playstation",
+	"name":"Sony Playstation (PSX)",
+	"author":"Anthony Dragoni (RetroWeeb)",
+	"version":"1.0",
+	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+	"license":"BSD 4-Clause Attribution",
+	"website":"https://ojdproject.com",
+	"styles":[
+		{"id":"analog-black", 	"name":"Analog Black", 	"file":"theme-analog-black.html", 	"mastercss":"theme-analog-black.css"},
+		{"id":"digital-gray", 	"name":"Digital Gray", 	"file":"theme-digital-gray.html", 	"mastercss":"theme-digital-gray.css"},
+		{"id":"streamer-analog-white", 		"name":"Streamer Analog (White Active)", 	"file":"theme-streamer-analog.html", 	"mastercss":"theme-streamer-analog.css"},
+		{"id":"streamer-analog-purple", 	"name":"Streamer Analog (Purple Active)", 	"file":"theme-streamer-analog.html", 	"mastercss":"theme-streamer-analog.css"},
+		{"id":"streamer-analog-orange", 	"name":"Streamer Analog (Orange Active)", 	"file":"theme-streamer-analog.html", 	"mastercss":"theme-streamer-analog.css"},
+		{"id":"streamer-analog-pink", 		"name":"Streamer Analog (Pink Active)", 	"file":"theme-streamer-analog.html", 	"mastercss":"theme-streamer-analog.css"},
+		{"id":"streamer-analog-green", 		"name":"Streamer Analog (Green Active)", 	"file":"theme-streamer-analog.html", 	"mastercss":"theme-streamer-analog.css"},
+		{"id":"streamer-analog-red", 		"name":"Streamer Analog (Red Active)", 		"file":"theme-streamer-analog.html", 	"mastercss":"theme-streamer-analog.css"},
+		{"id":"streamer-analog-blue", 		"name":"Streamer Analog (Blue Active)", 	"file":"theme-streamer-analog.html", 	"mastercss":"theme-streamer-analog.css"},
+		{"id":"streamer-digital-white", 		"name":"Streamer Digital (White Active)", 	"file":"theme-streamer-digital.html", 	"mastercss":"theme-streamer-digital.css"},
+		{"id":"streamer-digital-purple", 	"name":"Streamer Digital (Purple Active)", 	"file":"theme-streamer-digital.html", 	"mastercss":"theme-streamer-digital.css"},
+		{"id":"streamer-digital-orange", 	"name":"Streamer Digital (Orange Active)", 	"file":"theme-streamer-digital.html", 	"mastercss":"theme-streamer-digital.css"},
+		{"id":"streamer-digital-pink", 		"name":"Streamer Digital (Pink Active)", 	"file":"theme-streamer-digital.html", 	"mastercss":"theme-streamer-digital.css"},
+		{"id":"streamer-digital-green", 		"name":"Streamer Digital (Green Active)", 	"file":"theme-streamer-digital.html", 	"mastercss":"theme-streamer-digital.css"},
+		{"id":"streamer-digital-red", 		"name":"Streamer Digital (Red Active)", 		"file":"theme-streamer-digital.html", 	"mastercss":"theme-streamer-digital.css"},
+		{"id":"streamer-digital-blue", 		"name":"Streamer Digital (Blue Active)", 	"file":"theme-streamer-digital.html", 	"mastercss":"theme-streamer-digital.css"}
+	]
+}

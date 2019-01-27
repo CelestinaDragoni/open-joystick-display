@@ -1,0 +1,14 @@
+{
+	"version":1,
+	"bounds":{
+		"x":0, 
+		"y":0, 
+		"height":850, 
+		"width":1400
+	},
+	"devTools":false,
+	"broadcast":false,
+	"profile":0,
+	"themeUserDirectory":false,
+	"locale":"en-us"
+}

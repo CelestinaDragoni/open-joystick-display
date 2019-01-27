@@ -1,0 +1,15 @@
+.snes-button.active{
+	fill:#3B6EA5 !important;
+}
+.snes-label.active{
+	fill:#3B6EA5 !important;
+}
+.snes-label.active *{
+	fill:#3B6EA5 !important;
+}
+.snes-label-contrast.active{
+	fill:white !important;
+}
+.snes-label-contrast.active *{
+	fill:white !important;
+}

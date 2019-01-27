@@ -1,0 +1,9 @@
+.nes-button.active{
+	fill:#3B6EA5 !important;
+}
+.nes-label.active{
+	fill:#3B6EA5 !important;
+}
+.nes-label.active *{
+	fill:#3B6EA5 !important;
+}

@@ -1,8 +1,9 @@
 {
   "name": "open-joystick-display",
-  "version": "1.0.0-Beta",
+  "version": "1.0.0",
   "description": "An open source Joystick display for Twitch, YouTube, etc. ",
-  "main": "src/js/bootstrap.js",
+  "author":"Anthony Dragoni, Open Joystick Display",
+  "main": "app/js/electron.js",
   "scripts": {
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
@@ -12,17 +13,17 @@
     "appId": "open-joystick-display",
     "productName": "Open Joystick Display",
     "files": [
-      "src/**/*",
+      "app/**/*",
       "node_modules/**/*",
       "package.json"
     ],
     "linux": {
-      "icon":"./src/icons/icon.png",
+      "icon": "./app/icons/icon.png",
       "target": "dir",
       "category": "Multimedia"
     },
     "win": {
-      "icon": "./src/icons/icon.ico",
+      "icon": "./app/icons/icon.ico",
       "target": "zip"
     }
   },
@@ -38,6 +39,14 @@
     "electron": "^4.0.0",
     "electron-builder": "^20.38.4",
     "electron-store": "^2.0.0",
-    "jquery": "^3.3.1"
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-less": "^4.0.1",
+    "gulp-minify": "^3.1.0",
+    "jquery": "^3.3.1",
+    "less": "^3.9.0",
+    "node-watch": "^0.6.0",
+    "stream-combiner2": "^1.1.1"
   }
 }

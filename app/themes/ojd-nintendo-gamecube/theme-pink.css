@@ -1,0 +1,15 @@
+.gc-color-normal {
+	fill:#cc0066 !important;
+}
+
+.gc-color-dark {
+	fill:#b20059 !important;
+}
+
+.gc-color-light {
+	fill:#ff4ca6 !important;
+}
+
+.gc-start *{
+	fill:#CCC !important;
+}

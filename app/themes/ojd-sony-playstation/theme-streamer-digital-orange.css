@@ -1,0 +1,21 @@
+.theme-button.active{
+	fill:#fdab3a !important;
+}
+.theme-label.active{
+	fill:#fdab3a !important;
+}
+.theme-label.active *{
+	fill:#fdab3a !important;
+}
+.theme-label-contrast.active{
+	fill:white !important;
+}
+.theme-label-contrast.active *{
+	fill:white !important;
+}
+.theme-stroke.active{
+	stroke:white !important;
+}
+.theme-stroke.active *{
+	stroke:white !important;
+}

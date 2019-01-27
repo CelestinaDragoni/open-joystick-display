@@ -1,0 +1,20 @@
+{
+	"id":"ojd-nintendo-super-famicom",
+	"name":"Nintendo Super Famicom (SNES)",
+	"author":"Anthony Dragoni (RetroWeeb)",
+	"version":"2.0",
+	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+	"license":"BSD 4-Clause Attribution",
+	"website":"https://ojdproject.com",
+	"styles":[
+		{"id":"snes", 				"name":"SNES", 						"file":"theme-snes.html", 			"mastercss":"theme-snes.css"},
+		{"id":"sfc", 				"name":"Super Famicom", 			"file":"theme-sfc.html", 			"mastercss":"theme-sfc.css"},
+		{"id":"streamer-white", 	"name":"Streamer (White Active)", 	"file":"theme-streamer.html", 		"mastercss":"theme-streamer.css"},
+		{"id":"streamer-purple", 	"name":"Streamer (Purple Active)", 	"file":"theme-streamer.html", 		"mastercss":"theme-streamer.css"},
+		{"id":"streamer-orange", 	"name":"Streamer (Orange Active)", 	"file":"theme-streamer.html", 		"mastercss":"theme-streamer.css"},
+		{"id":"streamer-pink", 		"name":"Streamer (Pink Active)", 	"file":"theme-streamer.html", 		"mastercss":"theme-streamer.css"},
+		{"id":"streamer-green", 	"name":"Streamer (Green Active)", 	"file":"theme-streamer.html", 		"mastercss":"theme-streamer.css"},
+		{"id":"streamer-red", 		"name":"Streamer (Red Active)", 	"file":"theme-streamer.html", 		"mastercss":"theme-streamer.css"},
+		{"id":"streamer-blue", 		"name":"Streamer (Blue Active)", 	"file":"theme-streamer.html", 		"mastercss":"theme-streamer.css"}
+	]
+}
