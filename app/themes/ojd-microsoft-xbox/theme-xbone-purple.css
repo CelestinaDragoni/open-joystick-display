@@ -1,0 +1,9 @@
+.theme-color-normal {
+	fill:#5a2ca0 !important;
+}
+.theme-label-button *{
+	fill:#5a2ca0 !important;
+}
+.theme-label-stroke, .theme-label-stroke * {
+	stroke:#5a2ca0 !important;
+}

@@ -52,7 +52,6 @@ class Joystick {
 	updatePollRate() {
 		if (this.joystickConnected) {
 			const poll = this.profiles.getCurrentProfilePoll();
-			console.log(poll);
 			clearInterval(this.joystickCheckInterval);
 			const func = this.intervalCheckJoystick.bind(this);
 			this.joystickCheckInterval = setInterval(func, poll);

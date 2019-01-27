@@ -58,7 +58,7 @@ class Themes {
 	}
 
 	getDefault() {
-		return 'ojd-nintendo-gamecube';
+		return 'ojd-microsoft-xbox';
 	}
 
 	getTheme(id, styleKey) {

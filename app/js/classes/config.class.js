@@ -44,9 +44,9 @@ class Config {
 			}
 		}
 
-		const config = require('../../../app/js/data/config.json');
-		const profile = require('../../../app/js/data/profile.json');
-		const mappings = require('../../../app/js/data/mappings.json');
+		const config = require(OJD.appendCwdPath('app/js/data/config.json'));
+		const profile = require(OJD.appendCwdPath('app/js/data/profile.json'));
+		const mappings = require(OJD.appendCwdPath('app/js/data/mappings.json'));
 
 		// Center on Screen
 		const screenSize = electron.screen.getPrimaryDisplay().size;
@@ -74,7 +74,7 @@ class Config {
 		}
 
 		// Migrate to new profile system, will be removed in future releases.
-		const profile = require('../../../app/js/data/profile.json');
+		const profile = require(OJD.appendCwdPath('app/js/data/profile.json'));
 		const mappings = Clone(this.config.mappings);
 
 		profile.theme 			= this.config.theme;
