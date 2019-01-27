@@ -25,7 +25,6 @@ function createWindow () {
         minHeight:50, 
         menu:null,
         toolbar:false,
-        maximizable:false,
         minimizable:false,
         fullscreen:false,
         webPreferences:{nodeIntegration:true}
