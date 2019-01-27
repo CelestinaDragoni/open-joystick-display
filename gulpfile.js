@@ -11,7 +11,14 @@ function taskError(e) {
 	console.error(e);
 }
 
-function taskCSS(errorCallback = false, successCallback=false){
+function sectionOutput(message) {
+	const time = new Date().toUTCString();
+	console.log('----------------------------------------------------');
+	console.log(`[${time}]	${message}`);
+	console.log('----------------------------------------------------');
+}
+
+function taskCSS(){
 	return combiner.obj([
 		gulp.src('./app/stylesheets/less/main.less'),
 		less(),
@@ -37,7 +44,7 @@ function taskBuildLinux() {
 	let version = 0;
 	let unstable = '';
 
-	console.log('Transforming LESS Files');
+	sectionOutput('Transforming LESS Files');
 	taskCSS();
 
 	const versionFile = fs.openSync('app/version', 'r');
@@ -49,15 +56,15 @@ function taskBuildLinux() {
 		unstable = '-unstable';
 	}
 
-	console.log('Cleaning Artifacts');
-	execSync('rm -Rfv ./dist/');
-	console.log('Building Package');
-	execSync('yarn build');
-	execSync('mv ./dist/linux-unpacked ./dist/open-joystick-display');
-	console.log('Copying Icon');
-	execSync('cp ./app/icons/icon.png ./dist/open-joystick-display/icon.png');
-	console.log('Compressing Package');
-	execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-linux.tar.gz -C ./dist open-joystick-display`);
+	sectionOutput('Cleaning Artifacts');
+	execSync('rm -Rfv ./dist/', {stdio: 'inherit'});
+	sectionOutput('Building Package');
+	execSync('yarn build', {stdio: 'inherit'});
+	execSync('mv ./dist/linux-unpacked ./dist/open-joystick-display', {stdio: 'inherit'});
+	sectionOutput('Copying Icon');
+	execSync('cp ./app/icons/icon.png ./dist/open-joystick-display/icon.png', {stdio: 'inherit'});
+	sectionOutput('Compressing Package');
+	execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-linux.tar.gz -C ./dist open-joystick-display`, {stdio: 'inherit'});
 
 }
 
