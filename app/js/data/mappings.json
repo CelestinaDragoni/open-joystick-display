@@ -1,5 +1,97 @@
 [
 	{
+		"name": "Microsoft XBox 360 / One",
+		"button": [
+			{
+				"button": "B",
+				"index": 1
+			},
+			{
+				"button": "A",
+				"index": 0
+			},
+			{
+				"button": "Y",
+				"index": 3
+			},
+			{
+				"button": "X",
+				"index": 2
+			},
+			{
+				"button": "L",
+				"index": 4
+			},
+			{
+				"button": "R",
+				"index": 5
+			},
+			{
+				"button": "L2",
+				"index": 6
+			},
+			{
+				"button": "R2",
+				"index": 7
+			},
+			{
+				"button": "L3",
+				"index": 10
+			},
+			{
+				"button": "R3",
+				"index": 11
+			},
+			{
+				"button": "XBOX",
+				"index": 16
+			},
+			{
+				"button": "START",
+				"index": 9
+			},
+			{
+				"button": "SELECT",
+				"index": 8
+			},
+			{
+				"button": "UP",
+				"index": 12
+			},
+			{
+				"button": "DOWN",
+				"index": 13
+			},
+			{
+				"button": "LEFT",
+				"index": 14
+			},
+			{
+				"button": "RIGHT",
+				"index": 15
+			}
+		],
+		"directional": [
+			{
+				"deadzone": 0.25,
+				"analog": true,
+				"axes": [
+					0,
+					1
+				]
+			},
+			{
+				"deadzone": 0.25,
+				"analog": true,
+				"axes": [
+					2,
+					3
+				]
+			}
+		],
+		"trigger": []
+	},
+	{
 		"name": "8BitDo SN30/SFC30",
 		"button": [
 			{
@@ -183,98 +275,6 @@
 				]
 			}
 		]
-	},
-	{
-		"name": "Microsoft XBox 360 / One",
-		"button": [
-			{
-				"button": "B",
-				"index": 1
-			},
-			{
-				"button": "A",
-				"index": 0
-			},
-			{
-				"button": "Y",
-				"index": 3
-			},
-			{
-				"button": "X",
-				"index": 2
-			},
-			{
-				"button": "L",
-				"index": 4
-			},
-			{
-				"button": "R",
-				"index": 5
-			},
-			{
-				"button": "L2",
-				"index": 6
-			},
-			{
-				"button": "R2",
-				"index": 7
-			},
-			{
-				"button": "L3",
-				"index": 10
-			},
-			{
-				"button": "R3",
-				"index": 11
-			},
-			{
-				"button": "XBOX",
-				"index": 16
-			},
-			{
-				"button": "START",
-				"index": 9
-			},
-			{
-				"button": "SELECT",
-				"index": 8
-			},
-			{
-				"button": "UP",
-				"index": 12
-			},
-			{
-				"button": "DOWN",
-				"index": 13
-			},
-			{
-				"button": "LEFT",
-				"index": 14
-			},
-			{
-				"button": "RIGHT",
-				"index": 15
-			}
-		],
-		"directional": [
-			{
-				"deadzone": 0.25,
-				"analog": true,
-				"axes": [
-					0,
-					1
-				]
-			},
-			{
-				"deadzone": 0.25,
-				"analog": true,
-				"axes": [
-					2,
-					3
-				]
-			}
-		],
-		"trigger": []
 	},
 	{
 		"name": "Sony PlayStation 4",
