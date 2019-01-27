@@ -41,6 +41,8 @@ function taskBuildLinux() {
 		return;
 	}
 
+	sectionOutput('Start Building (Linux)');
+
 	let version = 0;
 	let unstable = '';
 
@@ -66,19 +68,105 @@ function taskBuildLinux() {
 	sectionOutput('Compressing Package');
 	execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-linux.tar.gz -C ./dist open-joystick-display`, {stdio: 'inherit'});
 
+	sectionOutput('Build Finished');
+
 }
 
 function taskBuildWindows() {
+
 	if (os.platform() !== 'win32') {
 		taskError("Try this command again while you're in windows chief.");
 		return;
 	}
+
+	sectionOutput('Start Building (Win32)');
+
+	let version = 0;
+	let unstable = '';
+
+	sectionOutput('Transforming LESS Files');
+	taskCSS();
+
+	const versionFile = fs.openSync('app/version', 'r');
+	version = fs.readFileSync(versionFile, 'UTF-8');
+	fs.closeSync(versionFile);
+
+	// Any version not whole is unstable.
+	if (parseFloat(version) % 1) {
+		unstable = '-unstable';
+	}
+
+	sectionOutput('Cleaning Artifacts');
+	try {
+		execSync('rmdir /S /Q .\\dist', {stdio: 'inherit'});
+	} catch {
+		console.log('No dist directory to delete. Moving on...');
+	}
+	sectionOutput('Building Package');
+	execSync('yarn build', {stdio: 'inherit'});
+	execSync('rename .\\dist\\win-unpacked open-joystick-display', {stdio: 'inherit'});
+	sectionOutput('Compressing Package');
+	execSync(`tools\\windows\\7zip\\7za.exe a -r .\\dist\\open-joystick-display-${version}${unstable}-windows.zip .\\dist\\open-joystick-display`, {stdio: 'inherit'});
+
+	sectionOutput('Build Finished');
+
+}
+
+function taskBuildDarwin() {
+
+	if (os.platform() !== 'darwin') {
+		taskError("Try this command again while you're in macOS chief.");
+		return;
+	}
+
+	sectionOutput('Start Building (Darwin/macOS)');
+
+	let version = 0;
+	let unstable = '';
+
+	sectionOutput('Transforming LESS Files');
+	taskCSS();
+
+	const versionFile = fs.openSync('app/version', 'r');
+	version = fs.readFileSync(versionFile, 'UTF-8');
+	fs.closeSync(versionFile);
+
+	// Any version not whole is unstable.
+	if (parseFloat(version) % 1) {
+		unstable = '-unstable';
+	}
+
+	sectionOutput('Cleaning Artifacts');
+	execSync('rm -Rfv ./dist/', {stdio: 'inherit'});
+	sectionOutput('Building Package');
+	execSync('yarn build', {stdio: 'inherit'});
+	execSync('mv ./dist/linux-unpacked ./dist/open-joystick-display', {stdio: 'inherit'});
+	sectionOutput('Copying Icon');
+	execSync('cp ./app/icons/icon.png ./dist/open-joystick-display/icon.png', {stdio: 'inherit'});
+	sectionOutput('Compressing Package');
+	execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-macos.tar.gz -C ./dist open-joystick-display`, {stdio: 'inherit'});
+
+	sectionOutput('Build Finished');
 
 
 }
 
 gulp.task('default', function(cb) {
 	taskWatch();
+	cb();
+});
+
+gulp.task('build', function(cb) {
+	const platform = os.platform();
+	if (platform === 'win32') {
+		taskBuildWindows();
+	} else if (platform === 'linux') {
+		taskBuildLinux();
+	} else if (platform === 'darwin') {
+		taskBuildDarwin();
+	} else {
+		console.error('Unsupported Platform');
+	}
 	cb();
 });
 
@@ -89,5 +177,10 @@ gulp.task('build-linux', function(cb) {
 
 gulp.task('build-windows', function(cb) {
 	taskBuildWindows();
+	cb();
+});
+
+gulp.task('build-darwin', function(cb) {
+	taskBuildDarwin();
 	cb();
 });
