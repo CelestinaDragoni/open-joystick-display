@@ -91,10 +91,14 @@ class RootController {
 			if (this.profiles.getCurrentProfileBoundsLock()) {
 				remote.getCurrentWindow().setResizable(false);
 			}
+			if (this.profiles.getCurrentProfileAlwaysOnTop()) {
+				remote.getCurrentWindow().setAlwaysOnTop(true);
+			}
 		} else {
 			$("*[ojd-broadcast]").removeClass('ojd-broadcast-mode');
 			remote.getCurrentWindow().setBounds(this.config.getBounds());	
 			remote.getCurrentWindow().setResizable(true);
+			remote.getCurrentWindow().setAlwaysOnTop(false);
 			this.reloadProfile();
 		}
 	}
