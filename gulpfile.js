@@ -104,9 +104,18 @@ function taskBuildWindows() {
 	}
 	sectionOutput('Building Package');
 	execSync('yarn build', {stdio: 'inherit'});
-	execSync('rename .\\dist\\win-unpacked open-joystick-display', {stdio: 'inherit'});
+	if (process.arch === 'x64') {
+		execSync('rename .\\dist\\win-unpacked open-joystick-display', {stdio: 'inherit'});
+	} else {
+		execSync('rename .\\dist\\win-ia32-unpacked open-joystick-display', {stdio: 'inherit'});
+	}
 	sectionOutput('Compressing Package');
-	execSync(`tools\\windows\\7zip\\7za.exe a -r .\\dist\\open-joystick-display-${version}${unstable}-windows.zip .\\dist\\open-joystick-display`, {stdio: 'inherit'});
+
+	if (process.arch === 'x64') {
+		execSync(`tools\\windows\\7zip\\7za.exe a -r .\\dist\\open-joystick-display-${version}${unstable}-x64-windows.zip .\\dist\\open-joystick-display`, {stdio: 'inherit'});
+	} else {
+		execSync(`tools\\windows\\7zip\\7za.exe a -r .\\dist\\open-joystick-display-${version}${unstable}-x86-windows.zip .\\dist\\open-joystick-display`, {stdio: 'inherit'});
+	}
 
 	sectionOutput('Build Finished');
 
