@@ -61,6 +61,8 @@ class MapperController {
 	 */
 	onUpdate(e) {
 
+		console.log('trigger');
+
 		const $target = $(e.currentTarget);
 		const mapid = this.profiles.getCurrentProfileMap();
 		const mapping = this.profiles.getCurrentProfileMapping();
@@ -68,24 +70,35 @@ class MapperController {
 		const field = $target.attr('ojd-map-field');
 		const index = parseInt($target.attr('ojd-map-index'));
 
+		let doRender = true;
+		let value = '';
+
 		if (group == 'button') {
 			if (field === 'button') {
 				mapping.button[index].button = OJD.escapeText($target.val());
 			}
 			if (field === 'index') {
-				mapping.button[index].index = parseInt($target.val());
+				value = parseInt($target.val());
+				mapping.button[index].index = value;
+				doRender=false;
 			}
 		}
 
 		if (group == 'directional') {
 			if (field === 'axisX') {
-				mapping.directional[index].axes[0] = parseInt($target.val(), 10);
+				value = parseInt($target.val(), 10);
+				mapping.directional[index].axes[0] = value;
+				doRender=false;
 			}
 			if (field === 'axisY') {
-				mapping.directional[index].axes[1] = parseInt($target.val(), 10);
+				value = parseInt($target.val(), 10);
+				mapping.directional[index].axes[1] = value;
+				doRender=false;
 			}
 			if (field === 'deadzone') {
-				mapping.directional[index].index = parseFloat($target.val(), 10);
+				value = parseFloat($target.val(), 0);
+				mapping.directional[index].deadzone = value;
+				doRender=false;
 			}
 			if (field === 'dpad') {
 				if (!$target.hasClass("ojd-button-active")) {
@@ -105,13 +118,19 @@ class MapperController {
 
 		if (group == 'trigger') {
 			if (field === 'axis') {
-				mapping.trigger[index].axis = parseInt($target.val(), 10);
+				value = parseInt($target.val(), 10);
+				mapping.trigger[index].axis = value;
+				doRender=false;
 			}
 			if (field === 'min') {
-				mapping.trigger[index].range[0] = parseFloat($target.val(), 10);
+				value = parseFloat($target.val());
+				mapping.trigger[index].range[0] = value;
+				doRender=false;
 			}
 			if (field === 'max') {
-				mapping.trigger[index].range[1] = parseFloat($target.val(), 10);
+				value = parseFloat($target.val());
+				mapping.trigger[index].range[1] = value;
+				doRender=false;
 			}
 			if (field === 'button') {
 				if ($target.val() === '') {
@@ -131,7 +150,11 @@ class MapperController {
 		this.mappings.update(mapid, mapping);
 		this.mappings.reset();
 		this.rootController.reloadProfile();
-		this.render();
+
+		if (doRender) {
+			this.render();
+		}
+
 	}
 
 	/*

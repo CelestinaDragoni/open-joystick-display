@@ -23,10 +23,10 @@
 
 .gc-analog-wrapper {
 	position:absolute;
-	top:128px;
-	left:86px;
-	height:70px;
-	width:70px;
+	top:113px;
+	left:71px;
+	height:100px;
+	width:100px;
 	border-radius:100%;
 }
 .gc-analog {
@@ -46,10 +46,10 @@
 
 .gc-cstick-wrapper {
 	position:absolute;
-	bottom:121px;
-	right:163px;
-	height:70px;
-	width:70px;
+	bottom:107px;
+	right:148px;
+	height:100px;
+	width:100px;
 	border-radius:100%;
 }
 .gc-cstick {
