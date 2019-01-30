@@ -54,9 +54,9 @@ function taskBuildLinux() {
 	fs.closeSync(versionFile);
 
 	// Any version not whole is unstable.
-	if (parseFloat(version) % 1) {
+	/*if (parseFloat(version) % 1) {
 		unstable = '-unstable';
-	}
+	}*/
 
 	sectionOutput('Cleaning Artifacts');
 	execSync('rm -Rfv ./dist/', {stdio: 'inherit'});
@@ -92,9 +92,9 @@ function taskBuildWindows() {
 	fs.closeSync(versionFile);
 
 	// Any version not whole is unstable.
-	if (parseFloat(version) % 1) {
+	/*if (parseFloat(version) % 1) {
 		unstable = '-unstable';
-	}
+	}*/
 
 	sectionOutput('Cleaning Artifacts');
 	try {
@@ -141,9 +141,9 @@ function taskBuildDarwin() {
 	fs.closeSync(versionFile);
 
 	// Any version not whole is unstable.
-	if (parseFloat(version) % 1) {
+	/*if (parseFloat(version) % 1) {
 		unstable = '-unstable';
-	}
+	}*/
 
 	sectionOutput('Cleaning Artifacts');
 	execSync('rm -Rfv ./dist/', {stdio: 'inherit'});
