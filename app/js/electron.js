@@ -10,7 +10,10 @@ function createWindow () {
     if (process.platform === "win32") {
         cwd = __dirname.replace('app\\js', '');
         ico = cwd+"app/icons/icon.png"; 
-    } else {
+    } else if (process.platform === "darwin") {
+        cwd = __dirname.replace('app/js', '');
+        ico = cwd+"app/icons/icon.icns";
+    }else {
         cwd = __dirname.replace('app/js', '');
         ico = cwd+"app/icons/icon.png";
     } 

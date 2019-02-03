@@ -24,7 +24,11 @@
     },
     "win": {
       "icon": "./app/icons/icon.ico",
-      "target": "zip"
+      "target": "dir"
+    },
+    "mac": {
+      "icon": "./app/icons/icon.icns",
+      "target": "dmg"
     }
   },
   "dependencies": {

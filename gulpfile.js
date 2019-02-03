@@ -62,11 +62,21 @@ function taskBuildLinux() {
 	execSync('rm -Rfv ./dist/', {stdio: 'inherit'});
 	sectionOutput('Building Package');
 	execSync('yarn build', {stdio: 'inherit'});
-	execSync('mv ./dist/linux-unpacked ./dist/open-joystick-display', {stdio: 'inherit'});
+	if (process.arch === 'x64') {
+		execSync('mv ./dist/linux-unpacked ./dist/open-joystick-display', {stdio: 'inherit'});
+	} else {
+
+	}
+	
 	sectionOutput('Copying Icon');
 	execSync('cp ./app/icons/icon.png ./dist/open-joystick-display/icon.png', {stdio: 'inherit'});
 	sectionOutput('Compressing Package');
-	execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-linux.tar.gz -C ./dist open-joystick-display`, {stdio: 'inherit'});
+
+	if (process.arch === 'x64') {
+		execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-x64-linux.tar.gz -C ./dist open-joystick-display`, {stdio: 'inherit'});
+	} else {
+		execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-x86-linux.tar.gz -C ./dist open-joystick-display`, {stdio: 'inherit'});
+	}
 
 	sectionOutput('Build Finished');
 
@@ -149,11 +159,8 @@ function taskBuildDarwin() {
 	execSync('rm -Rfv ./dist/', {stdio: 'inherit'});
 	sectionOutput('Building Package');
 	execSync('yarn build', {stdio: 'inherit'});
-	execSync('mv ./dist/linux-unpacked ./dist/open-joystick-display', {stdio: 'inherit'});
-	sectionOutput('Copying Icon');
-	execSync('cp ./app/icons/icon.png ./dist/open-joystick-display/icon.png', {stdio: 'inherit'});
-	sectionOutput('Compressing Package');
-	execSync(`tar czvf ./dist/open-joystick-display-${version}${unstable}-macos.tar.gz -C ./dist open-joystick-display`, {stdio: 'inherit'});
+	sectionOutput('Renaming Package');
+	execSync(`mv ./dist/*.dmg ./dist/open-joystick-display-${version}${unstable}-x64-mac.dmg`, {stdio: 'inherit'});
 
 	sectionOutput('Build Finished');
 
