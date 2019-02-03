@@ -65,7 +65,7 @@ function taskBuildLinux() {
 	if (process.arch === 'x64') {
 		execSync('mv ./dist/linux-unpacked ./dist/open-joystick-display', {stdio: 'inherit'});
 	} else {
-
+		execSync('mv ./dist/linux-ia32-unpacked ./dist/open-joystick-display', {stdio: 'inherit'});
 	}
 	
 	sectionOutput('Copying Icon');
