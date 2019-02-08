@@ -1,9 +1,9 @@
 {
 	"id":"ojd-nintendo-famicom",
-	"name":"Nintendo Famicom (NES)",
-	"author":"Anthony Dragoni (RetroWeeb)",
+	"name":"Nintendo Famicom",
+	"author":"Anthony 'Dragoni' Mattera (RetroWeeb)",
 	"version":"2.0",
-	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+	"copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[

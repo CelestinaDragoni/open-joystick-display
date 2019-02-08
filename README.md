@@ -1,11 +1,27 @@
 ![Open Joystick Display](https://ojdproject.com/images/logo-dark.png)
 
 # Open Joystick Display
-**A powerful and easy to use streamer-ready display for your joystick or gamepad. Completely free and open source.**
+**A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.**
 
-## Features
+### Version 1.03 (NEW)
+* PC-Engine Controller Themes
+* Sega Dreamcast Controller Themes
+* Sega Saturn Controller Themes
+* Support for CAPTURE and RUN Buttons
+* Minor changes and patreon backers list.
 
-### New Features in 1.0 Stable
+### Version 1.02
+* Support for continuous integration pipeline.
+* macOS Support
+* Linux 32-Bit Support
+
+### Version 1.01
+* Bug fix for some issues with the sidebar and inputs losing focus.
+* Bug fix to allow the deadzone value to be changed.
+* Some visual modifications to the Gamecube controller.
+* Windows 32-Bit Support
+
+### Version 1.0
 * Updated interface and color theme.
 * Broadcast profiles
 * Brand new themes for the following platforms. All with various controller styles as well as streamer-style color options! Included in this update are:
@@ -21,7 +37,7 @@
 * Better SVG support
 * Ability to change the event polling rate for better response time.
 
-### Original Features
+### Core Features
 * Gamepad/Joystick Support
 * Various Types of Buttons (Alpha, Numeric, PlayStation, Gamecube/N64, Wii/Switch)
 * Analog, Directionals, Linear Triggers, and C-Stick Support
@@ -66,7 +82,7 @@ are met:
 
 4. Redistributions of any form whatsoever must retain the following
    acknowledgment: 'This product includes software developed by
-   "Open Joystick Display Project and 'Anthony Dragoni' 
+   "Open Joystick Display Project and 'Anthony 'Dragoni' Mattera' 
    (http://www.ojdproject.com/)."
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS

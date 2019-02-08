@@ -1,0 +1,31 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:675px;
+	height:600px;
+}
+.theme-analog-wrapper {
+	position:absolute;
+	top:141px;
+	left:107px;
+	height:100px;
+	width:100px;
+	border-radius:100%;
+}
+.theme-analog {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:80px;
+	height:80px;
+	margin-left:-40px;
+	margin-top:-40px;
+	background:#f497afff;
+	border-radius:100%;
+	border:4px solid #f497afff;
+}
+.theme-analog.active {
+	border:4px solid #f497afff;
+	background:white;
+}

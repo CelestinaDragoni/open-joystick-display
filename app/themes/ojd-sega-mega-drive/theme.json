@@ -1,9 +1,9 @@
 {
 	"id":"ojd-sega-mega-drive",
-	"name":"Sega Mega Drive (Genesis)",
-	"author":"Anthony Dragoni (RetroWeeb)",
+	"name":"Sega Mega Drive / Genesis",
+	"author":"Anthony 'Dragoni' Mattera (RetroWeeb)",
 	"version":"1.0",
-	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+	"copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[

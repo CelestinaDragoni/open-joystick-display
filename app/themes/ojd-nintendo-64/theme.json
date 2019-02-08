@@ -1,9 +1,9 @@
 {
 	"id":"ojd-nintendo-64",
-	"name":"Nintendo 64 (N64)",
-	"author":"Anthony Dragoni (RetroWeeb)",
+	"name":"Nintendo 64",
+	"author":"Anthony 'Dragoni' Mattera (RetroWeeb)",
 	"version":"1.0",
-	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+	"copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[

@@ -1,9 +1,9 @@
 {
 	"id":"ojd-nec-pc-engine",
-	"name":"NEC PC-Engine / TurboGrafx-16 (TG16)",
-	"author":"Anthony Dragoni (RetroWeeb)",
+	"name":"NEC PC-Engine / TurboGrafx-16",
+	"author":"Anthony 'Dragoni' Mattera (RetroWeeb)",
 	"version":"1.0",
-	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+	"copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[

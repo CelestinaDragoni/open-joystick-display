@@ -1,9 +1,9 @@
 {
 	"id":"ojd-microsoft-xbox",
-	"name":"Microsoft Xbox (XBox/360/XBOne)",
-	"author":"Anthony Dragoni (RetroWeeb)",
+	"name":"Microsoft Xbox",
+	"author":"Anthony 'Dragoni' Mattera (RetroWeeb)",
 	"version":"1.0",
-	"copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+	"copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[
