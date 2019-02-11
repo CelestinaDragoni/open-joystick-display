@@ -62,7 +62,9 @@ class ThemeController {
 		// Style of Theme
 		if (theme.styles && theme.styles.length > 0 && theme.styles[themeStyleId]) {
 			const style = theme.styles[themeStyleId];
-			$('head').append(`<link id="ojd-theme-stylesheet-style" rel="stylesheet" href="${theme.directory}/theme-${style.id}.css" type="text/css" />`);
+			if (FS.existsSync(`${theme.directory}theme-${style.id}.css`)) {
+				$('head').append(`<link id="ojd-theme-stylesheet-style" rel="stylesheet" href="${theme.directory}/theme-${style.id}.css" type="text/css" />`);
+			}
 		}
 
 		// Add Theme

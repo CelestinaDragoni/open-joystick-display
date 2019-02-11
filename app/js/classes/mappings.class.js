@@ -105,7 +105,10 @@ class Mappings {
 		$(`*[ojd-trigger-scale-inverted]`).css('height', '');
 		$(`*[ojd-trigger]`).removeClass('trigger-active');
 		$(`*[ojd-trigger-move]`).css('top', ``);
+		$(`*[ojd-trigger-move-inverted]`).css('bottom', ``);
 		$(`*[ojd-trigger-move-inverted]`).css('top', ``);
+		$(`*[ojd-arcade-directional]`).css('top',``);
+		$(`*[ojd-arcade-directional]`).css('left',``);
 
 	}
 

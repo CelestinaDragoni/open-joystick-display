@@ -112,7 +112,6 @@ class Joystick {
 
 		const currentMapping = this.profiles.getCurrentProfileMapping();
 		const currentButtonMapping = currentMapping.button;
-		const hasDirectionalPad = currentMapping;
 
 		// Check Buttons
 		const multimapCheck=[]; // In case a single button is mapped to multiple physical buttons.
@@ -126,6 +125,16 @@ class Joystick {
 					$(`*[ojd-button='${k.button}']`).removeClass('active');
 				}
 			}
+		}
+
+		// Check for Arcade Stick
+		const arcadeOffset = this.checkArcadeStick(currentButtonMapping);
+		$(`*[ojd-arcade-directional]`).css('top',`${arcadeOffset.y}%`);
+		$(`*[ojd-arcade-directional]`).css('left',`${arcadeOffset.x}%`);
+		if (arcadeOffset.x !== 50 || arcadeOffset.y !== 50) {
+			$(`*[ojd-arcade-directional]`).addClass('active');
+		} else {
+			$(`*[ojd-arcade-directional]`).removeClass('active');
 		}
 
 		// Check Directional Pad
@@ -222,6 +231,89 @@ class Joystick {
 
 		}
 		return false;
+	}
+
+	checkArcadeStick(buttonMapping) {
+
+		const joystick = navigator.getGamepads()[this.joystickIndex];
+
+		const buttons = {
+			'UP':false,
+			'LEFT':false,
+			'RIGHT':false,
+			'DOWN':false
+		};
+
+		const active = {
+			'UP':false,
+			'LEFT':false,
+			'RIGHT':false,
+			'DOWN':false
+		};
+
+		const offset = {
+			x:0,
+			y:0,
+			xRaw:0,
+			yRaw:0
+		};
+
+		// Find Directionals
+		for (const k of buttonMapping) {
+
+			switch(k.button) {
+				case "UP":
+					buttons.UP = k.index;
+					break;
+				case "DOWN":
+					buttons.DOWN = k.index;
+					break;
+				case "LEFT":
+					buttons.LEFT = k.index;
+					break;
+				case "RIGHT":
+					buttons.RIGHT = k.index;
+					break;
+			}
+
+		}
+
+		// Determine if the buttons are activated
+		active.UP 		= buttons.UP 	!== false && joystick.buttons[buttons.UP] 	 && joystick.buttons[buttons.UP].pressed ? true : false;
+		active.LEFT 	= buttons.LEFT 	!== false && joystick.buttons[buttons.LEFT]  && joystick.buttons[buttons.LEFT].pressed ? true : false;
+		active.RIGHT 	= buttons.RIGHT !== false && joystick.buttons[buttons.RIGHT] && joystick.buttons[buttons.RIGHT].pressed ? true : false;
+		active.DOWN 	= buttons.DOWN 	!== false && joystick.buttons[buttons.DOWN]  && joystick.buttons[buttons.DOWN].pressed ? true : false;
+
+		// Check Directions
+		if (active.UP && active.LEFT) { // Check Secondary-Cardinal Directions
+			offset.yRaw = -1;
+			offset.xRaw = -1;
+		} else if (active.UP && active.RIGHT) {
+			offset.yRaw = -1;
+			offset.xRaw = 1;
+		} else if (active.DOWN && active.LEFT) {
+			offset.yRaw = 1;
+			offset.xRaw = -1;
+		} else if (active.DOWN && active.RIGHT) {
+			offset.yRaw = 1;
+			offset.xRaw = 1;
+		} else if (active.UP) { // Check Primary-Cardinal Directions
+			offset.yRaw = -1;
+		} else if (active.LEFT) {
+			offset.xRaw = -1;
+		} else if (active.DOWN) {
+			offset.yRaw = 1;
+		} else if (active.RIGHT) {
+			offset.xRaw = 1;
+		}
+
+		offset.x = 50 + (offset.xRaw*50);
+		offset.y = 50 + (offset.yRaw*50);
+
+		console.log(offset);
+
+		return offset;
+
 	}
 
 	checkTrigger(axisIndex, rangeMin, rangeMax) {
