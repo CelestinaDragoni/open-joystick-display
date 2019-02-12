@@ -1,0 +1,17 @@
+{
+	"id":"ojd-fight-sticks",
+	"name":"Fight Sticks",
+	"author":"Anthony 'Dragoni' Mattera (RetroWeeb)",
+	"version":"1.0",
+	"copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
+	"license":"BSD 4-Clause Attribution",
+	"website":"https://ojdproject.com",
+	"styles":[
+		{"id":"xbox-ABXL", 	"name":"Xbox ABXL Four Position"},
+		{"id":"xbox-ABXY", 	"name":"Xbox ABXY Four Position"},
+		{"id":"xbox-ABXL", 	"name":"Xbox ABXL Analog"},
+		{"id":"xbox-ABXY", 	"name":"Xbox ABXY Analog"}
+
+
+	]
+}

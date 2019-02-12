@@ -310,8 +310,6 @@ class Joystick {
 		offset.x = 50 + (offset.xRaw*50);
 		offset.y = 50 + (offset.yRaw*50);
 
-		console.log(offset);
-
 		return offset;
 
 	}
