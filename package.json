@@ -2,7 +2,7 @@
   "name": "open-joystick-display",
   "version": "1.0.0",
   "description": "An open source Joystick display for Twitch, YouTube, etc. ",
-  "author":"Anthony Dragoni, Open Joystick Display",
+  "author": "Anthony Dragoni, Open Joystick Display",
   "main": "app/js/electron.js",
   "scripts": {
     "pack": "electron-builder --dir",
@@ -33,14 +33,16 @@
   },
   "dependencies": {
     "clone": "^2.1.2",
+    "electron-rebuild": "^1.8.4",
     "electron-store": "^2.0.0",
     "jquery": "^3.3.1",
     "original-fs": "^1.0.0",
-    "sanitize-html": "^1.20.0"
+    "sanitize-html": "^1.20.0",
+    "serialport": "^7.1.4"
   },
   "devDependencies": {
     "clone": "^2.1.2",
-    "electron": "^4.0.0",
+    "electron": "^4.0.4",
     "electron-builder": "^20.38.4",
     "electron-store": "^2.0.0",
     "gulp": "^4.0.0",

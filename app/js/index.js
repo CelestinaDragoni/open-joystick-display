@@ -3,6 +3,8 @@
 */
 
 // Load jQuery Globally
+require('events').EventEmitter.defaultMaxListeners = 99;
+
 window.$ 	= window.jQuery = require('jquery');
 const {OJD} = require("../../app/js/ojd.js");
 

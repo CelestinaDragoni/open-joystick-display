@@ -10,6 +10,8 @@ const {TesterController} 	= require(OJD.appendCwdPath('app/js/classes/controller
 const {ThemeController} 	= require(OJD.appendCwdPath('app/js/classes/controllers/theme.controller.js'));
 const {ToolbarController} 	= require(OJD.appendCwdPath('app/js/classes/controllers/toolbar.controller.js'));
 
+const {RetroSpy} 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy.driver.js'));
+
 class RootController {
 
 	constructor(config, themes, mappings, joystick, profiles) {
@@ -26,6 +28,9 @@ class RootController {
 		this.profiles 	= profiles;
 		this.themes 	= themes;
 		this.mappings  	= mappings;
+
+		this.drivers	= {}
+		this.drivers.retrospy = new RetroSpy();
 
 		// Broadcast should be off on load.
 		this.config.config.broadcast = false;

@@ -15,5 +15,8 @@
 	"theme":"ojd-microsoft-xbox",
 	"themeStyle":0,
 	"zoom":100,
-	"poll":10
+	"poll":10,
+	"driver":"gamepad",
+	"driverPort":0,
+	"driverParser":false
 }
