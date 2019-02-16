@@ -1,4 +1,7 @@
 const OJD = window.OJD;
+const {ChromiumDriver} 	= require(window.OJD.appendCwdPath("app/js/classes/drivers/chromium.driver.js"));
+const {RetroSpyDriver} 	= require(window.OJD.appendCwdPath("app/js/classes/drivers/retrospy.driver.js"));
+
 
 class Joystick {
 
@@ -7,55 +10,76 @@ class Joystick {
 		// External Classes
 		this.config = config;
 		this.profiles = profiles;
+		this.driver = this.profiles.getCurrentProfileDriver();
 		this.lastButton = 0;
 
 		// Keywords for Interface
 		this.dpadKeywords = ['LEFT', 'RIGHT', 'UP', 'DOWN'];
 		this.cpadKeywords = ['CLEFT', 'CRIGHT', 'CUP', 'CDOWN'];
 
-		// Joystick Properties
-		this.joystickConnected = false;
-		this.joystickStatus = 'No Joystick Connected. Press a button or connect a joystick.';	
-		this.joystickInfo = '';	
-		this.joystickIndex 	= null;
-		this.joystickCheckInterval = null;
+		// New Driver Components
+		this.drivers = {
+			'chromium':new ChromiumDriver(this),
+			'retrospy':new RetroSpyDriver(this)
+		};
 
-		// Load Event Listeners
-		window.addEventListener("gamepadconnected", this.eventConnectGamepad.bind(this));
-		window.addEventListener("gamepaddisconnected", this.eventDisconnectGamepad.bind(this));
+		// Setup Checking
+		const poll = this.profiles.getCurrentProfilePoll();
+		const func = this.intervalCheckJoystick.bind(this);
+		this.joystickCheckInterval = setInterval(func, poll);
 
-	}
+		this.reloadDriver();
 
-	eventConnectGamepad(e) {
-		if (!this.joystickConnected) {
-			const poll = this.profiles.getCurrentProfilePoll();
-			const joystick = navigator.getGamepads()[e.gamepad.index];
-
-			this.joystickConnected = true;
-			this.joystickIndex = e.gamepad.index;
-			this.joystickStatus = 'Joystick Connected.';
-			this.joystickInfo = `Joystick connected at index ${joystick.index}: ${joystick.id}. ${joystick.buttons.length} buttons, ${joystick.axes.length} axes.`;
-
-			const func = this.intervalCheckJoystick.bind(this);
-			this.joystickCheckInterval = setInterval(func, poll);
-		}
-	}
-
-	eventDisconnectGamepad(e) {
-		clearInterval(this.joystickCheckInterval);
-		this.joystickIndex = false;
-		this.joystickConnected = false;
-		this.joystickStatus = 'No Joystick Connected. Press a button or connect a joystick.';	
-		this.joystickInfo = '';
 	}
 
 	updatePollRate() {
-		if (this.joystickConnected) {
-			const poll = this.profiles.getCurrentProfilePoll();
-			clearInterval(this.joystickCheckInterval);
-			const func = this.intervalCheckJoystick.bind(this);
-			this.joystickCheckInterval = setInterval(func, poll);
+		clearInterval(this.joystickCheckInterval);
+		const poll = this.profiles.getCurrentProfilePoll();
+		const func = this.intervalCheckJoystick.bind(this);
+		this.joystickCheckInterval = setInterval(func, poll);
+	}
+
+	isReady() {
+		for (const k in this.drivers) {
+			if (!this.drivers[k].ready) {
+				return false;
+			}
 		}
+		return true;
+	}
+
+	reloadDriver() {
+		this.drivers[this.driver].setInactive();
+		this.driver = this.profiles.getCurrentProfileDriver();
+
+		const port = this.profiles.getCurrentProfileDriverPort();
+		const device = this.profiles.getCurrentProfileDriverDevice();
+
+		this.drivers[this.driver].setActive(port, device);
+	}
+
+	getSupportedPorts() {
+		return this.drivers[this.driver].getPorts();
+	}
+
+	getSupportedDevices() {
+		return this.drivers[this.driver].getDevices();
+	}
+
+	getCurrentDriver() {
+		return this.drivers[this.driver];
+	}
+
+	getJoystick() {
+		return this.drivers[this.driver].getJoystick();
+	}
+
+	getJoystickInfo() {
+		return this.drivers[this.driver].getInformation();
+	}
+
+	isConnected() {
+		return this.drivers[this.driver].isConnected();
 	}
 
 	intervalCheckJoystick() {
@@ -65,8 +89,12 @@ class Joystick {
 
 	checkRaw() {
 
+		if (!this.getCurrentDriver().isConnected()) {
+			return false;
+		}
+
 		// Buttons
-		const joystick = navigator.getGamepads()[this.joystickIndex];
+		const joystick = this.getCurrentDriver().getJoystick();
 		for (const i in joystick.buttons) {
 			if (joystick.buttons[i].pressed) {
 				this.lastButton = i;
@@ -88,10 +116,8 @@ class Joystick {
 			axisIndex+=2;
 
 			offset = this.checkAnalog(axis1, axis2, 0);
-
 			$(`span[ojd-raw-analog-axes-x='${i}']`).html(axis1);
 			$(`span[ojd-raw-analog-axes-y='${i}']`).html(axis2);
-
 			$(`*[ojd-raw-analog='${i}']`).css('top',`${offset.y}%`);
 			$(`*[ojd-raw-analog='${i}']`).css('left',`${offset.x}%`);
 			$(`*[ojd-raw-analog-x='${i}']`).val(offset.xRaw.toFixed(5));
@@ -109,6 +135,10 @@ class Joystick {
 	}
 
 	checkMapping() {
+
+		if (!this.getCurrentDriver().isConnected()) {
+			return false;
+		}
 
 		const currentMapping = this.profiles.getCurrentProfileMapping();
 		const currentButtonMapping = currentMapping.button;
@@ -225,17 +255,9 @@ class Joystick {
 
 	}
 
-	getJoystick() {
-		if (this.joystickConnected) {
-			return navigator.getGamepads()[this.joystickIndex];
-
-		}
-		return false;
-	}
-
 	checkArcadeStick(buttonMapping) {
 
-		const joystick = navigator.getGamepads()[this.joystickIndex];
+		const joystick = this.getCurrentDriver().getJoystick();
 
 		const buttons = {
 			'UP':false,
@@ -316,7 +338,7 @@ class Joystick {
 
 	checkTrigger(axisIndex, rangeMin, rangeMax) {
 
-		const joystick = navigator.getGamepads()[this.joystickIndex];
+		const joystick = this.getCurrentDriver().getJoystick();
 		const axis = joystick.axes[axisIndex];
 
 		if (axis >= rangeMin && axis <= rangeMax) {
@@ -329,7 +351,7 @@ class Joystick {
 
 	checkAnalog(axisIndex1, axisIndex2, deadzone) {
 		
-		const joystick = navigator.getGamepads()[this.joystickIndex];
+		const joystick = this.getCurrentDriver().getJoystick();
 		const axis1 = joystick.axes[axisIndex1];
 		const axis2 = joystick.axes[axisIndex2];
 
@@ -354,7 +376,7 @@ class Joystick {
 
 	checkDirectionPressed(axisIndex1, axisIndex2, deadzone, direction) {
 
-		const joystick = navigator.getGamepads()[this.joystickIndex];
+		const joystick = this.getCurrentDriver().getJoystick();
 		const axis1 = joystick.axes[axisIndex1];
 		const axis2 = joystick.axes[axisIndex2];
 
@@ -387,7 +409,7 @@ class Joystick {
 	}
 
 	checkButtonPressed(buttonIndex) {
-		const joystick = navigator.getGamepads()[this.joystickIndex];
+		const joystick = this.getCurrentDriver().getJoystick();
 		if (joystick.buttons[buttonIndex]) {
 			if (joystick.buttons[buttonIndex].pressed) {
 				return true;

@@ -82,6 +82,26 @@
 </div>
 
 <div class='ojd-sidebar-subsection'>
+	<div class='ojd-sidebar-subsection-header'>Profile Input Driver</div>
+	<div class='ojd-sidebar-subsection-content'>
+		<div class='ojd-sidebar-subsection-division'>
+			<select ojd-profile-event-select ojd-profile-data='driver' class='ojd-input'>
+				<option value='chromium'>Operating System (Chromium)</option>
+				<option value='retrospy'>RetroSpy</option>
+			</select>
+		</div>
+		<div ojd-driver-port class='ojd-sidebar-subsection-division'>
+			<label class='ojd-label'>Port:</label>
+			<select ojd-profile-event-select ojd-profile-data='driverPort' class='ojd-input'></select>
+		</div>
+		<div ojd-driver-device class='ojd-sidebar-subsection-division'>
+			<label class='ojd-label'>Device:</label>
+			<select ojd-profile-event-select ojd-profile-data='driverDevice' class='ojd-input'></select>
+		</div>
+	</div>
+</div>
+
+<div class='ojd-sidebar-subsection'>
 	<div class='ojd-sidebar-subsection-header'>
 		Profile Options
 		<div class='ojd-sidebar-subsection-toggle'></div>

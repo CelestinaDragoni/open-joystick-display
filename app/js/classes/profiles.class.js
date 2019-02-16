@@ -140,6 +140,37 @@ class Profiles {
 	}
 
 	/*
+	 * getCurrentProfileDriver()
+	 * @return string
+	 * Gets the current profile driver.
+	 */
+	getCurrentProfileDriver() {
+		let driver = this.profile.driver;
+		if (typeof driver === 'undefined' || !driver) {
+			driver = 'chromium';
+		}
+		return driver;
+	}
+
+	/*
+	 * getCurrentProfileDriverPort()
+	 * @return string
+	 * Gets the current profile driver port.
+	 */
+	getCurrentProfileDriverPort() {
+		return this.profile.driverPort;
+	}
+
+	/*
+	 * getCurrentProfileDriverDevice()
+	 * @return string
+	 * Gets the current profile driver device.
+	 */
+	getCurrentProfileDriverDevice() {
+		return this.profile.driverDevice;
+	}
+
+	/*
 	 * getProfile(id)
 	 * @param integer id
 	 * @return object
@@ -265,6 +296,48 @@ class Profiles {
 	 */
 	setProfileChromaColor(color) {
 		this.profile.chromaColor = color;
+		this.saveCurrent();
+	}
+
+	/*
+	 * setProfileDriver(driver)
+	 * @param string driver
+	 * @return NULL
+	 * Sets the profile driver
+	 */
+	setProfileDriver(driver) {
+		this.profile.driver = (driver === 'chromium') ? 'chromium' : 'retrospy';
+
+		if (this.profile.driver  === 'chromium') {
+			this.profile.driverPort = '';
+			this.profile.driverDevice = '';
+		} else if (this.profile.driver  === 'retrospy') {
+			this.profile.driverPort = '';
+			this.profile.driverDevice = 'nes';
+		}
+
+		this.saveCurrent();
+	}
+
+	/*
+	 * setProfileDriverPort(port)
+	 * @param string port
+	 * @return NULL
+	 * Sets the profile driver port
+	 */
+	setProfileDriverPort(port) {
+		this.profile.driverPort = port;
+		this.saveCurrent();
+	}
+
+	/*
+	 * setProfileDriverDevice(device)
+	 * @param string device
+	 * @return NULL
+	 * Sets the profile driver device
+	 */
+	setProfileDriverDevice(device) {
+		this.profile.driverDevice = device;
 		this.saveCurrent();
 	}
 

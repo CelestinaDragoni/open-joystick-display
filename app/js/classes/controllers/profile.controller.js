@@ -142,6 +142,18 @@ class ProfileController {
 		} else if (key === 'map') {
 			this.profiles.setProfileMap(value);
 			this.rootController.reloadMapper();
+		}  else if (key === 'driver') {
+			this.profiles.setProfileDriver(value);
+			this.joystick.reloadDriver();
+			this.rootController.reloadTester();
+		}  else if (key === 'driverPort') {
+			this.profiles.setProfileDriverPort(value);
+			this.joystick.reloadDriver();
+			this.rootController.reloadTester();
+		}  else if (key === 'driverDevice') {
+			this.profiles.setProfileDriverDevice(value);
+			this.joystick.reloadDriver();
+			this.rootController.reloadTester();
 		} else {
 			return;
 		}
@@ -185,6 +197,8 @@ class ProfileController {
 		const id = e.target.value;
 		this.profiles.setCurrentProfile(id);
 		this.rootController.reloadMapper();
+		this.joystick.reloadDriver();
+		this.rootController.reloadTester();
 		this.render();
 	}
 
@@ -197,6 +211,8 @@ class ProfileController {
 	onCreateProfile(e) {
 		this.profiles.create();
 		this.rootController.reloadMapper();
+		this.joystick.reloadDriver();
+		this.rootController.reloadTester();
 		this.render();
 	}
 
@@ -209,6 +225,8 @@ class ProfileController {
 	onCloneProfile(e) {
 		this.profiles.clone(this.profiles.getCurrentProfileId());
 		this.rootController.reloadMapper();
+		this.joystick.reloadDriver();
+		this.rootController.reloadTester();
 		this.render();
 	}
 
@@ -222,6 +240,7 @@ class ProfileController {
 		if (confirm("Do you wish to delete this profile? This action cannot be undone.")) {
 			this.profiles.remove(this.profiles.getCurrentProfileId());
 			this.rootController.reloadMapper();
+			this.joystick.reloadDriver();
 			this.render();
 		}
 	}
@@ -434,16 +453,62 @@ class ProfileController {
 	renderMappingsMenu() {
 
 		const profile = this.profiles.getCurrentProfile();
-		const mapppings = this.mappings.getMappings();
+		const mappings = this.mappings.getMappings();
 		const $menu = $(`${this.rootId} select[ojd-profile-data='map']`);
 		$menu.html('');
 
-		for (const key in mapppings) {
-			const map = mapppings[key];
+		for (const key in mappings) {
+			const map = mappings[key];
 			$menu.append($('<option/>').val(key).html(map.name));
 		}
 		
 		$menu.val(profile.map);
+
+	}
+
+	/*
+	 * renderDriversMenu()
+	 * @return NULL
+	 * Renders the new driver menu for retrospy and future devices.
+	 */
+	renderDriversMenu() {
+
+		// Get Values
+		const profile = this.profiles.getCurrentProfile();
+		const ports = this.joystick.getSupportedPorts();
+		const devices = this.joystick.getSupportedDevices();
+		const $driverMenu = $(`${this.rootId} select[ojd-profile-data='driver']`);
+		const $driverPortMenu = $(`${this.rootId} select[ojd-profile-data='driverPort']`);
+		const $driverDeviceMenu = $(`${this.rootId} select[ojd-profile-data='driverDevice']`);
+
+		// Driver Menu
+		$driverMenu.val(profile.driver);
+		$driverPortMenu.html('');
+		$driverDeviceMenu.html('');
+
+		// Load Ports
+		if (ports) {
+			$driverPortMenu.append($('<option/>').val('').html('No Port Selected'));
+			for (const port of ports) {
+				$driverPortMenu.append($('<option/>').val(port.value).html(port.label));
+			}
+			$driverPortMenu.val(profile.driverPort);
+			$($driverPortMenu).parent().show();
+		} else {
+			$($driverPortMenu).parent().hide();
+		}
+
+		// Load Devices
+		if (devices) {
+			for (const device of devices) {
+				$driverDeviceMenu.append($('<option/>').val(device.value).html(device.label));
+			}
+			$driverDeviceMenu.val(profile.driverDevice);
+			$($driverDeviceMenu).parent().show();
+
+		} else {
+			$($driverDeviceMenu).parent().hide();
+		}
 
 	}
 
@@ -457,6 +522,7 @@ class ProfileController {
 		this.renderThemesMenu();
 		this.renderMappingsMenu();
 		this.renderFields();
+		this.renderDriversMenu();
 		this.renderCSSOverrides();
 		this.rootController.reloadTheme();
 		this.bindEvents();

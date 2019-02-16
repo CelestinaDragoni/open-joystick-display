@@ -10,8 +10,6 @@ const {TesterController} 	= require(OJD.appendCwdPath('app/js/classes/controller
 const {ThemeController} 	= require(OJD.appendCwdPath('app/js/classes/controllers/theme.controller.js'));
 const {ToolbarController} 	= require(OJD.appendCwdPath('app/js/classes/controllers/toolbar.controller.js'));
 
-const {RetroSpy} 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy.driver.js'));
-
 class RootController {
 
 	constructor(config, themes, mappings, joystick, profiles) {
@@ -28,9 +26,6 @@ class RootController {
 		this.profiles 	= profiles;
 		this.themes 	= themes;
 		this.mappings  	= mappings;
-
-		this.drivers	= {}
-		this.drivers.retrospy = new RetroSpy();
 
 		// Broadcast should be off on load.
 		this.config.config.broadcast = false;
@@ -49,11 +44,22 @@ class RootController {
 		this.electron.window.setMenu(null);
 		this.electron.window.setBounds(this.config.getBounds());
 
-		this.renderInitial();
-   		this.windowChangeTimeout = false;
+		this.loadInterval = setInterval((function() {
 
-   		remote.getCurrentWindow().on('resize', this.onWindowChange.bind(this));
-    	remote.getCurrentWindow().on('move', this.onWindowChange.bind(this));
+			if (!this.joystick.isReady()) {
+				return;
+			}
+
+			clearInterval(this.loadInterval);
+
+			this.renderInitial();
+	   		this.windowChangeTimeout = false;
+
+	   		remote.getCurrentWindow().on('resize', this.onWindowChange.bind(this));
+	    	remote.getCurrentWindow().on('move', this.onWindowChange.bind(this));
+
+
+		}).bind(this), 50);
 
 	}
 
@@ -118,6 +124,10 @@ class RootController {
 		}
 
 		return path[0];
+	}
+
+	reloadTester() {
+		this.controllers.tester.render();
 	}
 
 	reloadTheme() {

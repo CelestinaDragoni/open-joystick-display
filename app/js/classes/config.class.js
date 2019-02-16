@@ -27,6 +27,9 @@ class Config {
 		// If config version 0, migrate.
 		this.migrateConfigZero();
 
+		// If config version 1, migrate.
+		this.migrateConfigOne();
+
 	}
 
 	/*
@@ -60,6 +63,16 @@ class Config {
 		this.config = this.store.get('config');
 
 		return true;
+	}
+
+	migrateConfigOne() {
+
+		if (this.config.version !== 1) {
+			return false;
+		}
+
+		
+
 	}
 
 	/*

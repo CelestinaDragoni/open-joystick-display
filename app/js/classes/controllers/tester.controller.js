@@ -26,7 +26,7 @@ class TesterController {
 		this.config = rootController.config;
 		this.joystick = rootController.joystick;
 		
-		this.joystickConnected = 
+		this.joystickConnected = false;
 		this.intervalCheckJoystick = false;
 	}
 
@@ -47,8 +47,8 @@ class TesterController {
 	 * Checks to see if a controller is connected on interval. Could be simplified in the future
 	 */
 	checkController() {
-		if (this.joystickConnected != this.joystick.joystickConnected) {
-			if (this.joystick.joystickConnected) {
+		if (this.joystickConnected != this.joystick.isConnected()) {
+			if (this.joystick.isConnected()) {
 				this.joystickConnected = true;
 			} else {
 				this.joystickConnected = false;
@@ -66,10 +66,10 @@ class TesterController {
 
 		if (!this.joystickConnected) {
 			$(this.objectIds.connected).hide();
-			$(this.objectIds.information).html('No joystick connected. Please connect a joystick and press a button to activate.');
+			$(this.objectIds.information).html(this.joystick.getJoystickInfo());
 		} else {
 			$(this.objectIds.connected).show();
-			$(this.objectIds.information).html(this.joystick.joystickInfo);
+			$(this.objectIds.information).html(this.joystick.getJoystickInfo());
 		}
 
 	}
@@ -171,6 +171,7 @@ class TesterController {
 	 * General renderer
 	 */	
 	render() {
+		this.checkController();
 		this.renderButtons();
 		this.renderDimensional();
 		this.renderLinear();

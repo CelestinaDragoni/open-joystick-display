@@ -27,5 +27,6 @@ $(function() {
 	const joystick  		= new Joystick(config, profiles);
 	const themes 			= new Themes(config, profiles);
 	const rootController 	= new RootController(config, themes, mappings, joystick, profiles);
+	
 });
 
