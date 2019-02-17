@@ -49,14 +49,12 @@ function taskBuildLinux() {
 	sectionOutput('Transforming LESS Files');
 	taskCSS();
 
+	sectionOutput('Rebuilding Electron');
+	taskRebuildElectron();
+
 	const versionFile = fs.openSync('app/version', 'r');
 	version = fs.readFileSync(versionFile, 'UTF-8');
 	fs.closeSync(versionFile);
-
-	// Any version not whole is unstable.
-	/*if (parseFloat(version) % 1) {
-		unstable = '-unstable';
-	}*/
 
 	sectionOutput('Cleaning Artifacts');
 	execSync('rm -Rfv ./dist/', {stdio: 'inherit'});
@@ -97,14 +95,12 @@ function taskBuildWindows() {
 	sectionOutput('Transforming LESS Files');
 	taskCSS();
 
+	sectionOutput('Rebuilding Electron');
+	taskRebuildElectron();
+
 	const versionFile = fs.openSync('app/version', 'r');
 	version = fs.readFileSync(versionFile, 'UTF-8');
 	fs.closeSync(versionFile);
-
-	// Any version not whole is unstable.
-	/*if (parseFloat(version) % 1) {
-		unstable = '-unstable';
-	}*/
 
 	sectionOutput('Cleaning Artifacts');
 	try {
@@ -146,14 +142,12 @@ function taskBuildDarwin() {
 	sectionOutput('Transforming LESS Files');
 	taskCSS();
 
+	sectionOutput('Rebuilding Electron');
+	taskRebuildElectron();
+
 	const versionFile = fs.openSync('app/version', 'r');
 	version = fs.readFileSync(versionFile, 'UTF-8');
 	fs.closeSync(versionFile);
-
-	// Any version not whole is unstable.
-	/*if (parseFloat(version) % 1) {
-		unstable = '-unstable';
-	}*/
 
 	sectionOutput('Cleaning Artifacts');
 	execSync('rm -Rfv ./dist/', {stdio: 'inherit'});
