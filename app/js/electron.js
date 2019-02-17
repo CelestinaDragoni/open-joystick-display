@@ -1,3 +1,5 @@
+require('events').EventEmitter.defaultMaxListeners = 99;
+
 const {app, BrowserWindow} = require('electron');
 let mainWindow;
 

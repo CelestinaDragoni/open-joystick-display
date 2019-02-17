@@ -18,7 +18,9 @@ class ProfileController {
 			themeFolderLabel:'#ojd-profile-folder-label',
 			mapCreate:'#ojd-profile-map-create',
 			mapClone:'#ojd-profile-map-clone',
-			mapDelete:'#ojd-profile-map-delete'
+			mapDelete:'#ojd-profile-map-delete',
+			driverRefresh:'#ojd-profile-driver-refresh',
+			driverReload:'#ojd-profile-driver-reload',
 		};
 		this.rootController = rootController;
 		this.profiles 		= rootController.profiles;
@@ -57,6 +59,8 @@ class ProfileController {
 		$(`${this.rootId} ${this.objectIds.mapCreate}`).unbind('click');
 		$(`${this.rootId} ${this.objectIds.mapClone}`).unbind('click');
 		$(`${this.rootId} ${this.objectIds.mapDelete}`).unbind('click');
+		$(`${this.rootId} ${this.objectIds.driverRefresh}`).unbind('click');
+		$(`${this.rootId} ${this.objectIds.driverReload}`).unbind('click');
 
 		$(`${this.rootId} ${this.objectIds.profileMenu}`).bind('change', this.onChangeProfile.bind(this));
 		$(`${this.rootId} ${this.objectIds.profileCreate}`).bind('click', this.onCreateProfile.bind(this));
@@ -66,6 +70,8 @@ class ProfileController {
 		$(`${this.rootId} ${this.objectIds.mapCreate}`).bind('click', this.onCreateMap.bind(this));
 		$(`${this.rootId} ${this.objectIds.mapClone}`).bind('click', this.onCloneMap.bind(this));
 		$(`${this.rootId} ${this.objectIds.mapDelete}`).bind('click', this.onDeleteMap.bind(this));
+		$(`${this.rootId} ${this.objectIds.driverRefresh}`).bind('click', this.onDriverRefresh.bind(this));
+		$(`${this.rootId} ${this.objectIds.driverReload}`).bind('click', this.onDriverReload.bind(this));
 
 	}
 
@@ -298,6 +304,28 @@ class ProfileController {
 		}
 	}
 
+	/*
+	 * onDriverRefresh(e)
+	 * @param event e
+	 * @return NULL
+	 * Updates the drivers avaliable ports.
+	 */
+	async onDriverRefresh(e) {
+		await this.joystick.reloadPorts();
+		this.render();
+	}
+
+	/*
+	 * onDriverReload(e)
+	 * @param event e
+	 * @return NULL
+	 * Reloads the driver to a clean state. Used for RetroSpy generally.
+	 */
+	async onDriverReload(e) {
+		this.onDriverRefresh(e);
+		this.joystick.reloadDriver();
+		this.render();
+	}
 
 	/*
 	 * renderCSSOverrides()
@@ -489,12 +517,29 @@ class ProfileController {
 		// Load Ports
 		if (ports) {
 			$driverPortMenu.append($('<option/>').val('').html('No Port Selected'));
+
+			let found = false;
 			for (const port of ports) {
+				if (profile.driverPort === port.value) {
+					found = true;
+				}
 				$driverPortMenu.append($('<option/>').val(port.value).html(port.label));
 			}
-			$driverPortMenu.val(profile.driverPort);
+
+			if (!found) {
+				this.profiles.setProfileDriverPort('');
+				this.joystick.reloadDriver();
+			} else {
+				$driverPortMenu.val(profile.driverPort);
+			}
+			
+			$(this.objectIds.driverRefresh).show();
+			$(this.objectIds.driverReload).show();
 			$($driverPortMenu).parent().show();
+
 		} else {
+			$(this.objectIds.driverRefresh).hide();
+			$(this.objectIds.driverReload).hide();
 			$($driverPortMenu).parent().hide();
 		}
 

@@ -1,9 +1,9 @@
 const Clone = require('clone');
-class RetroSpyDevice_SNES {
+class RetroSpyDevice_MD {
 
 	constructor(profile) {
 		this.resetJoystick();
-		this.joystickInfo = "RetroSpy Ardunio Nintendo Super Famicom (SNES). 12 Buttons, 0 Axes";
+		this.joystickInfo = "RetroSpy Ardunio Sega Master System / Mega Drive (Genesis). 13 Buttons, 0 Axes";
 	}
 
 	resetJoystick() {
@@ -11,6 +11,7 @@ class RetroSpyDevice_SNES {
 		this.joystick = Clone({
 			axes:[],
 			buttons: [
+				{pressed:false, value:0},
 				{pressed:false, value:0},
 				{pressed:false, value:0},
 				{pressed:false, value:0},
@@ -51,4 +52,4 @@ class RetroSpyDevice_SNES {
 
 }
 
-module.exports.RetroSpyDevice_SNES = RetroSpyDevice_SNES;
+module.exports.RetroSpyDevice_MD = RetroSpyDevice_MD;

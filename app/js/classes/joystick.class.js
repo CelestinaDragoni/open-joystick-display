@@ -48,6 +48,10 @@ class Joystick {
 		return true;
 	}
 
+	async reloadPorts() {
+		await this.drivers[this.driver].initPorts();
+	}
+
 	reloadDriver() {
 		this.drivers[this.driver].setInactive();
 		this.driver = this.profiles.getCurrentProfileDriver();

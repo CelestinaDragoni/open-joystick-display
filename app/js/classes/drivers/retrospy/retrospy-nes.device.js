@@ -3,10 +3,11 @@ class RetroSpyDevice_NES {
 
 	constructor(profile) {
 		this.resetJoystick();
-		this.joystickInfo = "RetroSpy Ardunio NES. 8 Buttons, 0 Axes";
+		this.joystickInfo = "RetroSpy Ardunio Nintendo Famicom (NES). 8 Buttons, 0 Axes";
 	}
 
 	resetJoystick() {
+		// Emulates Chromium Gamepad Modal
 		this.joystick = Clone({
 			axes:[],
 			buttons: [

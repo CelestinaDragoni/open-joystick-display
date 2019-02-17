@@ -60,6 +60,10 @@ class ChromiumDriver {
 		}
 	}
 
+	async initPorts() {
+		return true;
+	}
+
 	getPorts() {
 		return false;
 	}

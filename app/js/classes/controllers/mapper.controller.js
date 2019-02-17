@@ -61,8 +61,6 @@ class MapperController {
 	 */
 	onUpdate(e) {
 
-		console.log('trigger');
-
 		const $target = $(e.currentTarget);
 		const mapid = this.profiles.getCurrentProfileMap();
 		const mapping = this.profiles.getCurrentProfileMapping();

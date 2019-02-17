@@ -98,6 +98,14 @@
 			<label class='ojd-label'>Device:</label>
 			<select ojd-profile-event-select ojd-profile-data='driverDevice' class='ojd-input'></select>
 		</div>
+		<div ojd-driver-port-actions class='ojd-sidebar-flex-row'>
+			<div class='ojd-flex-grow'>
+				<button id='ojd-profile-driver-refresh' class='ojd-button ojd-sidebar-button'><i class="fas fa-fw fa-redo"></i> Refresh Ports</button>
+			</div>
+			<div class='ojd-flex-grow'>
+				<button id='ojd-profile-driver-reload' class='ojd-button ojd-sidebar-button'><i class="fas fa-fw fa-gamepad"></i> Reload Driver</button>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -164,14 +172,6 @@
 	<div class='ojd-sidebar-subsection-header'>Profile Window Size</div>
 	<div class='ojd-sidebar-subsection-content'>
 		<div class='ojd-sidebar-flex-row'>
-			<!--<div class='ojd-flex-grow'>
-				<label class='ojd-label'>X Pos:</label>
-				<input ojd-profile-event-input ojd-profile-data='bounds.x' type='number' step='1' class='ojd-input' type='text' maxlength='255' value=''/>
-			</div>
-			<div class='ojd-flex-grow'>
-				<label class='ojd-label'>Y Pos:</label>
-				<input ojd-profile-event-input ojd-profile-data='bounds.y' type='number' step='1' class='ojd-input' type='text' maxlength='255' value=''/>
-			</div>-->
 			<div class='ojd-flex-grow'>
 				<label class='ojd-label'>Height:</label>
 				<input ojd-profile-event-input ojd-profile-data='bounds.height' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value=''/>

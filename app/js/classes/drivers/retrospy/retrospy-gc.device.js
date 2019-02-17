@@ -1,24 +1,24 @@
 const Clone = require('clone');
-class RetroSpyDevice_N64 {
+class RetroSpyDevice_GC {
 
 	constructor(profile) {
 
-		this.buttonMap 			= [0, 1 ,2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15];
-		this.axisMap 			= [0, 8];
+		this.buttonMap 			= [3, 4 ,5, 6, 7, 9, 10, 11, 12, 13, 14, 15];
+		this.axisMap 			= [0, 8, 16, 24, 32, 40];
 
 		// For some reason y axis are inverted in value. I could update the arduino firmware, but to remain compatible with zoggins work...
-		this.axisMapInverted	= [false, true]; 
+		this.axisMapInverted	= [false, true, false, true, false, false]; 
 		this.axisMapOffset 		= 16;
 		this.axisMapByteLength 	= 8;
 
 		this.resetJoystick();
-		this.joystickInfo = "RetroSpy Ardunio Nintendo 64. 12 Buttons, 6 Axes";
+		this.joystickInfo = "RetroSpy Ardunio Nintendo Gamecube. 12 Buttons, 6 Axes";
 	}
 
 	resetJoystick() {
 		// Emulates Chromium Gamepad Modal
 		this.joystick = Clone({
-			axes:[0.0, 0.0],
+			axes:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
 			buttons: [
 				{pressed:false, value:0},
 				{pressed:false, value:0},
@@ -91,4 +91,4 @@ class RetroSpyDevice_N64 {
 
 }
 
-module.exports.RetroSpyDevice_N64 = RetroSpyDevice_N64;
+module.exports.RetroSpyDevice_GC = RetroSpyDevice_GC;
