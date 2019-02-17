@@ -147,6 +147,7 @@ class Profiles {
 	getCurrentProfileDriver() {
 		let driver = this.profile.driver;
 		if (typeof driver === 'undefined' || !driver) {
+			this.setProfileDriver('chromium');
 			driver = 'chromium';
 		}
 		return driver;
