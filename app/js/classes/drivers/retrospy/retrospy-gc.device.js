@@ -16,7 +16,7 @@ class RetroSpyDevice_GC {
 	}
 
 	resetJoystick() {
-		// Emulates Chromium Gamepad Modal
+		// Emulates Chromium Gamepad Model
 		this.joystick = Clone({
 			axes:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
 			buttons: [

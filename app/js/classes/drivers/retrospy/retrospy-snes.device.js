@@ -7,7 +7,7 @@ class RetroSpyDevice_SNES {
 	}
 
 	resetJoystick() {
-		// Emulates Chromium Gamepad Modal
+		// Emulates Chromium Gamepad Model
 		this.joystick = Clone({
 			axes:[],
 			buttons: [
