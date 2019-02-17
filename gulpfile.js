@@ -164,6 +164,17 @@ function taskBuildDarwin() {
 
 	sectionOutput('Build Finished');
 
+}
+
+function taskRebuildElectron() {
+
+	let cmd = '';
+	if (os.platform() === 'win32') {
+		cmd = '.\\node_modules\\.bin\\electron-rebuild -p -t "dev,prod,optional"';
+	} else {
+		cmd = './node_modules/.bin/electron-rebuild -p -t "dev,prod,optional"';
+	}
+	execSync(cmd, {stdio: 'inherit'});
 
 }
 
@@ -183,6 +194,11 @@ gulp.task('build', function(cb) {
 	} else {
 		console.error('Unsupported Platform');
 	}
+	cb();
+});
+
+gulp.task('rebuild-electron', function(cb) {
+	taskRebuildElectron();
 	cb();
 });
 
