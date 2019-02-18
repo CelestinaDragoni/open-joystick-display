@@ -68,6 +68,8 @@ https://ojdproject.com/developer-guide
 ## License
 BSD License + Attribution (4 Clause)
 
+Copyright (c) 2019 Open Joystick Display Project, Anthony 'Dragoni' Mattera (RetroWeeb)
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
