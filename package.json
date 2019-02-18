@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "clone": "^2.1.2",
-    "electron-rebuild": "^1.8.4",
     "electron-store": "^2.0.0",
     "jquery": "^3.3.1",
     "original-fs": "^1.0.0",
@@ -44,6 +43,7 @@
     "clone": "^2.1.2",
     "electron": "^4.0.4",
     "electron-builder": "^20.38.4",
+    "electron-rebuild": "^1.8.4",
     "electron-store": "^2.0.0",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^4.0.0",
