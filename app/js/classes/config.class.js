@@ -65,13 +65,31 @@ class Config {
 		return true;
 	}
 
+	/*
+	 * migrateConfigOne()
+	 * @return bool
+	 * Migrates config version 1 to version 2. Adds new default mappings for RetroSpy.
+	 */
 	migrateConfigOne() {
 
 		if (this.config.version !== 1) {
 			return false;
 		}
 
+		// Push new mappings for this release.
+		const newMappings = require(OJD.appendCwdPath('app/js/data/mappings-v2.json'));
+		const mappings = this.store.get('mappings');
+		for (const map of newMappings) {
+			mappings.push(map);
+		}
+		this.store.set('mappings', mappings);
+
+		// Set Config to Version 2
+		this.config.version = 2;
+		this.store.set('config', this.config);
 		
+		// Reload
+		this.config = this.store.get('config');
 
 	}
 

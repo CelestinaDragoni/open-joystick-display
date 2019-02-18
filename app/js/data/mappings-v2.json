@@ -1,0 +1,260 @@
+[
+	{
+			"name": "Nintendo Famicom (RetroSpy)",
+			"button": [
+				{
+					"button": "A",
+					"index": 0
+				},
+				{
+					"button": "B",
+					"index": 1
+				},
+				{
+					"button": "SELECT",
+					"index": 2
+				},
+				{
+					"button": "START",
+					"index": 3
+				},
+				{
+					"button": "UP",
+					"index": 4
+				},
+				{
+					"button": "DOWN",
+					"index": 5
+				},
+				{
+					"button": "LEFT",
+					"index": 6
+				},
+				{
+					"button": "RIGHT",
+					"index": 7
+				}
+			],
+			"directional": [],
+			"trigger": []
+	},
+	{
+			"name": "Nintendo Super Famicom (RetroSpy)",
+			"button": [
+				{
+					"button": "B",
+					"index": 0
+				},
+				{
+					"button": "A",
+					"index": 8
+				},
+				{
+					"button": "X",
+					"index": 9
+				},
+				{
+					"button": "Y",
+					"index": 1
+				},
+				{
+					"button": "START",
+					"index": 3
+				},
+				{
+					"button": "SELECT",
+					"index": 2
+				},
+				{
+					"button": "UP",
+					"index": 4
+				},
+				{
+					"button": "DOWN",
+					"index": 5
+				},
+				{
+					"button": "LEFT",
+					"index": 6
+				},
+				{
+					"button": "RIGHT",
+					"index": 7
+				},
+				{
+					"button": "R",
+					"index": 11
+				},
+				{
+					"button": "L",
+					"index": 10
+				}
+			],
+			"directional": [],
+			"trigger": []
+	},
+	{
+			"name": "Nintendo 64 (RetroSpy)",
+			"button": [
+				{
+					"button": "A",
+					"index": 0
+				},
+				{
+					"button": "B",
+					"index": 1
+				},
+				{
+					"button": "Z",
+					"index": 2
+				},
+				{
+					"button": "START",
+					"index": 3
+				},
+				{
+					"button": "UP",
+					"index": 4
+				},
+				{
+					"button": "DOWN",
+					"index": 5
+				},
+				{
+					"button": "LEFT",
+					"index": 6
+				},
+				{
+					"button": "RIGHT",
+					"index": 7
+				},
+				{
+					"button": "L",
+					"index": 8
+				},
+				{
+					"button": "R",
+					"index": 9
+				},
+				{
+					"button": "CUP",
+					"index": 10
+				},
+				{
+					"button": "CDOWN",
+					"index": 11
+				},
+				{
+					"button": "CLEFT",
+					"index": 12
+				},
+				{
+					"button": "CRIGHT",
+					"index": 13
+				}
+			],
+			"directional": [
+				{
+					"axes": [
+						0,
+						1
+					],
+					"deadzone": 0.25,
+					"dpad": false,
+					"cpad": false
+				}
+			],
+			"trigger": []
+		},
+		{
+			"name": "Nintendo Gamecube (RetroSpy)",
+			"button": [
+				{
+					"button": "START",
+					"index": 0
+				},
+				{
+					"button": "Y",
+					"index": 1
+				},
+				{
+					"button": "X",
+					"index": 2
+				},
+				{
+					"button": "B",
+					"index": 3
+				},
+				{
+					"button": "A",
+					"index": 4
+				},
+				{
+					"button": "L",
+					"index": 5
+				},
+				{
+					"button": "R",
+					"index": 6
+				},
+				{
+					"button": "Z",
+					"index": 7
+				},
+				{
+					"button": "UP",
+					"index": 8
+				},
+				{
+					"button": "DOWN",
+					"index": 9
+				},
+				{
+					"button": "RIGHT",
+					"index": 10
+				},
+				{
+					"button": "LEFT",
+					"index": 11
+				}
+			],
+			"directional": [
+				{
+					"axes": [
+						0,
+						1
+					],
+					"deadzone": 0.25,
+					"dpad": false,
+					"cpad": false
+				},
+				{
+					"axes": [
+						2,
+						3
+					],
+					"deadzone": 0.25,
+					"dpad": false,
+					"cpad": false
+				}
+			],
+			"trigger": [
+				{
+					"axis": 4,
+					"range": [
+						-0.5,
+						1
+					],
+					"button": false
+				},
+				{
+					"axis": 5,
+					"range": [
+						-0.5,
+						1
+					],
+					"button": false
+				}
+			]
+	}
+]

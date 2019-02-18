@@ -3,7 +3,14 @@
 # Open Joystick Display
 **A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.**
 
-### Version 1.03 (NEW)
+### Version 2.0 (NEW)
+* NintendoSpy/RetroSpy Support!
+* Playstation and Xbox Fight Stick Themes.
+* Arcade Stick Support.
+* Interface Tweaks.
+* Performance Enhancements.
+
+### Version 1.03
 * PC-Engine Controller Themes
 * Sega Dreamcast Controller Themes
 * Sega Saturn Controller Themes
@@ -57,9 +64,6 @@ https://ojdproject.com/user-guide
 
 ## Developer Guide
 https://ojdproject.com/developer-guide
-
-## Contact/Feedback/Suggestions
-https://ojdproject.com/contact
 
 ## License
 BSD License + Attribution (4 Clause)

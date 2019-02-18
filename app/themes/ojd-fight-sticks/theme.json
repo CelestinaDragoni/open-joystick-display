@@ -7,11 +7,14 @@
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[
-		{"id":"xbox-ABXL", 	"name":"Xbox ABXL Four Position"},
-		{"id":"xbox-ABXY", 	"name":"Xbox ABXY Four Position"},
-		{"id":"xbox-ABXL", 	"name":"Xbox ABXL Analog"},
-		{"id":"xbox-ABXY", 	"name":"Xbox ABXY Analog"}
-
+		{"id":"xbox-ABXY", 			"name":"Xbox ABXY Four Position", "file":"theme-xbox-abxy-4.html"},
+		{"id":"xbox-ABXL", 			"name":"Xbox ALBX Four Position", "file":"theme-xbox-albx-4.html"},
+		{"id":"xbox-ABXY", 			"name":"Xbox AYBX Four Position", "file":"theme-xbox-aybx-4.html"},
+		{"id":"xbox-ABXY-analog", 	"name":"Xbox ABXY Analog", "file":"theme-xbox-abxy-analog.html"},
+		{"id":"xbox-ABXL-analog", 	"name":"Xbox ALBX Analog", "file":"theme-xbox-albx-analog.html"},
+		{"id":"xbox-ABXY-analog", 	"name":"Xbox AYBX Analog", "file":"theme-xbox-aybx-analog.html"},
+		{"id":"ps-XOST", 			"name":"PlayStation XOST Four Position", "file":"theme-ps-xost-4.html"},
+		{"id":"ps-TOST-analog", 	"name":"PlayStation XOST Analog", "file":"theme-ps-xost-analog.html"}
 
 	]
 }
