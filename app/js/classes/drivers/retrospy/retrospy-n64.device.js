@@ -4,14 +4,14 @@ const Clone = require('clone');
 	RetroSpyDevice_N64
 	Parses the input from a nintendo 64 controller and parses it into an chromium gamepad response.
 
-	Original Implimentation:
-	Original NintendoSpy implimentation by Jeremy Burns (jaburns). https://github.com/jaburns/NintendoSpy
+	Original implementation:
+	Original NintendoSpy implementation by Jeremy Burns (jaburns). https://github.com/jaburns/NintendoSpy
 	RetroSpy fork by Christopher J. Mallery (zoggins). https://github.com/zoggins/RetroSpy
 
 	RetroSpy Copyright 2018 Christopher J. Mallery <http://www.zoggins.net> NintendoSpy Copyright (c) 2014 Jeremy Burns
 	LICENSE: https://github.com/zoggins/RetroSpy/blob/master/LICENSE
 	
-	Open Joystick Display Implimentation:
+	Open Joystick Display implementation:
 	Port by Anthony 'Dragoni' Mattera (RetroWeeb) https://github.com/RetroWeeb
 	Copyright 2019 Open Joystick Display Project, Anthony 'Dragoni' Mattera (RetroWeeb)
 	LICENSE: https://ojdproject.com/license
