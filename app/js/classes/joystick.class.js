@@ -154,9 +154,11 @@ class Joystick {
 			if (pressed) {
 				multimapCheck.push(k.button);
 				$(`*[ojd-button='${k.button}']`).addClass('active');
+				$(`*[ojd\\:button='${k.button}']`).addClass('active');
 			} else {
 				if (!multimapCheck.includes(k.button)) {
 					$(`*[ojd-button='${k.button}']`).removeClass('active');
+					$(`*[ojd\\:button='${k.button}']`).removeClass('active');
 				}
 			}
 		}
@@ -197,9 +199,11 @@ class Joystick {
 					const pressed = this.checkDirectionPressed(axisIndex1, axisIndex2, deadzone, d);
 					if (pressed) {
 						$(`*[ojd-button='${d}']`).addClass('active');
+						$(`*[ojd\\:button='${d}']`).addClass('active');
 					} else {
 						if (!multimapCheck.includes(d)) {
 							$(`*[ojd-button='${d}']`).removeClass('active');
+							$(`*[ojd\\:button='${d}']`).removeClass('active');
 						}
 					}
 				}

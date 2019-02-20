@@ -10,6 +10,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:ojd="https://ojdproject.com/svg-namespace"
    width="600"
    height="300"
    viewBox="0 0 158.75 79.375005"
@@ -276,7 +277,7 @@
        ry="2.0492766"
        inkscape:label="btnRun"
        class="theme-button"
-       ojd-button="RUN" />
+       ojd:button="RUN" />
     <path
        sodipodi:type="inkscape:offset"
        inkscape:radius="0.99331182"
@@ -338,7 +339,7 @@
        ry="2.0492766"
        inkscape:label="btnSelect"
        class="theme-button"
-       ojd-button="SELECT" />
+       ojd:button="SELECT" />
     <path
        transform="matrix(1.0578947,0,0,1.0578947,-6.1986027,7.0573152)"
        sodipodi:type="inkscape:offset"
@@ -349,7 +350,7 @@
        d="m 114.875,66.349609 c -1.46777,1.7e-4 -2.92697,0.604708 -3.96484,1.642579 -1.03787,1.03787 -1.64241,2.497073 -1.64258,3.964843 1.7e-4,1.467771 0.60471,2.926973 1.64258,3.964844 1.03787,1.037871 2.49707,1.642409 3.96484,1.642578 1.46805,2.62e-4 2.92663,-0.604666 3.96484,-1.642578 1.03822,-1.037912 1.64437,-2.496798 1.64454,-3.964844 -1.7e-4,-1.468045 -0.60632,-2.926931 -1.64454,-3.964843 -1.03821,-1.037913 -2.49679,-1.642841 -3.96484,-1.642579 z"
        inkscape:label="btn2"
        class="theme-button"
-       ojd-button="2" />
+       ojd:button="2" />
     <path
        transform="matrix(1.0578947,0,0,1.0578947,10.882408,8.14628)"
        sodipodi:type="inkscape:offset"
@@ -368,7 +369,7 @@
        d="m 114.875,66.349609 c -1.46777,1.7e-4 -2.92697,0.604708 -3.96484,1.642579 -1.03787,1.03787 -1.64241,2.497073 -1.64258,3.964843 1.7e-4,1.467771 0.60471,2.926973 1.64258,3.964844 1.03787,1.037871 2.49707,1.642409 3.96484,1.642578 1.46805,2.62e-4 2.92663,-0.604666 3.96484,-1.642578 1.03822,-1.037912 1.64437,-2.496798 1.64454,-3.964844 -1.7e-4,-1.468045 -0.60632,-2.926931 -1.64454,-3.964843 -1.03821,-1.037913 -2.49679,-1.642841 -3.96484,-1.642579 z"
        inkscape:label="btn1"
        class="theme-button"
-       ojd-button="1" />
+       ojd:button="1" />
     <rect
        style="display:inline;opacity:1;fill:#5f5fd3;fill-opacity:1;stroke:none;stroke-width:1.28700006;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect943-6"
@@ -413,7 +414,7 @@
        inkscape:transform-center-x="1.6279441e-06"
        inkscape:label="btnUp"
        class="theme-button"
-       ojd-button="UP" />
+       ojd:button="UP" />
     <path
        sodipodi:type="star"
        style="display:inline;opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:1.44056368;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -434,7 +435,7 @@
        transform="scale(1,-1)"
        inkscape:label="btnDown"
        class="theme-button"
-       ojd-button="DOWN" />
+       ojd:button="DOWN" />
     <path
        sodipodi:type="star"
        style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:1.36172688;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -454,7 +455,7 @@
        transform="matrix(0,1.0578947,-1.0578947,0,96.69107,43.962831)"
        inkscape:label="btnRight"
        class="theme-button"
-       ojd-button="RIGHT" />
+       ojd:button="RIGHT" />
     <path
        sodipodi:type="star"
        style="display:inline;opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:1.36172688;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -475,7 +476,7 @@
        transform="matrix(0,1.0578947,1.0578947,0,96.69107,43.962831)"
        inkscape:label="btnLeft"
        class="theme-button"
-       ojd-button="LEFT" />
+       ojd:button="LEFT" />
     <circle
        style="opacity:1;fill:url(#radialGradient1743);fill-opacity:1;stroke:none;stroke-width:1.36151063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1709"
