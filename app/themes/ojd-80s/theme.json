@@ -1,0 +1,17 @@
+{
+	"id":"ojd-80s",
+	"name":"Joysticks in the 80s",
+	"author":"Anthony 'Dragoni' Mattera (RetroWeeb)",
+	"version":"1.0",
+	"copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
+	"license":"BSD 4-Clause Attribution",
+	"website":"https://ojdproject.com",
+	"styles":[
+		{"id":"atari-4", 			"name":"Atari VCS (2600) Four Position", 				"file":"theme-atari-2600-4.html", 		"mastercss":"theme-atari-2600.css"},
+		{"id":"atari-analog", 		"name":"Atari VCS (2600) Analog", 						"file":"theme-atari-2600-analog.html", 	"mastercss":"theme-atari-2600.css"},
+		{"id":"c64-4", 				"name":"Commodore 64 Competition Pro Four Position", 	"file":"theme-c64-4.html", 				"mastercss":"theme-c64.css"},
+		{"id":"c64-analog", 		"name":"Commodore 64 Competition Pro Analog", 			"file":"theme-c64-analog.html", 		"mastercss":"theme-c64.css"},
+		{"id":"msx-sony-joypad", 	"name":"MSX Sony JoyPad", 								"file":"theme-msx-sony-joypad.html"},
+		{"id":"sharp-x68000", 		"name":"Sharp X68000 X1 Joycard", 						"file":"theme-sharp-x68000.html"}
+	]
+}

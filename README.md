@@ -3,7 +3,17 @@
 # Open Joystick Display
 **A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.**
 
-### Version 2.0 (NEW)
+### Version 2.1 (NEW)
+* 80s Joysticks and Joypads (Joysticks in the 80s Theme)
+    - Atari VCS (2600) Joystick
+    - Commodore 64 Competition Pro Joystick
+    - MSX Sony JoyPad
+    - Sharp X68000 X1 Joycard
+* Updated XBox and Gamecube Controllers
+* Custom OJD SVG Namespace
+* Bug Fixes
+
+### Version 2.0
 * NintendoSpy/RetroSpy Support!
 * Playstation and Xbox Fight Stick Themes.
 * Arcade Stick Support.

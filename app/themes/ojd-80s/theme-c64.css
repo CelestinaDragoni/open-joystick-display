@@ -1,0 +1,30 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:400px;
+	height:500px;
+}
+.theme-button.active *{
+	fill:white !important;
+}
+.theme-button.active{
+	fill:white !important;
+}
+
+.theme-analog {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:90px;
+	height:90px;
+	margin-left:-45px;
+	margin-top:-45px;
+	background:#333;
+	border-radius:100%;
+	background: radial-gradient(ellipse at center, #FF6666 10%,#FF0000 100%);
+}
+.theme-analog.active {
+	background:white;
+	background: radial-gradient(ellipse at center, #FFF 0%,#AAA 100%);
+}

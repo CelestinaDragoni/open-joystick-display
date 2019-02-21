@@ -1,0 +1,13 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:600px;
+	height:300px;
+}
+.theme-button.active *{
+	fill:white !important;
+}
+.theme-button.active{
+	fill:white !important;
+}

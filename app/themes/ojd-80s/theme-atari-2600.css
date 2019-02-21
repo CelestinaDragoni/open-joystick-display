@@ -1,0 +1,50 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:500px;
+	height:500px;
+}
+.theme-button.active *{
+	fill:white !important;
+}
+.theme-button.active{
+	fill:white !important;
+}
+.theme-analog-wrapper {
+	position:absolute;
+	top:212px;
+	left:235px;
+	height:40px;
+	width:40px;
+	border-radius:100%;
+
+}
+.theme-analog {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:180px;
+	height:180px;
+	margin-left:-90px;
+	margin-top:-90px;
+	background:#333;
+	border-radius:100%;
+	background: url("images/vcs-analog.svg");
+	background-size:100% 100%;
+}
+.theme-stick {
+	position:absolute;
+	top:-187px;
+	left:52px;
+	background:red;
+	width:80px;
+	height:334px;
+	background: url("images/vcs-stick.svg");
+	background-size:100% 100%;
+
+}
+.theme-analog.active .theme-stick {
+	background: url("images/vcs-stick-active.svg");
+	background-size:100% 100%;
+}
