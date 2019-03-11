@@ -112,6 +112,13 @@ class MapperController {
 					mapping.directional[index].cpad = false;
 				}
 			}
+			if (field === 'infinity') {
+				if (!$target.hasClass("ojd-button-active")) {
+					mapping.directional[index].infinity = true;
+				} else {
+					mapping.directional[index].infinity = false;
+				}
+			}
 		} 
 
 		if (group == 'trigger') {
@@ -268,6 +275,7 @@ class MapperController {
 			t = t.replace(/\$\{deadzone\}/g, directional.deadzone);
 			t = t.replace(/\$\{dpad\}/g, directional.dpad ? 'ojd-button-active' : '');
 			t = t.replace(/\$\{cpad\}/g, directional.cpad ? 'ojd-button-active' : '');
+			t = t.replace(/\$\{infinity\}/g, directional.infinity ? 'ojd-button-active' : '');
 			t = t.replace(/\$\{i\}/g, i);
 			$(wrapper).append(t);
 		}

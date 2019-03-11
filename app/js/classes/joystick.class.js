@@ -180,7 +180,8 @@ class Joystick {
 			const deadzone = directional.deadzone;
 			const axisIndex1 = directional.axes[0];
 			const axisIndex2 = directional.axes[1];
-			const offset = this.checkAnalog(axisIndex1, axisIndex2, deadzone);
+			const hasInfinity = directional.infinity;
+			const offset = this.checkAnalog(axisIndex1, axisIndex2, deadzone, hasInfinity);
 
 			// All directionals are treated like analogs regardless
 			$(`*[ojd-directional='${i}']`).css('top',`${offset.y}%`);
@@ -196,7 +197,7 @@ class Joystick {
 			// Is axes support to function like a dpad?
 			if (directional.dpad) {
 				for (const d of this.dpadKeywords) {
-					const pressed = this.checkDirectionPressed(axisIndex1, axisIndex2, deadzone, d);
+					const pressed = this.checkDirectionPressed(axisIndex1, axisIndex2, deadzone, d, hasInfinity);
 					if (pressed) {
 						$(`*[ojd-button='${d}']`).addClass('active');
 						$(`*[ojd\\:button='${d}']`).addClass('active');
@@ -212,7 +213,7 @@ class Joystick {
 			// Is axes suppose to function like a cpad (Gamecube/N64)
 			if (directional.cpad) {
 				for (const d of this.cpadKeywords) {
-					const pressed = this.checkDirectionPressed(axisIndex1, axisIndex2, deadzone, d);
+					const pressed = this.checkDirectionPressed(axisIndex1, axisIndex2, deadzone, d, hasInfinity);
 					if (pressed) {
 						$(`*[ojd-button='${d}']`).addClass('active');
 					} else {
@@ -357,11 +358,11 @@ class Joystick {
 
 	}
 
-	checkAnalog(axisIndex1, axisIndex2, deadzone) {
+	checkAnalog(axisIndex1, axisIndex2, deadzone, hasInfinity=false) {
 		
 		const joystick = this.getCurrentDriver().getJoystick();
-		const axis1 = joystick.axes[axisIndex1];
-		const axis2 = joystick.axes[axisIndex2];
+		let axis1 = joystick.axes[axisIndex1];
+		let axis2 = joystick.axes[axisIndex2];
 
 		const offset = {
 			x:0,
@@ -370,9 +371,29 @@ class Joystick {
 			yRaw:0,
 		};
 
+		if (hasInfinity) {
+
+			if (axis1 === -Infinity) {
+				axis1 = -1;
+			} else if (axis1 === Infinity) {
+				axis1 = 1;
+			} else {
+				axis1 = 0;
+			}
+
+			if (axis2 === -Infinity) {
+				axis2 = -1;
+			} else if (axis2 === Infinity) {
+				axis2 = 1;
+			} else {
+				axis2 = 0;
+			}
+
+		}
+
 		let x = (axis1 < deadzone*-1 || axis1 > deadzone) ? axis1 : 0;
 		let y = (axis2 < deadzone*-1 || axis2 > deadzone) ? axis2 : 0;
-
+		
 		offset.x = 50 + (x*50);
 		offset.y = 50 + (y*50);
 		offset.xRaw = axis1;
@@ -382,11 +403,31 @@ class Joystick {
 
 	}
 
-	checkDirectionPressed(axisIndex1, axisIndex2, deadzone, direction) {
+	checkDirectionPressed(axisIndex1, axisIndex2, deadzone, direction, hasInfinity=false) {
 
 		const joystick = this.getCurrentDriver().getJoystick();
-		const axis1 = joystick.axes[axisIndex1];
-		const axis2 = joystick.axes[axisIndex2];
+		let axis1 = joystick.axes[axisIndex1];
+		let axis2 = joystick.axes[axisIndex2];
+
+		if (hasInfinity) {
+
+			if (axis1 === -Infinity) {
+				axis1 = -1;
+			} else if (axis1 === Infinity) {
+				axis1 = 1;
+			} else {
+				axis1 = 0;
+			}
+
+			if (axis2 === -Infinity) {
+				axis2 = -1;
+			} else if (axis2 === Infinity) {
+				axis2 = 1;
+			} else {
+				axis2 = 0;
+			}
+
+		}
 
 		if (direction === 'LEFT' || direction === 'CLEFT') {
 			if (axis1 < deadzone*-1) {

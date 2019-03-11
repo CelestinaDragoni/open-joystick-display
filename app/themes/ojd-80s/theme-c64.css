@@ -11,15 +11,23 @@
 .theme-button.active{
 	fill:white !important;
 }
-
+.theme-analog-wrapper {
+	position:absolute;
+	top:207px;
+	left:191px;
+	height:14px;
+	width:14px;
+	border-radius:100%;
+	background:red;
+}
 .theme-analog {
 	position:absolute;
 	top:50%;
 	left:50%;
-	width:90px;
-	height:90px;
-	margin-left:-45px;
-	margin-top:-45px;
+	width:0px;
+	height:0px;
+	margin-left:-7px;
+	margin-top:-7px;
 	background:#333;
 	border-radius:100%;
 	background: radial-gradient(ellipse at center, #FF6666 10%,#FF0000 100%);
@@ -27,4 +35,17 @@
 .theme-analog.active {
 	background:white;
 	background: radial-gradient(ellipse at center, #FFF 0%,#AAA 100%);
+}
+.theme-stick {
+	position:absolute;
+	top:-187px;
+	left:-45px;
+	width:110px;
+	height:240px;
+	background: url("images/c64-stick.svg");
+	background-size:100% 100%;
+}
+.theme-analog.active .theme-stick {
+	background: url("images/c64-stick-active.svg");
+	background-size:100% 100%;
 }
