@@ -7,9 +7,8 @@
 * 80s Joysticks and Joypads (Joysticks in the 80s Theme)
     - Atari VCS (2600) Joystick
     - Commodore 64 Competition Pro Joystick
-    - MSX Sony JoyPad
     - Sharp X68000 X1 Joycard
-* Updated XBox and Gamecube Controllers
+* Infinity Fix for Some Analog Controllers
 * Custom OJD SVG Namespace
 * Bug Fixes
 
