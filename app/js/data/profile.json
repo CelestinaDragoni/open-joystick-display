@@ -18,5 +18,6 @@
 	"poll":10,
 	"driver":"chromium",
 	"driverPort":"",
-	"driverDevice":""
+	"driverDevice":"",
+	"driverUri":"ojd://127.0.0.1:9001"
 }

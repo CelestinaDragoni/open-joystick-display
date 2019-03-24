@@ -35,6 +35,8 @@
     "clone": "^2.1.2",
     "electron-store": "^2.0.0",
     "jquery": "^3.3.1",
+    "json-socket": "^0.3.0",
+    "node-hid": "^0.7.7",
     "original-fs": "^1.0.0",
     "sanitize-html": "^1.20.0",
     "serialport": "^7.1.4"

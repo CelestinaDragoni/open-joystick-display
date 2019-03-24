@@ -1,7 +1,8 @@
 const OJD = window.OJD;
 const {ChromiumDriver} 	= require(window.OJD.appendCwdPath("app/js/classes/drivers/chromium.driver.js"));
 const {RetroSpyDriver} 	= require(window.OJD.appendCwdPath("app/js/classes/drivers/retrospy.driver.js"));
-
+const {NetworkDriver} 	= require(window.OJD.appendCwdPath("app/js/classes/drivers/network.driver.js"));
+//const {HIDDriver} 		= require(window.OJD.appendCwdPath("app/js/classes/drivers/hid.driver.js"));
 
 class Joystick {
 
@@ -20,7 +21,9 @@ class Joystick {
 		// New Driver Components
 		this.drivers = {
 			'chromium':new ChromiumDriver(this),
-			'retrospy':new RetroSpyDriver(this)
+			'retrospy':new RetroSpyDriver(this),
+			'network':new NetworkDriver(this)
+			//'hid':new HIDDriver(this)
 		};
 
 		// Setup Checking

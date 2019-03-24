@@ -21,6 +21,7 @@ class ProfileController {
 			mapDelete:'#ojd-profile-map-delete',
 			driverRefresh:'#ojd-profile-driver-refresh',
 			driverReload:'#ojd-profile-driver-reload',
+			driverNetwork:'*[ojd-driver-network]'
 		};
 		this.rootController = rootController;
 		this.profiles 		= rootController.profiles;
@@ -508,9 +509,12 @@ class ProfileController {
 		const $driverMenu = $(`${this.rootId} select[ojd-profile-data='driver']`);
 		const $driverPortMenu = $(`${this.rootId} select[ojd-profile-data='driverPort']`);
 		const $driverDeviceMenu = $(`${this.rootId} select[ojd-profile-data='driverDevice']`);
+		const $driverUri = $(`${this.rootId} select[ojd-profile-data='driverUri']`);
+		const $driverNetwork = $(`${this.rootId} ${this.objectIds.driverNetwork}`);
 
 		// Driver Menu
 		$driverMenu.val(profile.driver);
+		$driverUri.val(profile.driverUri);
 		$driverPortMenu.html('');
 		$driverDeviceMenu.html('');
 
@@ -554,6 +558,16 @@ class ProfileController {
 		} else {
 			$($driverDeviceMenu).parent().hide();
 		}
+
+
+		// Network
+		if (profile.driver === 'network') {
+			$($driverNetwork).show();
+		} else {
+			$($driverNetwork).hide();
+		}
+
+
 
 	}
 

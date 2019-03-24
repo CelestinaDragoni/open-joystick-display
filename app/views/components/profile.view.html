@@ -87,9 +87,13 @@
 		<div class='ojd-sidebar-subsection-division'>
 			<select ojd-profile-event-select ojd-profile-data='driver' class='ojd-input'>
 				<option value='chromium'>Operating System (Chromium)</option>
+				<!--<option value='hid'>Operating System (HID)</option>-->
 				<option value='retrospy'>RetroSpy (Arduino)</option>
+				<option value='network'>Network (OJD Server)</option>
 			</select>
 		</div>
+
+		<!-- Everything Else -->
 		<div ojd-driver-port class='ojd-sidebar-subsection-division'>
 			<label class='ojd-label'>Port:</label>
 			<select ojd-profile-event-select ojd-profile-data='driverPort' class='ojd-input'></select>
@@ -106,6 +110,28 @@
 				<button id='ojd-profile-driver-reload' class='ojd-button ojd-sidebar-button'><i class="fas fa-fw fa-gamepad"></i> Reload Driver</button>
 			</div>
 		</div>
+		<div ojd-driver-network class='ojd-sidebar-flex-row'>
+			<div class='ojd-flex-grow'>
+				<p class='ojd-sidebar-note'>
+					Network support requires installing and running the Open Joystick Display Server software on another computer. For more information please read our guide here.
+				</p>
+			</div>
+		</div>
+
+		<!-- Network Only -->
+		<div ojd-driver-network class='ojd-sidebar-subsection-division'>
+			<label class='ojd-label'>Server URI:</label>
+			<input ojd-driver-network-input ojd-profile-data='driverUri' id='ojd-profile-driver-uri' class='ojd-input' type='text' maxlength='255' value=''/>
+		</div>
+
+		<div ojd-driver-network class='ojd-sidebar-flex-row'>
+			<div class='ojd-flex-grow'>
+				<button id='ojd-profile-driver-reconnect' class='ojd-button ojd-sidebar-button'><i class="fas fa-fw fa-network-wired"></i> Reconnect</button>
+			</div>
+		</div>
+
+		
+
 	</div>
 </div>
 

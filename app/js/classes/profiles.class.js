@@ -307,15 +307,36 @@ class Profiles {
 	 * Sets the profile driver
 	 */
 	setProfileDriver(driver) {
-		this.profile.driver = (driver === 'chromium') ? 'chromium' : 'retrospy';
+
+		if (driver === 'chromium') {
+			this.profile.driver = 'chromium';
+		} else if (driver === 'hid') {
+			this.profile.driver = 'hid';
+		} else if (driver === 'network') {
+			this.profile.driver = 'network';
+		} else {
+			this.profile.driver = 'retrospy';
+		}
 
 		if (this.profile.driver  === 'chromium') {
 			this.profile.driverPort = '';
 			this.profile.driverDevice = '';
-		} else if (this.profile.driver  === 'retrospy') {
+			this.profile.driverUri = '';
+		} else if (this.profile.driver  === 'hid') {
+			this.profile.driverPort = '';
+			this.profile.driverDevice = '';
+			this.profile.driverUri = '';
+		} else if (this.profile.driver  === 'network') {
+			this.profile.driverPort = '';
+			this.profile.driverDevice = '';
+			this.profile.driverUri = 'ojd://127.0.0.1:9001';
+		} else {
 			this.profile.driverPort = '';
 			this.profile.driverDevice = 'nes';
+			this.profile.driverUri = '';
 		}
+
+		console.log(this.profile);
 
 		this.saveCurrent();
 	}
