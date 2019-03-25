@@ -3,7 +3,10 @@
 # Open Joystick Display
 **A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.**
 
-### Version 2.1 (NEW)
+### Version 2.2 (New)
+* Remote Joystick/Network Support (OJD Server)
+
+### Version 2.1
 * 80s Joysticks and Joypads (Joysticks in the 80s Theme)
     - Atari VCS (2600) Joystick
     - Commodore 64 Competition Pro Joystick

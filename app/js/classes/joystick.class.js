@@ -61,8 +61,9 @@ class Joystick {
 
 		const port = this.profiles.getCurrentProfileDriverPort();
 		const device = this.profiles.getCurrentProfileDriverDevice();
+		const uri = this.profiles.getCurrentProfileDriverUri();
 
-		this.drivers[this.driver].setActive(port, device);
+		this.drivers[this.driver].setActive(port, device, uri);
 	}
 
 	getSupportedPorts() {

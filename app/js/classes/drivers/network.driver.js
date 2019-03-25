@@ -1,7 +1,5 @@
-const Clone 		= require('clone');
-const OJD 			= window.OJD;
-const NET 			= require('net');
-const JSONSocket 	= require('json-socket');
+const Clone 			= require('clone');
+const OJD 				= window.OJD;
 
 // Handles OJD server requests from another PC.
 class NetworkDriver {
@@ -9,6 +7,9 @@ class NetworkDriver {
 	constructor(handler) {
 
 		// Joystick Properties
+		this.driverActive = false;
+		this.joystickDefault = {connected:false, axes:[], buttons:[]};
+		this.joystick = Clone(this.joystickDefault);
 		this.joystickConnected = false;
 		this.joystickInfo = '';
 
@@ -16,32 +17,49 @@ class NetworkDriver {
 		this.handler 	= handler;
 		this.uri 		= null;
 
-		// Load Ports
-		this.initPorts();
+		this.serverInterval = null;
 
 	}
 
-	setActive() {
-		// Do nothing.
+	setActive(port, device, uri) {
+		this.uri = `http://${uri}`;
+		this.driverActive = true;
+		this.checkJoystick(this);
 	}
 
 	setInactive() {
-		// Do nothing.
-	}
-
-	connectJoystick(e) {
-		if (!this.joystickConnected) {
-			const joystick = navigator.getGamepads()[e.gamepad.index];
-			this.joystickConnected = true;
-			this.joystickIndex = e.gamepad.index;
-			this.joystickInfo = `${joystick.id}: ${joystick.buttons.length} Buttons, ${joystick.axes.length} Axes.`;
-		}
-	}
-
-	disconnectJoystick() {
-		this.joystickIndex = false;
+		this.driverActive = false;
+		this.joystick = Clone(this.joystickDefault);
 		this.joystickConnected = false;
 		this.joystickInfo = '';
+		this.uri = null;
+	}
+
+	async checkJoystick() {
+		const response = await this.doRequest("GET", this.uri);
+		if (response && response.connected) {
+			this.joystick = response;
+			if (!this.joystickConnected) {
+				this.joystickConnected = true;
+				this.joystickInfo = `${this.joystick.id}: ${this.joystick.buttons.length} Buttons, ${this.joystick.axes.length} Axes.`;
+			}
+		} else {
+			this.joystick = Clone(this.joystickDefault);
+			this.joystickConnected = false;
+			this.joystickInfo = '';
+		}
+		await this.doSleep(10); // Gets a bit CPU heavy
+		this.checkJoystick();
+	}
+
+	doSleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+	doRequest(method, url) {
+		return fetch(url).then(function(response) {
+			return response.json();
+		});
 	}
 
 	isConnected() {
@@ -50,7 +68,7 @@ class NetworkDriver {
 
 	getJoystick() {
 		if (this.joystickConnected) {
-			return navigator.getGamepads()[this.joystickIndex];
+			return this.joystick;
 		}
 		return false;
 	}
@@ -64,16 +82,13 @@ class NetworkDriver {
 	}
 
 	getPorts() {
-		return this.ports;
+		return false;
 	}
 
 	getDevices() {
 		return false;
 	}
 
-	initPorts() {
-
-	}
 
 }
 

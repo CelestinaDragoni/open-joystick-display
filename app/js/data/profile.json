@@ -19,5 +19,5 @@
 	"driver":"chromium",
 	"driverPort":"",
 	"driverDevice":"",
-	"driverUri":"ojd://127.0.0.1:9001"
+	"driverUri":"127.0.0.1:9001"
 }

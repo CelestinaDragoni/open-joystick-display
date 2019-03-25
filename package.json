@@ -36,10 +36,11 @@
     "electron-store": "^2.0.0",
     "jquery": "^3.3.1",
     "json-socket": "^0.3.0",
-    "node-hid": "^0.7.7",
     "original-fs": "^1.0.0",
+    "promise": "^8.0.3",
     "sanitize-html": "^1.20.0",
-    "serialport": "^7.1.4"
+    "serialport": "^7.1.4",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "clone": "^2.1.2",
@@ -53,6 +54,7 @@
     "gulp-less": "^4.0.1",
     "gulp-minify": "^3.1.0",
     "jquery": "^3.3.1",
+    "json-socket": "^0.3.0",
     "less": "^3.9.0",
     "node-watch": "^0.6.0",
     "stream-combiner2": "^1.1.1"

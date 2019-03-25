@@ -21,6 +21,7 @@ class ProfileController {
 			mapDelete:'#ojd-profile-map-delete',
 			driverRefresh:'#ojd-profile-driver-refresh',
 			driverReload:'#ojd-profile-driver-reload',
+			driverReconnect:'#ojd-profile-driver-reconnect',
 			driverNetwork:'*[ojd-driver-network]'
 		};
 		this.rootController = rootController;
@@ -73,6 +74,7 @@ class ProfileController {
 		$(`${this.rootId} ${this.objectIds.mapDelete}`).bind('click', this.onDeleteMap.bind(this));
 		$(`${this.rootId} ${this.objectIds.driverRefresh}`).bind('click', this.onDriverRefresh.bind(this));
 		$(`${this.rootId} ${this.objectIds.driverReload}`).bind('click', this.onDriverReload.bind(this));
+		$(`${this.rootId} ${this.objectIds.driverReconnect}`).bind('click', this.onDriverReload.bind(this));
 
 	}
 
@@ -115,6 +117,8 @@ class ProfileController {
 			this.joystick.updatePollRate();
 		} else if (key === 'name'){
 			this.profiles.setProfileName(value);
+		} else if (key === 'driverUri'){
+			this.profiles.setProfileDriverUri(value);
 		} else {
 			return;
 		}

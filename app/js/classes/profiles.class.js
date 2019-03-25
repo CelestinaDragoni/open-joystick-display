@@ -172,6 +172,15 @@ class Profiles {
 	}
 
 	/*
+	 * getCurrentProfileDriverUri()
+	 * @return string
+	 * Gets the current profile driver uri.
+	 */
+	getCurrentProfileDriverUri() {
+		return this.profile.driverUri;
+	}
+
+	/*
 	 * getProfile(id)
 	 * @param integer id
 	 * @return object
@@ -242,6 +251,17 @@ class Profiles {
 	 */
 	setProfileTheme(id) {
 		this.profile.theme = id;
+		this.saveCurrent();
+	}
+
+	/*
+	 * setProfileDriverUri(id)
+	 * @param string id
+	 * @return NULL
+	 * Sets the selected profile driver URI.
+	 */
+	setProfileDriverUri(uri) {
+		this.profile.driverUri = uri;
 		this.saveCurrent();
 	}
 
@@ -329,7 +349,7 @@ class Profiles {
 		} else if (this.profile.driver  === 'network') {
 			this.profile.driverPort = '';
 			this.profile.driverDevice = '';
-			this.profile.driverUri = 'ojd://127.0.0.1:9001';
+			this.profile.driverUri = '127.0.0.1:9001';
 		} else {
 			this.profile.driverPort = '';
 			this.profile.driverDevice = 'nes';
