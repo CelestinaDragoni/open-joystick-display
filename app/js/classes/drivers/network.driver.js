@@ -1,5 +1,8 @@
 const Clone 			= require('clone');
+const net 				= require('net');
+const JSONSocket 		= require('json-socket');
 const OJD 				= window.OJD;
+
 
 // Handles OJD server requests from another PC.
 class NetworkDriver {
@@ -15,16 +18,41 @@ class NetworkDriver {
 
 		this.ready 		= true;
 		this.handler 	= handler;
-		this.uri 		= null;
+		this.host 		= null;
+		this.port 		= 9001;
+		this.socket 	= null;
 
 		this.serverInterval = null;
 
 	}
 
-	setActive(port, device, uri) {
-		this.uri = `http://${uri}`;
+	setActive(physticalPort, physicalDevice, networkHost) {
+
+		this.host = networkHost;
+		this.port =  9001;
 		this.driverActive = true;
-		this.checkJoystick(this);
+		this.socket = new JSONSocket(new net.Socket());
+		this.socket.connect(this.port, this.host);
+
+		this.socket.on('connect', (function() {
+			this.checkJoystick();
+		}).bind(this));
+
+		this.socket.on('message', (function(response) {
+	        if (response && response.connected) {
+				this.joystick = response;
+				if (!this.joystickConnected) {
+					this.joystickConnected = true;
+					this.joystickInfo = `${this.joystick.id}: ${this.joystick.buttons.length} Buttons, ${this.joystick.axes.length} Axes.`;
+				}
+			} else {
+				this.joystick = Clone(this.joystickDefault);
+				this.joystickConnected = false;
+				this.joystickInfo = '';
+			}
+	        this.checkJoystick();
+	    }).bind(this));
+
 	}
 
 	setInactive() {
@@ -32,24 +60,13 @@ class NetworkDriver {
 		this.joystick = Clone(this.joystickDefault);
 		this.joystickConnected = false;
 		this.joystickInfo = '';
-		this.uri = null;
+		this.host = null;
+		this.socket = null;
+		this.port = 9001;
 	}
 
-	async checkJoystick() {
-		const response = await this.doRequest("GET", this.uri);
-		if (response && response.connected) {
-			this.joystick = response;
-			if (!this.joystickConnected) {
-				this.joystickConnected = true;
-				this.joystickInfo = `${this.joystick.id}: ${this.joystick.buttons.length} Buttons, ${this.joystick.axes.length} Axes.`;
-			}
-		} else {
-			this.joystick = Clone(this.joystickDefault);
-			this.joystickConnected = false;
-			this.joystickInfo = '';
-		}
-		await this.doSleep(10); // Gets a bit CPU heavy
-		this.checkJoystick();
+	checkJoystick() {
+		this.socket.sendMessage({getController: true});
 	}
 
 	doSleep(ms) {
