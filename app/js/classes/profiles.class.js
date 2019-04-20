@@ -349,7 +349,7 @@ class Profiles {
 		} else if (this.profile.driver  === 'network') {
 			this.profile.driverPort = '';
 			this.profile.driverDevice = '';
-			this.profile.driverUri = '127.0.0.1:9001';
+			this.profile.driverUri = '127.0.0.1';
 		} else {
 			this.profile.driverPort = '';
 			this.profile.driverDevice = 'nes';

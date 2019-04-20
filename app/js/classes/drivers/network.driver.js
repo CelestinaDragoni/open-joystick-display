@@ -19,7 +19,7 @@ class NetworkDriver {
 		this.ready 		= true;
 		this.handler 	= handler;
 		this.host 		= null;
-		this.port 		= 9001;
+		this.port 		= 56709;
 		this.socket 	= null;
 
 		this.serverInterval = null;
@@ -29,7 +29,6 @@ class NetworkDriver {
 	setActive(physticalPort, physicalDevice, networkHost) {
 
 		this.host = networkHost;
-		this.port =  9001;
 		this.driverActive = true;
 		this.socket = new JSONSocket(new net.Socket());
 		this.socket.connect(this.port, this.host);
@@ -62,7 +61,6 @@ class NetworkDriver {
 		this.joystickInfo = '';
 		this.host = null;
 		this.socket = null;
-		this.port = 9001;
 	}
 
 	checkJoystick() {
