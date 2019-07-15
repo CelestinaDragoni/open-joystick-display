@@ -153,6 +153,20 @@ class Profiles {
 		return driver;
 	}
 
+    /*
+     * getCurrentProfilePlayer()
+     * @return string
+     * Sets the current player for the OS driver
+     */
+    getCurrentProfilePlayer() {
+        let player = this.profile.player;
+        if (typeof player === 'undefined' || !player) {
+            this.setProfilePlayer('0');
+            player = '0';
+        }
+        return player;
+    }
+
 	/*
 	 * getCurrentProfileDriverPort()
 	 * @return string
@@ -356,11 +370,20 @@ class Profiles {
 			this.profile.driverUri = '';
 		}
 
-		console.log(this.profile);
-
 		this.saveCurrent();
 	}
 
+    /*
+     * setProfilePlayer(port)
+     * @param string player
+     * @return NULL
+     * Sets the profile player port for chromium driver
+     */
+    setProfilePlayer(player) {
+        player = parseInt(player, 10);
+        this.profile.player = player;
+        this.saveCurrent();       
+    }
 	/*
 	 * setProfileDriverPort(port)
 	 * @param string port

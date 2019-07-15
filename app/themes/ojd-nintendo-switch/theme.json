@@ -1,0 +1,16 @@
+{
+    "id":"ojd-nintendo-switch",
+    "name":"Nintendo Switch",
+    "author":"Anthony Dragoni (RetroWeeb)",
+    "version":"1.0",
+    "copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+    "license":"BSD 4-Clause Attribution",
+    "website":"https://ojdproject.com",
+    "styles":[
+        {"id":"pro-gray",  "name":"Switch Pro Controller"},
+        {"id":"pro-zelda", "name":"Switch Pro Controller Zelda", "file":"theme-zelda.html"},
+        {"id":"pro-mario", "name":"Switch Pro Controller Mario", "file":"theme-mario.html"},
+        {"id":"pro-luigi", "name":"Switch Pro Controller Luigi", "file":"theme-luigi.html"},
+        {"id":"pro-peach", "name":"Switch Pro Controller Peach", "file":"theme-peach.html"}
+    ]
+}

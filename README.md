@@ -3,7 +3,11 @@
 # Open Joystick Display
 **A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.**
 
-### Version 2.2 (New)
+### Version 2.3 (New)
+* Multi-Player Support Using Chromium Driver
+* Switch Pro Controller Themes
+
+### Version 2.2
 * Remote Joystick/Network Support (OJD Server)
 
 ### Version 2.1
