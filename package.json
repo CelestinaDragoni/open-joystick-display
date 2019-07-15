@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "clone": "^2.1.2",
-    "electron-store": "^2.0.0",
+    "electron-store": "^4.0.0",
     "jquery": "^3.3.1",
     "json-socket": "^0.3.0",
     "lodash": "^4.17.14",
@@ -45,8 +45,8 @@
   },
   "devDependencies": {
     "clone": "^2.1.2",
-    "electron": "^4.0.4",
-    "electron-builder": "^20.38.4",
+    "electron": "^5.0.6",
+    "electron-builder": "^21.0.15",
     "electron-rebuild": "^1.8.4",
     "electron-store": "^2.0.0",
     "gulp": "^4.0.0",

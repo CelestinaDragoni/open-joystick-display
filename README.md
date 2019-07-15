@@ -6,6 +6,7 @@
 ### Version 2.3 (New)
 * Multi-Player Support Using Chromium Driver
 * Switch Pro Controller Themes
+* Security Updates
 
 ### Version 2.2
 * Remote Joystick/Network Support (OJD Server)
