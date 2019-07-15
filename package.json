@@ -24,7 +24,7 @@
     },
     "win": {
       "icon": "./app/icons/icon.ico",
-      "target": "portable"
+      "target": "dir"
     },
     "mac": {
       "icon": "./app/icons/icon.icns",
