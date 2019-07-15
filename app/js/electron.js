@@ -38,6 +38,8 @@ function createWindow () {
     mainWindow = new BrowserWindow(windowConfig);
     mainWindow.setMenu(null);
 
+    //mainWindow.webContents.openDevTools();
+
     // Our Controller FIle
     mainWindow.loadFile('app/views/index.view.html');
     
