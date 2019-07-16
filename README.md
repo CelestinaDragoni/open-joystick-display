@@ -12,7 +12,7 @@ As of version 2.3 I will no longer be supporting 32-bit builds of any platform. 
 * Multi-Player Support Using Chromium Driver
 * Switch Pro Controller Themes
 * Security Updates
-* End of 32-But Support
+* End of 32-Bit Support
 
 ### Version 2.2
 * Remote Joystick/Network Support (OJD Server)
