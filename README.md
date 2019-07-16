@@ -1,12 +1,18 @@
+
 ![Open Joystick Display](https://ojdproject.com/images/logo-dark.png)
 
 # Open Joystick Display
 **A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.**
 
+## Important Notice
+As of version 2.3 I will no longer be supporting 32-bit builds of any platform. You can read more here: [https://ojdproject.com/goodbye-32bit](https://ojdproject.com/goodbye-32bit)
+
+## Changelog
 ### Version 2.3 (New)
 * Multi-Player Support Using Chromium Driver
 * Switch Pro Controller Themes
 * Security Updates
+* End of 32-But Support
 
 ### Version 2.2
 * Remote Joystick/Network Support (OJD Server)
