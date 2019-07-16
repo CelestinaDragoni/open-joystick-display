@@ -66,7 +66,7 @@ class Joystick {
         if (this.driver === 'chromium') {
             this.drivers[this.driver].player = this.profiles.getCurrentProfilePlayer();
         }
-		this.drivers[this.driver].setActive(port, device);
+		this.drivers[this.driver].setActive(port, device, uri);
 	}
 
 	getSupportedPorts() {

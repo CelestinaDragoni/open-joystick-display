@@ -31,7 +31,10 @@ class NetworkDriver {
 		this.host = networkHost;
 		this.driverActive = true;
 		this.socket = new JSONSocket(new net.Socket());
-		this.socket.connect(this.port, this.host);
+
+        this.socket.on('error', function(err){
+            console.warn(`Socket Error: ${err.message}`);
+        });
 
 		this.socket.on('connect', (function() {
 			this.checkJoystick();
@@ -51,6 +54,8 @@ class NetworkDriver {
 			}
 	        this.checkJoystick();
 	    }).bind(this));
+
+        this.socket.connect(this.port, this.host);
 
 	}
 
@@ -104,6 +109,9 @@ class NetworkDriver {
 		return false;
 	}
 
+    async initPorts() {
+        return true;
+    }
 
 }
 
