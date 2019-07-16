@@ -131,15 +131,15 @@ class Joystick {
 			$(`span[ojd-raw-analog-axes-y='${i}']`).html(axis2);
 			$(`*[ojd-raw-analog='${i}']`).css('top',`${offset.y}%`);
 			$(`*[ojd-raw-analog='${i}']`).css('left',`${offset.x}%`);
-			$(`*[ojd-raw-analog-x='${i}']`).val(offset.xRaw.toFixed(5));
-			$(`*[ojd-raw-analog-y='${i}']`).val(offset.yRaw.toFixed(5));
+			$(`*[ojd-raw-analog-x='${i}']`).val(offset.xRaw.toFixed(4));
+			$(`*[ojd-raw-analog-y='${i}']`).val(offset.yRaw.toFixed(4));
 		}
 
 		// 1D Thottle/Linear Axes View
 		for(const i in joystick.axes) {
 			const value = joystick.axes[i];
 			const valueOffset = value+1; // Allows for easy percentage calculation
-			$(`*[ojd-raw-axes-value='${i}']`).val(value.toFixed(5));
+			$(`*[ojd-raw-axes-value='${i}']`).val(value.toFixed(4));
 			$(`*[ojd-raw-axes='${i}']`).css('width',`${100*(valueOffset/2)}%`);
 		}
 
@@ -269,6 +269,38 @@ class Joystick {
 
 		}
 
+		for (const i in currentMapping.triggerFixed) {
+			const trigger = currentMapping.triggerFixed[i];
+			const active = this.checkFixedTrigger(trigger.axis, trigger.val);
+
+			if (active) {
+				if (trigger.button1) {
+					multimapCheck.push(trigger.button1);
+					$(`*[ojd-button='${trigger.button1}']`).addClass('active');
+				}
+
+				if (trigger.button2) {
+					multimapCheck.push(trigger.button2);
+					$(`*[ojd-button='${trigger.button2}']`).addClass('active');
+				}
+
+			} else {
+				if (trigger.button1) {
+					if (!multimapCheck.includes(trigger.button1)) {
+						$(`*[ojd-button='${trigger.button1}']`).removeClass('active');
+					}
+				}
+
+				if (trigger.button2) {
+					if (!multimapCheck.includes(trigger.button2)) {
+						$(`*[ojd-button='${trigger.button2}']`).removeClass('active');
+					}
+				}
+
+			}
+
+		}
+
 	}
 
 	checkArcadeStick(buttonMapping) {
@@ -359,6 +391,19 @@ class Joystick {
 
 		if (axis >= rangeMin && axis <= rangeMax) {
 			return axis;
+		}
+
+		return false;
+
+	}
+
+	checkFixedTrigger(axisIndex, val) {
+
+		const joystick = this.getCurrentDriver().getJoystick();
+		const axis = joystick.axes[axisIndex];
+
+		if (axis.toFixed(4) == val) {
+			return true;
 		}
 
 		return false;

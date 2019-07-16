@@ -8,7 +8,7 @@
 			<label class='ojd-label'>Name:</label>
 			<input id='ojd-mapper-name' class='ojd-input' ojd-map-group='global' ojd-map-field='name' class='ojd-input' type='text' maxlength='255' value=''/>
 		</div>
-		<div class='ojd-sidebar-flex-row'>
+		<div class='ojd-sidebar-flex-row' style='margin-bottom:10px'>
 			<div class='ojd-flex-grow'>
 				<strong>Buttons:</strong> <span id='ojd-mapper-buttons-count'></span>
 			</div>
@@ -17,6 +17,11 @@
 			</div>
 			<div class='ojd-flex-grow'>
 				<strong>Triggers:</strong> <span id='ojd-mapper-triggers-count'></span>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row'>
+			<div class='ojd-flex-grow'>
+				<strong>Fixed Triggers:</strong> <span id='ojd-mapper-triggers-fixed-count'></span>
 			</div>
 		</div>
 
@@ -72,6 +77,19 @@
 			<div class='ojd-flex-grow'></div>
 			<div class='ojd-flex-static'>
 				<button ojd-map-group='trigger' class='ojd-button ojd-sidebar-button ojd-button-add'><i class="fas fa-plus"></i> Add Trigger</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='ojd-sidebar-subsection'>
+	<div class='ojd-sidebar-subsection-header'>Fixed Triggers</div>
+	<div class='ojd-sidebar-subsection-content'>
+		<div id='ojd-triggers-fixed-group'></div>
+		<div class='ojd-sidebar-flex-row ojd-margin-top'>
+			<div class='ojd-flex-grow'></div>
+			<div class='ojd-flex-static'>
+				<button ojd-map-group='trigger-fixed' class='ojd-button ojd-sidebar-button ojd-button-add'><i class="fas fa-plus"></i> Add Fixed Trigger</button>
 			</div>
 		</div>
 	</div>
@@ -161,6 +179,46 @@
 			<div class='ojd-flex-static'>
 				<label class='ojd-label'>&nbsp;</label>
 				<button ojd-map-index='${i}' ojd-map-group='trigger' class='ojd-button ojd-sidebar-button ojd-button-danger ojd-button-delete'><i class="fas fa-trash"></i></button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script id='ojd-mapper-trigger-fixed-template' type='text/html'>
+	<div ojd-map-index='${i}' ojd-map-group='trigger-fixed' class='ojd-sidebar-group ojd-margin-bottom-sm ojd-mapper-trigger-row'>
+		<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Fixed Trigger ID: ${i}</label>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row ojd-margin-bottom-sm'>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Axis:</label>
+				<input ojd-map-index='${i}' ojd-map-group='trigger-fixed' ojd-map-field='axis' type='number' step='1' min='0' class='ojd-input' type='text' maxlength='255' value='${axis}'/>
+			</div>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Value:</label>
+				<input ojd-map-index='${i}' ojd-map-group='trigger-fixed' ojd-map-field='val' type='number' step='.05' class='ojd-input' type='text' maxlength='255' value='${val}'/>
+			</div>
+		</div>
+		<div class='ojd-sidebar-flex-row '>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Button 1</label>
+				<select ojd-map-index='${i}' ojd-map-group='trigger-fixed' ojd-map-field='button1' class='ojd-input'>
+					<option>None</option>
+					${select}
+				</select>
+			</div>
+			<div class='ojd-flex-grow'>
+				<label class='ojd-label'>Button 2</label>
+				<select ojd-map-index='${i}' ojd-map-group='trigger-fixed' ojd-map-field='button2' class='ojd-input'>
+					<option>None</option>
+					${select}
+				</select>
+			</div>
+			<div class='ojd-flex-static'>
+				<label class='ojd-label'>&nbsp;</label>
+				<button ojd-map-index='${i}' ojd-map-group='trigger-fixed' class='ojd-button ojd-sidebar-button ojd-button-danger ojd-button-delete'><i class="fas fa-trash"></i></button>
 			</div>
 		</div>
 	</div>

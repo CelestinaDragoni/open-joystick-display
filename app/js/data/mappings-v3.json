@@ -1,0 +1,92 @@
+[
+	{
+	    "name": "Nintendo Switch (Hacked) OJD Server NX",
+	    "button": [
+	        {
+	            "button": "A",
+	            "index": 0
+	        },
+	        {
+	            "button": "B",
+	            "index": 1
+	        },
+	        {
+	            "button": "X",
+	            "index": 2
+	        },
+	        {
+	            "button": "Y",
+	            "index": 3
+	        },
+	        {
+	            "button": "L3",
+	            "index": 4
+	        },
+	        {
+	            "button": "R3",
+	            "index": 5
+	        },
+	        {
+	            "button": "L",
+	            "index": 6
+	        },
+	        {
+	            "button": "R",
+	            "index": 7
+	        },
+	        {
+	            "button": "L2",
+	            "index": 8
+	        },
+	        {
+	            "button": "R2",
+	            "index": 9
+	        },
+	        {
+	            "button": "PLUS",
+	            "index": 10
+	        },
+	        {
+	            "button": "MINUS",
+	            "index": 11
+	        },
+	        {
+	            "button": "LEFT",
+	            "index": 12
+	        },
+	        {
+	            "button": "UP",
+	            "index": 13
+	        },
+	        {
+	            "button": "RIGHT",
+	            "index": 14
+	        },
+	        {
+	            "button": "DOWN",
+	            "index": 15
+	        }
+	    ],
+	    "directional": [
+	        {
+	            "deadzone": 0.25,
+	            "analog": true,
+	            "axes": [
+	                0,
+	                1
+	            ]
+	        },
+	        {
+	            "deadzone": 0.25,
+	            "analog": true,
+	            "axes": [
+	                2,
+	                3
+	            ]
+	        }
+	    ],
+	    "trigger": [],
+	    "triggerFixed": []
+	}
+
+]

@@ -89,7 +89,8 @@
 				]
 			}
 		],
-		"trigger": []
+		"trigger": [],
+	    "triggerFixed": []
 	},
 	{
 		"name": "8BitDo SN30/SFC30",
@@ -138,7 +139,8 @@
 				]
 			}
 		],
-		"trigger": []
+		"trigger": [],
+	    "triggerFixed": []
 	},
 	{
 		"name": "8BitDo NES30",
@@ -187,7 +189,8 @@
 				"cpad": false
 			}
 		],
-		"trigger": []
+		"trigger": [],
+	    "triggerFixed": []
 	},
 	{
 		"name": "Nintendo Gamecube (Mayflash)",
@@ -274,7 +277,8 @@
 					1
 				]
 			}
-		]
+		],
+	    "triggerFixed": []
 	},
 	{
 		"name": "Sony PlayStation 4",
@@ -368,7 +372,8 @@
 				"cpad": false
 			}
 		],
-		"trigger": []
+		"trigger": [],
+	    "triggerFixed": []
 	},
 	{
 		"name": "Sony PlayStation 3",
@@ -462,7 +467,8 @@
 				"cpad": false
 			}
 		],
-		"trigger": []
+		"trigger": [],
+	    "triggerFixed": []
 	},
 	{
 		"name": "Sony PlayStation Classic",
@@ -519,7 +525,8 @@
 				"cpad": false
 			}
 		],
-		"trigger": []
+		"trigger": [],
+	    "triggerFixed": []
 	},
 	{
 		"name": "NVIDIA Shield",
@@ -613,7 +620,8 @@
 				"cpad": false
 			}
 		],
-		"trigger": []
+		"trigger": [],
+	    "triggerFixed": []
 	},
 	{
 			"name": "Nintendo Famicom (RetroSpy)",
@@ -652,7 +660,8 @@
 				}
 			],
 			"directional": [],
-			"trigger": []
+			"trigger": [],
+	    	"triggerFixed": []
 	},
 	{
 			"name": "Nintendo Super Famicom (RetroSpy)",
@@ -707,7 +716,8 @@
 				}
 			],
 			"directional": [],
-			"trigger": []
+			"trigger": [],
+	    	"triggerFixed": []
 	},
 	{
 			"name": "Nintendo 64 (RetroSpy)",
@@ -780,7 +790,8 @@
 					"cpad": false
 				}
 			],
-			"trigger": []
+			"trigger": [],
+	    	"triggerFixed": []
 		},
 		{
 			"name": "Nintendo Gamecube (RetroSpy)",
@@ -871,6 +882,7 @@
 					],
 					"button": false
 				}
-			]
+			],
+	    	"triggerFixed": []
 	}
 ]

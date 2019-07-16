@@ -36,7 +36,8 @@
 				}
 			],
 			"directional": [],
-			"trigger": []
+			"trigger": [],
+	    	"triggerFixed": []
 	},
 	{
 			"name": "Nintendo Super Famicom (RetroSpy)",
@@ -91,7 +92,8 @@
 				}
 			],
 			"directional": [],
-			"trigger": []
+			"trigger": [],
+	    	"triggerFixed": []
 	},
 	{
 			"name": "Nintendo 64 (RetroSpy)",
@@ -164,7 +166,8 @@
 					"cpad": false
 				}
 			],
-			"trigger": []
+			"trigger": [],
+	    	"triggerFixed": []
 		},
 		{
 			"name": "Nintendo Gamecube (RetroSpy)",
@@ -255,6 +258,7 @@
 					],
 					"button": false
 				}
-			]
+			],
+	    	"triggerFixed": []
 	}
 ]
