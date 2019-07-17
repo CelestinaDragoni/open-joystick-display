@@ -11,6 +11,14 @@
         {"id":"pro-zelda", "name":"Switch Pro Controller Zelda", "file":"theme-zelda.html"},
         {"id":"pro-mario", "name":"Switch Pro Controller Mario", "file":"theme-mario.html"},
         {"id":"pro-luigi", "name":"Switch Pro Controller Luigi", "file":"theme-luigi.html"},
-        {"id":"pro-peach", "name":"Switch Pro Controller Peach", "file":"theme-peach.html"}
+        {"id":"pro-peach", "name":"Switch Pro Controller Peach", "file":"theme-peach.html"},
+        {"id":"joycons-gray", "name":"Switch Joycons (Gray)", "file":"theme-joycons-gray.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-blue-red", "name":"Switch Joycons (Blue+Red)", "file":"theme-joycons-blue-red.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-pink-green", "name":"Switch Joycons (Pink+Green)", "file":"theme-joycons-pink-green.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-green-yellow", "name":"Switch Joycons (Green+Yellow)", "file":"theme-joycons-green-yellow.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-yellow", "name":"Switch Joycons (Yellow)", "file":"theme-joycons-yellow.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-purple-orange", "name":"Switch Joycons (Purple+Orange)", "file":"theme-joycons-purple-orange.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-blue-yellow", "name":"Switch Joycons (Blue+Yellow)", "file":"theme-joycons-blue-yellow.html", "mastercss":"theme-joycon.css"},
+        {"id":"pokkendx", "name":"HORI Pokkén Tournament DX", "file":"theme-pokkendx.html", "mastercss":"theme-pokkendx.css"}
     ]
 }

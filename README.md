@@ -8,7 +8,16 @@
 As of version 2.3 I will no longer be supporting 32-bit builds of any platform. You can read more here: [https://ojdproject.com/goodbye-32bit](https://ojdproject.com/goodbye-32bit)
 
 ## Changelog
-### Version 2.3 (New)
+### Version 2.4 (New)
+* Small Fix to Pro Controller Design
+* Switch Joycon Themes
+* HORI Pokkén Tournament DX Theme
+* Updated 'Fancy' Xbox Controller Themes
+* Fixed Triggers added to Support Switch Controllers
+* Network Stack Fix
+* Open Joystick Display Server NX for Nintendo Switch
+
+### Version 2.3
 * Multi-Player Support Using Chromium Driver
 * Switch Pro Controller Themes
 * Security Updates

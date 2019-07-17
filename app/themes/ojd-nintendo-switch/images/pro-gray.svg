@@ -184,15 +184,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="333.25689"
+     inkscape:cx="206.98782"
      inkscape:cy="98.313312"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="1056"
-     inkscape:window-x="1920"
+     inkscape:window-height="1031"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="false" />
@@ -220,8 +220,9 @@
        id="path3894"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc"
-       inkscape:label="L1" class="theme-button"
-         ojd-button="L"/>
+       inkscape:label="L1"
+       class="theme-button"
+       ojd-button="L" />
     <path
        style="fill:#4d4d4d;stroke:none;stroke-width:0.32343531px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 135.35496,4.0361392 C 133.48107,-7.6468609 109.30521,-12.801842 99.315024,-5.089358 Z"
@@ -230,7 +231,7 @@
        sodipodi:nodetypes="ccc"
        inkscape:label="R1"
        class="theme-button"
-        ojd-button="R"/>
+       ojd-button="R" />
     <path
        inkscape:connector-curvature="0"
        style="fill:#000000;stroke:none;stroke-width:0.32343531px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -320,9 +321,10 @@
     <circle
        style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.32343531;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path4096"
-       cx="61.420155"
+       cx="-97.257156"
        cy="10.711961"
-       r="2.8792112" />
+       r="2.8792112"
+       transform="scale(-1,1)" />
     <circle
        style="display:inline;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.46106735;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path4096-2-0"
@@ -338,9 +340,10 @@
     <circle
        style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.32343531;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path4096-2-3"
-       cx="97.257156"
+       cx="-61.420155"
        cy="10.650702"
-       r="2.8792112" />
+       r="2.8792112"
+       transform="scale(-1,1)" />
     <rect
        style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.32343531;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4149"
@@ -541,7 +544,7 @@
        inkscape:label="btnPlus"
        class="theme-button"
        ojd-button="PLUS"
-       transform="matrix(1.2224328,0,0,1.2224328,-1.493676,-24.000454)">
+       transform="matrix(-1.2224328,0,0,1.2224328,160.17099,-24.000454)">
       <circle
          r="2.3553126"
          cy="27.867004"
@@ -579,7 +582,7 @@
        inkscape:label="btnMinus"
        class="theme-button"
        ojd-button="MINUS"
-       transform="matrix(1.2224328,0,0,1.2224328,-1.493676,-24.000454)">
+       transform="matrix(-1.2224328,0,0,1.2224328,160.17099,-24.000454)">
       <circle
          r="2.3553126"
          cy="27.816893"
