@@ -1,0 +1,66 @@
+.theme {
+    position:relative;
+    top:0px;
+    left:0px;
+    width:600px;
+    height:452px;
+}
+.theme-analog-wrapper {
+    position:absolute;
+    top:120px;
+    left:87px;
+    height:70px;
+    width:70px;
+    border-radius:100%;
+}
+.theme-cstick-wrapper {
+    position:absolute;
+    top:252px;
+    left:367px;
+    height:70px;
+    width:70px;
+    border-radius:100%;
+}
+.theme-analog {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:60px;
+    height:60px;
+    margin-left:-30px;
+    margin-top:-30px;
+    background:#222;
+    border-radius:100%;
+    background: #DDD;
+    box-shadow:0 0 10px #999;
+    background: radial-gradient(circle, #FFFFFF 0%, #AAA 100%);
+}
+.theme-cstick {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:60px;
+    height:60px;
+    margin-left:-30px;
+    margin-top:-30px;
+    background:#222;
+    border-radius:100%;
+    box-shadow:0 0 10px #999;
+    background: radial-gradient(circle, rgba(255,204,0,1) 0%, rgba(204,163,0,1) 100%);
+}
+.theme-analog.active {
+    background:white;
+    border-color:white;
+}
+.theme-button.active{
+    fill:white !important;
+}
+.theme-button.active *{
+    fill:white !important;
+}
+.theme-label.active{
+    fill:black !important;
+}
+.theme-label.active *{
+    fill:black !important;
+}

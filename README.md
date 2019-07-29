@@ -4,11 +4,19 @@
 # Open Joystick Display
 **A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.**
 
-## Important Notice
+## Notice about OJD 2.x Series
+2.5 will be the final update to the 2.x series of Open Joystick Display unless there is a bug or a dire need to patch/update. A newly rewritten version is coming with a ton of architecture changes. Pull requests are highly discouraged until this rewrite is complete.
+
+## Notice about 32-Bit Support
 As of version 2.3 I will no longer be supporting 32-bit builds of any platform. You can read more here: [https://ojdproject.com/goodbye-32bit](https://ojdproject.com/goodbye-32bit)
 
 ## Changelog
-### Version 2.4 (New)
+### Version 2.5 (New)
+* Alternate/Reversed Nintendo Switch Joycon Color Themes
+* Switch Streamer Theme
+* Updated Gamecube Themes
+
+### Version 2.4
 * Small Fix to Pro Controller Design
 * Switch Joycon Themes
 * HORI Pokkén Tournament DX Theme

@@ -19,6 +19,18 @@
         {"id":"joycons-yellow", "name":"Switch Joycons (Yellow)", "file":"theme-joycons-yellow.html", "mastercss":"theme-joycon.css"},
         {"id":"joycons-purple-orange", "name":"Switch Joycons (Purple+Orange)", "file":"theme-joycons-purple-orange.html", "mastercss":"theme-joycon.css"},
         {"id":"joycons-blue-yellow", "name":"Switch Joycons (Blue+Yellow)", "file":"theme-joycons-blue-yellow.html", "mastercss":"theme-joycon.css"},
-        {"id":"pokkendx", "name":"HORI Pokkén Tournament DX", "file":"theme-pokkendx.html", "mastercss":"theme-pokkendx.css"}
+        {"id":"joycons-red-blue", "name":"Switch Joycons Reversed (Red+Blue)", "file":"theme-joycons-red-blue-jp.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-green-pink", "name":"Switch Joycons Reversed (Green+Pink)", "file":"theme-joycons-green-pink-jp.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-yellow-green", "name":"Switch Joycons Reversed (Yellow+Green)", "file":"theme-joycons-yellow-green-jp.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-orange-purple", "name":"Switch Joycons Reversed (Orange+Purple)", "file":"theme-joycons-orange-purple-jp.html", "mastercss":"theme-joycon.css"},
+        {"id":"joycons-yellow-blue", "name":"Switch Joycons Reversed (Yellow+Blue)", "file":"theme-joycons-yellow-blue-jp.html", "mastercss":"theme-joycon.css"},
+        {"id":"pokkendx", "name":"HORI Pokkén Tournament DX", "file":"theme-pokkendx.html", "mastercss":"theme-pokkendx.css"},
+        {"id":"streamer-white", "name":"Streamer (White Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-purple", "name":"Streamer (Purple Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-orange", "name":"Streamer (Orange Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-pink", "name":"Streamer (Pink Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-green", "name":"Streamer (Green Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-red", "name":"Streamer (Red Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-blue", "name":"Streamer (Blue Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"}
     ]
 }
