@@ -1,0 +1,50 @@
+.theme {
+    position:relative;
+    top:0px;
+    left:0px;
+    width:600px;
+    height:500px;
+}
+.theme-analog-wrapper {
+    position:absolute;
+    top:154px;
+    left:76px;
+    height:80px;
+    width:80px;
+    border-radius:100%;
+}
+.theme-analog-right-wrapper {
+    position:absolute;
+    top:258px;
+    left:351px;
+    height:80px;
+    width:80px;
+    border-radius:100%;
+}
+.theme-analog {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:80px;
+    height:80px;
+    margin-left:-40px;
+    margin-top:-40px;
+    background:#666;
+    border-radius:100%;
+}
+.theme-analog.active {
+    background:white;
+    border-color:white;
+}
+.theme-button.active{
+    fill:white !important;
+}
+.theme-button.active *{
+    fill:white !important;
+}
+.theme-label.active{
+    fill:black !important;
+}
+.theme-label.active *{
+    fill:black !important;
+}

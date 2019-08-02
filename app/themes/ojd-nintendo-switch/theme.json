@@ -25,12 +25,19 @@
         {"id":"joycons-orange-purple", "name":"Switch Joycons Reversed (Orange+Purple)", "file":"theme-joycons-orange-purple-jp.html", "mastercss":"theme-joycon.css"},
         {"id":"joycons-yellow-blue", "name":"Switch Joycons Reversed (Yellow+Blue)", "file":"theme-joycons-yellow-blue-jp.html", "mastercss":"theme-joycon.css"},
         {"id":"pokkendx", "name":"HORI Pokkén Tournament DX", "file":"theme-pokkendx.html", "mastercss":"theme-pokkendx.css"},
-        {"id":"streamer-white", "name":"Streamer (White Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
-        {"id":"streamer-purple", "name":"Streamer (Purple Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
-        {"id":"streamer-orange", "name":"Streamer (Orange Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
-        {"id":"streamer-pink", "name":"Streamer (Pink Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
-        {"id":"streamer-green", "name":"Streamer (Green Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
-        {"id":"streamer-red", "name":"Streamer (Red Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
-        {"id":"streamer-blue", "name":"Streamer (Blue Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"}
+        {"id":"streamer-pro-white", "name":"Streamer Pro (White Active)", "file":"theme-pro-streamer.html", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-purple", "name":"Streamer Pro (Purple Active)", "file":"theme-pro-streamer.html", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-orange", "name":"Streamer Pro (Orange Active)", "file":"theme-pro-streamer.html", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-pink", "name":"Streamer Pro (Pink Active)", "file":"theme-pro-streamer.html", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-green", "name":"Streamer Pro (Green Active)", "file":"theme-pro-streamer.html", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-red", "name":"Streamer Pro (Red Active)", "file":"theme-pro-streamer.html", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-blue", "name":"Streamer Pro (Blue Active)", "file":"theme-pro-streamer.html", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-white", "name":"Streamer Joycon (White Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-purple", "name":"Streamer Joycon (Purple Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-orange", "name":"Streamer Joycon (Orange Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-pink", "name":"Streamer Joycon (Pink Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-green", "name":"Streamer Joycon (Green Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-red", "name":"Streamer Joycon (Red Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-blue", "name":"Streamer Joycon (Blue Active)", "file":"theme-streamer.html", "mastercss":"theme-streamer.css"}
     ]
 }
