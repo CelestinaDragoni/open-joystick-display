@@ -269,19 +269,25 @@ class Joystick {
 
 		}
 
+        const fixedTriggerDir = [];
 		for (const i in currentMapping.triggerFixed) {
 			const trigger = currentMapping.triggerFixed[i];
 			const active = this.checkFixedTrigger(trigger.axis, trigger.val);
 
+            
+
 			if (active) {
+
 				if (trigger.button1) {
 					multimapCheck.push(trigger.button1);
 					$(`*[ojd-button='${trigger.button1}']`).addClass('active');
+                    fixedTriggerDir.push(trigger.button1);
 				}
 
 				if (trigger.button2) {
 					multimapCheck.push(trigger.button2);
 					$(`*[ojd-button='${trigger.button2}']`).addClass('active');
+                    fixedTriggerDir.push(trigger.button2);
 				}
 
 			} else {
@@ -298,10 +304,51 @@ class Joystick {
 				}
 
 			}
-
 		}
 
+
+        const fixedTriggerOffset = this.checkTriggerArcadeStick(fixedTriggerDir);
+        if (fixedTriggerOffset.x !== 50 || fixedTriggerOffset.y !== 50) {
+            $(`*[ojd-arcade-directional]`).addClass('active');
+        } else {
+            $(`*[ojd-arcade-directional]`).removeClass('active');
+        }
+
+        // All directionals are treated like analogs regardless
+        $(`*[ojd-arcade-directional]`).css('top',`${fixedTriggerOffset.y}%`);
+        $(`*[ojd-arcade-directional]`).css('left',`${fixedTriggerOffset.x}%`);
+
 	}
+
+
+    checkTriggerArcadeStick(direction) {
+
+        const offset = {x:0, y:0, xRaw:0, yRaw:0};
+
+        for(const dir of direction) {
+            switch(dir) {
+                case "UP":
+                    offset.yRaw = -1;
+                    break;
+                case "DOWN":
+                    offset.yRaw = 1;
+                    break;
+                case "LEFT":
+                    offset.xRaw = -1;
+                    break;
+                case "RIGHT":
+                    offset.xRaw = 1;
+                    break;
+            }
+        }
+
+        offset.x = 50 + (offset.xRaw*50);
+        offset.y = 50 + (offset.yRaw*50);
+
+        return offset;
+
+    }
+
 
 	checkArcadeStick(buttonMapping) {
 
