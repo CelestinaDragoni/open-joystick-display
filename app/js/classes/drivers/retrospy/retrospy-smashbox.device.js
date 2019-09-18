@@ -24,7 +24,7 @@ class RetroSpyDevice_SMASHBOX {
 
 	constructor(profile) {
 		this.resetJoystick();
-		this.joystickInfo = "RetroSpy Ardunio Hit Box Smash Box. 23 Buttons, 0 Axes";
+		this.joystickInfo = "RetroSpy Ardunio Hit Box Smash Box. 23 Buttons, 4 Switch Positions, 0 Axes";
 	}
 
 	resetJoystick() {
