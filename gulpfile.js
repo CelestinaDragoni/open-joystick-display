@@ -65,7 +65,7 @@ function taskBuildLinux() {
 	} else {
 		execSync('mv ./dist/linux-ia32-unpacked ./dist/open-joystick-display', {stdio: 'inherit'});
 	}
-	
+
 	sectionOutput('Copying Icon');
 	execSync('cp ./app/icons/icon.png ./dist/open-joystick-display/icon.png', {stdio: 'inherit'});
 	sectionOutput('Compressing Package');
@@ -105,7 +105,7 @@ function taskBuildWindows() {
 	sectionOutput('Cleaning Artifacts');
 	try {
 		execSync('rmdir /S /Q .\\dist', {stdio: 'inherit'});
-	} catch {
+	} catch (error){
 		console.log('No dist directory to delete. Moving on...');
 	}
 	sectionOutput('Building Package');
