@@ -7,7 +7,7 @@
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[
-		{"id":"hitbox-SmashBox-Default", 			"name":"Hit Box Smash Box Default", "file":"theme-hitbox-smashbox-default.html"}
+		{"id":"hitbox-SmashBox-Default", 			"name":"Hit Box Smash Box Smash Ultimate", "file":"theme-hitbox-smashbox-ultimate.html"}
 
 	]
 }

@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Nintendo GameCube Smash Box (Retro Spy)",
+        "button": [
+            {
+                "button": "UP",
+                "index": 3
+            },
+            {
+                "button": "DOWN",
+                "index": 1
+            },
+            {
+                "button": "LEFT",
+                "index": 0
+            },
+            {
+                "button": "RIGHT",
+                "index": 2
+            },
+            {
+                "button": "16",
+                "index": 17
+            },
+            {
+                "button": "17",
+                "index": 18
+            },
+            {
+                "button": "18",
+                "index": 19
+            },
+            {
+                "button": "19",
+                "index": 20
+            },
+            {
+                "button": "20",
+                "index": 21
+            },
+            {
+                "button": "START",
+                "index": 22
+            },
+            {
+                "button": "L",
+                "index": 4
+            },
+            {
+                "button": "Y",
+                "index": 5
+            },
+            {
+                "button": "Z",
+                "index": 6
+            },
+            {
+                "button": "R",
+                "index": 7
+            },
+            {
+                "button": "A",
+                "index": 8
+            },
+            {
+                "button": "X",
+                "index": 9
+            },
+            {
+                "button": "B",
+                "index": 10
+            },
+            {
+                "button": "D",
+                "index": 11
+            },
+            {
+                "button": "CUP",
+                "index": 12
+            },
+            {
+                "button": "CRIGHT",
+                "index": 13
+            },
+            {
+                "button": "CLEFT",
+                "index": 14
+            },
+            {
+                "button": "CDOWN",
+                "index": 15
+            },
+            {
+                "button": "15",
+                "index": 16
+            }
+        ],
+        "directional": [],
+        "trigger": [],
+        "triggerFixed": []
+    }
+]
