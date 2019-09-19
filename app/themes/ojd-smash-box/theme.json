@@ -1,0 +1,13 @@
+{
+	"id":"ojd-smash-box",
+	"name":"Smash Box",
+	"author":"Dylan 'Luberry' Kozicki",
+	"version":"1.0",
+	"copyright":"Copyright 2019 Dylan 'Luberry' Kozicki, Open Joystick Display",
+	"license":"BSD 4-Clause Attribution",
+	"website":"https://ojdproject.com",
+	"styles":[
+		{"id":"hitbox-SmashBox-Default", 			"name":"Hit Box Smash Box Default", "file":"theme-hitbox-smashbox-default.html"}
+
+	]
+}
