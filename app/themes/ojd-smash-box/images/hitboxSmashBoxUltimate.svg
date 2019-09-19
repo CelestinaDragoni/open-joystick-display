@@ -48,7 +48,7 @@
      inkscape:window-maximized="0"
      inkscape:current-layer="svg921" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblAD"
      class="theme-button"
      ojd-button="UP"
@@ -56,7 +56,7 @@
      cy="943.685"
      r="148.175" />
   <ellipse
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblAC"
      class="theme-button"
      cx="1789.515"
@@ -65,7 +65,7 @@
      rx="148.175"
      ry="148.17" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblMB"
      ojd-button="17"
      class="theme-button"
@@ -73,7 +73,7 @@
      cy="1884.905"
      r="148.185" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblMD"
      ojd-button="19"
      class="theme-button"
@@ -81,7 +81,7 @@
      cy="2184.39"
      r="148.17" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblME"
      ojd-button="20"
      class="theme-button"
@@ -89,7 +89,7 @@
      cy="2181.875"
      r="148.19" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblCC"
      ojd-button="CLEFT"
      class="theme-button"
@@ -97,25 +97,25 @@
      cy="2181.875"
      r="148.17" />
   <path
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblCE"
      ojd-button="15"
      class="theme-button"
      d="M2947.22,2330.67a148.17,148.17,0,1,1-148.17,148.17A148.175,148.175,0,0,1,2947.22,2330.67Z" />
   <path
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblCD"
      ojd-button="CDOWN"
      class="theme-button"
      d="M3125.91,2031.19a148.17,148.17,0,1,1-148.17,148.17A148.175,148.175,0,0,1,3125.91,2031.19Z" />
   <path
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblCA"
      ojd-button="CUP"
      class="theme-button"
      d="M2944.71,1736.74a148.17,148.17,0,1,1-148.18,148.17A148.173,148.173,0,0,1,2944.71,1736.74Z" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblCB"
      ojd-button="CRIGHT"
      class="theme-button"
@@ -123,7 +123,7 @@
      cy="1882.39"
      r="148.175" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblKA"
      class="theme-button"
      ojd-button="A"
@@ -131,31 +131,31 @@
      cy="1459.595"
      r="148.17" />
   <path
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblKB"
      ojd-button="X"
      class="theme-button"
      d="M3591.51,1122.68a148.17,148.17,0,1,1-148.17,148.17A148.175,148.175,0,0,1,3591.51,1122.68Z" />
   <path
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblKC"
      ojd-button="B"
      class="theme-button"
      d="M3931.28,1132.75a148.165,148.165,0,1,1-148.18,148.17A148.166,148.166,0,0,1,3931.28,1132.75Z" />
   <path
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblKD"
      ojd-button="D"
      class="theme-button"
      d="M4240.84,1263.61a148.17,148.17,0,1,1-148.18,148.17A148.173,148.173,0,0,1,4240.84,1263.61Z" />
   <path
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblPD"
      ojd-button="R"
      class="theme-button"
      d="M4208.12,931.416a148.167,148.167,0,1,1-148.17,148.164A148.163,148.163,0,0,1,4208.12,931.416Z" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblPC"
      ojd-button="Z"
      class="theme-button"
@@ -163,7 +163,7 @@
      cy="948.721"
      r="148.17" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblPB"
      ojd-button="Y"
      class="theme-button"
@@ -171,13 +171,13 @@
      cy="938.639"
      r="148.19" />
   <path
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblPA"
      ojd-button="L"
      class="theme-button"
      d="M3281.95,979.232A148.169,148.169,0,1,1,3133.78,1127.4,148.173,148.173,0,0,1,3281.95,979.232Z" />
   <circle
-     style="display:inline;opacity:1;stroke:#fff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
      id="lblST"
      class="theme-button"
      ojd-button="START"
@@ -185,7 +185,7 @@
      cy="790.172"
      r="148.175" />
   <circle
-     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:10px"
      id="lblMA"
      ojd-button="16"
      class="theme-button"
@@ -199,14 +199,14 @@
      class="theme-button"
      id="lblAA"
      ojd-button="LEFT"
-     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:5px" />
+     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:10px" />
   <circle
      r="148.175"
      cy="1278.395"
      cx="1459.8151"
      class="theme-button"
      id="lblAB"
-     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:5px"
+     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:10px"
      ojd-button="DOWN"
      inkscape:label="#lblAB" />
   <circle
@@ -216,5 +216,5 @@
      class="theme-button"
      id="lblMC"
      ojd-button="18"
-     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:5px" />
+     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:10px" />
 </svg>
