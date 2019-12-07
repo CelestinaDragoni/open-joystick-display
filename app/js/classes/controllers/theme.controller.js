@@ -53,8 +53,12 @@ class ThemeController {
 		$('#ojd-theme-stylesheet').remove();
 
         let cssRoot = '';
-        if(theme.styles[themeStyleId].cssroot) {
-            cssRoot = theme.styles[themeStyleId].cssroot;
+        try {
+            if(theme.styles[themeStyleId].cssroot) {
+                cssRoot = theme.styles[themeStyleId].cssroot;
+            }
+        } catch {
+            cssRoot = '';
         }
 
 		// If the style has a master css file, load that first, otherwise load the base theme.css
