@@ -1,4 +1,4 @@
-Copyright (c) 2019 Open Joystick Display Project, Anthony 'Dragoni' Mattera (RetroWeeb)
+Copyright (c) 2019 Open Joystick Display Project, Anthony Mattera (KernelZechs)
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -18,7 +18,7 @@ are met:
 
 4. Redistributions of any form whatsoever must retain the following
    acknowledgment: 'This product includes software developed by
-   "Open Joystick Display Project and 'Anthony 'Dragoni' Mattera' 
+   "Open Joystick Display Project and 'Anthony Mattera' 
    (http://www.ojdproject.com/)."
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS

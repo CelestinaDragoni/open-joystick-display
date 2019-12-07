@@ -52,18 +52,24 @@ class ThemeController {
 		$('#ojd-theme-stylesheet-style').remove();
 		$('#ojd-theme-stylesheet').remove();
 
+        let cssRoot = '';
+        if(theme.styles[themeStyleId].cssroot) {
+            cssRoot = theme.styles[themeStyleId].cssroot;
+        }
+
 		// If the style has a master css file, load that first, otherwise load the base theme.css
 		if (theme.styles && theme.styles.length > 0 && theme.styles[themeStyleId] && theme.styles[themeStyleId].mastercss) {
-			$('head').append(`<link id="ojd-theme-stylesheet" rel="stylesheet" href="${theme.directory}/${PATH.basename(theme.styles[themeStyleId].mastercss)}" type="text/css" />`);
+			$('head').append(`<link id="ojd-theme-stylesheet" rel="stylesheet" href="${theme.directory}/${cssRoot}/${theme.styles[themeStyleId].mastercss}" type="text/css" />`);
 		} else {
-			$('head').append(`<link id="ojd-theme-stylesheet" rel="stylesheet" href="${theme.directory}/theme.css" type="text/css" />`);
+			$('head').append(`<link id="ojd-theme-stylesheet" rel="stylesheet" href="${theme.directory}/${cssRoot}/theme.css" type="text/css" />`);
 		}
-		
+
 		// Style of Theme
 		if (theme.styles && theme.styles.length > 0 && theme.styles[themeStyleId]) {
 			const style = theme.styles[themeStyleId];
-			if (FS.existsSync(`${theme.directory}theme-${style.id}.css`)) {
-				$('head').append(`<link id="ojd-theme-stylesheet-style" rel="stylesheet" href="${theme.directory}/theme-${style.id}.css" type="text/css" />`);
+
+			if (FS.existsSync(`${theme.directory}${cssRoot}theme-${style.id}.css`)) {
+				$('head').append(`<link id="ojd-theme-stylesheet-style" rel="stylesheet" href="${theme.directory}/${cssRoot}/theme-${style.id}.css" type="text/css" />`);
 			}
 		}
 

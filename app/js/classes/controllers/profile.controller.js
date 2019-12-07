@@ -347,7 +347,6 @@ class ProfileController {
 
 		if (this.profiles.getCurrentProfileChroma()) {
 			const chromaColor = this.profiles.getCurrentProfileChromaColor();
-			console.log(chromaColor);
 			css += `body{background:${chromaColor} !important;}`;
 		}
 

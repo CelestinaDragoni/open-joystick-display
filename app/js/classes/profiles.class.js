@@ -468,7 +468,6 @@ class Profiles {
 	 */
 	create() {
 		const id = this.profiles.length; // Will always be one ahead. Thanks zero index;
-		console.log(id);
 		const profile = require(OJD.appendCwdPath('app/js/data/profile.json'));
 		this.profiles.push(profile);
 		this.setCurrentProfile(id);
