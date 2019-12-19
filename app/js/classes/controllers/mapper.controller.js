@@ -25,7 +25,8 @@ class MapperController {
 			directional:'#ojd-mapper-directional-template',
 			trigger:'#ojd-mapper-trigger-template',
 			triggerFixed:'#ojd-mapper-trigger-fixed-template',
-			buttonsSelect:'#ojd-mapper-button-options-template'
+			buttonsSelect:'#ojd-mapper-button-options-template',
+            invertSelect:'#ojd-mapper-invert-options-template'
 		}
 		this.rootController = rootController;
 
@@ -139,6 +140,16 @@ class MapperController {
 				mapping.trigger[index].range[1] = value;
 				doRender=false;
 			}
+            if (field === 'degrees') {
+                value = parseInt($target.val());
+                mapping.trigger[index].degrees = value;
+                doRender=false;
+            }
+            if (field === 'invert') {
+                value = parseInt($target.val());
+                mapping.trigger[index].invert = value;
+                doRender=false;
+            }
 			if (field === 'button') {
 				if ($target.val() === '') {
 					mapping.trigger[index].button = false;
@@ -324,20 +335,28 @@ class MapperController {
 		const wrapper = $(this.objectIds.triggerGroup);
 		const template = $(this.templateIds.trigger).html();
 		const selectTemplate = $(this.templateIds.buttonsSelect).html();
+        const selectInvertTemplate = $(this.templateIds.invertSelect).html();
 
 		$(wrapper).html('');
 		for(const i in mapping.trigger) {
 			const trigger = mapping.trigger[i];
-			let t = template;
+            const degrees = (trigger.degrees) ? parseInt(trigger.degrees) : '180';
+			
+            let t = template;
 			t = t.replace(/\$\{axis\}/g, trigger.axis);
 			t = t.replace(/\$\{min\}/g, trigger.range[0]);
 			t = t.replace(/\$\{max\}/g, trigger.range[1]);
+            t = t.replace(/\$\{degrees\}/g, degrees);
 			t = t.replace(/\$\{select\}/g, selectTemplate);
+            t = t.replace(/\$\{selectInvert\}/g, selectInvertTemplate);
 			t = t.replace(/\$\{i\}/g, i);
 			$(wrapper).append(t);
 			if (trigger.button) {
-				$(`*[ojd-map-index='${i}'] select`, wrapper).val(trigger.button);
+				$(`*[ojd-map-index='${i}'] select.ojd-trgger-select-button`, wrapper).val(trigger.button);
 			}
+            if (trigger.invert) {
+                $(`*[ojd-map-index='${i}'] select.ojd-trigger-select-invert`, wrapper).val(trigger.invert);
+            }
 		}
 	}
 

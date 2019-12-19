@@ -171,16 +171,28 @@
 		<div class='ojd-sidebar-flex-row '>
 			<div class='ojd-flex-grow'>
 				<label class='ojd-label'>Trigger Button</label>
-				<select ojd-map-index='${i}' ojd-map-group='trigger' ojd-map-field='button' class='ojd-input'>
+				<select ojd-map-index='${i}' ojd-map-group='trigger' ojd-map-field='button' class='ojd-input ojd-trgger-select-button'>
 					<option>None</option>
 					${select}
 				</select>
 			</div>
-			<div class='ojd-flex-static'>
-				<label class='ojd-label'>&nbsp;</label>
-				<button ojd-map-index='${i}' ojd-map-group='trigger' class='ojd-button ojd-sidebar-button ojd-button-danger ojd-button-delete'><i class="fas fa-trash"></i></button>
-			</div>
 		</div>
+        <div class='ojd-sidebar-flex-row '>
+            <div class='ojd-flex-grow'>
+                <label class='ojd-label'>Wheel Degrees</label>
+                <input ojd-map-index='${i}' ojd-map-group='trigger' ojd-map-field='degrees' type='number' step='30' min='0' max='1800' class='ojd-input' type='text' maxlength='255' value='${degrees}'/>
+            </div>
+            <div class='ojd-flex-grow'>
+                <label class='ojd-label'>Invert</label>
+                <select ojd-map-index='${i}' ojd-map-group='trigger' ojd-map-field='invert' class='ojd-input ojd-trigger-select-invert'>
+                    ${selectInvert}
+                </select>
+            </div>
+            <div class='ojd-flex-static'>
+                <label class='ojd-label'>&nbsp;</label>
+                <button ojd-map-index='${i}' ojd-map-group='trigger' class='ojd-button ojd-sidebar-button ojd-button-danger ojd-button-delete'><i class="fas fa-trash"></i></button>
+            </div>
+        </div>
 	</div>
 </script>
 
@@ -222,6 +234,11 @@
 			</div>
 		</div>
 	</div>
+</script>
+
+<script id='ojd-mapper-invert-options-template' type='text/html'>
+    <option value='0'>No</option>
+    <option value='1'>Yes</option>
 </script>
 
 <script id='ojd-mapper-button-options-template' type='text/html'>

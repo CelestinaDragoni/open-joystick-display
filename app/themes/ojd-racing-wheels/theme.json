@@ -5,5 +5,13 @@
     "version":"1.0",
     "copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
     "license":"BSD 4-Clause Attribution",
-    "website":"https://ojdproject.com"
+    "website":"https://ojdproject.com",
+    "styles":[
+        {"id":"g29",             "name":"Logitech G29 (Gearbox Right)",  "cssroot":"g29/", "file":"g29/theme-g29.html",     "mastercss":"theme-g29.css"},
+        {"id":"g29-left",        "name":"Logitech G29 (Gearbox Left)",   "cssroot":"g29/", "file":"g29/theme-g29.html",     "mastercss":"theme-g29.css"},
+        {"id":"g29-no-gear",     "name":"Logitech G29 (No Gearbox)",     "cssroot":"g29/", "file":"g29/theme-g29.html",     "mastercss":"theme-g29.css"},
+        {"id":"g920",            "name":"Logitech G920 (Gearbox Right)", "cssroot":"g920/", "file":"g920/theme-g920.html",   "mastercss":"theme-g920.css"},
+        {"id":"g920-left",       "name":"Logitech G920 (Gearbox Left)",  "cssroot":"g920/", "file":"g920/theme-g920.html",   "mastercss":"theme-g920.css"},
+        {"id":"g920-no-gear",    "name":"Logitech G920 (No Gearbox)",    "cssroot":"g920/", "file":"g920/theme-g920.html",   "mastercss":"theme-g920.css"}
+    ]
 }
