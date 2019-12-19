@@ -35,6 +35,7 @@
 		"ojd-trigger-move",
 		"ojd-trigger-move-inverted",
 		"ojd-arcade-directional",
+        "ojd-trigger-wheel",
 		"class",
 		"style",
 		"id",
