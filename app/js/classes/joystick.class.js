@@ -258,7 +258,7 @@ class Joystick {
                 } else {
                     degrees = 0;
                 }
-                degrees = parseInt(degrees);
+                degrees = parseInt(degrees/2);
 
 				$(`*[ojd-trigger-scale='${i}']`).css('height', `${scale}%`);
 				$(`*[ojd-trigger-move='${i}']`).css('top', `${scale}%`);
