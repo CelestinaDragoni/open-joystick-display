@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 2.7
+* Racing Wheel Support
+* Logitech G29 and G920 Racing Wheels with Gearboxes and Pedal Configurations
+* Invert Option for Triggers
+* Wheel Degrees Option for Triggers (That are Steering Wheels)
+* Build Fix for Linux Users
+
 ## Version 2.6
 * `--start-broadcast-mode` command line argument added to start OJD in broadcast mode.
 * Switch PowerA Gamecube Theme
