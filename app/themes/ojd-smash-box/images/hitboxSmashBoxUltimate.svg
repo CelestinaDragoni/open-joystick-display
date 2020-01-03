@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="510"
+   height="330"
+   viewBox="0 0 5099 3300"
+   version="1.1"
+   id="svg921"
+   sodipodi:docname="hitboxSmashBoxUltimate.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata927">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs925" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1908"
+     inkscape:window-height="1043"
+     id="namedview923"
+     showgrid="false"
+     inkscape:zoom="2.5960784"
+     inkscape:cx="229.05026"
+     inkscape:cy="175.99844"
+     inkscape:window-x="1084"
+     inkscape:window-y="397"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg921" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblAD"
+     class="theme-button"
+     ojd-button="UP"
+     cx="1487.515"
+     cy="943.685"
+     r="148.175" />
+  <ellipse
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblAC"
+     class="theme-button"
+     cx="1789.515"
+     cy="1306.08"
+     ojd-button="RIGHT"
+     rx="148.175"
+     ry="148.17" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblMB"
+     ojd-button="17"
+     class="theme-button"
+     cx="1797.065"
+     cy="1884.905"
+     r="148.185" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblMD"
+     ojd-button="19"
+     class="theme-button"
+     cx="1963.17"
+     cy="2184.39"
+     r="148.17" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblME"
+     ojd-button="20"
+     class="theme-button"
+     cx="2307.97"
+     cy="2181.875"
+     r="148.19" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblCC"
+     ojd-button="CLEFT"
+     class="theme-button"
+     cx="2781.11"
+     cy="2181.875"
+     r="148.17" />
+  <path
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblCE"
+     ojd-button="15"
+     class="theme-button"
+     d="M2947.22,2330.67a148.17,148.17,0,1,1-148.17,148.17A148.175,148.175,0,0,1,2947.22,2330.67Z" />
+  <path
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblCD"
+     ojd-button="CDOWN"
+     class="theme-button"
+     d="M3125.91,2031.19a148.17,148.17,0,1,1-148.17,148.17A148.175,148.175,0,0,1,3125.91,2031.19Z" />
+  <path
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblCA"
+     ojd-button="CUP"
+     class="theme-button"
+     d="M2944.71,1736.74a148.17,148.17,0,1,1-148.18,148.17A148.173,148.173,0,0,1,2944.71,1736.74Z" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblCB"
+     ojd-button="CRIGHT"
+     class="theme-button"
+     cx="3289.515"
+     cy="1882.39"
+     r="148.175" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblKA"
+     class="theme-button"
+     ojd-button="A"
+     cx="3309.64"
+     cy="1459.595"
+     r="148.17" />
+  <path
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblKB"
+     ojd-button="X"
+     class="theme-button"
+     d="M3591.51,1122.68a148.17,148.17,0,1,1-148.17,148.17A148.175,148.175,0,0,1,3591.51,1122.68Z" />
+  <path
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblKC"
+     ojd-button="B"
+     class="theme-button"
+     d="M3931.28,1132.75a148.165,148.165,0,1,1-148.18,148.17A148.166,148.166,0,0,1,3931.28,1132.75Z" />
+  <path
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblKD"
+     ojd-button="D"
+     class="theme-button"
+     d="M4240.84,1263.61a148.17,148.17,0,1,1-148.18,148.17A148.173,148.173,0,0,1,4240.84,1263.61Z" />
+  <path
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblPD"
+     ojd-button="R"
+     class="theme-button"
+     d="M4208.12,931.416a148.167,148.167,0,1,1-148.17,148.164A148.163,148.163,0,0,1,4208.12,931.416Z" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblPC"
+     ojd-button="Z"
+     class="theme-button"
+     cx="3898.55"
+     cy="948.721"
+     r="148.17" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblPB"
+     ojd-button="Y"
+     class="theme-button"
+     cx="3561.31"
+     cy="938.639"
+     r="148.19" />
+  <path
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblPA"
+     ojd-button="L"
+     class="theme-button"
+     d="M3281.95,979.232A148.169,148.169,0,1,1,3133.78,1127.4,148.173,148.173,0,0,1,3281.95,979.232Z" />
+  <circle
+     style="display:inline;opacity:1;stroke:#fff;stroke-width:10px"
+     id="lblST"
+     class="theme-button"
+     ojd-button="START"
+     cx="2539.515"
+     cy="790.172"
+     r="148.175" />
+  <circle
+     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:10px"
+     id="lblMA"
+     ojd-button="16"
+     class="theme-button"
+     cx="837.17499"
+     cy="1412.0551"
+     r="148.175" />
+  <circle
+     r="148.175"
+     cy="1248.1949"
+     cx="1130.125"
+     class="theme-button"
+     id="lblAA"
+     ojd-button="LEFT"
+     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:10px" />
+  <circle
+     r="148.175"
+     cy="1278.395"
+     cx="1459.8151"
+     class="theme-button"
+     id="lblAB"
+     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:10px"
+     ojd-button="DOWN"
+     inkscape:label="#lblAB" />
+  <circle
+     r="148.175"
+     cy="1884.905"
+     cx="2139.345"
+     class="theme-button"
+     id="lblMC"
+     ojd-button="18"
+     style="display:inline;opacity:1;stroke:#ffffff;stroke-width:10px" />
+</svg>

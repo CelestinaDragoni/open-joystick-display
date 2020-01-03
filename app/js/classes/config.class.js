@@ -10,7 +10,7 @@ class Config {
 
 	/*
 	 * constructor(cwd)
-	 * Config class constructor. 
+	 * Config class constructor.
 	 */
 	constructor() {
 
@@ -23,7 +23,7 @@ class Config {
 
 		// Make new config if one doesn't exist.
 		this.init();
-		
+
 		// If config version 0, migrate.
 		this.migrateConfigZero();
 
@@ -33,14 +33,17 @@ class Config {
 		// If config version 2, migrate.
 		this.migrateConfigTwo();
 
+		// If config version 3, migrate.
+		this.migrateConfigThree();
+
 
 	}
 
 	/*
 	 * init()
-	 * @param bool reset - Overloaded method for reseting regardless of current state. 
+	 * @param bool reset - Overloaded method for reseting regardless of current state.
 	 * @return bool
-	 * Makes a new configuration if this is the first time it's being used. 
+	 * Makes a new configuration if this is the first time it's being used.
 	 */
 	init(reset=false) {
 
@@ -69,12 +72,37 @@ class Config {
 		return true;
 	}
 
+	migrateConfigThree() {
+
+		if (this.config.version !== 3) {
+			return false;
+		}
+
+		const newMappings = require(OJD.appendCwdPath('app/js/data/mappings-v4.json'));
+		const mappings = this.store.get('mappings');
+		for (const map of newMappings) {
+			mappings.push(map);
+		}
+		for (const map of mappings) {
+			map.triggerFixed = [];
+		}
+		this.store.set('mappings', mappings);
+
+		// Set Config to Version 4
+		this.config.version = 4;
+		this.store.set('config', this.config);
+
+		// Reload
+		this.config = this.store.get('config');
+
+	}
+
 	migrateConfigTwo() {
 
 		if (this.config.version !== 2) {
 			return false;
 		}
-		
+
 		const newMappings = require(OJD.appendCwdPath('app/js/data/mappings-v3.json'));
 		const mappings = this.store.get('mappings');
 		for (const map of newMappings) {
@@ -88,9 +116,9 @@ class Config {
 		// Set Config to Version 2
 		this.config.version = 3;
 		this.store.set('config', this.config);
-		
+
 		// Reload
-		this.config = this.store.get('config');		
+		this.config = this.store.get('config');
 
 	}
 
@@ -116,7 +144,7 @@ class Config {
 		// Set Config to Version 2
 		this.config.version = 2;
 		this.store.set('config', this.config);
-		
+
 		// Reload
 		this.config = this.store.get('config');
 
@@ -171,7 +199,7 @@ class Config {
 	 * setBounds(bounds)
 	 * @param object bounds
 	 * @return object
-	 * Sets the current bounds of the window in non-broadcast mode. {x:, y:, height:, width:}. 
+	 * Sets the current bounds of the window in non-broadcast mode. {x:, y:, height:, width:}.
 	 */
 	setBounds(bounds) {
 		this.config.bounds = Clone(bounds);
