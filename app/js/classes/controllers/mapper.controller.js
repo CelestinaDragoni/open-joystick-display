@@ -16,14 +16,17 @@ class MapperController {
 			triggersCount:'#ojd-mapper-triggers-count',
 			buttonsGroup:'#ojd-buttons-group',
 			directionalsGroup:'#ojd-directionals-group',
-			triggerGroup:'#ojd-triggers-group'
+			triggerGroup:'#ojd-triggers-group',
+			triggerFixedGroup:'#ojd-triggers-fixed-group'
 
 		};
 		this.templateIds = {
 			button:'#ojd-mapper-button-template',
 			directional:'#ojd-mapper-directional-template',
 			trigger:'#ojd-mapper-trigger-template',
-			buttonsSelect:'#ojd-mapper-button-options-template'
+			triggerFixed:'#ojd-mapper-trigger-fixed-template',
+			buttonsSelect:'#ojd-mapper-button-options-template',
+            invertSelect:'#ojd-mapper-invert-options-template'
 		}
 		this.rootController = rootController;
 
@@ -137,11 +140,48 @@ class MapperController {
 				mapping.trigger[index].range[1] = value;
 				doRender=false;
 			}
+            if (field === 'degrees') {
+                value = parseInt($target.val());
+                mapping.trigger[index].degrees = value;
+                doRender=false;
+            }
+            if (field === 'invert') {
+                value = parseInt($target.val());
+                mapping.trigger[index].invert = value;
+                doRender=false;
+            }
 			if (field === 'button') {
 				if ($target.val() === '') {
 					mapping.trigger[index].button = false;
 				} else {
 					mapping.trigger[index].button = OJD.escapeText($target.val());
+				}
+			}
+		}
+
+		if (group == 'trigger-fixed') {
+			if (field === 'axis') {
+				value = parseInt($target.val(), 10);
+				mapping.triggerFixed[index].axis = value;
+				doRender=false;
+			}
+			if (field === 'val') {
+				value = parseFloat($target.val());
+				mapping.triggerFixed[index].val = value;
+				doRender=false;
+			}
+			if (field === 'button1') {
+				if ($target.val() === '') {
+					mapping.triggerFixed[index].button1 = false;
+				} else {
+					mapping.triggerFixed[index].button1 = OJD.escapeText($target.val());
+				}
+			}
+			if (field === 'button2') {
+				if ($target.val() === '') {
+					mapping.triggerFixed[index].button2 = false;
+				} else {
+					mapping.triggerFixed[index].button2 = OJD.escapeText($target.val());
 				}
 			}
 		}
@@ -181,6 +221,8 @@ class MapperController {
 			mapping.directional.push({axes:[0,1], deadzone:.25, dpad:false, cpad:false});
 		} else if (group == 'trigger') {
 			mapping.trigger.push({axis:0, range:[-1,1], button:false});
+		} else if (group == 'trigger-fixed') {
+			mapping.triggerFixed.push({axis:0, val:0, button1:false, button2:false});
 		}
 
 		this.mappings.update(mapid, mapping);
@@ -194,7 +236,7 @@ class MapperController {
 	 * onDelete(e)
 	 * @param event e
 	 * @return NULL
-	 * Deletes a button, directiona, or trigger and renders.
+	 * Deletes a button, directional, or trigger and renders.
 	 */
 	onDelete(e) {
 
@@ -211,6 +253,8 @@ class MapperController {
 			mapping.directional.splice(index, 1);
 		} else if (group == 'trigger') {
 			mapping.trigger.splice(index, 1);
+		} else if (group == 'trigger-fixed') {
+			mapping.triggerFixed.splice(index, 1);
 		}
 
 		this.mappings.update(mapid, mapping);
@@ -291,23 +335,64 @@ class MapperController {
 		const wrapper = $(this.objectIds.triggerGroup);
 		const template = $(this.templateIds.trigger).html();
 		const selectTemplate = $(this.templateIds.buttonsSelect).html();
+        const selectInvertTemplate = $(this.templateIds.invertSelect).html();
 
 		$(wrapper).html('');
 		for(const i in mapping.trigger) {
 			const trigger = mapping.trigger[i];
-			let t = template;
+            const degrees = (trigger.degrees) ? parseInt(trigger.degrees) : '180';
+			
+            let t = template;
 			t = t.replace(/\$\{axis\}/g, trigger.axis);
 			t = t.replace(/\$\{min\}/g, trigger.range[0]);
 			t = t.replace(/\$\{max\}/g, trigger.range[1]);
+            t = t.replace(/\$\{degrees\}/g, degrees);
 			t = t.replace(/\$\{select\}/g, selectTemplate);
+            t = t.replace(/\$\{selectInvert\}/g, selectInvertTemplate);
 			t = t.replace(/\$\{i\}/g, i);
 			$(wrapper).append(t);
 			if (trigger.button) {
-				$(`*[ojd-map-index='${i}'] select`, wrapper).val(trigger.button);
+				$(`*[ojd-map-index='${i}'] select.ojd-trgger-select-button`, wrapper).val(trigger.button);
 			}
+            if (trigger.invert) {
+                $(`*[ojd-map-index='${i}'] select.ojd-trigger-select-invert`, wrapper).val(trigger.invert);
+            }
 		}
 	}
 
+	/*
+	 * renderFixedTriggers()
+	 * @return NULL
+	 * Renders the mapping triggers
+	 */
+	renderFixedTriggers() {
+
+		const mapping = this.profiles.getCurrentProfileMapping();
+		const wrapper = $(this.objectIds.triggerFixedGroup);
+		const template = $(this.templateIds.triggerFixed).html();
+		const selectTemplate = $(this.templateIds.buttonsSelect).html();
+
+		$(wrapper).html('');
+
+		for(const i in mapping.triggerFixed) {
+			const trigger = mapping.triggerFixed[i];
+			let t = template;
+			t = t.replace(/\$\{axis\}/g, trigger.axis);
+			t = t.replace(/\$\{val\}/g, trigger.val);
+			t = t.replace(/\$\{button1\}/g, trigger.button1);
+			t = t.replace(/\$\{button2\}/g, trigger.button2);
+			t = t.replace(/\$\{select\}/g, selectTemplate);
+			t = t.replace(/\$\{i\}/g, i);
+			$(wrapper).append(t);
+			if (trigger.button1) {
+				$(`*[ojd-map-index='${i}'] select[ojd-map-field=button1]`, wrapper).val(trigger.button1);
+			}
+			if (trigger.button2) {
+				$(`*[ojd-map-index='${i}'] select[ojd-map-field=button2]`, wrapper).val(trigger.button2);
+			}
+		}
+
+	}
 
 	/*
 	 * render()
@@ -319,6 +404,7 @@ class MapperController {
 		this.renderButtons();
 		this.renderDirectionals();
 		this.renderTriggers();
+		this.renderFixedTriggers();
 		this.bindActions();
 	}
 

@@ -6,55 +6,54 @@ class ChromiumDriver {
 	constructor(handler) {
 
 		// Joystick Properties
-		this.joystickConnected = false;
+        this.joysticks = [
+            {connected:false, index:0, info:''},
+            {connected:false, index:1, info:''},
+            {connected:false, index:2, info:''},
+            {connected:false, index:3, info:''},
+        ];
+
 		this.joystickInfo = '';
+        this.player = 0;
 
 		this.ready = true;
 		this.handler = handler;
 
-		// Load Event Listeners
-		window.addEventListener("gamepadconnected", this.connectJoystick.bind(this));
-		window.addEventListener("gamepaddisconnected", this.disconnectJoystick.bind(this));
+        window.addEventListener("gamepadconnected", this.connectJoystick.bind(this));
+        window.addEventListener("gamepaddisconnected", this.disconnectJoystick.bind(this));
 
 	}
 
-	setActive() {
-		// Do nothing.
-	}
-
-	setInactive() {
-		// Do nothing.
-	}
+	setActive() {}
+	setInactive() {}
 
 	connectJoystick(e) {
-		if (!this.joystickConnected) {
-			const joystick = navigator.getGamepads()[e.gamepad.index];
-			this.joystickConnected = true;
-			this.joystickIndex = e.gamepad.index;
-			this.joystickInfo = `${joystick.id}: ${joystick.buttons.length} Buttons, ${joystick.axes.length} Axes.`;
-		}
+        const joystick = navigator.getGamepads()[e.gamepad.index];
+        this.joysticks[e.gamepad.index] = {
+            connected: true,
+            index: e.gamepad.index,
+            info: `Player ${e.gamepad.index} - ${joystick.id}: ${joystick.buttons.length} Buttons, ${joystick.axes.length} Axes.`
+        };
 	}
 
-	disconnectJoystick() {
-		this.joystickIndex = false;
-		this.joystickConnected = false;
-		this.joystickInfo = '';
+	disconnectJoystick(e) {
+		this.joysticks[e.gamepad.index] = {joystick:{}, connected:false, index:e.gamepad.index, info:''};
 	}
 
 	isConnected() {
-		return this.joystickConnected;
+		return this.joysticks[this.player].connected;
 	}
 
 	getJoystick() {
-		if (this.joystickConnected) {
-			return navigator.getGamepads()[this.joystickIndex];
+		if (this.joysticks[this.player].connected) {
+			return navigator.getGamepads()[this.player];
 		}
 		return false;
 	}
 
 	getInformation() {
-		if (this.joystickConnected) {
-			return this.joystickInfo;
+		if (this.joysticks[this.player].connected) {
+			return this.joysticks[this.player].info;
 		} else {
 			return 'No joystick connected. Please connect a joystick and press a button to activate.';
 		}

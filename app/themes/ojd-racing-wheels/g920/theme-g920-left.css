@@ -1,0 +1,12 @@
+.theme .wheel {
+    left: auto;
+    right: 0;
+}
+.pedal {
+    left: auto;
+    right: 10px;
+}
+.gearbox {
+    left:0px;
+    right: auto;
+}

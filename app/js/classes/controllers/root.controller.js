@@ -143,6 +143,16 @@ class RootController {
 	}
 
 	renderInitial() {
+
+        const argv = remote.getGlobal('sharedObject').argv;
+        let startInBroadcastMode = false;
+
+        for (const arg of argv) {
+            if (arg === '--start-broadcast-mode') {
+                startInBroadcastMode = true;
+            }
+        }
+
 		this.controllers.toolbar.renderInitial();
 		this.controllers.profile.renderInitial();
 		this.controllers.mapper.renderInitial();
@@ -150,6 +160,12 @@ class RootController {
 		this.controllers.theme.renderInitial();
 		$(window).bind('keyup', this.onToggleBroadcast.bind(this));
 		$(".ojd-external-link").bind('click', this.onExternalLink.bind(this));
+
+        if (startInBroadcastMode) {
+            this.config.toggleBroadcast();
+            this.renderBroadcast();
+        }
+
 	}
 
 }

@@ -8,7 +8,8 @@ app.disableHardwareAcceleration();
 
 function createWindow () {
     
-    console.log(__dirname);
+    global.sharedObject = {argv: process.argv}
+
     if (process.platform === "win32") {
         cwd = __dirname.replace('app\\js', '');
         ico = cwd+"app/icons/icon.png"; 
@@ -18,8 +19,8 @@ function createWindow () {
     }else {
         cwd = __dirname.replace('app/js', '');
         ico = cwd+"app/icons/icon.png";
-    } 
-    
+    }
+
     const windowConfig = {
         icon:ico,
         width:320, 
@@ -38,7 +39,6 @@ function createWindow () {
     mainWindow = new BrowserWindow(windowConfig);
     mainWindow.setMenu(null);
 
-    // Our Controller FIle
     mainWindow.loadFile('app/views/index.view.html');
     
 }

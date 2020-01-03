@@ -1,0 +1,138 @@
+.theme {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 700px;
+}
+
+.theme .wheel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('./images/wheel.png');
+    background-size: 100% 100%;
+    width: 400px;
+    height: 400px;
+    border-radius:100%;
+}
+
+.theme .wheel .button {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-size: 100% 100%;
+}
+
+.theme .wheel .button-cross.active {background-image:url('./images/cross.png');}
+.theme .wheel .button-circle.active {background-image:url('./images/circle.png');}
+.theme .wheel .button-triangle.active {background-image:url('./images/triangle.png');}
+.theme .wheel .button-square.active {background-image:url('./images/square.png');}
+.theme .wheel .button-up.active {background-image:url('./images/up.png');}
+.theme .wheel .button-down.active {background-image:url('./images/down.png');}
+.theme .wheel .button-left.active {background-image:url('./images/left.png');}
+.theme .wheel .button-right.active {background-image:url('./images/right.png');}
+.theme .wheel .button-plus.active {background-image:url('./images/plus.png');}
+.theme .wheel .button-minus.active {background-image:url('./images/minus.png');}
+.theme .wheel .button-share.active {background-image:url('./images/share.png');}
+.theme .wheel .button-option.active {background-image:url('./images/option.png');}
+.theme .wheel .button-ps.active {background-image:url('./images/ps.png');}
+.theme .wheel .button-l.active {background-image:url('./images/l.png');}
+.theme .wheel .button-r.active {background-image:url('./images/r.png');}
+.theme .wheel .button-l2.active {background-image:url('./images/l2.png');}
+.theme .wheel .button-r2.active {background-image:url('./images/r2.png');}
+.theme .wheel .button-l3.active {background-image:url('./images/l3.png');}
+.theme .wheel .button-r3.active {background-image:url('./images/r3.png');}
+.theme .wheel .button-return.active {background-image:url('./images/return.png');}
+
+.pedal {
+    position:absolute;
+    bottom: 0;
+    left: 10px;
+    width: 376px;
+    height: 305px;
+    background: url('./images/pedal.png');
+    background-size: 100% 100%;
+    transform: scale(.8);
+}
+
+.clutch {
+    position:absolute;
+    top:0px;
+    left:30px;
+    width:76px;
+    height:65px;
+}
+
+.clutch div {
+    position:absolute;
+    top:0px;
+    width:76px;
+    height:107px;
+    background: url('./images/clutch.png');
+    background-size: 100% 100%;
+}
+
+.brake {
+    position:absolute;
+    top:0px;
+    left:139px;
+    width:77px;
+    height:65px;
+}
+
+.brake div {
+    position:absolute;
+    top:0px;
+    width:77px;
+    height:108px;
+    background: url('./images/brake.png');
+    background-size: 100% 100%;
+}
+
+.accel {
+    position:absolute;
+    top:0px;
+    left:275px;
+    width:69px;
+    height:65px;
+}
+
+.accel div {
+    position:absolute;
+    top:0px;
+    width:69px;
+    height:122px;
+    background: url('./images/accel.png');
+    background-size: 100% 100%;
+}
+
+.gearbox {
+    position:absolute;
+    top:270px;
+    right:0px;
+    width:250px;
+    height:295px;
+    background: url('./images/gearbox.png');
+    background-size: 100% 100%;
+
+}
+
+.gearbox .button {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-size: 100% 100%;
+}
+
+.gearbox .button-gear1.active {background-image:url('./images/gear-1.png');}
+.gearbox .button-gear2.active {background-image:url('./images/gear-2.png');}
+.gearbox .button-gear3.active {background-image:url('./images/gear-3.png');}
+.gearbox .button-gear4.active {background-image:url('./images/gear-4.png');}
+.gearbox .button-gear5.active {background-image:url('./images/gear-5.png');}
+.gearbox .button-gear6.active {background-image:url('./images/gear-6.png');}
+.gearbox .button-reverse.active {background-image:url('./images/gear-r.png');}

@@ -1,0 +1,51 @@
+{
+    "id":"ojd-nintendo-switch",
+    "name":"Nintendo Switch",
+    "author":"Anthony Dragoni (RetroWeeb)",
+    "version":"1.0",
+    "copyright":"Copyright 2019 Anthony Dragoni, Open Joystick Display",
+    "license":"BSD 4-Clause Attribution",
+    "website":"https://ojdproject.com",
+    "styles":[
+
+        {"id":"pro-gray",  "name":"Switch Pro Controller"},
+        {"id":"pro-zelda", "name":"Switch Pro Controller Zelda", "file":"theme-zelda.html"},
+        {"id":"pro-mario", "name":"Switch Pro Controller Mario", "file":"theme-mario.html"},
+        {"id":"pro-luigi", "name":"Switch Pro Controller Luigi", "file":"theme-luigi.html"},
+        {"id":"pro-peach", "name":"Switch Pro Controller Peach", "file":"theme-peach.html"},
+        
+        {"id":"joycons-gray", "name":"Switch Joycons (Gray)", "file":"theme-joycons-gray.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-blue-red", "name":"Switch Joycons (Blue+Red)", "file":"theme-joycons-blue-red.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-pink-green", "name":"Switch Joycons (Pink+Green)", "file":"theme-joycons-pink-green.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-green-yellow", "name":"Switch Joycons (Green+Yellow)", "file":"theme-joycons-green-yellow.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-yellow", "name":"Switch Joycons (Yellow)", "file":"theme-joycons-yellow.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-purple-orange", "name":"Switch Joycons (Purple+Orange)", "file":"theme-joycons-purple-orange.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-blue-yellow", "name":"Switch Joycons (Blue+Yellow)", "file":"theme-joycons-blue-yellow.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-red-blue", "name":"Switch Joycons Reversed (Red+Blue)", "file":"theme-joycons-red-blue-jp.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-green-pink", "name":"Switch Joycons Reversed (Green+Pink)", "file":"theme-joycons-green-pink-jp.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-yellow-green", "name":"Switch Joycons Reversed (Yellow+Green)", "file":"theme-joycons-yellow-green-jp.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-orange-purple", "name":"Switch Joycons Reversed (Orange+Purple)", "file":"theme-joycons-orange-purple-jp.html", "mastercss":"css/joycons/theme-joycon.css"},
+        {"id":"joycons-yellow-blue", "name":"Switch Joycons Reversed (Yellow+Blue)", "file":"theme-joycons-yellow-blue-jp.html", "mastercss":"css/joycons/theme-joycon.css"},
+        
+        {"id":"gamecube-purple", "name":"PowerA Gamecube Purple", "file":"theme-gamecube-purple.html", "mastercss":"css/gamecube/theme-gamecube.css"},
+        {"id":"gamecube-black", "name":"PowerA Gamecube Black", "file":"theme-gamecube-black.html", "mastercss":"css/gamecube/theme-gamecube.css"},
+        {"id":"gamecube-silver", "name":"PowerA Gamecube Silver", "file":"theme-gamecube-silver.html", "mastercss":"css/gamecube/theme-gamecube.css"},
+
+        {"id":"pokkendx", "name":"HORI Pokkén Tournament DX", "file":"theme-pokkendx.html", "mastercss":"css/pokken/theme-pokkendx.css"},
+        
+        {"id":"streamer-pro-white", "name":"Streamer Pro (White Active)", "file":"theme-pro-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-purple", "name":"Streamer Pro (Purple Active)", "file":"theme-pro-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-orange", "name":"Streamer Pro (Orange Active)", "file":"theme-pro-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-pink", "name":"Streamer Pro (Pink Active)", "file":"theme-pro-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-green", "name":"Streamer Pro (Green Active)", "file":"theme-pro-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-red", "name":"Streamer Pro (Red Active)", "file":"theme-pro-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-pro-blue", "name":"Streamer Pro (Blue Active)", "file":"theme-pro-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-pro-streamer.css"},
+        {"id":"streamer-white", "name":"Streamer Joycon (White Active)", "file":"theme-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-purple", "name":"Streamer Joycon (Purple Active)", "file":"theme-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-orange", "name":"Streamer Joycon (Orange Active)", "file":"theme-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-pink", "name":"Streamer Joycon (Pink Active)", "file":"theme-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-green", "name":"Streamer Joycon (Green Active)", "file":"theme-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-red", "name":"Streamer Joycon (Red Active)", "file":"theme-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-streamer.css"},
+        {"id":"streamer-blue", "name":"Streamer Joycon (Blue Active)", "file":"theme-streamer.html", "cssroot":"css/streamer/", "mastercss":"theme-streamer.css"}
+    ]
+}

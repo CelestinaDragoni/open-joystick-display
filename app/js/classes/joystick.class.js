@@ -63,6 +63,9 @@ class Joystick {
 		const device = this.profiles.getCurrentProfileDriverDevice();
 		const uri = this.profiles.getCurrentProfileDriverUri();
 
+        if (this.driver === 'chromium') {
+            this.drivers[this.driver].player = this.profiles.getCurrentProfilePlayer();
+        }
 		this.drivers[this.driver].setActive(port, device, uri);
 	}
 
@@ -128,15 +131,15 @@ class Joystick {
 			$(`span[ojd-raw-analog-axes-y='${i}']`).html(axis2);
 			$(`*[ojd-raw-analog='${i}']`).css('top',`${offset.y}%`);
 			$(`*[ojd-raw-analog='${i}']`).css('left',`${offset.x}%`);
-			$(`*[ojd-raw-analog-x='${i}']`).val(offset.xRaw.toFixed(5));
-			$(`*[ojd-raw-analog-y='${i}']`).val(offset.yRaw.toFixed(5));
+			$(`*[ojd-raw-analog-x='${i}']`).val(offset.xRaw.toFixed(4));
+			$(`*[ojd-raw-analog-y='${i}']`).val(offset.yRaw.toFixed(4));
 		}
 
 		// 1D Thottle/Linear Axes View
 		for(const i in joystick.axes) {
 			const value = joystick.axes[i];
 			const valueOffset = value+1; // Allows for easy percentage calculation
-			$(`*[ojd-raw-axes-value='${i}']`).val(value.toFixed(5));
+			$(`*[ojd-raw-axes-value='${i}']`).val(value.toFixed(4));
 			$(`*[ojd-raw-axes='${i}']`).css('width',`${100*(valueOffset/2)}%`);
 		}
 
@@ -237,12 +240,31 @@ class Joystick {
 
 			if (active !== false) {
 
-				const scale = ((active+1)/(trigger.range[1]+1))*100;
+				let scale = ((active+1)/(trigger.range[1]+1))*100;
+
+                if (trigger.invert) {
+                    scale = 100 - scale;
+                }
+                
+                let degrees = trigger.degrees || trigger.degrees == 0 ? trigger.degrees : 0;
+                let degreesScale = 0;
+
+                if (scale > 50) {
+                    degreesScale = (scale-50)/50;
+                    degrees = degrees*degreesScale;
+                } else if (scale < 50) {
+                    degreesScale = ((scale*-1)+50)/50;
+                    degrees = degrees*degreesScale*-1;
+                } else {
+                    degrees = 0;
+                }
+                degrees = parseInt(degrees/2);
 
 				$(`*[ojd-trigger-scale='${i}']`).css('height', `${scale}%`);
 				$(`*[ojd-trigger-move='${i}']`).css('top', `${scale}%`);
 				$(`*[ojd-trigger-scale-inverted='${i}']`).css('height', `${100-scale}%`);
 				$(`*[ojd-trigger-move-inverted='${i}']`).css('top', `${100-scale}%`);
+                $(`*[ojd-trigger-wheel='${i}']`).css('transform', `rotate(${degrees}deg)`);
 				$(`*[ojd-trigger='${i}']`).addClass('trigger-active');
 
 				if (trigger.button) {
@@ -255,6 +277,7 @@ class Joystick {
 				$(`*[ojd-trigger-scale-inverted='${i}']`).css('height', '');
 				$(`*[ojd-trigger-move='${i}']`).css('top', ``);
 				$(`*[ojd-trigger-move-inverted='${i}']`).css('top', ``);
+                $(`*[ojd-trigger-wheel='${i}']`).css('transform', ``);
 				$(`*[ojd-trigger='${i}']`).removeClass('trigger-active');
 
 				if (trigger.button) {
@@ -266,7 +289,86 @@ class Joystick {
 
 		}
 
+        const fixedTriggerDir = [];
+		for (const i in currentMapping.triggerFixed) {
+			const trigger = currentMapping.triggerFixed[i];
+			const active = this.checkFixedTrigger(trigger.axis, trigger.val);
+
+            
+
+			if (active) {
+
+				if (trigger.button1) {
+					multimapCheck.push(trigger.button1);
+					$(`*[ojd-button='${trigger.button1}']`).addClass('active');
+                    fixedTriggerDir.push(trigger.button1);
+				}
+
+				if (trigger.button2) {
+					multimapCheck.push(trigger.button2);
+					$(`*[ojd-button='${trigger.button2}']`).addClass('active');
+                    fixedTriggerDir.push(trigger.button2);
+				}
+
+			} else {
+				if (trigger.button1) {
+					if (!multimapCheck.includes(trigger.button1)) {
+						$(`*[ojd-button='${trigger.button1}']`).removeClass('active');
+					}
+				}
+
+				if (trigger.button2) {
+					if (!multimapCheck.includes(trigger.button2)) {
+						$(`*[ojd-button='${trigger.button2}']`).removeClass('active');
+					}
+				}
+
+			}
+		}
+
+
+        const fixedTriggerOffset = this.checkTriggerArcadeStick(fixedTriggerDir);
+        if (fixedTriggerOffset.x !== 50 || fixedTriggerOffset.y !== 50) {
+            $(`*[ojd-arcade-directional]`).addClass('active');
+        } else {
+            $(`*[ojd-arcade-directional]`).removeClass('active');
+        }
+
+        // All directionals are treated like analogs regardless
+        $(`*[ojd-arcade-directional]`).css('top',`${fixedTriggerOffset.y}%`);
+        $(`*[ojd-arcade-directional]`).css('left',`${fixedTriggerOffset.x}%`);
+
 	}
+
+
+    checkTriggerArcadeStick(direction) {
+
+        const offset = {x:0, y:0, xRaw:0, yRaw:0};
+
+        for(const dir of direction) {
+            switch(dir) {
+                case "UP":
+                    offset.yRaw = -1;
+                    break;
+                case "DOWN":
+                    offset.yRaw = 1;
+                    break;
+                case "LEFT":
+                    offset.xRaw = -1;
+                    break;
+                case "RIGHT":
+                    offset.xRaw = 1;
+                    break;
+            }
+        }
+
+        offset.x = 50 + (offset.xRaw*50);
+        offset.y = 50 + (offset.yRaw*50);
+
+        return offset;
+
+    }
+
 
 	checkArcadeStick(buttonMapping) {
 
@@ -356,6 +458,19 @@ class Joystick {
 
 		if (axis >= rangeMin && axis <= rangeMax) {
 			return axis;
+		}
+
+		return false;
+
+	}
+
+	checkFixedTrigger(axisIndex, val) {
+
+		const joystick = this.getCurrentDriver().getJoystick();
+		const axis = joystick.axes[axisIndex];
+
+		if (axis.toFixed(4) == val) {
+			return true;
 		}
 
 		return false;

@@ -1,0 +1,16 @@
+.theme-analog.active {
+    background:white;
+    border-color:white;
+}
+.theme-button.active{
+    fill:white !important;
+}
+.theme-button.active *{
+    fill:white !important;
+}
+.theme-label.active{
+    fill:black !important;
+}
+.theme-label.active *{
+    fill:black !important;
+}

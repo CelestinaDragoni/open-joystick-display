@@ -8,6 +8,7 @@ class Mappings {
 		this.store = new Store();
 		this.config = config;
 		this.mappings = this.store.get('mappings');
+		window.ojdMappings = this.mappings;
 	}
 
 	/* 

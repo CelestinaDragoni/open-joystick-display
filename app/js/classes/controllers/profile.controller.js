@@ -153,7 +153,11 @@ class ProfileController {
 		} else if (key === 'map') {
 			this.profiles.setProfileMap(value);
 			this.rootController.reloadMapper();
-		}  else if (key === 'driver') {
+		}  else if (key === 'player') {
+            this.profiles.setProfilePlayer(value);
+            this.joystick.reloadDriver();
+            this.rootController.reloadTester();
+        }  else if (key === 'driver') {
 			this.profiles.setProfileDriver(value);
 			this.joystick.reloadDriver();
 			this.rootController.reloadTester();
@@ -343,7 +347,6 @@ class ProfileController {
 
 		if (this.profiles.getCurrentProfileChroma()) {
 			const chromaColor = this.profiles.getCurrentProfileChromaColor();
-			console.log(chromaColor);
 			css += `body{background:${chromaColor} !important;}`;
 		}
 
@@ -515,10 +518,13 @@ class ProfileController {
 		const $driverDeviceMenu = $(`${this.rootId} select[ojd-profile-data='driverDevice']`);
 		const $driverUri = $(`${this.rootId} select[ojd-profile-data='driverUri']`);
 		const $driverNetwork = $(`${this.rootId} ${this.objectIds.driverNetwork}`);
+        const $playerDeviceSection = $(`${this.rootId} div[ojd-driver-chromium-player]`);
+        const $playerDeviceMenu = $(`${this.rootId} select[ojd-profile-data='player']`);
 
 		// Driver Menu
 		$driverMenu.val(profile.driver);
-		$driverUri.val(profile.driverUri);
+		$driverUri.val(profile.driverUri);+
+        $playerDeviceMenu.val(this.profiles.getCurrentProfilePlayer());
 		$driverPortMenu.html('');
 		$driverDeviceMenu.html('');
 
@@ -570,6 +576,13 @@ class ProfileController {
 		} else {
 			$($driverNetwork).hide();
 		}
+
+        // Chromium Players
+        if (profile.driver === 'chromium') {
+            $($playerDeviceSection).show();
+        } else {
+            $($playerDeviceSection).hide();
+        }
 
 
 

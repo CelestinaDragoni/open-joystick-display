@@ -70,7 +70,7 @@ class Themes {
 
 		let styleFile = false;
 		if (theme.styles && theme.styles[styleKey] && theme.styles[styleKey].file) {
-			styleFile = PATH.basename(theme.styles[styleKey].file);
+			styleFile = theme.styles[styleKey].file;
 		}
 
 		theme.html = '';

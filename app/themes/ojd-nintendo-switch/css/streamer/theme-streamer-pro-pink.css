@@ -1,0 +1,15 @@
+.theme-analog.active {
+    background:#ff4ca6;
+}
+.theme-button.active{
+    fill:#ff4ca6 !important;
+}
+.theme-button.active *{
+    fill:#ff4ca6 !important;
+}
+.theme-label.active{
+    fill:white !important;
+}
+.theme-label.active *{
+    fill:white !important;
+}

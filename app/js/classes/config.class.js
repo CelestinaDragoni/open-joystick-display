@@ -30,6 +30,10 @@ class Config {
 		// If config version 1, migrate.
 		this.migrateConfigOne();
 
+		// If config version 2, migrate.
+		this.migrateConfigTwo();
+
+
 	}
 
 	/*
@@ -63,6 +67,31 @@ class Config {
 		this.config = this.store.get('config');
 
 		return true;
+	}
+
+	migrateConfigTwo() {
+
+		if (this.config.version !== 2) {
+			return false;
+		}
+		
+		const newMappings = require(OJD.appendCwdPath('app/js/data/mappings-v3.json'));
+		const mappings = this.store.get('mappings');
+		for (const map of newMappings) {
+			mappings.push(map);
+		}
+		for (const map of mappings) {
+			map.triggerFixed = [];
+		}
+		this.store.set('mappings', mappings);
+
+		// Set Config to Version 2
+		this.config.version = 3;
+		this.store.set('config', this.config);
+		
+		// Reload
+		this.config = this.store.get('config');		
+
 	}
 
 	/*
