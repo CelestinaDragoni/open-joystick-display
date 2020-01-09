@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 2.71
+* Hitbox and Smashbox Support Developed by Luberry
+
 ## Version 2.7
 * Racing Wheel Support
 * Logitech G29 and G920 Racing Wheels with Gearboxes and Pedal Configurations
