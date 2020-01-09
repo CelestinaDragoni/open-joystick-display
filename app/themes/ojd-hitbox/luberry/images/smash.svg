@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500"
+   height="300"
+   viewBox="0 0 4999.0196 3000"
+   version="1.1"
+   id="svg921"
+   sodipodi:docname="smash.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata927">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs925" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview923"
+     showgrid="false"
+     inkscape:zoom="1.2980392"
+     inkscape:cx="463.91939"
+     inkscape:cy="52.066997"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg921"
+     inkscape:pagecheckerboard="true" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblAD"
+     class="theme-button"
+     ojd-button="UP"
+     cx="1181.5636"
+     cy="675.43756"
+     r="183.25168" />
+  <ellipse
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblAC"
+     class="theme-button"
+     cx="1555.0544"
+     cy="1123.6202"
+     ojd-button="RIGHT"
+     rx="183.25168"
+     ry="183.24548" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblMB"
+     ojd-button="17"
+     class="theme-button"
+     cx="1564.3916"
+     cy="1839.4675"
+     r="183.26404" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblMD"
+     ojd-button="19"
+     class="theme-button"
+     cx="1769.818"
+     cy="2209.8479"
+     r="183.24548" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblME"
+     ojd-button="20"
+     class="theme-button"
+     cx="2196.2407"
+     cy="2206.7375"
+     r="183.27023" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblCC"
+     ojd-button="CLEFT"
+     class="theme-button"
+     cx="2781.3848"
+     cy="2206.7375"
+     r="183.24548" />
+  <path
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblCE"
+     ojd-button="15"
+     class="theme-button"
+     d="m 2986.8168,2390.7561 a 183.24549,183.24549 0 1 1 -183.2455,183.2455 183.25168,183.25168 0 0 1 183.2455,-183.2455 z"
+     inkscape:connector-curvature="0" />
+  <path
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblCD"
+     ojd-button="CDOWN"
+     class="theme-button"
+     d="m 3207.8071,2020.3818 a 183.24549,183.24549 0 1 1 -183.2455,183.2455 183.25168,183.25168 0 0 1 183.2455,-183.2455 z"
+     inkscape:connector-curvature="0" />
+  <path
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblCA"
+     ojd-button="CUP"
+     class="theme-button"
+     d="m 2983.7126,1656.2282 a 183.24549,183.24549 0 1 1 -183.2579,183.2455 183.2492,183.2492 0 0 1 183.2579,-183.2455 z"
+     inkscape:connector-curvature="0" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblCB"
+     ojd-button="CRIGHT"
+     class="theme-button"
+     cx="3410.1414"
+     cy="1836.3572"
+     r="183.25168" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblKA"
+     class="theme-button"
+     ojd-button="A"
+     cx="3435.0305"
+     cy="1313.4761"
+     r="183.24548" />
+  <path
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblKB"
+     ojd-button="X"
+     class="theme-button"
+     d="M 3783.6261,896.80504 A 183.24549,183.24549 0 1 1 3600.3806,1080.0506 183.25168,183.25168 0 0 1 3783.6261,896.80504 Z"
+     inkscape:connector-curvature="0" />
+  <path
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblKC"
+     ojd-button="B"
+     class="theme-button"
+     d="M 4203.828,909.25886 A 183.23931,183.23931 0 1 1 4020.5702,1092.5044 183.24054,183.24054 0 0 1 4203.828,909.25886 Z"
+     inkscape:connector-curvature="0" />
+  <path
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblKD"
+     ojd-button="D"
+     class="theme-button"
+     d="m 4586.6685,1071.0967 a 183.24549,183.24549 0 1 1 -183.2578,183.2455 183.2492,183.2492 0 0 1 183.2578,-183.2455 z"
+     inkscape:connector-curvature="0" />
+  <path
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblPD"
+     ojd-button="R"
+     class="theme-button"
+     d="M 4546.2029,660.26414 A 183.24178,183.24178 0 1 1 4362.9574,843.50221 183.23683,183.23683 0 0 1 4546.2029,660.26414 Z"
+     inkscape:connector-curvature="0" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblPC"
+     ojd-button="Z"
+     class="theme-button"
+     cx="4163.3501"
+     cy="681.66571"
+     r="183.24548" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblPB"
+     ojd-button="Y"
+     class="theme-button"
+     cx="3746.2773"
+     cy="669.19702"
+     r="183.27023" />
+  <path
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblPA"
+     ojd-button="L"
+     class="theme-button"
+     d="M 3400.7856,719.39936 A 183.24425,183.24425 0 1 1 3217.5401,902.64238 183.2492,183.2492 0 0 1 3400.7856,719.39936 Z"
+     inkscape:connector-curvature="0" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblST"
+     class="theme-button"
+     ojd-button="START"
+     cx="2482.5979"
+     cy="485.58423"
+     r="183.25168" />
+  <circle
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     id="lblMA"
+     ojd-button="16"
+     class="theme-button"
+     cx="377.27213"
+     cy="1254.6823"
+     r="183.25168" />
+  <circle
+     r="183.25168"
+     cy="1052.0325"
+     cx="739.57062"
+     class="theme-button"
+     id="lblAA"
+     ojd-button="LEFT"
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px" />
+  <circle
+     r="183.25168"
+     cy="1089.3816"
+     cx="1147.3064"
+     class="theme-button"
+     id="lblAB"
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px"
+     ojd-button="DOWN"
+     inkscape:label="#lblAB" />
+  <circle
+     r="183.25168"
+     cy="1839.4675"
+     cx="1987.6979"
+     class="theme-button"
+     id="lblMC"
+     ojd-button="18"
+     style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:12.36724663px" />
+</svg>

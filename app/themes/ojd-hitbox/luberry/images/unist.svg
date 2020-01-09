@@ -15,7 +15,7 @@
    width="450"
    height="300"
    viewBox="0 0 450 300.00001"
-   sodipodi:docname="hitboxUNIST.svg"
+   sodipodi:docname="unist.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <metadata
      id="metadata1654">
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,7 +45,7 @@
      id="namedview1650"
      showgrid="false"
      inkscape:zoom="2.9404084"
-     inkscape:cx="217.18299"
+     inkscape:cx="161.91856"
      inkscape:cy="157.10148"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
@@ -113,21 +113,17 @@
      transform="scale(1,-1)"
      class="theme-button"
      inkscape:label="btnRight" />
-  <text
-     xml:space="preserve"
+  <g
+     aria-label="⇦"
+     transform="rotate(180,4.5043945e-6,-1.000003)"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40.37840271px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.00945997"
-     x="-180.30666"
-     y="-140.25879"
-     id="text5941"
-     ojd-button="RIGHT"
-     class="theme-button-label"
-     inkscape:label="lblRight"
-     transform="scale(-1)"><tspan
-       sodipodi:role="line"
-       id="tspan5939"
-       x="-180.30666"
-       y="-140.25879"
-       style="stroke-width:1.00945997">⇦</tspan></text>
+     id="text5941">
+    <path
+       d="m -148.68216,-149.0127 v -5.83594 h -17.01493 v -2.77996 l -7.11748,5.69793 7.11748,5.69793 v -2.77996 z m 1.93216,1.95189 h -17.01492 v 4.86985 l -12.16478,-9.73971 12.16478,-9.73971 v 4.86985 H -146.75 Z"
+       style="stroke-width:1.00945997"
+       id="path6703"
+       inkscape:connector-curvature="0" />
+  </g>
   <circle
      inkscape:label="btnUp"
      transform="matrix(0,-1,-1,0,0,0)"
@@ -138,21 +134,17 @@
      cx="-257.92542"
      id="circle5943"
      style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:2.27157998;stroke-opacity:1" />
-  <text
-     inkscape:label="lblUp"
-     id="text5947"
-     y="-173.47864"
-     ojd-button="UP"
-     x="234.08722"
-     class="theme-button-label"
+  <g
+     aria-label="⇦"
+     transform="rotate(90,2.565918e-6,2.6049805e-6)"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.7490921px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.26872742"
-     xml:space="preserve"
-     transform="rotate(90)"><tspan
-       y="-173.47864"
-       x="234.08722"
-       id="tspan5945"
-       sodipodi:role="line"
-       style="stroke-width:1.26872742">⇦</tspan></text>
+     id="text5947">
+    <path
+       d="m 273.83407,-184.48088 v -7.33483 h -21.385 v -3.49396 l -8.94552,7.16137 8.94552,7.16137 v -3.49395 z m 2.42842,2.4532 H 254.8775 v 6.12062 l -15.28916,-12.24124 15.28916,-12.24123 v 6.12061 h 21.38499 z"
+       style="stroke-width:1.26872742"
+       id="path6700"
+       inkscape:connector-curvature="0" />
+  </g>
   <circle
      style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.80737734;stroke-opacity:1"
      id="circle5949"
@@ -522,33 +514,26 @@
        d="m 20,0 c -2.210937,0 -4,1.789063 -4,4 0,0.277344 0.03906,0.550781 0.09375,0.8125 L 7,9.375 C 6.265625,8.535156 5.203125,8 4,8 1.789063,8 0,9.789063 0,12 c 0,2.210938 1.789063,4 4,4 1.203125,0 2.265625,-0.535156 3,-1.375 l 9.09375,4.5625 C 16.039063,19.449219 16,19.722656 16,20 c 0,2.210938 1.789063,4 4,4 2.210938,0 4,-1.789062 4,-4 0,-2.210937 -1.789062,-4 -4,-4 -1.203125,0 -2.265625,0.535156 -3,1.375 L 7.90625,12.8125 C 7.960938,12.550781 8,12.277344 8,12 8,11.722656 7.960938,11.449219 7.90625,11.1875 L 17,6.625 C 17.734375,7.464844 18.796875,8 20,8 22.210938,8 24,6.210938 24,4 24,1.789063 22.210938,0 20,0 Z"
        inkscape:connector-curvature="0" />
   </g>
-  <text
-     inkscape:label="lblDown"
-     id="text5935"
-     y="117.91846"
-     ojd-button="DOWN"
-     x="-142.95364"
-     class="theme-button-label"
+  <g
+     aria-label="⇦"
+     transform="rotate(-90,1.0000011,-1.0000044)"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40.37840271px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.00945997"
-     xml:space="preserve"
-     transform="rotate(-90)"><tspan
-       y="117.91846"
-       x="-142.95364"
-       id="tspan5933"
-       sodipodi:role="line"
-       style="stroke:none;stroke-width:1.00945997">⇦</tspan></text>
-  <text
-     xml:space="preserve"
+     id="text5935">
+    <path
+       d="m -109.32915,109.16455 v -5.83595 h -17.01493 v -2.77995 l -7.11748,5.69792 7.11748,5.69793 v -2.77995 z m 1.93217,1.95188 h -17.01493 v 4.86986 l -12.16478,-9.73972 12.16478,-9.739707 v 4.869857 h 17.01493 z"
+       style="stroke:none;stroke-width:1.00945997"
+       id="path6697"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     aria-label="⇦"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40.37840271px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.00945997"
-     x="28.433311"
-     y="134.64452"
      id="lblSquare"
-     ojd-button="LEFT"
-     class="theme-button-label"
-     inkscape:label="lblLeft"><tspan
-       sodipodi:role="line"
-       id="tspan5929"
-       x="28.433311"
-       y="134.64452"
-       style="stroke-width:1.00945997">⇦</tspan></text>
+     transform="translate(7.9108887e-6,-0.98580333)">
+    <path
+       d="m 62.057803,125.8906 v -5.83594 H 45.04288 v -2.77995 l -7.117482,5.69792 7.117482,5.69793 v -2.77996 z m 1.932169,1.95189 H 46.97505 v 4.86986 l -12.164783,-9.73972 12.164783,-9.73971 v 4.86986 h 17.014922 z"
+       style="stroke-width:1.00945997"
+       id="path6694"
+       inkscape:connector-curvature="0" />
+  </g>
 </svg>
