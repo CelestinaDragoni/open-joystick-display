@@ -1,0 +1,13 @@
+{
+	"id":"ojd-hitbox",
+	"name":"Hit Boxes / Smash Boxes",
+	"author":"Dylan 'Luberry' Kozicki",
+	"version":"1.0",
+	"copyright":"Copyright 2019-2020 Dylan 'Luberry' Kozicki, Open Joystick Display",
+	"license":"BSD 4-Clause Attribution",
+	"website":"https://ojdproject.com",
+	"styles":[
+		{"id":"hitbox-luberry", "name":"Luberry Hit Box UNIST", "file":"luberry/theme-unist.html", "cssroot":"luberry/", "mastercss":"theme-unist.css"},
+        {"id":"hitbox-luberry", "name":"Luberry Smash Box Ultimate", "file":"luberry/theme-smash.html", "cssroot":"luberry/", "mastercss":"theme-smash.css"}
+	]
+}

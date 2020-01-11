@@ -1,0 +1,22 @@
+.theme {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:450px;
+	height:300px;
+}
+.theme-button.active{
+	fill:#7424FF !important;
+}
+.theme-button-label.active{
+	fill:#7424FF !important;
+}
+.theme-button-label.active *{
+	fill:white !important;
+}
+.theme-button-label-stroke.active{
+	stroke:white !important;
+}
+.theme-button-label-stroke.active *{
+	stroke:white !important;
+}

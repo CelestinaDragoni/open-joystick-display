@@ -1,9 +1,9 @@
 {
     "id":"ojd-racing-wheels",
     "name":"Racing Wheels",
-    "author":"Anthony 'Dragoni' Mattera (RetroWeeb)",
+    "author":"Anthony Mattera (KernelZechs)",
     "version":"1.0",
-    "copyright":"Copyright 2019 Anthony 'Dragoni' Mattera, Open Joystick Display",
+    "copyright":"Copyright 2019 Anthony Mattera (KernelZechs), Open Joystick Display",
     "license":"BSD 4-Clause Attribution",
     "website":"https://ojdproject.com",
     "styles":[
