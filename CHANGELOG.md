@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 2.71
+## Version 2.7.1
 * Hitbox and Smashbox Support Developed by Luberry
 
 ## Version 2.7
