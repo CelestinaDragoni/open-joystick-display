@@ -1,6 +1,6 @@
 ---
 name: Standard Bug/Feature/Theme
-about: Describes the standard issue template for Open Joystick Display
+about: Bug/Feature/Theme Issues Open Joystick Display
 title: ''
 labels: ''
 assignees: KernelZechs
@@ -33,5 +33,5 @@ Please consider the following before submitting a ticket:
 If all of the above is true, please submit a ticket with as much detail as you can provide.
 
 ## For Theme Requests
-- Unless it is a group of themes that would benefit the community as a whole, I will not take theme requests for your own personal needs. There is plenty of examples and documentation on how to build your own here: https://ojdproject.com/developer-guide
+- Unless it is a group of themes that would benefit the community as a whole, I will not take theme requests for your own personal needs. There are plenty of examples and documentation on how to build your own here: https://ojdproject.com/developer-guide
 - If you don't understand what the above means, think of it this way- would it be an enhancement to OJD that everyone would enjoy or just an aesthetic choice that would benefit you and your stream alone? If it's number two, I won't do it. I'm a single developer and I'm busy, also I don't take commissions don't ask.
