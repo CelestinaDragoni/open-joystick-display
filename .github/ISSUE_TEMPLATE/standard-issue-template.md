@@ -7,6 +7,8 @@ assignees: KernelZechs
 
 ---
 
+# Failure to follow the steps below will result in the ticket being immediately closed. Please read and respond carefully. 
+
 ## For Bug Reports
 - Information and version about the operating system you are currently using:
   - For **Microsoft Windows** you can get this information by going to `Command Prompt` and using the `systeminfo` command.
