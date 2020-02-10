@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 2.8
+* SCUF Playstation 4 Themes
+* Invert Axis Options for Directionals
+* Mode Button for 6-Button Genesis/Mega Drive Controller
+
 ## Version 2.7.1
 * Hitbox and Smashbox Support Developed by Luberry
 
