@@ -1,9 +1,9 @@
 {
-	"id":"odj-scuf-ps4",
+	"id":"ojd-scuf-ps4",
 	"name":"SCUF Playstation 4",
-	"author":"Anthony 'Dragoni' Mattera (KernelZechs)",
+	"author":"Anthony Mattera (KernelZechs)",
 	"version":"1.0",
-	"copyright":"Copyright 2020 Anthony Mattera (KernelZechs), Open Joystick Display",
+	"copyright":"Copyright 2020 Anthony Mattera (KernelZechs)",
 	"license":"BSD 4-Clause Attribution",
 	"website":"https://ojdproject.com",
 	"styles":[
