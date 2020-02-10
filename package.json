@@ -2,7 +2,7 @@
   "name": "open-joystick-display",
   "version": "2.8.0",
   "description": "A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.",
-  "author": "Anthony Mattera (KernelZechs), Open Joystick Display",
+  "author": "Anthony Mattera (KernelZechs), Open Joystick Display <void@kernelzechs.com>",
   "main": "app/js/electron.js",
   "scripts": {
     "build": "gulp build && gulp rebuild-electron && electron-builder",
@@ -10,7 +10,7 @@
   },
   "build": {
     "appId": "open-joystick-display",
-    "artifactName": "open-randomizer-tracker-${version}.${ext}",
+    "artifactName": "open-joystick-display-${version}.${ext}",
     "productName": "Open Joystick Display",
     "files": [
       "app/**/*",
