@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 2.8
+## Version 2.8.0
 * SCUF Playstation 4 Themes
 * Invert Axis Support for Directionals
 * Mode Button for 6-Button Genesis/Mega Drive Controller
