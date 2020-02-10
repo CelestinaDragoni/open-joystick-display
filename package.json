@@ -35,7 +35,7 @@
     },
     "mac": {
       "icon": "./app/icons/icon.icns",
-      "target": "dmg"
+      "target": "zip"
     }
   },
   "dependencies": {
