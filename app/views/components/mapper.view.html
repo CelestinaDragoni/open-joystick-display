@@ -130,15 +130,24 @@
 				<input ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='deadzone' type='number' step='.05' min='0' max='1' class='ojd-input' type='text' maxlength='5' value='${deadzone}'/>
 			</div>
 		</div>
+		<div class='ojd-sidebar-flex-row' style='padding-bottom:5px'>
+			<div class='ojd-flex-grow'>
+				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='dpad' class='ojd-button ojd-sidebar-button ojd-button-toggle ${dpad}'>D-Pad</button>
+			</div>
+			<div class='ojd-flex-grow'>
+				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='cpad' class='ojd-button ojd-sidebar-button ojd-button-toggle ${cpad}'>C-Pad</button>
+			</div>
+			
+			<div class='ojd-flex-grow'>
+				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='infinity' class='ojd-button ojd-sidebar-button ojd-button-toggle ${infinity}'> Infinity</button>
+			</div>
+		</div>
 		<div class='ojd-sidebar-flex-row'>
 			<div class='ojd-flex-grow'>
-				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='dpad' class='ojd-button ojd-sidebar-button ojd-button-toggle ${dpad}'><i class="fas fa-check"></i> D-Pad</button>
+				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='invertY' class='ojd-button ojd-sidebar-button ojd-button-toggle ${invertY}'>Invert X</button>
 			</div>
 			<div class='ojd-flex-grow'>
-				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='cpad' class='ojd-button ojd-sidebar-button ojd-button-toggle ${cpad}'><i class="fas fa-check"></i> C-Pad</button>
-			</div>
-			<div class='ojd-flex-grow'>
-				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='infinity' class='ojd-button ojd-sidebar-button ojd-button-toggle ${infinity}'><i class="fas fa-infinity"></i></button>
+				<button ojd-map-index='${i}' ojd-map-group='directional' ojd-map-field='invertX' class='ojd-button ojd-sidebar-button ojd-button-toggle ${invertX}'>Invert Y</button>
 			</div>
 			<div class='ojd-flex-fixed'>
 				<button ojd-map-index='${i}' ojd-map-group='directional' class='ojd-button ojd-sidebar-button ojd-button-danger ojd-button-delete'><i class="fas fa-trash"></i></button>
@@ -249,6 +258,7 @@
 	<option value='X'>X</option>
 	<option value='Y'>Y</option>
 	<option value='Z'>Z</option>
+	<option value='MODE'>MODE</option>
 	<option value='CROSS'>CROSS</option>
 	<option value='CIRCLE'>CIRCLE</option>
 	<option value='SQUARE'>SQUARE</option>
