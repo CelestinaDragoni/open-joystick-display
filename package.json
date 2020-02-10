@@ -1,16 +1,16 @@
 {
   "name": "open-joystick-display",
-  "version": "1.0.0",
-  "description": "An open source Joystick display for Twitch, YouTube, etc. ",
-  "author": "Anthony Dragoni, Open Joystick Display",
+  "version": "2.8.0",
+  "description": "A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.",
+  "author": "KernelZechs, Open Joystick Display <void@kernelzechs.com>",
   "main": "app/js/electron.js",
   "scripts": {
-    "compile": "electron-builder --dir",
-    "build": "electron-builder",
+    "build": "gulp build && gulp rebuild-electron && electron-builder",
     "start": "electron ."
   },
   "build": {
     "appId": "open-joystick-display",
+    "artifactName": "open-joystick-display-${version}.${ext}",
     "productName": "Open Joystick Display",
     "files": [
       "app/**/*",
@@ -19,16 +19,23 @@
     ],
     "linux": {
       "icon": "./app/icons/icon.png",
-      "target": "dir",
+      "target": [
+          {"target":"tar.gz"},
+          {"target":"deb"},
+          {"target":"AppImage"}
+      ],
       "category": "Multimedia"
     },
     "win": {
       "icon": "./app/icons/icon.ico",
-      "target": "dir"
+      "target": [
+        {"target":"zip"},
+        {"target":"nsis"}
+      ]
     },
     "mac": {
       "icon": "./app/icons/icon.icns",
-      "target": "dmg"
+      "target": "zip"
     }
   },
   "dependencies": {

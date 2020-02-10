@@ -188,7 +188,9 @@ class Joystick {
 			const axisIndex1 = directional.axes[0];
 			const axisIndex2 = directional.axes[1];
 			const hasInfinity = directional.infinity;
-			const offset = this.checkAnalog(axisIndex1, axisIndex2, deadzone, hasInfinity);
+			const invertX = directional.invertX;
+			const invertY = directional.invertY;
+			const offset = this.checkAnalog(axisIndex1, axisIndex2, deadzone, hasInfinity, invertX, invertY);
 
 			// All directionals are treated like analogs regardless
 			$(`*[ojd-directional='${i}']`).css('top',`${offset.y}%`);
@@ -477,7 +479,7 @@ class Joystick {
 
 	}
 
-	checkAnalog(axisIndex1, axisIndex2, deadzone, hasInfinity=false) {
+	checkAnalog(axisIndex1, axisIndex2, deadzone, hasInfinity=false, invertX=false, invertY=false) {
 		
 		const joystick = this.getCurrentDriver().getJoystick();
 		let axis1 = joystick.axes[axisIndex1];
@@ -513,10 +515,20 @@ class Joystick {
 		let x = (axis1 < deadzone*-1 || axis1 > deadzone) ? axis1 : 0;
 		let y = (axis2 < deadzone*-1 || axis2 > deadzone) ? axis2 : 0;
 		
-		offset.x = 50 + (x*50);
-		offset.y = 50 + (y*50);
 		offset.xRaw = axis1;
 		offset.yRaw = axis2;
+
+		if (invertX) {
+			offset.x = 50 + ((x*-1)*50);
+		} else {
+			offset.x = 50 + (x*50);
+		}
+
+		if (invertY) {
+			offset.y = 50 + ((y*-1)*50);
+		} else {
+			offset.y = 50 + (y*50);
+		}
 		
 		return offset;
 

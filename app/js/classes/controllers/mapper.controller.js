@@ -101,6 +101,20 @@ class MapperController {
 				mapping.directional[index].deadzone = value;
 				doRender=false;
 			}
+			if (field === 'invertX') {
+				if (!$target.hasClass("ojd-button-active")) {
+					mapping.directional[index].invertX = true;
+				} else {
+					mapping.directional[index].invertX = false;
+				}
+			}
+			if (field === 'invertY') {
+				if (!$target.hasClass("ojd-button-active")) {
+					mapping.directional[index].invertY = true;
+				} else {
+					mapping.directional[index].invertY = false;
+				}
+			}
 			if (field === 'dpad') {
 				if (!$target.hasClass("ojd-button-active")) {
 					mapping.directional[index].dpad = true;
@@ -218,7 +232,7 @@ class MapperController {
 		if (group == 'button') {
 			mapping.button.push({button:"A", index:0});
 		} else if (group == 'directional') {
-			mapping.directional.push({axes:[0,1], deadzone:.25, dpad:false, cpad:false});
+			mapping.directional.push({axes:[0,1], deadzone:.25, dpad:false, cpad:false, invertX:false, invertY:false});
 		} else if (group == 'trigger') {
 			mapping.trigger.push({axis:0, range:[-1,1], button:false});
 		} else if (group == 'trigger-fixed') {
@@ -317,6 +331,8 @@ class MapperController {
 			t = t.replace(/\$\{x\}/g, directional.axes[0]);
 			t = t.replace(/\$\{y\}/g, directional.axes[1]);
 			t = t.replace(/\$\{deadzone\}/g, directional.deadzone);
+			t = t.replace(/\$\{invertX\}/g, directional.invertX ? 'ojd-button-active' : '');
+			t = t.replace(/\$\{invertY\}/g, directional.invertY ? 'ojd-button-active' : '');
 			t = t.replace(/\$\{dpad\}/g, directional.dpad ? 'ojd-button-active' : '');
 			t = t.replace(/\$\{cpad\}/g, directional.cpad ? 'ojd-button-active' : '');
 			t = t.replace(/\$\{infinity\}/g, directional.infinity ? 'ojd-button-active' : '');
