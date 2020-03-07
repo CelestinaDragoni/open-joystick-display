@@ -1,0 +1,14 @@
+{
+	"id":"ojd-sony-ps4",
+	"name":"Sony Playstation 4",
+	"author":"John (ATFx)",
+	"version":"1.0",
+	"website":"https://ojdproject.com",
+	"styles":[
+                {"id":"black", "name":"Black"},
+                {"id":"white", "name":"White"},
+                {"id":"blue", "name":"Blue"},
+                {"id":"green", "name":"Green"},
+                 {"id":"snowcamo", "name":"SnowCamo"}
+	]
+}

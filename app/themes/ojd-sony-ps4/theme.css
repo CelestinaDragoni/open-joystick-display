@@ -1,0 +1,61 @@
+.theme-wrapper {
+    position:relative;
+    top:0;
+    left:0;
+    width:800px;
+    height:499px;
+}
+
+.controller {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 499px;
+    background-repeat: no-repeat;
+}
+
+.button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 800px;
+	height: 499px;
+	z-index:2;
+	display: none;
+}
+
+.button.active {
+	display:block;
+}
+
+.analog-wrapper {
+	position:absolute;
+	top:0;
+	left:0;
+	height:75px;
+	width:75px;
+	border-radius:100%;
+	z-index: 3;
+}
+.analog-wrapper-left {
+	top: 180px;
+	left: 235px;
+}
+.analog-wrapper-right {
+	top: 180px;
+	left: 485px;
+}
+.analog {
+    position:absolute;
+	top:50%;
+	left:50%;
+	width:90px;
+	height:90px;
+	margin-left:-50px;
+	margin-top:-62px;
+	background-repeat: no-repeat;
+	background-image: url('images/shared/analog.png');
+	border-radius:100%;
+
+}
