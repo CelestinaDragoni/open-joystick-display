@@ -1,16 +1,16 @@
-const Clone 		= require('clone');
-const SerialPort 	= require("serialport");
+const Clone 		= require('clone')
+const SerialPort 	= require('serialport')
 const Readline 		= require('@serialport/parser-readline')
-const OJD 			= window.OJD;
+const OJD 			= window.OJD
 
 // Devices
-const {RetroSpyDevice_NES} 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-nes.device.js'));
-const {RetroSpyDevice_SNES} = require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-snes.device.js'));
-const {RetroSpyDevice_SMASHBOX} = require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-smashbox.device.js'));
-const {RetroSpyDevice_GC} 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-gc.device.js'));
-const {RetroSpyDevice_N64} 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-n64.device.js'));
-const {RetroSpyDevice_PCE} 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-pce.device.js'));
-const {RetroSpyDevice_MD} 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-md.device.js'));
+const { RetroSpyDevice_NES } 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-nes.device.js'))
+const { RetroSpyDevice_SNES } = require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-snes.device.js'))
+const { RetroSpyDevice_SMASHBOX } = require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-smashbox.device.js'))
+const { RetroSpyDevice_GC } 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-gc.device.js'))
+const { RetroSpyDevice_N64 } 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-n64.device.js'))
+const { RetroSpyDevice_PCE } 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-pce.device.js'))
+const { RetroSpyDevice_MD } 	= require(OJD.appendCwdPath('app/js/classes/drivers/retrospy/retrospy-md.device.js'))
 
 /*
 	RetroSpyDriver
@@ -31,155 +31,144 @@ const {RetroSpyDevice_MD} 	= require(OJD.appendCwdPath('app/js/classes/drivers/r
 
 */
 class RetroSpyDriver {
+    constructor(handler) {
+        this.joystickConnected = false
+        this.joystickInfo = ''
+        this.handler = handler
 
-	constructor(handler) {
+        // RetroSpy Settings
+        this.ports 	= []
+        this.ready = false
+        this.port 	= false
+        this.socket = false
+        this.baud 	= 115200
+        this.device = false
 
-		this.joystickConnected = false;
-		this.joystickInfo = '';
-		this.handler = handler;
+        // List of Support Device Parsers
+        this.devices = {
+            nes: new RetroSpyDevice_NES(),
+            snes: new RetroSpyDevice_SNES(),
+            smashbox: new RetroSpyDevice_SMASHBOX(),
+            n64: new RetroSpyDevice_N64(),
+            gc: new RetroSpyDevice_GC(),
+            md: new RetroSpyDevice_MD(),
+            pce: new RetroSpyDevice_PCE()
+        }
 
-		// RetroSpy Settings
-		this.ports 	= [];
-		this.ready  = false;
-		this.port 	= false;
-		this.socket = false;
-		this.baud 	= 115200;
-		this.device = false;
+        // Get Serial Ports
+        this.initPorts()
+    }
 
-		// List of Support Device Parsers
-		this.devices = {
-			'nes':new RetroSpyDevice_NES(),
-			'snes':new RetroSpyDevice_SNES(),
-			'smashbox':new RetroSpyDevice_SMASHBOX(),
-			'n64':new RetroSpyDevice_N64(),
-			'gc':new RetroSpyDevice_GC(),
-			'md':new RetroSpyDevice_MD(),
-			'pce':new RetroSpyDevice_PCE()
-		};
+    setActive(port, device) {
+        // Sanity Checking
+        if (port === '') {
+            return false
+        }
 
-		// Get Serial Ports
-		this.initPorts();
+        if (device === '') {
+            return false
+        }
 
-	}
+        // Setup Devices
+        this.port = port
+        this.device = this.devices[device]
+        this.device.resetJoystick()
 
-	setActive(port, device) {
+        // Make Serial Connection
+        this.socket = new SerialPort(this.port, { baudRate: this.baud, autoOpen: true }, (function (err) {
+            if (err) {
+                console.info(`RetroSpy: ${err}`)
+            }
+        }))
 
-		// Sanity Checking
-		if (port === '') {
-			return false;
-		}
+        // On Disconnect Refresh Driver
+        this.socket.on('err', (function (err) {
+            if (this.joystickConnected) {
+                console.info('RetroSpy: Reloading Driver')
+                this.handler.reloadDriver()
+            }
+        }).bind(this))
 
-		if (device === '') {
-			return false;
-		}
+        // Send Information to Parser
+        const parser = this.socket.pipe(new Readline({ delimiter: '\n' }))
+        parser.on('data', (function (data) {
+            this.device.read(data)
+        }).bind(this))
 
-		// Setup Devices
-		this.port = port;
-		this.device = this.devices[device];
-		this.device.resetJoystick();
+        this.joystickConnected = true
+    }
 
-		// Make Serial Connection
-		this.socket = new SerialPort(this.port, {baudRate:this.baud, autoOpen:true}, (function(err) {
-			if (err) {
-				console.info(`RetroSpy: ${err}`);
-			}
-		}).bind(this));
+    setInactive() {
+        this.joystickConnected = false
+        this.error = false
+        this.port = false
+        this.socket = false
 
-		// On Disconnect Refresh Driver
-		this.socket.on('err', (function(err) {
-			if (this.joystickConnected) {
-				console.info('RetroSpy: Reloading Driver');
-				this.handler.reloadDriver();
-			}
-		}).bind(this));
+        if (this.socket && this.socket.isOpen) {
+            this.socket.close()
+        }
+    }
 
-		// Send Information to Parser
-		const parser = this.socket.pipe(new Readline({ delimiter: '\n' }))
-		parser.on('data', (function (data) {
-			this.device.read(data);
-		}).bind(this));
+    isConnected() {
+        return this.joystickConnected
+    }
 
-		this.joystickConnected = true;
+    getInformation() {
+        if (this.device && this.port) {
+            return `Connected on ${this.port}: ${this.device.getInformation()}.`
+        }
+        return 'RetroSpy is not connected. Check your arduino installation, your firmware, your serial port, your cable, and if your console is currently on.'
+    }
 
-	}
+    getJoystick() {
+        if (this.device && this.port) {
+            return this.device.getJoystick()
+        }
+        return { buttons: [], axes: [] }
+    }
 
-	setInactive() {
-		this.joystickConnected = false;
-		this.error = false;
-		this.port = false;
-		this.socket = false;
+    getPorts() {
+        return this.ports
+    }
 
-		if (this.socket && this.socket.isOpen) {
-			this.socket.close();
-		}
-	}
+    getDevices() {
+        return [
+            { value: 'nes', label: 'Nintendo Famicom (NES)' },
+            { value: 'snes', label: 'Nintendo Super Famicom (SNES)' },
+            { value: 'smashbox', label: 'Hit Box Smash Box' },
+            { value: 'n64', label: 'Nintendo 64' },
+            { value: 'gc', label: 'Nintendo Gamecube' },
+            { value: 'pce', label: 'NEC PC-Engine / TurboGrafx-16' },
+            { value: 'md', label: 'Sega Master System / Mega Drive (Genesis)' }
+        ]
+    }
 
-	isConnected() {
-		return this.joystickConnected;
-	}
+    async initPorts() {
+        this.ports = []
 
-	getInformation() {
-		if (this.device && this.port) {
-			return `Connected on ${this.port}: ${this.device.getInformation()}.`
-		} else {
-			return "RetroSpy is not connected. Check your arduino installation, your firmware, your serial port, your cable, and if your console is currently on.";
-		}
-	}
+        try {
+            const ports = await SerialPort.list()
 
-	getJoystick() {
-		if (this.device  && this.port) {
-			return this.device.getJoystick();
-		} else {
-			return {buttons:[],axes:[]};
-		}
-	}
+            for (const port of ports) {
+                let name = port.comName
 
-	getPorts() {
-		return this.ports;
-	}
+                if (typeof port.pnpId !== 'undefined') {
+                    name = `${name} (${port.pnpId})`
+                }
 
-	getDevices() {
-		return [
-			{value:'nes', label:'Nintendo Famicom (NES)'},
-			{value:'snes', label:'Nintendo Super Famicom (SNES)'},
-			{value:'smashbox', label:'Hit Box Smash Box'},
-			{value:'n64', label:'Nintendo 64'},
-			{value:'gc', label:'Nintendo Gamecube'},
-			{value:'pce', label:'NEC PC-Engine / TurboGrafx-16'},
-			{value:'md', label:'Sega Master System / Mega Drive (Genesis)'}
-		];
-	}
+                this.ports.push({
+                    value: port.comName,
+				    label: name
+                })
+            }
 
-	async initPorts() {
+            this.ready = true
+        } catch (err) {
+            console.error('RetroSpy: Could not access serial device. Maybe you need to give yourself permissions or run as administrator?')
+        }
 
-		this.ports = [];
-
-		try {
-			const ports = await SerialPort.list();
-
-			for (const port of ports) {
-				let name = port.comName;
-
-				if (typeof port.pnpId !== 'undefined') {
-					name = `${name} (${port.pnpId})`;
-				}
-
-				this.ports.push({
-					value:port.comName,
-				    label:name
-				});
-			}
-
-			this.ready = true;
-
-		} catch (err) {
-			console.error("RetroSpy: Could not access serial device. Maybe you need to give yourself permissions or run as administrator?");
-		}
-
-		return true;
-
-	}
-
+        return true
+    }
 }
 
-module.exports.RetroSpyDriver = RetroSpyDriver;
+module.exports.RetroSpyDriver = RetroSpyDriver

@@ -1,4 +1,4 @@
-const Clone = require('clone');
+const Clone = require('clone')
 
 /*
 	RetroSpyDevice_SNES
@@ -10,63 +10,60 @@ const Clone = require('clone');
 
 	RetroSpy Copyright 2018 Christopher J. Mallery <http://www.zoggins.net> NintendoSpy Copyright (c) 2014 Jeremy Burns
 	LICENSE: https://github.com/zoggins/RetroSpy/blob/master/LICENSE
-	
+
 	Open Joystick Display implementation:
 	Port by Anthony 'Dragoni' Mattera (RetroWeeb) https://github.com/RetroWeeb
 	Copyright 2019 Open Joystick Display Project, Anthony 'Dragoni' Mattera (RetroWeeb)
 	LICENSE: https://ojdproject.com/license
-	
+
 */
 class RetroSpyDevice_SNES {
+    constructor(profile) {
+        this.resetJoystick()
+        this.joystickInfo = 'RetroSpy Ardunio Nintendo Super Famicom (SNES). 12 Buttons, 0 Axes'
+    }
 
-	constructor(profile) {
-		this.resetJoystick();
-		this.joystickInfo = "RetroSpy Ardunio Nintendo Super Famicom (SNES). 12 Buttons, 0 Axes";
-	}
+    resetJoystick() {
+        // Emulates Chromium Gamepad Model
+        this.joystick = Clone({
+            axes: [],
+            buttons: [
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 },
+                { pressed: false, value: 0 }
+            ]
+        })
+    }
 
-	resetJoystick() {
-		// Emulates Chromium Gamepad Model
-		this.joystick = Clone({
-			axes:[],
-			buttons: [
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0},
-				{pressed:false, value:0}
-			]
-		});
-	}
+    getJoystick() {
+        return this.joystick
+    }
 
-	getJoystick() {
-		return this.joystick;
-	}
+    getInformation() {
+        return this.joystickInfo
+    }
 
-	getInformation() {
-		return this.joystickInfo;
-	}
-
-	read(line) {
-		const b = [...line];
-		for (const i in b) {
-			if (this.joystick.buttons[i]) {
-				if (b[i] === '1') {
-					this.joystick.buttons[i] = {pressed:true, value:1};
-				} else {
-					this.joystick.buttons[i] = {pressed:false, value:0};
-				}
-			}
-		}
-	}
-
-
+    read(line) {
+        const b = [...line]
+        for (const i in b) {
+            if (this.joystick.buttons[i]) {
+                if (b[i] === '1') {
+                    this.joystick.buttons[i] = { pressed: true, value: 1 }
+                } else {
+                    this.joystick.buttons[i] = { pressed: false, value: 0 }
+                }
+            }
+        }
+    }
 }
 
-module.exports.RetroSpyDevice_SNES = RetroSpyDevice_SNES;
+module.exports.RetroSpyDevice_SNES = RetroSpyDevice_SNES
