@@ -26,6 +26,7 @@ class Joystick {
 			//'hid':new HIDDriver(this)
 		};
 
+		this.activeTriggers = []
 		// Setup Checking
 		const poll = this.profiles.getCurrentProfilePoll();
 		const func = this.intervalCheckJoystick.bind(this);
@@ -240,8 +241,10 @@ class Joystick {
 			const trigger = currentMapping.trigger[i];
 			const active = this.checkTrigger(trigger.axis, trigger.range[0], trigger.range[1]);
 
-			if (active !== false) {
-
+			if (!!active) {
+                if (!this.activeTriggers.includes(i)) {
+                    this.activeTriggers.push(i)
+                }
 				let scale = ((active+1)/(trigger.range[1]+1))*100;
 
                 if (trigger.invert) {
@@ -273,8 +276,8 @@ class Joystick {
 					$(`*[ojd-button='${trigger.button}']`).addClass('active');
 				}
 
-			} else {
-
+			} else if (this.activeTriggers.includes(i)) {
+                this.activeTriggers = this.activeTriggers.filter((trigg) => trigg !== i)
 				$(`*[ojd-trigger-scale='${i}']`).css('height', '');
 				$(`*[ojd-trigger-scale-inverted='${i}']`).css('height', '');
 				$(`*[ojd-trigger-move='${i}']`).css('top', ``);
@@ -423,28 +426,22 @@ class Joystick {
 		active.RIGHT 	= buttons.RIGHT !== false && joystick.buttons[buttons.RIGHT] && joystick.buttons[buttons.RIGHT].pressed ? true : false;
 		active.DOWN 	= buttons.DOWN 	!== false && joystick.buttons[buttons.DOWN]  && joystick.buttons[buttons.DOWN].pressed ? true : false;
 
-		// Check Directions
-		if (active.UP && active.LEFT) { // Check Secondary-Cardinal Directions
-			offset.yRaw = -1;
-			offset.xRaw = -1;
-		} else if (active.UP && active.RIGHT) {
-			offset.yRaw = -1;
-			offset.xRaw = 1;
-		} else if (active.DOWN && active.LEFT) {
-			offset.yRaw = 1;
-			offset.xRaw = -1;
-		} else if (active.DOWN && active.RIGHT) {
-			offset.yRaw = 1;
-			offset.xRaw = 1;
-		} else if (active.UP) { // Check Primary-Cardinal Directions
-			offset.yRaw = -1;
-		} else if (active.LEFT) {
-			offset.xRaw = -1;
-		} else if (active.DOWN) {
-			offset.yRaw = 1;
-		} else if (active.RIGHT) {
-			offset.xRaw = 1;
-		}
+        // Check Directions
+        if (active.UP) {
+            offset.yRaw = -1
+        } else if (active.DOWN) {
+            offset.yRaw = 1
+        } else {
+            offset.yRaw = 0
+        }
+
+        if (active.LEFT) {
+            offset.xRaw = -1
+        } else if (active.RIGHT) {
+            offset.xRaw = 1
+        } else {
+            offset.xRaw = 0
+        }
 
 		offset.x = 50 + (offset.xRaw*50);
 		offset.y = 50 + (offset.yRaw*50);
@@ -511,10 +508,31 @@ class Joystick {
 			}
 
 		}
+        let x = 0
+        let y = 0
 
-		let x = (axis1 < deadzone*-1 || axis1 > deadzone) ? axis1 : 0;
-		let y = (axis2 < deadzone*-1 || axis2 > deadzone) ? axis2 : 0;
-		
+        // We don't want to devide by zero if the deadzone is 1
+        // If the deadzone is 1, x and y will always be 0
+        if (deadzone === 1) {
+            x = 0
+            y = 0
+        } else {
+            if (axis1 > 0) {
+                // Scale from "deadzone->1" to "0->1"
+                x = (Math.max(deadzone, axis1) - deadzone) / (1 - deadzone)
+            } else {
+                // Scale from "-deadzone->-1" to "0->-1"
+                x = (Math.min((deadzone * -1), axis1) + deadzone) / (1 - deadzone)
+            }
+
+            if (axis2 > 0) {
+                // Scale from "deadzone->1" to "0->1"
+                y = (Math.max(deadzone, axis2) - deadzone) / (1 - deadzone)
+            } else {
+                // Scale from "-deadzone->-1" to "0->-1"
+                y = (Math.min((deadzone * -1), axis2) + deadzone) / (1 - deadzone)
+            }
+        }
 		offset.xRaw = axis1;
 		offset.yRaw = axis2;
 
