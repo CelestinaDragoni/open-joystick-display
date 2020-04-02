@@ -38,7 +38,7 @@ Note that `yarn build` does everything including building CSS and rebuilding the
 - macOS
   - Package Types: `zip` (DMG no longer supported)
 - Linux
-  - `tar.gz`, `deb`, `AppImage` 
+  - Package Types: `tar.gz`, `deb`, and `AppImage` 
 
 The raw build will also be located in the `/dist/${os}-unpacked` directory if you wish to bundle it yourself.
 
