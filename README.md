@@ -19,3 +19,6 @@ https://ojdproject.com/developer-guide
 
 ## License
 https://github.com/KernelZechs/open-joystick-display/blob/master/LICENSE.md
+
+## Development and Deployment Guide
+https://github.com/KernelZechs/open-joystick-display/blob/master/BUILD.md
