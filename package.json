@@ -41,7 +41,7 @@
   "dependencies": {
     "clone": "^2.1.2",
     "electron-store": "^4.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "json-socket": "^0.3.0",
     "lodash": "^4.17.14",
     "original-fs": "^1.0.0",
