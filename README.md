@@ -1,10 +1,15 @@
-![Open Joystick Display](https://ojdproject.com/images/logo-dark.png)
+### Project Discontinued
+
+This project has been discontinued. I no longer have time or money to support this product due to recent events in my life. Links below to the archived source and last compiled binaries. You can find archived documentation listed below as well. This project was open source, so if someone wants to fork and make a new version by all means do so. As of writing the application works just fine from my testing except for one documented bug regarding the N64 RetroSpy configuration.
+
+
+![Open Joystick Display](http://kernelzechs.com/open-joystick-display/images/logo-dark.png)
 
 # Open Joystick Display
 **A powerful and easy to use streamer-ready overlay for your joystick or gamepad. Completely free and open source.**
 
-## Package Downloads
-https://ojdproject.com
+## Archived Package Downloads
+http://kernelzechs.com/open-joystick-display/
 
 ## Documentation
 
